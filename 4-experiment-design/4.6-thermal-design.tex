@@ -1,0 +1,34 @@
+\pagebreak
+\subsection{Thermal Design}
+
+\begin{centering}
+The experiment will experience a wide range of temperatures during the flight and it must be able to continue to operate despite these changes. As seen in Figure \ref{fig:temperature-profile} the coldest point of the flight will be between 15km and 20km where the air temperature can drop to $-80\degree$C and temperatures on the gondola have been recorded as low as $-40\degree$C during the float phase in the past \cite{BexusManual}. In addition launching from Kiruna in late October means the temperature on the ground could be as low as $-15\degree$C. As our lowest operating temperature component must be at a minimum of $0\degree$C this could mean heaters may need to be switched on while the experiment is still on the ground. 
+\end{centering}
+
+
+\begin{figure}[H]
+    \begin{align*}
+        \includegraphics[height=5cm]{4-experiment-design/img/temperature-profile.png}
+    \end{align*}
+    \caption{Diagram showing the temperature profile of the atmosphere \cite{jacob}}\label{fig:temperature-profile}
+\end{figure}
+
+
+\begin{centering}
+To protect the components against the cold two heaters will be included. One of these will be placed close to the Arduino, which is anticipated to be able to keep the controller area warm enough, and the second will be placed close to the valves to ensure they continue to operate as expected. To control these heaters two temperature sensors will also be onboard in similar locations. If the reading from one of the temperature sensors is lower than the predefined value then the heater will turn on. The predefined value will be chosen based upon the minimum operating temperature of the components. It is also expected that the electrical components will produce some heat themselves.
+\end{centering}
+
+
+\begin{centering}
+In addition to using electrical heaters the experiment will also be thermally insulated. The Styrofoam casing which will be used to protect the CAC from impact forces will also serve as insulation. It is also planned to add additional insulation around the components.  
+\end{centering}
+
+\begin{centering}
+It is also important to consider heating from the sun which could raise the temperature of the experiment considerably. Sufficient insulation should be included to ensure the inside of the box stays within the operating temperature range. This will be investigated at a later date when a full CFD thermal analysis is completed.
+\end{centering}
+\bigskip
+
+\pagebreak
+\input{4-experiment-design/tables/thermaltable.tex}
+
+\raggedbottom

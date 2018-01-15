@@ -1,0 +1,16 @@
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+Components interacting & Communication protocol & Interface                 \\ \hline
+Pressure Sensors-OBC   & I2C                    & Arduino I2C \\
+Thermometer-OBC        & SPI                    & Arduino SPI and GPIO pins \\
+Airflow sensor-OBC     & I2C                    & Arduino I2C \\
+Heaters-OBC            & Digital                & GPIO pins \\
+Air pump-OBC           & Digital                & GPIO pins \\
+Valve-OBC              & Digital                & GPIO pins                 \\
+OBC-microSD Storage    & SPI                    & Arduino Ethernet shield   \\
+OBC - E-Link           & Ethernet               & Ethernet port            
+\end{tabular}%Tabular dude
+\caption{Communication and interface protocols}
+\label{tab:comIntpro}
+\end{table}

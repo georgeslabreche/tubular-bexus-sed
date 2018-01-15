@@ -1,0 +1,315 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\renewcommand\familydefault{\sfdefault}
+% \usepackage[backref=true,backend=biber,hyperref=true]{biblatex}
+% \bibliography{help}
+\usepackage[hidelinks,bookmarksnumbered,colorlinks]{hyperref}
+\hypersetup{
+  colorlinks = black
+  citecolor=true}
+  
+
+%\usepackage[none]{hyphenat}
+\usepackage{float}
+%\usepackage{subfig} Removed this bc it overrides the subcaption one, if it caused problems for anyone contact me // Lucas
+\usepackage{graphicx}
+%\graphicspath{} Always search for images in this folder. Dont need to add foldername in includegraphics.
+\usepackage{csquotes}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{ae}
+\usepackage{boldline}
+\usepackage{units}
+%\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{icomma}
+\usepackage{color}
+\usepackage{eurosym}
+\usepackage{bbm}
+\usepackage{multicol}
+\usepackage{multirow}
+%\usepackage{listings}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{wrapfig}
+\usepackage[table]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage[square,sort,comma,numbers]{natbib} % (tar bort konstigt fel från \usepackage{natbib})
+\usepackage{textcomp}
+\usepackage{siunitx}
+\usepackage{pdfpages,picture} %
+\usepackage{listings}
+\usepackage{pdfpages} %Use \includepdf[pages={#,#,#,#,#}]{myfile.pdf}
+%To be clear, you need to specify the pages you wish to include, i.e. \includepdf[pages={1,3,5}]{myfile.pdf} would include pages 1, 3, and 5 of the file. To include the entire file, you specify pages={-}, where {-} is a range without the endpoints specified which default to the first and last pages, respectively. The first two things I had to also do were to scale and to reenable my outer page design (to show page numbers again) which can both be set using the configuration, e.g.: \includepdf[pages=-,scale=.8,pagecommand={}]{file}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{afterpage}
+\usepackage{longtable}
+\usepackage{tabularx} %Extended tabular
+\usepackage{ltxtable}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{gensymb}
+\usepackage{parskip} %% Vince added this to standardize paragraph spacing
+\usepackage{textcomp}
+\usepackage{lastpage,lipsum} %% lipsum for dummy text remove in your file
+\usepackage[margin=3cm]{geometry}
+\usepackage{xfrac}
+\usepackage{array}
+\usepackage{filecontents}
+\usepackage{etoolbox}
+\usepackage{nameref}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{appendix}
+\usepackage{spreadtab} %% Vince added this to test table sum function [2017-01-25, 15:27]
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+% % For references
+% %\bibliographystyle{plain}
+% \usepackage[numbib]{tocbibind}
+% %\usepackage[nottoc]{tocbibind}
+% \usepackage[paper=A4,pagesize]{typearea}    %% For putting in A3 / Hannah
+%%%%%%%%%%%%%%% to be able to higlight text, for PDR update %%%%%%%%%%%%%%
+\usepackage{soul} %/Hannah
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage[acronym]{glossaries} %natalie added 13/01/18
+% \makeglossaries
+% \usepackage[nopostdot]{glossaries}
+\usepackage[xindy,toc]{glossaries} %natalie added 14/01/18
+\makeglossaries
+\usepackage[xindy]{imakeidx}
+\makeindex
+\usepackage{makecell} % natalie added 15/01/18 this lets you put breaks inside table boxes :3
+
+\DeclareCaptionType[fileext=ext]{Test}
+%\newfloat{Test}{luc}{Test}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                                         %%%
+%%               DO NOT CHANGE IN TEX BELOW (that is literally all i have done/robo)      %%%
+%%                                                                                         %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{SED}
+\author{tba}
+
+\newcommand{\highlight}[1]{%
+  \colorbox{yellow}{$\displaystyle#1$}}
+  \makeatletter
+\newcommand{\skipitems}[1]{%
+  \addtocounter{\@enumctr}{#1}%
+}
+\makeatother
+\newcommand\blankpage{%
+
+    \null
+    \thispagestyle{empty}%
+    %\addtocounter{page}{-1}%
+    \newpage
+}
+%
+\fancypagestyle{SED}
+{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \chead{-\hspace{0.05cm}\thepage \hspace{0.05cm}-}
+    
+    %\renewcommand{\footrulewidth}{0pt}
+    \fancyfoot[RE,LO]{\textit{BX26\_TUBULAR\_SEDv1-0\_15Jan18}}
+    \fancyfoot[LE]{Page \thepage}
+}
+\fancypagestyle{cover}
+{
+   \fancyhf{}
+   \renewcommand{\footrulewidth}{0.5pt}  
+   \lfoot{\centering\textit{BX26\_TUBULAR\_SEDv1-0\_15Jan18}}
+  %\cfoot{}
+  % \rfoot{} 
+}
+
+\fancypagestyle{firstp}
+{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+   \chead{-\hspace{0.05cm}\thepage \hspace{0.05cm}-}
+   \renewcommand{\footrulewidth}{0pt}  
+   \fancyfoot[RE,LO]{\textit{BX26\_TUBULAR\_SEDv1-0\_15Jan18}}
+   \fancyfoot[LE]{Page \thepage}
+}
+
+% \pagestyle{cover}
+% \pagenumbering{roman}
+
+\begin{document}
+
+%\pagenumbering{arabic}
+\hypersetup{allcolors=black}
+
+\newgeometry{left=3cm,right=2.5cm,top=1cm,bottom=3cm,headheight=20pt,headsep=10pt}
+\thispagestyle{cover}
+
+
+\begin{flushright}
+\includegraphics[width=.25\textwidth]{0-cover/img/logo-rexus-bexus.png} 
+\end{flushright}
+
+\begin{flushright}
+
+\begin{tabular}{p{0.70\textwidth} r}
+\vspace{-1cm}
+{{\hspace{-8pt}\huge{\textbf{SED}}} \vspace{15pt} \newline \vspace{15pt}
+{\hspace{-11pt}\large{\textbf{Student Experiment Documentation}}} \newline \vspace{30pt}
+{\hspace{-11pt}\footnotesize{Document ID: BX26\_TUBULAR\_SEDv1-0\_15Jan18}}}
+& \hspace{3pt}\multirow{3}{*}{\includegraphics[width=.25\textwidth]{0-cover/img/logo-rexus-bexus-tubular.png}}
+\end{tabular}
+\end{flushright}
+\begin{flushleft}
+\vspace{5pt}
+
+\noindent \textbf{\hspace{-1pt}Mission: BEXUS 26} \\
+
+\vspace{20pt}
+
+{\hspace{-2pt}\noindent \Large{\textbf{Team Name:} } TUBULAR} \\
+
+\vspace{20pt}
+
+\hspace{-1pt}Experiment Title: Alternative to AirCore for Atmospheric Greenhouse Gas Sampling\\
+
+\vspace{20pt}
+\begin{tabular}{p{.33\textwidth} p{.34\textwidth} p{.33\textwidth}}
+\textbf{Team} & \textbf{Name}  \\
+Student Team Leader:  &  Georges L. J. Labr\`{e}che \\
+\end{tabular}
+\vspace{5pt}
+\begin{tabular}{p{.33\textwidth} p{.34\textwidth} p{.33\textwidth}}
+Team Members:  & N\'{u}ria Agues Paszkowsky \\
+& Kyriaki Blazaki \\
+& Jordi Coll Ortega \\
+& Gustav Dyrssen \\
+& Natalie Lawton \\
+& Pau Molas Roca \\
+& Muhammad Ansyar Rafi Putra \\
+& Hamad Siddiqi \\
+& Ivan Zankov \\
+\end{tabular}
+\begin{tabular}{p{.33\textwidth} p{.34\textwidth} p{.33\textwidth}}
+University: & Lule\aa \ University of Technology
+\end{tabular}
+
+\vspace{0.5cm} 
+
+
+ \begin{tabular}{p{.15\textwidth} p{.3\textwidth} p{.25\textwidth} p{.25\textwidth}}
+\footnotesize{Version:}     & \footnotesize{Issue Date:} & \footnotesize{Document Type:} & \footnotesize{Valid from} \\
+\textbf{1.0}          & \textbf{January 15, 2018}    & \textbf{Spec}   & \textbf{January 15, 2018} \\ 
+\end{tabular}
+
+\vspace{10pt}
+
+\small
+{
+Issued by:\\
+}
+
+\vspace{0.3cm}
+
+\large
+{
+\textbf{The TUBULAR Team} \\
+}
+
+\vspace{0.3cm}
+
+\small
+{
+Approved by:\\
+}
+
+\vspace{0.3cm}
+
+\large
+{
+\textbf{Dr. Thomas Kuhn \\ Dr. Uwe Raffalski (Pending)}
+}
+\end{flushleft}
+
+\newgeometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=3cm,headheight=30pt,headsep=30pt}
+
+
+
+\pagestyle{firstp}
+%\thispagestyle{firstp}
+\section*{\small{\textbf{CHANGE RECORD}}}
+\addcontentsline{toc}{section}{CHANGE RECORD}%
+
+\begin{longtable}{|p{0.1\textwidth}| p{0.22\textwidth} |p{0.28\textwidth} |p{0.35\textwidth}|}\hline
+    \centering
+    %\begin{tabular}
+    \textbf{Version}    & \textbf{Date}     & \textbf{Changed chapters} & \textbf{Remarks} \\\hline
+    0       &   2017-12-20   & New Version   & Blank Book 2017  \\
+    1-0     &   2018-01-15   & All           & PDR \\ \hline 
+    %\end{tabular}
+    \label{COR}
+\end{longtable}
+
+\vspace{1cm}
+\begin{tabular}{p{.15\textwidth} p{.85\textwidth}}
+\textbf{Abstract:}     &  %Document Abstract  \\
+\input{0-cover/abstract.tex}
+  &  \\
+\textbf{Keywords:}     & %Document Keywords
+\input{0-cover/keywords.tex}
+\end{tabular}
+
+\vfill
+
+\newpage
+\tableofcontents
+%\newpage
+
+\newpage
+\input{0-cover/preface.tex}
+
+\newpage
+\input{0-cover/acknowledgement.tex}
+
+\pagestyle{SED}
+\newgeometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=3cm,headheight=30pt,headsep=30pt}
+\raggedbottom  % Fixed random spacing in text /H
+
+%\pagenumbering{arabic}
+%\input sections
+
+% MAIN TEXT DOCUMENT 
+\input{1-introduction/index.tex}
+\input{2-experiment-requirements-and-constraints/index.tex}
+\input{3-project-planning/index.tex}
+\input{4-experiment-design/index.tex}
+\input{5-experiment-verification-and-testing/index.tex}
+\input{6-launch-campaign-preparation/index.tex}
+\input{7-data-analysis-and-results/index.tex}
+\input{8-abbreviations-and-references/index.tex}
+\input{appendix/index.tex}
+
+% \glossarystyle{list}
+% \printglossaries
+% \printglossary[title=Abbreviations,toctitle=Acronyms]
+%\addcontentsline{toc}{section}{Bibliography} 
+%\bibliography{refs}
+%\bibliographystyle{plain}
+
+\restoregeometry
+%}
+
+\end{document}

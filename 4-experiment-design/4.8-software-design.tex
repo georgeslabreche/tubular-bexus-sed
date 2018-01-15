@@ -1,0 +1,56 @@
+\pagebreak
+\subsection{Software Design}
+\subsubsection{Purpose}
+The purpose of the software is to automatically control the valves so that they will be opened/closed at the designated altitude. Moreover, the software will store housekeeping data from sensors, pump and valves state to the on-board memory storage device. To determine a vertical profile, the acquisition of sensor data is required. From Olivier's research:
+\begin{quote}
+"In order to determine the vertical profiles of CO$_2$ and CH$_4$ from the analysis of sampled air, measurements of several atmospheric parameters are needed (see Sect. 2.3). The two most important parameters are the ambient pressure and the mean coil temperature. Those parameters are recorded by the AirCore-HR electronic data package. Mean coil temperature is obtained by taking the mean of three temperatures recorded by independent probes located at different positions along the AirCore-HR".\cite{Olivier}
+\end{quote}
+The next purpose is to transmit such data to the ground. It will allow the team to monitor the real-time condition of the experiment. Telecommand is also needed to take over the experiment if the software automation fails, since this experiment is highly dependent on the software. It will also be used to test the system, especially valves and heaters.\par
+\subsubsection{Design}
+\begin{enumerate}[label=(\alph*)]
+\item{Process Overview}\\
+The software which run on Arduino Due reads from the sensors through the digital I/O and analog pins. The sensors provides temperature, pressure, and humidity data. The acquired data will be time-stamped and stored to the on-board memory device and transmitted via the E-Link System. Then according to the pressure/altitude, the software controls the valves which will allow the air to flow inside the tube and bags.
+\item{General and Safety related concepts}\\
+Watchdog timer, which is an electronic countdown timer that causes an interrupt when it reaches 0, will be used to avoid failure because of a freezing software. During normal operations, the software will regularly reset the the watchdog timer to prevent it from elapsing, or \enquote{timing out}. Telecommands will also be used as backup in case the automation fails or otherwise become unresponsive. Telemetry will be utilized to transmit housekeeping data and the state of the valves to get conformation of operation. Rigorous testing will be performed during the development of the project and before the launch phase to insure that that the software is capable to control the experiment.
+\item{Interfaces}\\
+Table \ref{tab:comIntpro} demonstrates how the components will interact with the onboard computer (OBC). Components that use SPI, will share MISO, MOSI, and CLK pins on the Arduino board. Each of them will also be connected to general pins input output (GPIO) for slave select. Furthermore, components using I2C protocol, will share Serial Data pin (SDA) and Serial Clock pin (SCL).
+
+\input{4-experiment-design/tables/communication-and-interface-protocols.tex}
+
+Every transmission to/from the ground will utilize the E-link connection. The data packet which will be used is Ethernet Packet with a header contains the address of destination, followed by the data, and at the end there is a frame check sequence (FCS). The up-linked data packet will have the same structure, with header followed by commands and ended with FCS.
+\item{Data Acquisition and Storage}\\
+Data will be stored on the SD memory card on the Arduino Ethernet Shield. It is estimated that for the entire flight, all the sensors will produce $650$ kilo bytes or $5.2$ mega bits of data. The sampling rates of the sensors are dependent on the modes (see Figure \ref{fig:modediag}). In standby mode, the sampling rate is $1$ per $10$ seconds, since this is not the essential part. The sampling rate is increased in the Normal Operation (ascent) mode to $1$ per seconds. Moreover, in the the descent phase of the experiment, the sampling rate will be increased significantly to $10$ per one second.\\
+\\
+The data will be collected and presented as a matrix, where the first column is the time frame, the following columns are the sensors data. After the sensors data, there will also be housekeeping data, that keeps track of the valves, and heaters states. However, the size of the housekeeping data is not expected to surpass 20 bits per sampling.\\
+\\
+Data will be continuously down-linked and the total telemetry size is 4.788 MB for 5 hours of flight.
+\item{Process Flow}\\
+The process flow can be explained with the mode diagram in figure \ref{fig:modediag}. The software will start with Standby Mode, in which the software will get samples from all sensors. When the software got reading of pressure changes (decrease), it will change to Normal - Ascent mode, where the software will empty the tube and bags by opening the valves. Then, at certain altitudes, air sampling will be conducted during ascending phase. During floating phase, there will be nothing conducted. The software will go to Normal - Descent mode when it sense when the pressure reduction is considerably big, where the software will sample the air by opening the valves for each bag in their designated altitude. The air sampling during descent phase will only be started after the gondola stabilize after cut-off. The software will know this by the reduction of pressure value readings. The experiment goes to SAFE mode about $500 \, m$ before the landing, where all the valves will be closed. 
+\begin{figure}[H]
+    \begin{align*}
+        \includegraphics[width=1\linewidth]{4-experiment-design/img/Mode-diagram.png}
+    \end{align*}
+    \caption{Process diagram for the modes}\label{fig:modediag}
+\end{figure}
+\item{Modularization and Pseudo Code}\\
+\begin{figure}[H]
+    \begin{align*}
+        \includegraphics[width=1\linewidth]{4-experiment-design/img/sw_design_v1-5.png}
+    \end{align*}
+    \caption{Onboard Software Design Tree}\label{fig:obtree}
+\end{figure}
+The Telemetry object is responsible to format the sensor/housekeeping data, and to transmit it. MODE is responsible for controlling the four modes of software. INIT will initialize the necessary software programs. COMMANDS reads the telecommands and execute their commands. The AIR SAMPLING CONTROL object have the four children objects. The first child is responsible for controlling the pump. The second child contains the parameters for the valves and pump. The third child reads the data from the sensors, a fourth child is responsible for manipulating the valves.\\
+\\
+The SENSOR object have two children objects. One for sampling the sensors and another for recording and storing the housekeeping data. The HEATER object have three children objects. One for reading the temperature sensor data, another for deciding if the heaters should be turn on/off. And the third child for turning it on/off. 
+\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{4-experiment-design/img/hood-diagram-v1-0.png}
+    \caption{Hierarchic Object-Oriented Design of the software}
+    \label{fig:hood}
+\end{figure}
+\subsubsection{Implementation}
+The C programming language is used when programming the platform. Software's as Arduino IDE will be used, other software will be used if necessary. A real-time operating system is under consideration and might be implemented if its use is found warranted. 
+
+
+\raggedbottom

@@ -1,0 +1,22 @@
+\subsection{Data Analysis Plan}
+
+After the flight the collected samples, from the CAC and the AAC, will be analyzed with a Picarro gas analyzer. The end of the CAC that remains closed during sampling, will be opened first, and connected to the gas standard with the higher CO$_2$ and CH$_4$ concentrations. The reason for that, is to have a notable difference between the standard gas and the stratospheric air sample. The other end of the CAC will be connected to the analyzer. The analyzer pump will pull the sample through the analyzer with both ends of the CAC open, so that the standard gas will be pulled through after the sample finish, \cite{Karion}, \cite{Olivier}.
+After the sample has been analyzed, the time trace of analysis will be converted into a mole fraction profile as a function of atmospheric pressure, using the ideal gas law,
+\begin{equation}
+    PV = nRT <=> n = \frac{PV}{RT}
+    \label{eq:idealgaslaw}
+\end{equation}
+where P is the ambient pressure, V is the inner volume of the CAC/AAC, n the fraction of moles, R is the universal gas constant in $J K^{-1} mol^{-1}$ and T the ambient temperature in Kelvin, \cite{Olivier}. 
+A constant unit of pressure in the atmosphere is represented by a unit of length in the CAC tube, due to the method that the CAC will sample the ambient air.
+During the analysis the number of moles that will go through the analyzer will increase linearly with time. So, the number of moles at any time during the analysis will be
+\begin{equation}
+    n_i = n^{max}\frac{t_i}{\Delta t}
+    \label{eq:ni}
+\end{equation}
+where $n^{max}$ is the maximum number of moles i.e when the CAC reaches the Earth's surface, and $\Delta t$  is the total time duration of the analysis between the top and bottom of the CAC sample.   
+Finally, the vertical profiles will be obtained by using equations \ref{eq:idealgaslaw} and \ref{eq:ni}, and relate a specific pressure point with every Picarro measurement of the sample.   
+
+The AAC sampling system will be analyzed, in the same manner as the CAC, using the same Picarro gas analyzer. The vertical profiles for CO$_2$ and CH$_4$ are going to be obtained using again, equations \ref{eq:idealgaslaw} and \ref{eq:ni}. 
+
+
+ 
