@@ -12,7 +12,7 @@ After the analysis of the samples, the expected results are the vertical profile
     \caption{Pressure profiles for (left) CO$_2$ and (right) CH$_4$ by three different methods.\cite{Karion}\label{fig:vertical-profile-karion}}
 \end{figure}
 
-The experiment's goal is to achieve the higher vertical resolution possible. Since the vertical resolution is determined by the length and the diameter of the tube \cite{Olivier}, for the experiment a 300m long tube will be used, consisting of 2 smaller tubes. One of 200m length with 0.003m outside diameter and 0.00013m wall thickness, and another one of 100m length with 0.006m outside diameter and 0.00013m wall thickness. For achieving higher stratospheric resolution, the tube with the smaller diameter will be used to sample the higher altitudes and the one with the bigger diameter for the lower ones.
+The experiment's goal is to achieve the higher vertical resolution possible. Since the vertical resolution is determined by the length and the diameter of the tube \cite{Olivier}, for the experiment a 300m long tube will be used, consisting of 2 smaller tubes. One of 200m length with \num{3e-3} m outside diameter and \num{1.3e-4} m wall thickness, and another one of 100m length with \num{6e-3} m outside diameter and \num{1.3e-4} m wall thickness. For achieving higher stratospheric resolution, the tube with the smaller diameter will be used to sample the higher altitudes and the one with the bigger diameter for the lower ones.
 Figure \ref{fig:resolution-lenght} by Olivier Membrive \cite{Olivier} compares the vertical resolution that can be expected with three different AirCores.
 \begin{figure}[H]
     \begin{align*}
@@ -57,7 +57,10 @@ It is clear that the sooner the samples are going to be analyzed, the better the
 
 Based on past BEXUS projects, the time to experiment recovery is estimated at 12 to 24 hours if not multiple days. As such, it is expected that the desired vertical resolution of gas analysis will favour AAC configuration over that of CAC due to mixing of gases in the latter configuration, resulting in poorer vertical resolution.
 
+
+
 The targeted vertical resolution for the AAC is 500m. This will be achieved assuring the airflow intake rate. For ascent phase, a nominal speed of 5m/s is considered, which means that it will take 100 seconds to fill up a 3L sampling bag while ascending 500m, and therefore the airflow intake rate should be of approximately 1.8L/min. For descent phase, the nominal speed is assumed to be 8m/s. While descending 500m a 3L sampling bag will be filled in 62 seconds.
+But considering the fact that the pump will not have the same efficiency at higher altitudes, the sampling time may be longer and the airflow intake rate may be higher. The exact numbers will be included in the upcoming version of the SED.  
 
 For a 500m of vertical displacement, the horizontal resolution of the AAC has been approximated based on past BEXUS flights data obtained from the BEXUS manual \cite{BexusManual}. The average horizontal resolution obtained for ascent phase is 588m and for descent phase is 186.5m. This means that the square area covered by the sample will be 500m x 588m and 500m x 186.5m for ascent and descent phases respectively.
 
