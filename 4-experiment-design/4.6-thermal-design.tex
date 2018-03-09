@@ -1,5 +1,5 @@
 \pagebreak
-\subsection{Thermal Design}
+\subsection{Thermal Design} \label{Thermal_section}
 
 \begin{centering}
 The experiment will experience a wide range of temperatures during the flight and it must be able to continue to operate despite these changes. As seen in Figure \ref{fig:temperature-profile} the coldest point of the flight will be between 15km and 20km where the air temperature can drop to $-80\degree$C and temperatures on the gondola have been recorded as low as $-40\degree$C during the float phase in the past \cite{BexusManual}. In addition launching from Kiruna in late October means the temperature on the ground could be as low as $-15\degree$C. As our lowest operating temperature component must be at a minimum of $0\degree$C this could mean heaters may need to be switched on while the experiment is still on the ground. 
@@ -32,3 +32,15 @@ It is also important to consider heating from the sun which could raise the temp
 \input{4-experiment-design/tables/thermaltable.tex}
 
 \raggedbottom
+
+\subsubsection{Internal Temperature}
+
+As the current experiment model stands, an enclosed partition has been reserved in the lower front-right corner of the AAC section of the TUBULAR experiment. This partition will house all of the electronic components not required to be situated in specified locations throughout the experiment setting, as well as the pump and valves. The partition will occupy a space measuring 20 cm in length, 10 cm in width, and 20 cm in height, and will be insulated from inside to outside with polyethylene, polystyrene, and finally aluminum. The infrastructure within this enclosure shall be such that the electronics are fitted together to in turn be bound within another box of insulated material (likely made from PVC) and will be appropriately labeled the "Electronics Box." Subsequently, above the electronics box will be situated the pump and the collection of valves - the valves being routed together by several tubes to form a compact structure with the label "Valve Center" ascribed to it. As previously mentioned regarding the heaters, one will be included in the electronics box with its main priority being keeping the Arduino Due board within operational temperatures, and delivering the remaining heat to peripheral electronics. The other heater will be fitted between the diaphragm of the pump and the entrances to the valve center and will carry the task of keeping its lateral neighbors within their respective functional temperature ranges.
+
+The pump has the most critical temperature range in that it is the only component that cannot operate below freezing temperatures - in fact, it must always be no colder than $5\degree$C, or the EPDM diaphragm will not be able to expand and contract sufficiently to maintain the desired airflow of 8L/min. The valves are also crucial to the experiment's function, as their correct function is what enables each and every sampling bag onboard to be used. For this reason, while the valves can operate down to $-43\degree$C, they still need to be kept above this limit whenever in use.
+
+Given the thermal conductivity of EPDM ($0.2 W/(m.K)$), the diaphragm experiences a minimal temperature drop across itself when one side is subject to the heater's temperature while the other end of the pump is leveled with the ambient temperature. Case in point, it was found that at an ambient temperature of $-50\degree$C and a heater temperature at $10\degree$C, that the center of the pump - the far end of the diaphragm - measured $9.35\degree$C. Reassessing the equation yielded the most energy-conserving temperature that would keep the pump's diaphragm above the minimum requirement to be $7\degree$C - and this held whether the temperature were as it could be on ground level ($-10\degree$C), or in floating phase ($-50\degree$C).
+
+
+
+\subsubsection{Box Analysis}

@@ -1,30 +1,35 @@
 \subsection{Experiment Setup} \label{Experiment_Setup}
 
-The experiment consists of AAC sixteen sampling bags subsystem, and the CAC coiled tube subsystem. The principal aim is to validate the AAC sampling method and to do so, it is necessary to sample during descent phase in order to compare the results with the ones obtained from the CAC.
+The experiment consists of AAC ten sampling bags subsystem, and the CAC coiled tube subsystem. The principal aim is to validate the AAC sampling method and to do so, it is necessary to sample during descent phase in order to compare the results with the ones obtained from the CAC. All speeds mentioned in this section have been obtained from the BEXUS manual as well as through analysis of past flights.
 
-The primary concern regarding the AAC air sampling subsystem is that after cut-off the gondola will tumble and fall at an average speed of 50 m/s for approximately 2 minutes \cite{BexusManual}. This falling speed is too fast in order to sample air at the desired vertical resolution that is targeted to be 500m. This means that only after the gondola is stabilized at a descent rate of 8 m/s the sampling can be done. The tumbling phase will span approximately for 6km and considering a floating phase at 25km, the sampling can be started from 19km in altitude. Nevertheless, the main region of interest is the stratosphere, especially between 19km and 25km of altitude. It is for this reason that the team has decided to sample during ascent phase as well. Sixteen sampling bags will be filled up, ten during ascent phase approximately between 18-24km, and six during descent phase below 19km. The desired vertical resolution is 500 m at a falling speed of 8 m/s which means that using bags with a volume of 3L, an air pump with at least 3L/min intake rate is necessary for the sampling bags.During ascent phase, due to the decreasing pressure, the bags with the air samples , will expand. In order to avoid have them burst, they should not be fully sampled. The opposite applies for descent phase. The bags with the air samples, will be compressed, and in order to assure that the samples are enough for analysis, they should be fully filled.
+The primary concern regarding the AAC air sampling subsystem is that after cut-off the gondola will tumble and fall at an average speed of 50 m/s for approximately 2 minutes \cite{BexusManual}. This falling speed is too fast in order to sample air at the desired vertical resolution that is targeted to be 500m. This means that only after the gondola is stabilized at a descent rate of 8 m/s \cite{BexusManual} the sampling can be done. The tumbling phase will span approximately for 6km and considering a floating phase at 25km, the sampling can be started from 19km in altitude. Nevertheless, the main region of interest is the stratosphere, especially between 19km and 25km of altitude. It is for this reason that the team has decided to sample during ascent phase as well. Ten sampling bags will be filled up, six during ascent phase approximately between 18-24km, and four during descent phase below 19km. The desired vertical resolution is 500 m at a falling speed of 8 m/s which means that using bags with a volume of 3L, an air pump with at least 3L/min intake rate is necessary for the sampling bags.
 
-Depending on the altitude of sampling, the sample size that is enough for analysis, is between 0.2L and 0.8L. 
+It has to be taken into account the maximum pressure that the sampling bags can withstand in order to avoid bursting. During ascent phase, due to the decreasing pressure, the bags with the air samples , will expand which may have risk of bursting. To avoid this, the bags should not be fully sampled. The providers recommend not to fill more than 80 percent (~2psi/0.14bar) for Multi-Layer Foil bags. The opposite applies for descent phase. The bags with the air samples, will be compressed, and in order to assure that the samples are enough for analysis, they should be fully filled. It has to be mentioned that it has been found from past research that the same bags can withstand a difference in pressure between outside and inside of 310hPa at 30km of altitude, which is equivalent to 0.31bar. Therefore, future test will confirm the maximum pressure for the bags.  
+
+Depending on the altitude of sampling, the range of the sample size is between 0.2L and 0.8L, with 0.2L being the minimum amount required for the chromatographer to analyse. 
 
 The AAC will need an air pump for sampling, due to low ambient pressure at stratospheric altitudes. The air pump is also needed in order to assure the intake flow rate and obtain a good resolution. A control valve will be used to flush the pump after each bag is filled and make sure that the next bag will be filled with fresh air from the corresponding altitude. Each sampling bag will be assigned a 500 meter altitude sampling range from which to collect air samples. At an ascent speed of 5 m/s during the Ascent Phase and at a descent speed of 8 m/s during the Descent Phase. 
 
-
-Shortly after the launch, the CAC valve will be opened in order to flush the inert gas that is inside the tube, while the AAC valves will be closed until reaching the sampling altitude. The CAC valve will remain open at all time during ascent, floating, and descent phases. The tube will empty itself due to pressure gradient during the ascent phase and it will be filled passively during descent. The valve will close just after hitting the ground in order to preserve the sample. The AAC will need an air pump for sampling, due to low ambient pressure. The air pump is also needed in order to assure the intake flow rate and obtain a good resolution.
+Shortly after the launch, the CAC valve will be opened in order to flush the inert gas that is inside the tube, while the AAC valves will be closed until reaching the sampling altitude. Flushing of the CAC tube will be done passively through the progressive decrease in air pressure during the balloon's ascent phase. The CAC valve will remain open at all time during ascent, floating, and descent phases. The tube will empty itself due to pressure gradient during the ascent phase and it will be filled passively during descent. The valve will close just after hitting the ground in order to preserve the sample. The AAC will need an air pump for sampling, due to low ambient pressure. The air pump is also needed in order to assure the intake flow rate and obtain a good resolution.
 
 After sampling for a given bag is complete, the pump will be flushed and prior to the subsequent sampling bag valve being opened. This process continues until the last sampling bag is filled.This procedure occurs twice, the first time during the Ascent Phase for the 10 first sampling bags and the second time during the descent phase for the remaining 6 sampling bags.
 
-The emptying and sampling sequence is represented in Figures \ref{fig:ascent} and \ref{fig:descent}.
+Three pressure sensors and two temperature sensors will be used. The data will be collected for both systems AAC and CAC. Temperature inside the bags or the AirCore will not be measured directly because it is assumed to quickly adjust to the ambient temperature. Therefore only two sensors measuring ambient temperature will be necessary (one for CAC and another for AAC). The ambient pressure will be measured with two more sensors, one for the bags and one for the AirCore. For the inside pressure in the bags, one more sensor will be located inside the manifold. To have redundancy, each of the measurements mentioned above will be made with three different sensors.  
+
+The sampling of the AAC will be triggered by the pressure read from the sensors. When the required pressure is reached, the valve will open and the sampling will start. The closing of the valve depends on two conditions and it will be triggered when either one of the conditions is true. These conditions are: maximum sampling time or maximum pressure difference between inside/outside the bags. They are determined from past research but in the future will be determined by testing. 
+
+The emptying and sampling sequence is represented in Figures \ref{fig:ascent} and \ref{fig:descent}. It should be kept in mind that the different pressures are what triggers the opening of the valves. 
 
 \begin{figure}[H]
     \begin{align*}
-        \includegraphics[width=1\linewidth]{4-experiment-design/img/ascent-phase.png}
+        \includegraphics[width=1\linewidth]{4-experiment-design/img/ascent-phase.jpeg}
     \end{align*}
     \caption{The emptying and sampling sequence-Ascent Phase\label{fig:ascent}}
 \end{figure}
 
 \begin{figure}[H]
     \begin{align*}
-        \includegraphics[width=1\linewidth]{4-experiment-design/img/descent-phase.png}
+        \includegraphics[width=1\linewidth]{4-experiment-design/img/descent-phase.jpeg}
     \end{align*}
     \caption{The emptying and sampling sequence-Descent Phase\label{fig:descent}}
 \end{figure}
@@ -34,26 +39,26 @@ In the diagrams, 0 denotes closed/off and 1 denotes opened/on.
 The general timeline of the experiment is as follow:
 
 \textbf{Ascent Phase:}\\
-$t_0$ – $t_1$
+$p_0$ – $p_1$
 \begin{itemize}
     \item CAC valve shall be closed.
     \item AAC valves shall be closed.
     \item AAC' control valve shall be closed.
     \end{itemize}
-$t_1$ – $t_2$
+$p_1$ – $p_2$
 \begin{itemize}
     \item CAC valve shall be opened.
     \item AAC valves shall be closed.
     \item CAC tube shall be flushed.
     \item AAC' control valve shall be open.
     \end{itemize}
-$t_2$ – $t_3$
+$p_2$ – $p_3$
 \begin{itemize}
     \item Sampling bags' control valve shall be closed.
     \item Sampling bag valve 1 shall be opened, allowing for air to enter the first bag.
     \item CAC valve remains open.
     \end{itemize}
-$t_3$ – $t_4$
+$p_3$ – $p_4$
 \begin{itemize}
     \item Sampling bag valve 1 shall be closed
     \item Sampling bags' control valve shall be opened, allowing the system to flush. 
@@ -62,7 +67,7 @@ $t_4$ - $t_{n-1}$
 \begin{itemize}
     \item The above procedures shall repeat itself until the remaining nine bags have collected air samples for their assigned altitudes.
     \end{itemize}
-$t_{n-1}$ – $t_n$
+$p_{n-1}$ – $p_n$
 \begin{itemize}
     \item Sampling bag valve 10 shall be closed.
     \item Sampling bags' control valve shall be closed.
@@ -76,20 +81,20 @@ No action taken other than continued telemetry. Air pump is off.\\
 
 Note: Before sampling starts again, the system has to be flushed. 
 
-$t_{n+1}$ – $t_{n+2}$
+$p_{n+1}$ – $p_{n+2}$
 \begin{itemize}
     \item Sampling bags' control valve shall be closed.
     \item Sampling bag valve 11 shall be opened, allowing for air to enter the first bag.
 \end{itemize}
 
-$t_{n+2}$ – $t_{n+3}$
+$p_{n+2}$ – $p_{n+3}$
 \begin{itemize}
     \item Sampling bags' control valve shall be closed and sampling bag valve 12 shall be opened.
 \end{itemize}
 
 In between, same procedure shall repeat itself until all the remaining bags have collected air samples for their assigned altitudes.
 
-$t_{pre-landing}$
+$p_{pre-landing}$
 \begin{itemize}
     \item System shuts down:Sampling bag valve 16 shall be closed.
     \item Sampling bags' control valve shall be closed
@@ -98,5 +103,6 @@ $t_{pre-landing}$
 
 
 Note: The AAC system's air pump is only on during sampling into the air sampling bags and flushing of the system.
+
 
 \raggedbottom
