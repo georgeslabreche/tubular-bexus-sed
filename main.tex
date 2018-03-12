@@ -45,7 +45,7 @@
 \usepackage{siunitx}
 \usepackage{pdfpages,picture} %
 \usepackage{listings}
-\usepackage{pdfpages} %Use \includepdf[pages={#,#,#,#,#}]{myfile.pdf}
+\usepackage[final]{pdfpages} %Use \includepdf[pages={#,#,#,#,#}]{myfile.pdf}
 %To be clear, you need to specify the pages you wish to include, i.e. \includepdf[pages={1,3,5}]{myfile.pdf} would include pages 1, 3, and 5 of the file. To include the entire file, you specify pages={-}, where {-} is a range without the endpoints specified which default to the first and last pages, respectively. The first two things I had to also do were to scale and to reenable my outer page design (to show page numbers again) which can both be set using the configuration, e.g.: \includepdf[pages=-,scale=.8,pagecommand={}]{file}
 \usepackage{hyperref}
 \usepackage{enumitem}
@@ -240,7 +240,7 @@ Approved by:\\
 
 \large
 {
-\textbf{Dr. Uwe Raffalski (Pending)}
+\textbf{Dr. Thomas Kuhn\\Dr. Uwe Raffalski (Pending)}
 }
 \end{flushleft}
 
