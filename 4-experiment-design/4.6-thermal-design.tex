@@ -1,6 +1,7 @@
 \pagebreak
 \subsection{Thermal Design} \label{Thermal_section}
 
+\subsubsection{Thermal Environment}
 \begin{centering}
 The experiment will experience a wide range of temperatures during the flight and it must be able to continue to operate despite these changes. As seen in Figure \ref{fig:temperature-profile} the coldest point of the flight will be between 15km and 20km where the air temperature can drop to $-80\degree$C and temperatures on the gondola have been recorded as low as $-40\degree$C during the float phase in the past \cite{BexusManual}. In addition launching from Kiruna in late October means the temperature on the ground could be as low as $-15\degree$C. As our lowest operating temperature component must be at a minimum of $0\degree$C this could mean heaters may need to be switched on while the experiment is still on the ground. 
 \end{centering}
@@ -13,9 +14,9 @@ The experiment will experience a wide range of temperatures during the flight an
     \caption{Diagram showing the temperature profile of the atmosphere \cite{jacob}}\label{fig:temperature-profile}
 \end{figure}
 
-
+\subsubsection{Overall Design}
 \begin{centering}
-To protect the components against the cold two heaters will be included. One of these will be placed close to the Arduino, which is anticipated to be able to keep the controller area warm enough, and the second will be placed close to the valves to ensure they continue to operate as expected. To control these heaters two temperature sensors will also be onboard in similar locations. If the reading from one of the temperature sensors is lower than the predefined value then the heater will turn on. The predefined value will be chosen based upon the minimum operating temperature of the components. It is also expected that the electrical components will produce some heat themselves.
+To protect the components against the cold two heaters will be included. One of these will be placed close to the Arduino, which is anticipated to be able to keep the controller area warm enough, and the second will be placed close to the valves to ensure they continue to operate as expected. To control these heaters two temperature sensors will also be onboard in similar locations. If the reading from one of the temperature sensors is lower than the predefined value then the heater will turn on. 
 \end{centering}
 
 
@@ -35,12 +36,44 @@ It is also important to consider heating from the sun which could raise the temp
 
 \subsubsection{Internal Temperature}
 
-As the current experiment model stands, an enclosed partition has been reserved in the lower front-right corner of the AAC section of the TUBULAR experiment. This partition will house all of the electronic components not required to be situated in specified locations throughout the experiment setting, as well as the pump and valves. The partition will occupy a space measuring 20 cm in length, 10 cm in width, and 20 cm in height, and will be insulated from inside to outside with polyethylene, polystyrene, and finally aluminum. The infrastructure within this enclosure shall be such that the electronics are fitted together to in turn be bound within another box of insulated material (likely made from PVC) and will be appropriately labeled the "Electronics Box." Subsequently, above the electronics box will be situated the pump and the collection of valves - the valves being routed together by several tubes to form a compact structure with the label "Valve Center" ascribed to it. As previously mentioned regarding the heaters, one will be included in the electronics box with its main priority being keeping the Arduino Due board within operational temperatures, and delivering the remaining heat to peripheral electronics. The other heater will be fitted between the diaphragm of the pump and the entrances to the valve center and will carry the task of keeping its lateral neighbors within their respective functional temperature ranges.
+As the current experiment model stands, an enclosed partition has been reserved in the lower front-right corner of the AAC section of the TUBULAR experiment. This partition will house all of the electronic components not required to be situated in specified locations throughout the experiment setting, such as some of the sensors. 
 
-The pump has the most critical temperature range in that it is the only component that cannot operate below freezing temperatures - in fact, it must always be no colder than $5\degree$C, or the EPDM diaphragm will not be able to expand and contract sufficiently to maintain the desired airflow of 8L/min. The valves are also crucial to the experiment's function, as their correct function is what enables each and every sampling bag onboard to be used. For this reason, while the valves can operate down to $-43\degree$C, they still need to be kept above this limit whenever in use.
+Inside this partition will be three separate insulated boxes. The first of these is the Electronics box which will occupy a space measuring 20 cm in length, 10 cm in width, and 20 cm in height, and will be insulated from inside to outside with polyethylene, polystyrene, and finally aluminum. The infrastructure within this enclosure shall be such that the electronics are fitted together to in turn be bound within another box of insulated material (likely made from PVC). 
 
-Given the thermal conductivity of EPDM ($0.2 W/(m.K)$), the diaphragm experiences a minimal temperature drop across itself when one side is subject to the heater's temperature while the other end of the pump is leveled with the ambient temperature. Case in point, it was found that at an ambient temperature of $-50\degree$C and a heater temperature at $10\degree$C, that the center of the pump - the far end of the diaphragm - measured $9.35\degree$C. Reassessing the equation yielded the most energy-conserving temperature that would keep the pump's diaphragm above the minimum requirement to be $7\degree$C - and this held whether the temperature were as it could be on ground level ($-10\degree$C), or in floating phase ($-50\degree$C).
+Above the electronics box will be the second internal box, the pump box, where the pump will be situated and the third internal box, the valve centre, where the valves will be situated. The valves will be routed together by several tubes to form a compact structure aiding the thermal control over this area. 
+
+One heater will be included in the electronics box with its main priority being keeping the Arduino Due board within operational temperatures whilst delivering the remaining heat to peripheral electronics. The other heater will be fitted between the pump and the entrances to the valve center and will keep its lateral neighbors within their respective functional temperature ranges.
+
+The pump has the most critical temperature range as it is the only component that cannot operate below freezing temperatures. It's data sheet states it must always be no colder than $5\degree$C, or the EPDM diaphragm may not be able to expand and contract sufficiently to maintain the desired airflow of 8L/min. However as this pump has been used succesfully on flights before, \cite{LISA}, tests will be conducted on the pump to find its true performance at lower temperatures. The valves are also crucial to the experiment's function, as they are what enables each and every sampling bag onboard to be used. For this reason, while the valves can operate down to $-43\degree$C, it is desirable to be keep them above this limit whenever in use.
+
+Given the thermal conductivity of EPDM ($0.2 W/(m.K)$), the pump's diaphragm experiences a minimal temperature drop across itself when one side is subject to the heater's temperature while the other end of the pump is leveled with the ambient temperature. Through calculation it was found that at an ambient temperature of $-50\degree$C and a heater temperature at $10\degree$C, that the center of the pump, the far end of the diaphragm, measured $9.35\degree$C. Reassessing the equation yielded the most energy-conserving temperature that would keep the pump's diaphragm above the minimum requirement to be $7\degree$C. This held whether the temperature was as it could be on ground level ($-10\degree$C), or in floating phase ($-50\degree$C).
+
+ \begin{align*}
+     T_{inlet} &= 263 K\\
+    T_{heated} &= 283 K\\
+    L_{inlet} &= 0.038 m\\
+    L_{phragm} &= 0.038 m\\
+    k_{PPS} &= 2\frac{W}{m*K}\\
+    k_{EPDM} &= 0.2\frac{W}{m*K}\\
+    k_{air} &= 0.024\frac{W}{m*K}\\
+    k_{phragm} &=  \frac{k_{EPDM}+4k_{air}}{5} = 0.06\frac{W}{m*K}\\
+    T_{med} &= \frac{ k_{phragm}  L_{inlet} T_{inlet} + k_{PPS} L_{phragm} T_{heated} }{ k_{phragm} L_{inlet} + k_{PPS}  L_{phragm}} \\
+    T_{med} &= \frac{ 0.06 (0.038)(263) + 2(0.038)(283)}{(0.06)(0.038) + (2)(0.038)} \\
+    T_{med} &= 282.35 K or 9.35\degree C
+ \end{align*}
+
+Reworking the equation to fit the inlet face at the true ambient temperature of -50$\degree$C and the reduced heater temperature of 7$\degree$C gives the following:
+
+% nice :) Also remove the * and it will number the equations. Also also to start a new line just write \\ at the end and it will make the next thing appear on a new line. Also also also using &= aligns all the equals signs and makes it look nice :D I leave these tips here so delete when you don't need them :)
 
 
+
+ \begin{align*}
+     T_{inlet} = 223 K\\
+    T_{heated} = 280 K\\
+    T_{med} = \frac{ k_{phragm} L_{inlet} T_{inlet} + k_{PPS} L_{phragm} T_{heated} }{ k_{phragm} L_{inlet} + k_{PPS}  L_{phragm}}\\
+    T_{med} = \frac{ 0.06 (0.038)(223) + 2(0.038)(280)}{(0.06)(0.038) + (2)(0.038)}\\
+    T_{med} = 278.28 K or 5.28\degreeC
+ \end{align*}
 
 \subsubsection{Box Analysis}
