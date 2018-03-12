@@ -17,7 +17,7 @@ The electronics design can be seen in Figure \ref{fig:electronics-block-diagram}
 
 \begin{figure}[H]
     \begin{align*}
-        \includegraphics[width=16cm]{4-experiment-design/img/INTERFACE-DIAGRAM-2.png}
+        \includegraphics[width=16cm]{4-experiment-design/img/interface-diagram-electric.png}
     \end{align*}
     \caption{Block Diagram Showing the Interfaces Between All Electrical Components.}\label{fig:eee-interface-diagram}
 \end{figure}
@@ -63,7 +63,7 @@ The pump has a maximum flow rate of 8.0LPM when at ambient pressure. This is in 
 
 
 \subsubsection{Electromagnetically Controlled Valves}
-Filling of the air bags will be controlled by the solenoid valves. For this purpose Parker solenoid valve 121K63, Figure \ref{fig:valve},  with the 24 VDC coil, Figure \ref{fig:coil}, has been selected after careful consideration of the different options available in the market and keeping the experiment requirements in mind. The valves will be normally closed through out the experiment with zero power consumption and will be open, when given power, to fill up the air bags at specific altitudes or to flush the tubes.
+Filling of the air bags will be controlled by the solenoid valves. For this purpose Parker solenoid valve 121K63, Figure \ref{fig:valve},  with the 24 VDC input, Figure \ref{fig:coil}, has been selected after careful consideration of the different options available in the market and keeping the experiment requirements in mind. The valves will be normally closed through out the experiment with zero power consumption and will be open, when given power, to fill up the air bags at specific altitudes or to flush the tubes.
 
 \begin{figure}[H]
     \begin{align*}
@@ -101,7 +101,9 @@ The valves will be powered through a 50W DC-DC converter that will step down the
     \caption{Schematic showing the switching circuit to drive the valves through the Arduino}\label{fig:switchcir}
 \end{figure}
 
-The power MOSFET will control the valves ON-OFF state whilst the BJT will connect directly to the Arduino and ensure that the valve is only turned on when a true signal is given. The power MOSFET will be on when the BJT is on. The BJT will be on when a signal of 3.3V is given and off when a signal of 0V is given. Three resistors will also be used. The purpose of $R_{1}$ is to protect the Arudino and also to step up the current entering the BJT. The value has been chosen to ensure that enough current reaches the valve to turn it on. $R_{2}$ is an optional resistor which creates a voltage divider that further increases the current entering the BJT. Finally $R_{3}$ is for when the BJT is off to avoid creating a short circuit. 
+The power MOSFET will control the valves ON-OFF state whilst the BJT will connect directly to the Arduino and ensure that the valve is only turned on when a true signal is given. The power MOSFET will be on when the BJT is on. The BJT will be on when a signal of 3.3V is given and off when a signal of 0V is given. Three resistors will also be used. 
+
+% The purpose of $R_{1}$ is to protect the Arudino and also to step up the current entering the BJT. The value has been chosen to ensure that enough current reaches the valve to turn it on. $R_{2}$ is an optional resistor which creates a voltage divider that further increases the current entering the BJT. Finally $R_{3}$ is for when the BJT is off to avoid creating a short circuit. 
 
 
 \raggedbottom

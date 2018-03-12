@@ -44,21 +44,38 @@ Above the electronics box will be the second internal box, the pump box, where t
 
 One heater will be included in the electronics box with its main priority being keeping the Arduino Due board within operational temperatures whilst delivering the remaining heat to peripheral electronics. The other heater will be fitted between the pump and the entrances to the valve center and will keep its lateral neighbors within their respective operational temperature ranges.
 
-The pump has the most critical temperature range as it is the only component that cannot operate below freezing temperatures. It's data sheet states it must always be no colder than $5\degree$C, or the EPDM diaphragm may not be able to expand and contract sufficiently to maintain the desired airflow of 8L/min. However as this pump has been used successfully on flights before, \cite{LISA}, tests will be conducted on the pump to find its true performance at lower temperatures. The valves are also crucial to the experiment's function, as they are what enables each and every sampling bag onboard to be used. For this reason, while the valves can operate down to $-43\degree$C, it is desirable to be keep them above this limit whenever in use.
+The pump has the most critical temperature range as it is the only component that cannot operate below freezing temperatures. It's data sheet states it must always be no colder than $5\degree$C, or the EPDM diaphragm may not be able to expand and contract sufficiently to maintain the desired airflow of 8L/min. However as this pump has been used successfully on flights before, \cite{LISA}, tests will be conducted on the pump to find its true performance at lower temperatures. The valves are also crucial to the experiment's function, as they enable each and every sampling bag onboard to be used. For this reason, while the valves can operate down to $-43\degree$C, it is desirable to be keep them above this limit whenever in use.
 
-Given the thermal conductivity of EPDM ($0.2 W/(m.K)$), the pump's diaphragm experiences a minimal temperature drop across itself when one side is subject to the heater's temperature while the other end of the pump is leveled with the ambient temperature. Through calculation it was found that at an ambient temperature of $-50\degree$C and a heater temperature at $10\degree$C, that the center of the pump, the far end of the diaphragm, measured $9.35\degree$C. Reassessing the equation yielded the most energy-conserving temperature that would keep the pump's diaphragm above the minimum requirement to be $7\degree$C. This held whether the temperature was as it could be on ground level ($-10\degree$C), or in floating phase ($-50\degree$C).
+Given the thermal conductivity of EPDM ($0.2 W/(m.K)$), the pump's diaphragm experiences a minimal temperature drop across itself when one side is subject to the heater's temperature while the other end of the pump is leveled with the ambient temperature. Through calculation it was found that at an ambient temperature of $-50\degree$C and a heater temperature at $10\degree$C, the center of the pump, the far end of the diaphragm, measured $9.35\degree$C. Reassessing the equation yielded the most energy-conserving temperature that would keep the pump's diaphragm above the minimum requirement to be $7\degree$C. This held whether the temperature was as it could be on ground level ($-10\degree$C), or in floating phase ($-50\degree$C).
+
+Symbols used are the following:
+
+\begin{itemize}
+    \item $T_{inlet}$ &= Temperature at the pump inlet face
+    \item $T_{heated}$ &= Temperature at the pump's diaphragm face (directly heated)
+    \item $L_{inlet}$ &= Length of the pump inlet valve(s)
+    \item $L_{phragm}$ &= Length of the pump's diaphragm
+    \item $k_{PPS}$ &= Thermal conductivity of the pump's inlet valve(s) made of PPS
+    \item $k_{EPDM}$ &= Thermal conductivity of the pump's diaphragm made of EPDM
+    \item $k_{air}$ &= Thermal conductivity of the air entering the pump
+    \item $k_{phragm}$ &=  Averaged thermal conductivity of the pump's diaphragm (Assumed 4 parts air to 1 part EPDM)
+    \item $T_{med}$ &= Temperature halfway across the pump (start of the diaphragm)
+\end{itemize}
+
+
+
 
  \begin{align*}
-     T_{inlet} &= 263 K\\
+    T_{inlet} &= 263 K\\
     T_{heated} &= 283 K\\
     L_{inlet} &= 0.038 m\\
     L_{phragm} &= 0.038 m\\
-    k_{PPS} &= 2\frac{W}{m*K}\\
-    k_{EPDM} &= 0.2\frac{W}{m*K}\\
-    k_{air} &= 0.024\frac{W}{m*K}\\
-    k_{phragm} &=  \frac{k_{EPDM}+4k_{air}}{5} = 0.06\frac{W}{m*K}\\
-    T_{med} &= \frac{ k_{phragm}  L_{inlet} T_{inlet} + k_{PPS} L_{phragm} T_{heated} }{ k_{phragm} L_{inlet} + k_{PPS}  L_{phragm}} \\
-    T_{med} &= \frac{ 0.06 (0.038)(263) + 2(0.038)(283)}{(0.06)(0.038) + (2)(0.038)} \\
+    k_{PPS} &= 2\frac{W}{m\cdot K}\\
+    k_{EPDM} &= 0.2\frac{W}{m\cdot K}\\
+    k_{air} &= 0.024\frac{W}{m\cdot K}\\
+    k_{phragm} &=  \frac{(k_{EPDM}+4\cdotk_{air})}{5} = 0.06\frac{W}{m\cdotK}\\
+    T_{med} &= \frac{( k_{phragm}\cdot   L_{inlet}\cdot T_{inlet}) + (k_{PPS}\cdot L_{phragm}\cdot T_{heated}) }{ (k_{phragm}\cdot L_{inlet}) + (k_{PPS} \cdot L_{phragm})} \\
+    T_{med} &= \frac{ (0.06\cdot  0.038\cdot 263) + (2\cdot 0.038\cdot 283)}{(0.06\cdot 0.038) + (2\cdot 0.038)} \\
     T_{med} &= 282.35 K \longrightarrow 9.35\degree C
  \end{align*}
 
@@ -67,28 +84,64 @@ Reworking the equation to fit the inlet face at the true ambient temperature of 
 % nice :) Also remove the * and it will number the equations. Also also to start a new line just write \\ at the end and it will make the next thing appear on a new line. Also also also using &= aligns all the equals signs and makes it look nice :D I leave these tips here so delete when you don't need them :)
 
 
-
  \begin{align*}
-     T_{inlet} = 223 K\\
-    T_{heated} = 280 K\\
-    T_{med} = \frac{ k_{phragm} L_{inlet} T_{inlet} + k_{PPS} L_{phragm} T_{heated} }{ k_{phragm} L_{inlet} + k_{PPS}  L_{phragm}}\\
-    T_{med} = \frac{ 0.06 (0.038)(223) + 2(0.038)(280)}{(0.06)(0.038) + (2)(0.038)}\\
-    T_{med} = 278.28 K \longrightarrow 5.28\degree C
+     T_{inlet} &= 223 K\\
+    T_{heated} &= 280 K\\
+    T_{med} &= \frac{ (k_{phragm}\cdot L_{inlet}\cdot T_{inlet}) + (k_{PPS}\cdot L_{phragm}\cdot T_{heated}) }{ (k_{phragm}\cdot L_{inlet}) + (k_{PPS}\cdot L_{phragm})}\\
+    T_{med} &= \frac{ (0.06\cdot 0.038\cdot 223) + (2\cdot 0.038\cdot 280)}{(0.06\cdot 0.038) + (2\cdot 0.038)}\\
+    T_{med} &= 278.28 K \longrightarrow 5.28\degree C
  \end{align*}
 
+\newpage
 \subsubsection{Box Analysis}
 
-For the box temperature to be properly estimated, the other two divisions within the component enclosure need to be taken into account. The manifold comprising the valve center is made of a compound of nylon (assumed to be nylon-6) and kynar. It has also been assumed they are used equally in mass and distribution at this stage of thermal estimation.
+For the box temperature to be properly estimated, the other two divisions within the component enclosure need to be taken into account. The manifold comprising the valve center is made of a compound of nylon (assumed to be nylon-6) and kynar. It has also been assumed they are used equally in mass and distribution at this stage of the thermal estimation.
+
+Symbols used are the following:
+
+\begin{itemize}
+    \item $T_{outlet}$ &= Temperature at the manifold's outlet(s)
+    \item $T_{heated}$ &= Temperature of the pump at its diaphragm face
+    \item $L_{outhalf}$ &= Length of the outer half of the manifold
+    \item $L_{inhalf}$ &= Length of the inner half of the manifold
+    \item $k_{Nylon-6}$ &= Thermal conductivity of Nylon-6
+    \item $k_{Kynar}$ &= Thermal conductivity of Kynar
+    \item $k_{manifold}$ &= Averaged thermal conductivity of manifold
+\end{itemize}
+
 
  \begin{align*}
     T_{outlet} &= 263 K\\
     T_{heated} &= 283 K\\
     L_{outhalf}& = 0.038 m\\
     L_{inhalf} &= 0.038 m\\
-    k_{Nylon-6} &= 0.24\frac{W}{m*K}\\
-    k_{Kynar} &= 0.162\frac{W}{m*K}\\
-    k_{manifold} &=  \frac{k_{Nylon-6}+k_{Kynar}}{2} = 0.201\frac{W}{m*K}\\
-    T_{med} &= \frac{ k_{manifold} L_{inhalf} T_{heated} + k_{manifold} L_{outhalf} T_{outlet} }{ k_{manifold} L_{inhalf} + k_{manifold}  L_{outhalf}}\\
-    T_{med} &= \frac{ 0.201 (0.040)(223) + 0.201(0.040)(280)}{(0.201)(0.040) + (0.201)(0.040)}\\ 
-    T_{med} &= 251.59 K or -21.41\degree C
+    k_{Nylon-6} &= 0.24\frac{W}{m\cdot K}\\
+    k_{Kynar} &= 0.162\frac{W}{m\cdot K}\\
+    k_{manifold} &=  \frac{k_{Nylon-6}+k_{Kynar}}{2} = 0.201\frac{W}{m\cdot K}\\
+    T_{med} &= \frac{ (k_{manifold}\cdot L_{inhalf}\cdot T_{heated}) + (k_{manifold}\cdot L_{outhalf}\cdot T_{outlet}) }{ (k_{manifold}\cdot L_{inhalf}) + (k_{manifold}\cdot L_{outhalf})}\\
+    T_{med} &= \frac{ (0.201\cdot 0.040\cdot 223) + (0.201\cdot 0.040\cdot 280)}{(0.201\cdot 0.040) + (0.201\cdot 0.040)}\\ 
+    T_{med} &= 251.59 K \longrightarrow -21.41\degree C
  \end{align*}
+ 
+ 
+\newpage
+Below, in Figure \ref{fig:enclosurebox} is a theoretical general arrangement of the components within the enclosure, seen from the front of the experiment inward.
+ 
+ \begin{figure}[H]
+    \begin{align*}
+        \includegraphics[height=8cm]{4-experiment-design/img/bexus-thermal-first.png}
+    \end{align*}
+    \caption{Diagram showing a general layout of the AAC components}
+    \label{fig:enclosurebox}
+\end{figure}
+ 
+ A rough estimation of temperature gradients can thus be shown in Figure \ref{fig:boxanalysis}:
+ 
+ \begin{figure}[H]
+    \begin{align*}
+        \includegraphics[height=8cm]{4-experiment-design/img/bexus-thermal-second.png}
+    \end{align*}
+    \caption{Diagram of the previous layout now showing temperature contours}
+    \label{fig:boxanalysis}
+\end{figure}
+
