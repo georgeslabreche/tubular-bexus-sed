@@ -45,17 +45,22 @@ The two-box design will allow ease of access and manipulation of both the CAC an
 
 \subsubsection{CAC Subsystem}
 
-The CAC subsystem is designed to fit a 300-meter coiled tube, the valve governing it and a temperature sensor. To determine its positioning inside the gondola and the experiment box, some mechanical issues and gondola constraints must be considered.
+The CAC subsystem is designed to fit a 300-meter stainless steel coiled tube, a solenoid valve governing it and three temperature sensor. Schematic of this subsystem is in Figure \ref{fig:CAC-schematic}. The AirCore consists a combination of a 200m coiled tube of 1/8 in. and a 100m coiled tube of 1/4 in. Outlet of the AirCore is sealed with a quick connector provided by FMI. The inlet will be sealed in the same way but it will be open. A filter is placed between this orifice and the solenoid valve. The filter will be custom made by FMI, the set up is a tube containing magnesium perchlorate powder with stone wool at both ends of the tube. It will ensure that no moisture will enter during any testing or sampling. Another tube is attached to the solenoid valve that goes outside the box, thus having a direct outside outlet and inlet for the whole CAC system, as seen Figure \ref{overview} represent by the blue tube.
+
+\smallskip
+The total electronics in the CAC box will three temperature sensor and the solenoid valve. In order to send signals to these components, a D-sub connector will be placed at a positon on the wall of the box, where it is shortest distance to the electronic box in the AAC box. A identical D-sub connector will also be placed on that wall of AAC box. The connection between these connectors is through a wire. 
+% mechanical issues and gondola constraints 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{4-experiment-design/img/CAC-schematic-v3.PNG}
+    \caption{Schematic of CAC}
+    \label{fig:CAC-schematic}
+\end{figure}
+Since CAC will be the heaviest component in the whole experiment, its positioning and orientation inside the gondola will affect directly the stress analysis of the structure, hence it must be considered.
 
 \smallskip
 Firstly, it is possible to identify the interface to attach the experiment box to the gondola as one of the most critical points in terms of mechanics performance. In the worst case scenario, with a heavy experiment and without a proper study of the aforesaid interface, shear in the screws could be produced after a violent landing stress. Since the CAC will be the heaviest component in the whole experiment, its location and orientation will affect directly the stress analysis of the structure. The larger the distance to the fixed points, the bigger the momentum produced by the component. Nevertheless, due to fast recovery implementation, the CAC tube will be placed vertically. Therefore, its dedicated box will be properly attached to the AAC box by means of 4 anchor points, in black in Figure \ref{overview}. The fast recovery then will only imply unscrewing 4 screws and disconnecting a wire. 
-
-\smallskip
-In order to command the valve, a wire will go out from the box and connected to the electronics interface panel located on an AAC box wall.
-
-\smallskip
-In addition, to avoid sample contamination with standstill air inside the gondola, the coil will have a direct outside inlet and outlet by means of an extension tube reaching further from the gondola’s limits, in blue in the red box in Figure \ref{overview}.
-
 
 \subsubsection{AAC Subsystem}
 
@@ -74,6 +79,11 @@ The AAC Subsystem consists of 10 three-liter sampling bags. Each bag will have a
 
 The OBC and its external elements will be allocated in a bottom corner of the experiment box, inside AAC box, and on the opposite side of the CAC box. This will allow an easy access and manipulation as well as the required external interfaces, holes in Figure \ref{overview}. The smallest side of the EB will have the outer connections interfaces. Hence, the wall will have the necessary holes. The EB will be fixed to the AAC box structure bars in 3 different points.
 
+From the electronics box, there will be total 25 connections that are linked to other sections. Four of them will go to CAC box and the rest to the AAC subsystem. The list in table \ref{tab:list_of_components_CAC} and \ref{tab:list_of_components_AAC} give a more clearly view over the connections to respective section, which is divided into colors. 
+
+\input{4-experiment-design/tables/electronicsboxlistCAC.tex}
+\input{4-experiment-design/tables/electronicsboxlistAAC.tex}
+
 
 %% Figure of the electronics box inside the coil, only bottom cube, isometric top view, explosion
 
@@ -84,7 +94,6 @@ The OBC and its external elements will be allocated in a bottom corner of the ex
     %\label{electronics_box}
 %\end{figure}
 
-\pagebreak
 \subsubsection{Valve Center}
 
 The valve center consists of a coated box to which the AAC's 10 air sampling bags will be attached to. This box will serve as airflow chamber. It will be connected to a pipe from which outside air will be pumped and also enable pre-sample collection flushing. The pump providing the airflow will be allocated on the inlet side and protected by an air filter. It will be allocated inside a shielding box, more detailed information in section \ref{Thermal_section}. The pipes used for both intake and outlet can be seen in blue in the grey box in Figure \ref{overview}.

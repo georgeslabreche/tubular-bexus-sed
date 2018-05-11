@@ -72,6 +72,32 @@
 \usepackage{pdfpages}
 \usepackage{appendix}
 \usepackage{spreadtab} %% Vince added this to test table sum function [2017-01-25, 15:27]
+% For prettifying Matlab code.
+\usepackage{courier}
+\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
+\lstset{framextopmargin=50pt,frame=bottomline}
+
+% Again, for prettifying Matlab code.
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+    
+    % Still, for prettifying Matlab code.
+\lstset{language=Matlab,%
+        breaklines=true,%
+        morekeywords={matlab2tikz},
+        keywordstyle=\color{blue},%
+        morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+        identifierstyle=\color{black},%
+        stringstyle=\color{mylilas},
+        commentstyle=\color{mygreen},%
+        showstringspaces=false,%without this there will be a symbol in the places where there is a space
+        numbers=left,%
+        numberstyle={\tiny \color{black}},% size of the numbers
+        numbersep=9pt, % this defines how far the numbers are from the text
+        emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    } %Just experimenting to see if this will fix the code compiling issue in Appendix J. ~Ivan
+
 
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
@@ -125,14 +151,14 @@
     \chead{-\hspace{0.05cm}\thepage \hspace{0.05cm}-}
     
     %\renewcommand{\footrulewidth}{0pt}
-    \fancyfoot[RE,LO]{\textit{BX26\_TUBULAR\_SEDv1-2\_12Mar18}}
-    \fancyfoot[LE]{Page \thepage}
+    \fancyfoot[RE,LO]{\textit{BX26\_TUBULAR\_SEDv2-0\_14May18}}
+    %\fancyfoot[LE]{Page \thepage}
 }
 \fancypagestyle{cover}
 {
    \fancyhf{}
    \renewcommand{\footrulewidth}{0.5pt}  
-   \lfoot{\centering\textit{BX26\_TUBULAR\_SEDv1-2\_12Mar18}}
+   \lfoot{\centering\textit{BX26\_TUBULAR\_SEDv2-0\_14May18}}
   %\cfoot{}
   % \rfoot{} 
 }
@@ -143,8 +169,8 @@
     \renewcommand{\headrulewidth}{0pt}
    \chead{-\hspace{0.05cm}\thepage \hspace{0.05cm}-}
    \renewcommand{\footrulewidth}{0pt}  
-   \fancyfoot[RE,LO]{\textit{BX26\_TUBULAR\_SEDv1-2\_12Mar18}}
-   \fancyfoot[LE]{Page \thepage}
+   \fancyfoot[RE,LO]{\textit{BX26\_TUBULAR\_SEDv2-0\_14May18}}
+   %\fancyfoot[LE]{Page \thepage}
 }
 
 % \pagestyle{cover}
@@ -193,12 +219,15 @@ Student Team Leader:  &  Georges L. J. Labr\`{e}che \\
 \end{tabular}
 \vspace{5pt}
 \begin{tabular}{p{.33\textwidth} p{.34\textwidth} p{.33\textwidth}}
-Team Members:  & N\'{u}ria Agues Paszkowsky \\
+Team Members:  & N\'{u}ria Ag\"{u}es Paszkowsky \\
 & Kyriaki Blazaki \\
+& Emily Chen \\
 & Jordi Coll Ortega \\
 & Gustav Dyrssen \\
+& Erik Fagerström \\
 & Natalie Lawton \\
 & Pau Molas Roca \\
+& Emil Nordqvist \\
 & Muhammad Ansyar Rafi Putra \\
 & Hamad Siddiqi \\
 & Ivan Zankov \\
@@ -207,12 +236,12 @@ Team Members:  & N\'{u}ria Agues Paszkowsky \\
 University: & Lule\aa \ University of Technology
 \end{tabular}
 
-\vspace{0.5cm} 
+\vspace{0.25cm} 
 
 
  \begin{tabular}{p{.15\textwidth} p{.3\textwidth} p{.25\textwidth} p{.25\textwidth}}
 \footnotesize{Version:}     & \footnotesize{Issue Date:} & \footnotesize{Document Type:} & \footnotesize{Valid from} \\
-\textbf{1.2}          & \textbf{March 12, 2018}    & \textbf{Spec}   & \textbf{March 12, 2018} \\ 
+\textbf{2.0}          & \textbf{May 14, 2018}    & \textbf{Spec}   & \textbf{May 14, 2018} \\ 
 \end{tabular}
 
 \vspace{10pt}
@@ -258,8 +287,7 @@ Approved by:\\
 \vspace{1cm}
 \begin{tabular}{p{.15\textwidth} p{.85\textwidth}}
 \textbf{Abstract:}     &  %Document Abstract  \\
-\input{0-cover/abstract.tex}
-  &  \\
+\input{0-cover/abstract.tex}  &  \\
 \textbf{Keywords:}     & %Document Keywords
 \input{0-cover/keywords.tex}
 \end{tabular}

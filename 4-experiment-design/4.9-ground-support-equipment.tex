@@ -1,14 +1,14 @@
 \pagebreak
 \subsection{Ground Support Equipment}
-One personal computer will be used to connect to the E-Link through the Ethernet port. A GUI will be created to display the sensors data and a feature to change the parameters in the experiment. The GUI for the ground station shall be with MATLAB programming language and IDE.\par
-The data shall be recorded and stored on the computer. 
+One personal computer will be used to connect to the E-Link through the Ethernet port. A GUI is created to display the sensors data and valves, pump states during the experiment. MATLAB GUIDE is used for the development. \par
+The design of the ground station is responsible for receiving and transmitting data over the provided Ethernet connection. Using GUIDE to create an GUI and respective functions as a skeleton, the necessary  functionality to receive, transmit and display are built accordingly. The functions are defined for each GUI element.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{4-experiment-design/img/gc-software-V1-2.png}
-    \caption{The ground control software design tree}
-    \label{fig:gcModel}
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/GS-GUI.png}
+    \caption{Current GUI design for ground station}
+    \label{fig:guiDesign}
 \end{figure}
-Figure \ref{fig:gcModel} shows the preliminary design of the ground station. The RXTX object is responsible for receiving and transmitting data over the provided Ethernet connection. The READ object takes the input received from the user, and the DISPLAY object takes data received from the RXTX object and show the data to the user through the GUI.
+Figure \ref{fig:guiDesign} shows current design of ground station GUI. Telemetry data will be shown in several tables based on the data type. The data shall be recorded and stored on the computer. The experiment status panel represents the real-time status of the experiments, the red indicator will change to green indicator if the pump or valves are open later on. On the bottom side, the telecommand control panel provides command generation for the experiment. On its right side, connection control panel has full control of the connections.
 
 
 \raggedbottom

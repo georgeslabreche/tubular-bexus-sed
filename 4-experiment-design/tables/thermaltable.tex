@@ -1,21 +1,45 @@
 
-\begin{longtable}{|m{1cm}|m{3.5cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|}
+
+%Added this space to help us see all of the numbers. This "Track changes" sign blocks them every time!
+
+
+\begin{longtable}{|m{1cm}|m{3.5cm}|m{1.5cm}|m{1.5cm}|m{1.5cm}|m{1.5cm}|}
 \hline
-\multirow{2}{*}{\textbf{ID}} & \multirow{2}{*}{\textbf{Components}}                                 & \multicolumn{2}{l|}{\textbf{Operating T (°C)}} & \multicolumn{2}{l|}{\textbf{Survivable (°C)}} \\ \cline{3-6} 
-                             &                                                                      & Min.                   & Max.                  & Min.                  & Max.                  \\ \hline
-1                            & Arduino Due                                                          & -40                    & 85                    & -60                   & 150                   \\ \hline
-2                            & Arduino Ethernet Shield 2                                            & -40                    & 85                    & -65                   & 150                   \\ \hline
-3                           & KNF   850.1.2.KNDC   BMiniature Diaphragm Pump                                                            & 5                      & 50                      & -20                    & 100                      \\ \hline
-4                            & Barometric Pressure Sensor MS5607-02BA03                             & -40                    & 85                    & -40                   & 125                   \\ \hline
-5                          & Electromagnetically controlled valve                                 &  -40                      & 50              & -40                      & 50                      \\ \hline
-6                            & Airflow sensor AWM40000 Series                                       & -40                    & 125                   & -40                   & 125                   \\ \hline
-9                            & Temperature sensor VSSOP-8, LM70, LM70CIMM-5/NOPB & -55                    & 150                   & -65                   & 150                   \\ \hline
-10                            & DC-DC step converter                                                 & -40                       & 85                       & -50                      & 125                      \\ \hline
-11                           & HDC2010 Low Power Humidity Digital Sensors                           & -40                    & 85                    & -40                   & 125                   \\ \hline
-12                           & Industrial temperature microSD XCUHS-I 8GB                           & -40                    & 85                    & -40                   & 85                    \\ \hline
+\multirow{2}{*}{\textbf{ID}} & \multirow{2}{*}{\textbf{Components}}                                 & \multicolumn{2}{l|}{\textbf{Operating T (°C)}} & \multicolumn{2}{l|}{\textbf{Survivable (°C)}} \\ \cline{3-6} &                                                                      & Min.                   & Max.                  & Min.                  & Max.                  \\ \hline
+E1 & Arduino Due & -40 & 85 & -60 & 150 \\ \hline
+E2 & Arduino Ethernet Shield & -40 & 85 & -65 & 150 \\ \hline
+E3 & Pump NMP85012KNDCB & 5 & 40 & TBD\textsuperscript{\ref{fn:thermran1}} & TBD\textsuperscript{\ref{fn:thermran1}} \\ \hline
+E4 & Pressure Sensor & -40 & 85 & -40 & 125 \\ \hline
+E5-1 & Valve VDW23-5G-1-H-Q & -20 & 50 & (-20)\textsuperscript{\ref{fn:thermran2}} & (50)\textsuperscript{\ref{fn:thermran2}} \\ \hline
+E5-2 & Valve VDW22UANXB & -20 & 50 & (-20)\textsuperscript{\ref{fn:thermran2}} & (50)\textsuperscript{\ref{fn:thermran2}} \\ \hline
+E5-3 & 4M4F-V6LN-SS (Parker)\footnote{Item will be used solely for testing purposes to serve as reference for other component boundaries. \label{fn:thermran3}} & -54 & 232 & (-54)\textsuperscript{\ref{fn:thermran2}} & (232)\textsuperscript{\ref{fn:thermran2}} \\ \hline
+E6 & Airflow sensor AWM43300V & \multicolumn{4}{l|}{Item under revision. New selection TBD.} \\ \hline
+E7 & Heater ($12.7\times 101.6 mm$) & -200 & 200 & (-200)\textsuperscript{\ref{fn:thermran2}} & (200)\textsuperscript{\ref{fn:thermran2}} \\ \hline
+E8 & Heater ($12.7\times 50.8 mm$) & -200 & 200 & (-200)\textsuperscript{\ref{fn:thermran2}} & (200)\textsuperscript{\ref{fn:thermran2}} \\ \hline
+E9 & Temperature Sensor & -55 & 125 & -65 & 150 \\ \hline
+E10-1 & DCDC 12V & -40 & 85 & -55 & 125 \\ \hline
+E10-2 & DCDC 24V & -40 & 85 & -55 & 125 \\ \hline
+E11 & Humidity Sensor & -40 & 85 & -40 & 125 \\ \hline
+M1 & Sample Bag & TBD\footnote{Values must be determined either via inquiry to supplying vendor, or through testing upon aquisition of product.
+\label{fn:thermran1}} & 82 & TBD\textsuperscript{\ref{fn:thermran1}} & (82)\footnote{If survivable temperatures were not given, operating temperatures were used as survivable limits.
+\label{fn:thermran2}} \\ \hline
+M2 & Sample Bag Valve & TBD\textsuperscript{\ref{fn:thermran1}} & TBD\textsuperscript{\ref{fn:thermran1}} & TBD\textsuperscript{\ref{fn:thermran1}} & TBD\textsuperscript{\ref{fn:thermran1}} \\ \hline
+M3 & Swagelok fitting (3/16 inch) & TBD\textsuperscript{\ref{fn:thermran1}} & 232 & TBD\textsuperscript{\ref{fn:thermran1}} & (232)\textsuperscript{\ref{fn:thermran2}}  \\ \hline
+M4 & Manifold VV2DW2-H0401N-F-Q & -10 & 50 & TBD\textsuperscript{\ref{fn:thermran1}} & (50)\textsuperscript{\ref{fn:thermran2}} \\ \hline
+M5 & Magnesium dryer & \multicolumn{4}{l|}{Item under revision. New selection TBD.} \\ \hline
+M6 & Tube 4mm ID - T Series Nylon & -40 & 100 & (-40)\textsuperscript{\ref{fn:thermran2}} & (100)\textsuperscript{\ref{fn:thermran2}} \\ \hline
+M7 & T-Union & \multicolumn{4}{l|}{Item under revision. New selection TBD.} \hline
 
 
 \caption{Thermal Table}
 \label{tab:thermal-table}
 \end{longtable}
 \raggedbottom
+
+
+
+
+
+
+
+

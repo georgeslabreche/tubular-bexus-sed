@@ -16,18 +16,20 @@ The experiment will experience a wide range of temperatures during the flight an
 
 \subsubsection{Overall Design}
 \begin{centering}
-To protect the components against the cold two heaters will be included. One of these will be placed close to the Arduino, which is anticipated to be able to keep the controller area warm enough, and the second will be placed close to the valves to ensure they continue to operate as expected. To control these heaters two temperature sensors will also be onboard in similar locations. If the reading from one of the temperature sensors is lower than the predefined value then the heater will turn on. 
+To protect the components against the cold two heaters will be included. One of these will be placed close to the pump to keep it warm when it is not active. The second and third heaters will be placed adjacent to the valve manifold to ensure the valves continue to operate as expected. To control these heaters two temperature sensors will also be onboard in similar locations. If the reading from one of the temperature sensors is lower than the predefined threshold then the heater will turn on. 
 \end{centering}
 
+% New for the SED v2
+The main protection against the cold environment in the stratosphere is a passive thermal design, it is for this case thermal insulation. It will be two layers, one outer sheet of aluminum and a thicker sheet of styrofoam. The main insulating factor is the styrofoam and it will be 20mm of styrofoam. \\
+There will also be a active thermal control consisting off three heaters. One will be attached to the pump. The other two will be attached to the two manifolds that the valves are connected to. The pump and valves are the most critical components. To determine the uniform heat inside MATLAB will be used. Then by using ANSYS to simulate the condition inside the brain box.
+The heaters will be controlled by the Arduino with the help of temperature sensors. If the temperature is beneath a certain level the heaters will turn on to get the pump or the valve to their required temperature.
+%
 
 \begin{centering}
-In addition to using electrical heaters the experiment will also be thermally insulated. The Styrofoam casing which will be used to protect the CAC from impact forces will also serve as insulation. It is also planned to add additional insulation around the components.  
+In addition to using electrical heaters the experiment will also be thermally insulated. A layer of aluminum sheeting will cover the experiment's exterior to reflect a portion of solar radiation, and the Styrofoam casing which will be used to protect the CAC from impact forces will also serve as insulation. %It is also planned to add additional insulation around the components.  
 \end{centering}
 
-\begin{centering}
-It is also important to consider heating from the sun which could raise the temperature of the experiment considerably. Sufficient insulation should be included to ensure the inside of the box stays within the operating temperature range. This will be investigated at a later date when a full CFD thermal analysis is completed.
-\end{centering}
-\bigskip
+
 
 \pagebreak
 \input{4-experiment-design/tables/thermaltable.tex}
@@ -92,56 +94,98 @@ Reworking the equation to fit the inlet face at the true ambient temperature of 
     T_{med} &= 278.28 K \longrightarrow 5.28\degree C
  \end{align*}
 
+
 \newpage
-\subsubsection{Box Analysis}
+\subsubsection{Radiative Heat Input}
 
-For the box temperature to be properly estimated, the other two divisions within the component enclosure need to be taken into account. The manifold comprising the valve center is made of a compound of nylon (assumed to be nylon-6) and kynar. It has also been assumed they are used equally in mass and distribution at this stage of the thermal estimation.
 
-Symbols used are the following:
 
 \begin{itemize}
-    \item $T_{outlet}$ &= Temperature at the manifold's outlet(s)
-    \item $T_{heated}$ &= Temperature of the pump at its diaphragm face
-    \item $L_{outhalf}$ &= Length of the outer half of the manifold
-    \item $L_{inhalf}$ &= Length of the inner half of the manifold
-    \item $k_{Nylon-6}$ &= Thermal conductivity of Nylon-6
-    \item $k_{Kynar}$ &= Thermal conductivity of Kynar
-    \item $k_{manifold}$ &= Averaged thermal conductivity of manifold
+    \item $\sigma$ &= Stefan-Boltzmann constant measuring $5.67 \times 10^{-8} \frac{W}{m^{2} \cdot K^{4}}$
+    \item $\dot{Q}_{Strat}$ &= Solar radiation delivered at stratosphere level of about 25 km
+    \item $\dot{Q}_{Canvas-PE}$ &= Radiation from canvas incident on surface of polyethylene shielding
+    \item $\alpha_{Canvas}$ &= Absorptivity of the canvas
+    \item $\varepsilon_{Canvas}$ &= Emissivity of the canvas
+    \item $\alpha_{PE}$ &= Absorptivity of polyethylene
+    \item $\varepsilon_{PE}$ &= Emissivity of polyethylene
+    \item $T_{Air}$ &= Temperature of the air at stratosphere level of about 25 km (assumed to be $-80\degree C$ or $193K$)
+    \item $T_{Canvas}$ &= Temperature of the canvas at contact with solar radiation
+    \item $T_{PE}$ &= Temperature of the polyethylene surface
 \end{itemize}
 
 
- \begin{align*}
-    T_{outlet} &= 263 K\\
-    T_{heated} &= 283 K\\
-    L_{outhalf}& = 0.038 m\\
-    L_{inhalf} &= 0.038 m\\
-    k_{Nylon-6} &= 0.24\frac{W}{m\cdot K}\\
-    k_{Kynar} &= 0.162\frac{W}{m\cdot K}\\
-    k_{manifold} &=  \frac{k_{Nylon-6}+k_{Kynar}}{2} = 0.201\frac{W}{m\cdot K}\\
-    T_{med} &= \frac{ (k_{manifold}\cdot L_{inhalf}\cdot T_{heated}) + (k_{manifold}\cdot L_{outhalf}\cdot T_{outlet}) }{ (k_{manifold}\cdot L_{inhalf}) + (k_{manifold}\cdot L_{outhalf})}\\
-    T_{med} &= \frac{ (0.201\cdot 0.040\cdot 223) + (0.201\cdot 0.040\cdot 280)}{(0.201\cdot 0.040) + (0.201\cdot 0.040)}\\ 
-    T_{med} &= 251.59 K \longrightarrow -21.41\degree C
+
+\begin{align*}
+    \dot{Q}_{Strat} &= 922.1\frac{W}{m^{2}}\\
+    \alpha_{Canvas} &= 0.33\\
+    \varepsilon_{Canvas} &= 0.9\\
+    \alpha_{PE} &= 0.25\\
+    \varepsilon_{PE} &= 0.9\\
+    T_{Air} &= 193K\\
+    \dot{Q}_{Strat}\cdot \alpha_{Canvas} &= \varepsilon_{Canvas}\cdot \sigma \cdot (T_{Canvas}^{4} - T_{Air}^{4})\\
+    T_{Canvas} &= \sqrt[4]{\big(\frac{\dot{Q}_{Strat}\cdot \alpha_{Canvas}}{\varepsilon_{Canvas}\cdot \sigma} - T_{Air}^{4}\big)}\\
+    T_{Canvas} &= \sqrt[4]{\big(\frac{922.1\cdot 0.33}{0.9\cdot (5.67\times 10^{-8})} - 193^{4}\big)} = 292.805K\\
+    T_{Canvas} &= 292.8 K  \longrightarrow 19.8\degree C
  \end{align*}
  
- 
-\newpage
-Below, in Figure \ref{fig:enclosurebox} is a theoretical general arrangement of the components within the enclosure, seen from the front of the experiment inward.
- 
- \begin{figure}[H]
-    \begin{align*}
-        \includegraphics[height=8cm]{4-experiment-design/img/bexus-thermal-first.png}
-    \end{align*}
-    \caption{Diagram showing a general layout of the AAC components}
-    \label{fig:enclosurebox}
-\end{figure}
- 
- A rough estimation of temperature gradients can thus be shown in Figure \ref{fig:boxanalysis}:
- 
- \begin{figure}[H]
-    \begin{align*}
-        \includegraphics[height=8cm]{4-experiment-design/img/bexus-thermal-second.png}
-    \end{align*}
-    \caption{Diagram of the previous layout now showing temperature contours}
-    \label{fig:boxanalysis}
-\end{figure}
+ But only half of the heat radiated from the canvas travels into the gondola, as the other half is radiated back into the atmosphere along with the reflected radiation.
+Therefore:
+\begin{align*}
+\dot{Q}_{Canvas-Al} = \dot{Q}_{Strat}\cdot \alpha_{Canvas} = 304.293\frac{W}{m^{2}}
+\end{align*}
 
+\begin{align*}
+\dot{Q}_{Canvas-Al}\cdot \alpha_{Al} &= \frac{\nabla \cdot (T_{Canvas}^{4} - T_{Al}^{4})}{\big(\frac{1}{\varepsilon_{Canvas}} + \frac{1}{\varepsilon_{Al}} - 1\big)}\\
+T_{Al} &= \sqrt[4]{\big(\frac{\dot{Q}_{Canvas-Al}\cdot \alpha_{Al}\cdot \big(\frac{1}{\varepsilon_{Canvas}} + \frac{1}{\varepsilon_{Al}} - 1\big)}{\sigma} - T_{Canvas}^{4}\big)}\\
+T_{Al} &= \sqrt[4]{\big(\frac{304.3\cdot 0.3\cdot \big(\frac{1}{0.9} + \frac{1}{0.09} - 1\big)}{(5.67\times 10^{-8})} - 292.8^{4}\big)} = 274.891K\\
+T_{PE} &= 321.8 K \longrightarrow 48.8\degree C
+\end{align*}
+
+The surface of the aluminum shielding is estimated to be 48.8\degree C. As this material is only the first of three (the other two being polystyrene and high-density polyethylene) that constitute the design of the TUBULAR experiment's walls and each element is in contact with another, the conductive heat transfer mechanism takes over.
+
+
+\begin{itemize}
+    \item $k_{Al}$ &= Thermal conductivity of aluminum sheeting (assumed to be 205$\frac{W}{m\cdot K}$)
+    \item $k_{PS}$ &= Thermal conductivity of polystyrene foam (assumed to be 0.03$\frac{W}{m\cdot K}$)
+    \item $k_{PE}$ &= Thermal conductivity of polyethylene foam (assumed to be 0.47$\frac{W}{m\cdot K}$)
+    \item $L_{Al}$ &= Thickness of aluminum sheeting (2 mm)
+    \item $L_{PS}$ &= Thickness of polystyrene foam (10.0 mm)
+    \item $L_{PE}$ &= Thickness of polyethylene foam (10.0 mm)
+\end{itemize}
+
+The formula used for conduction through a wall of composite material is written below:
+
+\begin{align*}
+T_{out} - T_{in} &= \frac{\dot{Q}}{k}\cdot \frac{L^{2}}{2}
+\end{align*}
+
+Where:
+\begin{itemize}
+    \item $T_{out}$ is the outer surface of each composite layer and $T_{in}$ is its respective inner surface
+    \item $\dot{Q}$ is the incident radiative heat now being passed via conduction through the layers (assuming steady-state flow)
+    \item $k$ and $L$ are the thermal conductivity and thickness of the composite layer, respectively
+\end{itemize}
+
+So, starting with the aluminum exterior and assuming steady state transfer of heat at the outer surface:
+
+\begin{align*}
+321.8 - T_{in} &= \frac{\dot{Q}}{k}\cdot \frac{L^{2}}{2}
+\end{align*}
+
+
+
+
+\subsubsection{Component Box - Basic Analysis}
+
+As the most temperature-sensitive equipment will all be housed within the component box (formed from the electronics box, valve center, and the pump box), it is important to know what heat will be lost through the different heat transfer mechanisms as this will affect the frequency at which the heaters will need to be periodically activated. This can greatly be overcome through the integration of efficient insulation. Everything following in this section is based on the assumption that \textit{all} of the power dissipated through resistance in the electrical components will reach the marked boundaries of the component box - as a worst-case scenario for heat distribution. 
+
+The power sequence diagrams shown in section 4.1 indicate that the power usage during the ascent and descent phases can be considered identical for the purposes of power dissipation via thermodynamics. The total power being consumed at any given point in either of these two phases is either 14.107 W (if no heaters are on), 16.427 W (if the pump is currently offline), or 24.107 W (if the flushing valve is the only valve on). At any given point other than the last condition, there may be a second valve activating to enable airflow to a sampling bag via the pump - and the heaters will only be online when the pump is offline.
+
+
+
+
+A useful candidate for insulation would be aluminum sheeting. It may have among the highest of thermal conductivities, but its arrangement around the component boundaries would leave little points of contact for conduction bridges to occur - much of this would occur where the sheeting would connect to the insulating walls of the experiment. Instead, the high ratio between the absorptivity (0.15) and emissivity (0.05) of the material may be used to its advantage. As conservation of power is imperative, the heaters should be used sparingly, and instead methods like the use of aluminum for shielding should be employed as passive heating. For this reason, the element will get hotter as it continues to be exposed to the radiation from the power-dissipating components, but as it gets hotter, it will begin to radiate more back - somewhat slowing the rate of cooling within the components' boundaries. Its density is about $2700 \frac{kg}{{m}^3}$, and with the component box's spacing measuring 0.200 m by 0.170 m by 0.150 m, adding a 1 mm-thick insulation on the three sides not in contact with the main walls will add about 242 grams to the experiment's total mass. This will create a temperature difference of about $9.853\cdot {10}^-4 K$ between the inside and the outside surfaces of the PE foam insulation cover - and if the pump is to be maintained at operating temperature for much of the time, it is likely that the outside surface will be just above $5\degree C$, as the interior of the component box would need to be kept at a temperature higher than the minimum operating constraint for the pump. The other three walls need not be insulated any further, as it would be best to prevent heat from escaping the experiment (and the gondola) too quickly for the heater-pump sequencing.
+
+With the total outer surface area of the three inward-facing sides being $0.0902 {m}^2$, and the average power dissipation between the three cases being 18.2137 W, the component box is expected to radiate inwards approximately 0.455 W - for the ascent and descent phases. The reason for the small value (significantly less than half of the original value) has to do with aluminum's emissivity coefficient of 0.05.
+
+For the floating phase, the pump and valves (minus the flushing valve) will be offline - therefore only one heater may need to occasionally turn on (the one closer to the Arduino Due board). Factoring the power delivered to the board and the connected sensors throughout the experiment, it is estimated that only 5.427 W will be dissipated. Dividing this power between the six inner wall surfaces of the component box, halving that result (for only the three inward walls), and then multiplying by the outer surface area of the inward walls yields about 0.137 W will radiate into the non-electronic sections of the experiment.

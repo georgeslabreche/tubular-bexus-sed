@@ -1,0 +1,273 @@
+\newpage
+\section{APPENDIX I - Experiment Thermal Analysis} \label{sec:appI}
+\subsection{Thermal equations}
+
+\subsubsection{Variables and tables}
+\begin{table}[H]
+    \centering
+    \caption{Variables used in thermal calculation.}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Variable & Description & Unit & Value \\ \hline
+        $\alpha_{Al}$ & Absorption of aluminum & - & 0.3 \\ \hline
+        S & Solar constant & $\frac{W}{m^2}$ & 1315.6 \\ \hline
+        $A_{Sun}$ & Area affected by the sun & $m^2$ & 0.2546 \\ \hline
+        Albedo & Albedo coefficient & - & 0.15 \\ \hline
+        $A_{Albedo}$ & Area affected by the albedo & $m^2$ & 0.56 \\ \hline
+        $\varepsilon_{Earth}$ & Emissivity of Earth & - & 0.95 \\ \hline
+        $A_{IR}$ & Area affected by the IR flux & $m^2$ & 0.56 \\ \hline
+        $IR_{25km}$ & Earth IR flux at 25km & $\frac{W}{m^2}$ & 220 \\ \hline
+        P & Dissipated power from electronics & W & varies \\ \hline
+        h & Convection heat transfer constant & $\frac{W}{m^2 \cdot K}$ & 18 \\ \hline
+        K & Scaling factor for convection & - & varies \\ \hline
+        $A_{Convection}$ & Area affected by the convection & $m^2$ & 1.12 \\ \hline
+        $\sigma$ & Stefan-Boltzmans constant & $\frac{W}{m^2 \cdot K^4}$ & $5.67051 \cdot 10^{-8}$ \\ \hline
+        $A_{Radiation}$ & Radiating area & $m^2$ & 1.12\\ \hline
+        $\varepsilon_{Al}$ & Emissivity of aluminum & - & 0.09 \\ \hline
+        $T_{Out}$ & Temperature wall outside & $K$ & varies \\ \hline
+        $T_{Inside}$ & average uniform temperature inside & $K$ & varies \\ \hline
+        $T_{Ambient}$ & Ambient temperature outside & $K$ & varies \\ \hline
+        $T_{Ground}$ & Temperature of the ground & $K$ & 273 \\ \hline
+        $k_{Al}$ & Thermal conductivity of aluminum & $\frac{W}{m\cdot K}$ & 205 \\ \hline
+        $k_{PS}$ & Thermal conductivity of polystyrene foam & $\frac{W}{m\cdot K}$ & 0.03 \\ \hline
+        $L_{Al}$ & Thickness of aluminum sheeting & $m$ & 0.002 \\ \hline
+        $L_{PS}$ & Thickness of polystyrene foam & $m$ & 0.01 \\ \hline
+        $P_{Ground}$ & Pressure at ground & $Pa$ & $101.33 \cdot 10^3$ \\ \hline
+        $P_{25km}$ & Pressure at $25km$ & $Pa$ & $2.8 \cdot 10^3$ \\ \hline
+    \end{tabular}
+    \label{tab:thermal-variables}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Dissipated power at the different stages.}
+\label{tab:dissipated-power-thermal}
+\begin{tabular}{|l|l|l|}
+\hline
+\multirow{2}{*}{Critical stage} & \multicolumn{2}{l|}{Dissipated power (W)} \\ \cline{2-3} 
+                                & Worst case       & Average case       \\ \hline
+Launch pad                      & 7.589            & 5.083              \\ \hline
+Early ascent                    & 11.499           & 8.993              \\ \hline
+Sampling ascent                 & 13.499           & 13.397             \\ \hline
+Float                           & 11.499           & 8.993              \\ \hline
+Sampling descent                & 13.499           & 13.397             \\ \hline
+Shutdown descent                & 2.167            & 2167               \\ \hline
+Landed                          & 0                & 0                  \\ \hline
+\end{tabular}
+\end{table}
+The difference in dissipated power is depending if heaters need to be on or not.
+
+\begin{table}[H]
+\centering
+\caption{Scaling factor convection}
+\label{tab:scaling-factorconvection}
+\begin{tabular}{|l|l|}
+\hline
+Altitude (km) & Scaling factor convection (K) \\ \hline
+0             & 1                             \\ \hline
+5             & 0.7962                        \\ \hline
+10            & 0.5134                        \\ \hline
+15            & 0.3392                        \\ \hline
+20            & 0.2292                        \\ \hline
+25            & 0.1592                        \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Thermal calculations in MATLAB}
+For the MATLAB calculations a few assumptions were made, they are as follows.
+\begin{itemize}
+    \item Taking the average of no sun and sun calculations.
+    \item Calculate the average temperature on the outside.
+    \item Assuming the inner temperature is uniform.
+    \item The pipes letting cold air in have not been taken into account.
+    \item Only one box at a time is calculated.
+    \item All conduction is uniform from the inside.
+    \item Assume steady flow through the walls.
+    \item Assume radiation from 6 walls.
+\end{itemize}
+
+\subsubsection{Solar flux and Albedo}
+The albedo is the reflected solar flux from earth so it can be put into the same equation as the solar flux. It is assumed that the sun hit two sides of the experiment at a $45^o$ angle at all time over 10km. In the mid of October at the time for launch the sun will hit the experiment with an inclination of $15^o$ degrees.
+\begin{equation*}
+    Q_{Sun+Albedo} = \alpha_{Al}\cdot S \cdot cos(15) \cdot (A_{Sun} \cdot cos(45) + Albedo \cdot A_{Albedo})
+\end{equation*}
+
+\subsubsection{Conduction}
+For calculating the outer walls temperature, the assumption of steady flow through walls is used.
+\begin{equation*}
+    Q_{Conduction} = [\text{Steady flow through wall}] = \text{Dissipated power} = P
+\end{equation*}
+
+\subsubsection{Earth IR flux}
+The earth IR flux is the flux that comes from earth as a black body radiating. It is calculated from finding the IR flux at the ground then scale it to the altitude the experiment will fly at.
+\begin{gather*}
+    IR_{Ground} = \varepsilon_{earth} \cdot \sigma \cdot T_{ground}^4 \\
+    \tau_{atmIR} = 1.716 - 0.5\cdot \Bigg[e^{-0.65\frac{P_{25km}}{P_{ground}}} + e^{-0.95\frac{P_{25km}}{P_{ground}}}\Bigg] \\
+    IR_{25km} = \tau_{atmIR} \cdot IR_{Ground}
+\end{gather*}
+After the IR has been calculated for the floating altitude it is put into the following equation. 
+\begin{equation*}
+    Q_{IR} = \varepsilon_{earth} \cdot A_{IR} \cdot IR_{25km}
+\end{equation*}
+
+\subsubsection{Radiation}
+It is assumed to be radiation from all 6 sides. In fact it will be from 5 because the CAC box will be in touch with one of the AAC box. It is left to 6 because of compensating for no holes to let cold air in to the pump.
+\begin{equation*}
+    Q_{Radiation} = \sigma \cdot \varepsilon_{Al} \cdot A_{Radiation} \cdot (T_{Out}^4 - T_{Ambient}^4 )
+\end{equation*}
+
+\subsubsection{Convection}
+At an altitude of 25km there is less air density. It gives that a scaling factor $K$ have to be taken into account when calculating the convection and K can be seen in table \ref{tab:scaling-factorconvection} for different altitudes.
+\begin{equation*}
+    Q_{Convection} = h \cdot K \cdot A_{Convection} \cdot (T_{Out} - T_{Ambient})
+\end{equation*}
+
+The equation for approximating the heat transfer coefficient for air is outlined as:
+\begin{equation*}
+h = 10.45 - v + 10\cdot\sqrt{v}
+\end{equation*}
+Where $v$ is the velocity of the fluid medium.
+
+Because the balloon is expected to rise at approximately $5 m/s$ for the duration of the ascending phase, the starting value for the convective heat transfer coefficient $h$ is expected to be 27.811, assuming negligible wind currents perpendicular to the direction of ascent. %I will probably move this paragraph to our Thermal Design section, since this is important information.
+
+The equations used to obtain the value of $K$ are listed below:
+
+\begin{equation*}
+F(T_{sea}, T_{alt}) = \big(\frac{k_{alt}}{k_sea}\big)^{1-n}\times \Big[\Big(\frac{\beta_{alt}}{\beta_sea}\Big)\times \Big(\frac{\mu_{sea}}{\mu_{alt}}\Big)\times \Big(\frac{c_{p-alt}}{c_{p-sea}}\Big)\times \Big(\frac{\rho(T_{alt})}{\rho(T_{sea})}\Big)^{2}\Big]^{n}
+\end{equation*}
+
+Where:
+\begin{itemize}
+    \item $n$ is an exponent value dependent on the turbulence of the fluid medium ($\frac{1}{4}$ for laminar flow and $\frac{1}{3}$ for turbulent flow)
+    \item $k$ is the thermal conductivity of the air
+    \item $\beta$ is the thermal expansion coefficient for air
+    \item $\mu$ is the dynamic viscosity of the air
+    \item $c_{p}$ is the specific heat capacity of the air at constant pressure
+    \item $\rho(T)$ is the density of the air as a function of only temperature difference (i.e. for constant pressure)
+    \item "sea" denotes the current variable is represented by its value found at sea level
+    \item "alt" denotes the current variable is represented by its value found at a specified altitude
+\end{itemize}
+
+
+The values for $F$ from this equation were then applied to its respective position in the following equation to determine the ratio between the convective heat transfer coefficient $h$ at sea level (assumed to have negligible differences for Esrange ground level) and the same coefficient at a specified altitude:
+
+\begin{equation*}
+K = \Big(\frac{\rho(P_{alt})}{\rho(P_{sea})}\Big)^{2n}\times \Big(\frac{\Delta T_{air}}{\Delta T_{sea}}\Big)^{n}\times F(T_{sea}, T_{alt})
+\end{equation*}
+
+Where:
+\begin{itemize}
+    \item $\rho(T)$ is the density of the air as a function of only temperature difference (i.e. for constant pressure)
+    \item $\delta T$ is the difference between the temperature of the ambient air and the surface in question
+\end{itemize}
+
+
+%Table for convective and radiative heat loss will go here.
+
+\input{appendix/tables/heat-loss.tex}
+\raggedbottom
+
+
+\subsubsection{Thermal equation}
+If there is no sun on the experiment.
+\begin{gather*}
+    Q_{IR} + Q_{Conduction} = Q_{Radiation} + Q_{Convection} \\
+    \updownarrow \\
+    \varepsilon_{earth} \cdot A_{IR} \cdot IR_{25km} + P \\ = \sigma \cdot \varepsilon_{Al} \cdot A_{Radiation} \cdot (T_{Out}^4 - T_{Ambient}^4 ) + h \cdot K \cdot A_{Convection} \cdot (T_{Out} - T_{Ambient})
+\end{gather*}
+If there is sun on the experiment it is the same but adding $Q_{Sun+Albedo}$.
+\begin{gather*}
+    Q_{IR} + Q_{Conduction} + Q_{Sun+Albedo} = Q_{Radiation} + Q_{Convection} \\
+    \updownarrow \\
+    \varepsilon_{earth} \cdot A_{IR} \cdot IR_{25km} + P + \alpha_{Al}\cdot S \cdot cos(15) \cdot (A_{Sun} \cdot cos(45) + Albedo \cdot A_{Albedo}) \\ = \sigma \cdot \varepsilon_{Al} \cdot A_{Radiation} \cdot (T_{Out}^4 - T_{Ambient}^4 ) + h \cdot K \cdot A_{Convection} \cdot (T_{Out} - T_{Ambient})
+\end{gather*}
+From those equations $T_{Out}$ can be calculated and it is the average temperature on the aluminum sheets facing the outside air.
+After $T_{Out}$ have been found the inner temperature can be calculated by using heat transfer through the wall.
+\begin{gather*}
+    P = \frac{T_{Inside} - T_{Outside}}{A \cdot (\frac{L_{Al}}{k_{Al}} + \frac{L_{PE}}{k_{k_PE}} + \frac{L_{PS}}{k_{PS}})} \\
+     \updownarrow \\
+    T_{Inside} = P \cdot A \cdot (\frac{L_{Al}}{k_{Al}} + \frac{L_{PS}}{k_{PS}}) + T_{Outside}
+\end{gather*}
+$T_{Inside}$ is then assumed to be the uniform air temperature in the experiment.
+
+
+
+\subsubsection{Trial run with BEXUS 25 air temperature data for altitudes}
+The air temperature data varying over altitude from old BEXUS flight could be found on the REXUS/BEXUS webb site. To do a simulated test flight for the calculations done in MATLAB, to see how it would be for a real flight it were calculated and plotted in with data from BEXUS 25 flight. 
+Because of there being approx 42000 data points it had to be scaled down and only every 25:th data point were used to save time and there was not much detail loss by taking every 25:th. In the figure \ref{fig:thermal-testflight} the TUBULAR test flight is the uniform temperature on the inside with a insulation consisting of $0.002m$ Aluminum and $0.02m$ of styrofoam.
+
+\begin{figure}[H]
+    \begin{align*}
+        \includegraphics[width=1\linewidth]{appendix/img/Thermal/Real_test_flight_BEXUS_25.jpg}
+    \end{align*}
+    \caption{Simulated test flight of TUBULAR with data from BEXUS 25}
+    \label{fig:thermal-testflight}
+\end{figure}
+When it have been found it were checked in ANSYS to determine and fix with heaters to control the most critical parts of the model thermal wise.
+
+\subsubsection{MATLAB conclusion}
+By running the MATLAB script, the hotest and coldest case for $0.02m$ of styrofoam could be found for ascent and descent sampling. The thermal conductivity of styrofoam is $k=0.03$. In table \ref{tab:temperature-sampling-ascent-descent} it is shown the hottest and coldest case of temperature on the inside when samples should be taken. The hottest and coldest cases are taken from the figure \ref{fig:thermal-testflight}.
+
+\begin{table}[H]
+\centering
+\caption{The temperature ranges for ascent and descent for $0.02m$ of styrofoam insulation}
+\label{tab:temperature-sampling-ascent-descent}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\multirow{2}{*}{Styrofoam thickness (m)} & \multirow{2}{*}{Inner area (m\textasciicircum{}2)} & \multirow{2}{*}{(L/kA)} & \multicolumn{2}{l|}{Coldest (C)} & \multicolumn{2}{l|}{Hottest (C)} \\ \cline{4-7} 
+                                         &                                                    &                         & Ascent         & Descent         & Ascent         & Descent        \\ \hline
+0.02                                     & 1.0692                                             & 0.6235                  & -7.592         & -20.47          & 19.91          & -0.5909        \\ \hline
+\multicolumn{3}{|l|}{The outside air}                                                                                   & -38.22         & -44.41          & -15.9          & -31.18         \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Thermal simulations ANSYS}
+In ANSYS, FEA simulations were done by using both Steady-State Thermal and Transient Thermal.
+Because of limitations of ANSYS student license a simplified model have been used, it can be seen in figure \ref{fig:Ansys-CAD-model}. It is in a lower corner with the components box and have three walls to the outside and the uniform air on the inside. The uniform inside air can be taken from the data from the test flight in figure (\ref{fig:thermal-testflight}). This simulations were done to see what temperature the pump and valves will be because they are the most critical components.
+
+\begin{figure}[H]
+    \begin{align*}
+        \includegraphics[width=0.5\linewidth]{appendix/img/Thermal/Thermal_CAD_model.JPG}
+    \end{align*}
+    \caption{The CAD model used for ANSYS simulations}
+    \label{fig:Ansys-CAD-model}
+\end{figure}
+
+The CAD model is as seen in the figure \ref{fig:Ansys-CAD-model}. The side exterior walls are $0.02m$, the interior walls of the brain box to the bags are $0.03m$ and the top and bottom wall consist of $0.03m$ styrofoam as well. The outer parts of the pipes are set to stainless steel with a constant temperature (The same as the ambient outside). Tubes closest to the pump are set to air to simulate and be able to variate depending on the cold from outside and the pump heating up from the heater.
+
+A transient thermal analyze were done simulating a test flight with data from BEXUS 25 using results from MATLAB. It were done so the thickness of the wall could be verified if it were good and to be able to add heaters. By being able to add heaters and move around, change strength and time on it is possible to fix so the pump and the valve manifold will be in their operating temperature ranges.
+
+\begin{figure}[H]
+    \begin{align*}
+        \includegraphics[width=0.5\linewidth]{appendix/img/Thermal/Ansys_simulation.JPG}
+    \end{align*}
+    \caption{Cross section of the air in the component box at the time to sample during ascent}
+    \label{fig:Ansys-CAD-model}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \subfloat{\includegraphics[width=0.4\linewidth]{appendix/img/Thermal/Pump_time_to_sample.JPG}}
+    \hifll
+    \subfloat{\includegraphics[height=0.21\linewidth]{appendix/img/Thermal/Valve_time_to_sample.JPG}}
+    \caption{Pump and Valve at the time to sample during ascent}
+    \label{fig:Pump-Valve-ascent-sample}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \subfloat{\includegraphics[width=0.4\linewidth]{appendix/img/Thermal/Pump_time_to_sample_descent.JPG}}
+    \hifll
+    \subfloat{\includegraphics[height=0.21\linewidth]{appendix/img/Thermal/Valve_time_to_sample_descent.JPG}}
+    \caption{Pump and Valve at the time to sample during descent}
+    \label{fig:Pump-Valve-ascent-sample-descent}
+\end{figure}
+
+\subsection{Result}
+The result from doing first MATLAB and then ANSYS have been to iterate to find the wall thickness of styrofoam between the brain box and the inside of the AAC box. Next step is to be able to determine what heaters and how many will be needed. By running a transient thermal analysis for the test flight there is the possible to simulate heaters that will be on and off to determine how strong they need to be.
+
+The results from ANSYS simulations is assuming that it is the worst case. It gives that the results are not fully accurate but should be a bit warmer in reality. By looking at figure \ref{fig:Pump-Valve-ascent-sampl} and \ref{fig:Pump-Valve-ascent-sample-descent}. The temperature can be seen and check for the pump to be above $5^o C$ and the pump above $-10^o C$. It is only during a little before ascent to the time for sample the heater should be on for the pump to get above $5^o C$ and it is on during ascent. During descent it needs to be on a short period.
+
+With an insulation of $0.02m$ styrofoam and $0.002m$ of aluminum sheets as outer wall. For the three inner walls between the brain box and the bags there will be a $0.03m$ wall of styrofoam. By using a 10W heater for the pump and two 10W heaters for the valves (one for each manifold). The critical components shall be working.
+

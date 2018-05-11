@@ -1,7 +1,7 @@
 \subsection{Performance Requirements}
 
 \begin{enumerate}[label=P.\arabic*]
-    \item \st{The telecommand data rate \textit{shall} be 10Kb/s.}\footnote{Moved to design requirements.\label{fn:design-requirement}}
+    \item \st{The telecommand data rate \textit{shall} be 10Kb/s.}\footnote{Moved to design requirements.\label{designRequirement}}
     \item \st{The default sampling rate of the ambient pressure sensor during Standby mode \textit{shall} be 0.1 Hz.}\footnote{Replaced by \ref{newsamplerate}\label{replaceSampleRate}}
     \item \st{The default sampling rate of the ambient pressure sensor during Normal operation-ascent mode \textit{shall} be 0.2 Hz.}\textsuperscript{\ref{replaceSampleRate}}
     \item \st{The default sampling rate of the ambient pressure sensor during Normal operation-descent mode \textit{shall} be 10 Hz.}\textsuperscript{\ref{replaceSampleRate}}
@@ -15,16 +15,17 @@
     \item \st{The programmable sampling rate of the AAC Valve Box temperature sensor \textit{shall} not be greater than 7 Hz.}\textsuperscript{\ref{replaceSampleRate}}
     %\item The programmable sampling rate of the pressure sensor \textit{shall} not be lesser than .
     \item The accuracy of the ambient pressure measurements \textit{shall} be -1.5/+1.5 mbar for 25$\degree$C.
-    \item The accuracy of temperature measurements \textit{shall} be +3.5/-2$\degree$C (max) for condition of -55$\degree$C to 150$\degree$C.
+    \item The accuracy of temperature measurements \textit{shall} be +3.5/-3$\degree$C (max) for condition of -55$\degree$C to 150$\degree$C.
     \item The accuracy of the ambient humidity measurements \textit{shall} be ±3\%. \cite{Humiditysensor}
-    \item \st{The accuracy of the AAC Valve Box temperature measurements \textit{shall} be +3.5/-2°C(max).}\footnote{Combined with P13\label{fn:combi-p13}}
-    \item The air intake rate of the air pump \textit{shall} be minimum 3L/min.
-    \item The temperature of the Electronics Box \textit{shall} be between 0$\degree$C and 25$\degree$C.
-    \item \st{The temperature of the Electronics Box \textit{shall} not exceed 25$\degree$C.}\footnote{Combined with P17\label{fn:combi-p17}}
-    \item The temperature of the AAC Valve Box \textit{shall} be between 0$\degree$C and 25$\degree$C.
-    \item \st{The temperature of the AAC Valve Box \textit{shall} not exceed 25$\degree$C.}\footnote{Combined with P19\label{fn:combi-p19}}
-    \item The air sampling systems \textit{shall} filter out all water molecules before filling the sampling containers.
-    \item \st{The CAC air sampling \textit{shall} filter out all water molecules before filling the tube.}\footnote{Combined with P21\label{fn:combi-p21}}
+    \item \st{The accuracy of the AAC Valve Box temperature measurements \textit{shall} be +3.5/-2$\degree$C(max).}\footnote{Combined with P13\label{fn:combi-p13}}
+    \item \st{The air intake rate of the air pump \textit{shall} be minimum 3L/min.}\textsuperscript{\ref{designRequirement}}
+    \item \st{The temperature of the Electronics Box \textit{shall} be between 0$\degree$C and 25$\degree$C.} \textsuperscript{\ref{designRequirement}}
+    \item \st{The temperature of the Electronics Box \textit{shall} not exceed 25$\degree$C.}\footnote{Combined with P17 and moved to design requirements.\label{fn:combi-p17}}
+    \item \st{The temperature of the AAC Valve Box \textit{shall} be between 0$\degree$C and 25$\degree$C.}\textsuperscript{\ref{designRequirement}}
+    \item \st{The temperature of the AAC Valve Box \textit{shall} not exceed 25$\degree$C.}\footnote{Combined with P19 and moved to design requirements.\label{fn:combi-p19}}
+    \item \st{The air sampling systems \textit{shall} filter out all water molecules before filling the sampling containers.} \textsuperscript{\ref{designRequirement}}
+    \item \st{The CAC air sampling \textit{shall} filter out all water molecules before filling the tube.}\footnote{Combined with P21 and moved to design requirements.\label{fn:combi-p21}}
     \item The sensors sampling rate \textit{shall} be 2Hz.\label{newsamplerate}
-    \item The temperature of the Pump Box \textit{shall} be between 5$\degree$C and 25$\degree$C. 
-\end{enumerate} 
+    \item The temperature of the Pump \textit{shall} be between 5$\degree$C and 40$\degree$C. 
+    \item The minimum volume of air in the bags for analysis \textit{shall} be 0.2L at ground level.
+ \end{enumerate} 
