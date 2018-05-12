@@ -12,7 +12,7 @@ The AAC will need an air pump for sampling, due to low ambient pressure at strat
 
 Shortly after the launch, the CAC valve will be opened in order to allow flushing the fill gas that is inside the tube, while the AAC valves will be closed until reaching the sampling altitude. Flushing of the CAC tube happens passively through the progressive decrease in air pressure during the balloon's ascent phase. The CAC valve will remain open at all time during ascent, floating, and descent phases. The tube will empty itself due to pressure gradient during the ascent phase and it will be filled passively during descent. The valve will close just after hitting the ground in order to preserve the sample. The AAC will need an air pump for sampling, due to low ambient pressure. The air pump is also needed in order to assure the intake flow rate and obtain a good resolution.
 
-After sampling for a given bag is complete, the pump will be flushed and prior to the subsequent sampling bag valve being opened. This process continues until the last sampling bag is filled.This procedure occurs twice, the first time during the Ascent Phase for the 4 first sampling bags and the second time during the descent phase for the remaining 4 sampling bags.
+After sampling for a given bag is complete, the pump will be flushed and prior to the subsequent sampling bag valve being opened. This process continues until the last sampling bag is filled.This procedure occurs twice, the first time during the Ascent Phase for the 2 first sampling bags and the second time during the descent phase for the remaining 4 sampling bags.
 
 The ambient pressure will be measured by three pressure sensors located inside the experiment box. Only one of them is necessary for AAC and CAC, but using three will provide redundancy. The pressure inside the AirCore is assumed to be the same as the ambient pressure, therefore no sensor is needed. To measure the pressure inside the bags, three more sensors will be allocated inside the valve center. To measure the ambient temperature in the AirCore, three sensors will be allocated in the AirCoil box (in the styrofoam). Temperature inside the AirCore is assumed to quickly adjust to the ambient temperature, therefore there will not be differentiation in between inside/outside temperature. For the bags three more temperature sensors will be placed in the bags' box (in the styrofoam). To control the temperature in the electronics box, valve center and the pump box, one temperature sensor will be used in each of them. In total, there will be six pressure sensors and nine temperature sensors. 
 
@@ -64,19 +64,20 @@ $p_3$ – $p_4$
     \item Sampling bag valve 1 shall be closed
     \item Sampling bags' control valve shall be opened, allowing the system to flush. 
     \end{itemize}
-$p_4$ - $p_{n-1}$
+$p_4$ - $p_n$
 \begin{itemize}
-    \item The above procedures shall repeat itself until the remaining three bags have collected air samples for their assigned altitudes.
+    \item The above procedure shall repeat itself until the remaining one bag has collected air samples for its assigned altitude.
     \end{itemize}
-$p_{n-1}$ – $p_n$
-\begin{itemize}
-    \item Sampling bag valve 4 shall be closed.
-    \item Sampling bags' control valve shall be closed.
-\end{itemize}
+
 
 
 \textbf{\\Float Phase:}\\
-No action taken other than continued telemetry. Air pump is off.\\
+No action taken other than continued telemetry.
+\begin{itemize}
+    \item Sampling bag valve 2 shall be closed.
+    \item Sampling bags' control valve shall be closed.
+    \item Air pump is off.
+\end{itemize}\\
  
 \textbf{Descent Phase:}
 

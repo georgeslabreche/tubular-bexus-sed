@@ -5,7 +5,6 @@
 \subsubsection{Variables and tables}
 \begin{table}[H]
     \centering
-    \caption{Variables used in thermal calculation.}
     \begin{tabular}{|c|c|c|c|}
         \hline
         Variable & Description & Unit & Value \\ \hline
@@ -35,59 +34,45 @@
         $P_{Ground}$ & Pressure at ground & $Pa$ & $101.33 \cdot 10^3$ \\ \hline
         $P_{25km}$ & Pressure at $25km$ & $Pa$ & $2.8 \cdot 10^3$ \\ \hline
     \end{tabular}
+    \caption{Variables used in thermal calculation.}
     \label{tab:thermal-variables}
 \end{table}
 
-\begin{table}[H]
-\centering
-\caption{Dissipated power at the different stages.}
-\label{tab:dissipated-power-thermal}
-\begin{tabular}{|l|l|l|}
-\hline
-\multirow{2}{*}{Critical stage} & \multicolumn{2}{l|}{Dissipated power (W)} \\ \cline{2-3} 
-                                & Worst case       & Average case       \\ \hline
-Launch pad                      & 7.589            & 5.083              \\ \hline
-Early ascent                    & 11.499           & 8.993              \\ \hline
-Sampling ascent                 & 13.499           & 13.397             \\ \hline
-Float                           & 11.499           & 8.993              \\ \hline
-Sampling descent                & 13.499           & 13.397             \\ \hline
-Shutdown descent                & 2.167            & 2167               \\ \hline
-Landed                          & 0                & 0                  \\ \hline
-\end{tabular}
-\end{table}
-The difference in dissipated power is depending if heaters need to be on or not.
+%\begin{table}[H]
+%\centering
+%\caption{Dissipated power at the different stages.}
+%\label{tab:dissipated-power-thermal}
+%\begin{tabular}{|l|l|l|}
+%\hline
+%\multirow{2}{*}{Critical stage} & \multicolumn{2}{l|}{Dissipated power (W)} \\ \cline{2-3} 
+%                                & Worst case       & Average case       \\ \hline
+%Launch pad                      & 7.589            & 5.083              \\ \hline
+%Early ascent                    & 11.499           & 8.993              \\ \hline
+%Sampling ascent                 & 13.499           & 13.397             \\ \hline
+%Float                           & 11.499           & 8.993              \\ \hline
+%Sampling descent                & 13.499           & 13.397             \\ \hline
+%Shutdown descent                & 2.167            & 2167               \\ \hline
+%Landed                          & 0                & 0                  \\ \hline
+%\end{tabular}
+%\end{table}
+%The difference in dissipated power is depending if heaters need to be on or not.
 
-\begin{table}[H]
-\centering
-\caption{Scaling factor convection}
-\label{tab:scaling-factorconvection}
-\begin{tabular}{|l|l|}
-\hline
-Altitude (km) & Scaling factor convection (K) \\ \hline
-0             & 1                             \\ \hline
-5             & 0.7962                        \\ \hline
-10            & 0.5134                        \\ \hline
-15            & 0.3392                        \\ \hline
-20            & 0.2292                        \\ \hline
-25            & 0.1592                        \\ \hline
-\end{tabular}
-\end{table}
 
 \subsection{Thermal calculations in MATLAB}
 For the MATLAB calculations a few assumptions were made, they are as follows.
 \begin{itemize}
-    \item Taking the average of no sun and sun calculations.
+    \item Taking the average of MATLAB calculations for calculations with or without sun.
     \item Calculate the average temperature on the outside.
-    \item Assuming the inner temperature is uniform.
-    \item The pipes letting cold air in have not been taken into account.
-    \item Only one box at a time is calculated.
+    \item Assuming the inner temperature at the bags section is uniform.
+    \item The pipes letting cold air in have not been taken into account in MATLAB.
+    \item Assume no interference between the two experiment boxes.
     \item All conduction is uniform from the inside.
-    \item Assume steady flow through the walls.
-    \item Assume radiation from 6 walls.
+    \item Assume steady flow through the walls from conduction.
+    \item Assume radiation and convection from/on 6 walls not 5.
 \end{itemize}
 
 \subsubsection{Solar flux and Albedo}
-The albedo is the reflected solar flux from earth so it can be put into the same equation as the solar flux. It is assumed that the sun hit two sides of the experiment at a $45^o$ angle at all time over 10km. In the mid of October at the time for launch the sun will hit the experiment with an inclination of $15^o$ degrees.
+The albedo is the reflected solar flux from earth so it can be put into the same equation as the solar flux. It is assumed that the sun hit two sides of the experiment at a $45\degree$ angle at all time over 10km. In the mid of October at the time for launch the sun will hit the experiment with an inclination of $15\degree$ degrees.
 \begin{equation*}
     Q_{Sun+Albedo} = \alpha_{Al}\cdot S \cdot cos(15) \cdot (A_{Sun} \cdot cos(45) + Albedo \cdot A_{Albedo})
 \end{equation*}
@@ -159,10 +144,13 @@ Where:
 \begin{itemize}
     \item $\rho(T)$ is the density of the air as a function of only temperature difference (i.e. for constant pressure)
     \item $\delta T$ is the difference between the temperature of the ambient air and the surface in question
-\end{itemize}
+\end{itemize} \\
 
 
 %Table for convective and radiative heat loss will go here.
+
+The following table combines the previously listed convection and radiation formulae integrated into the MATLAB scripts to determine the convective and radiative heat loss in the worst case for (highest) power dissipation during each stage of the experiment.\\
+
 
 \input{appendix/tables/heat-loss.tex}
 \raggedbottom
@@ -210,7 +198,7 @@ By running the MATLAB script, the hotest and coldest case for $0.02m$ of styrofo
 
 \begin{table}[H]
 \centering
-\caption{The temperature ranges for ascent and descent for $0.02m$ of styrofoam insulation}
+
 \label{tab:temperature-sampling-ascent-descent}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
@@ -219,6 +207,7 @@ By running the MATLAB script, the hotest and coldest case for $0.02m$ of styrofo
 0.02                                     & 1.0692                                             & 0.6235                  & -7.592         & -20.47          & 19.91          & -0.5909        \\ \hline
 \multicolumn{3}{|l|}{The outside air}                                                                                   & -38.22         & -44.41          & -15.9          & -31.18         \\ \hline
 \end{tabular}
+\caption{The temperature ranges for ascent and descent for $0.02m$ of styrofoam insulation}
 \end{table}
 
 
@@ -267,7 +256,7 @@ A transient thermal analyze were done simulating a test flight with data from BE
 \subsection{Result}
 The result from doing first MATLAB and then ANSYS have been to iterate to find the wall thickness of styrofoam between the brain box and the inside of the AAC box. Next step is to be able to determine what heaters and how many will be needed. By running a transient thermal analysis for the test flight there is the possible to simulate heaters that will be on and off to determine how strong they need to be.
 
-The results from ANSYS simulations is assuming that it is the worst case. It gives that the results are not fully accurate but should be a bit warmer in reality. By looking at figure \ref{fig:Pump-Valve-ascent-sampl} and \ref{fig:Pump-Valve-ascent-sample-descent}. The temperature can be seen and check for the pump to be above $5^o C$ and the pump above $-10^o C$. It is only during a little before ascent to the time for sample the heater should be on for the pump to get above $5^o C$ and it is on during ascent. During descent it needs to be on a short period.
+The results from ANSYS simulations is assuming that it is the worst case. It gives that the results are not fully accurate but should be a bit warmer in reality. By looking at figure \ref{fig:Pump-Valve-ascent-sample} and \ref{fig:Pump-Valve-ascent-sample-descent}. The temperature can be seen and check for the pump to be above $5\degree C$ and the pump above $-10\degree C$. It is only during a little before ascent to the time for sample the heater should be on for the pump to get above $5\degree C$ and it is on during ascent. During descent it needs to be on a short period.
 
-With an insulation of $0.02m$ styrofoam and $0.002m$ of aluminum sheets as outer wall. For the three inner walls between the brain box and the bags there will be a $0.03m$ wall of styrofoam. By using a 10W heater for the pump and two 10W heaters for the valves (one for each manifold). The critical components shall be working.
+With an insulation of $0.02m$ styrofoam and $0.002m$ of aluminum sheets as outer wall. For the three inner walls between the brain box and the bags there will be a $0.03m$ wall of styrofoam. By using a 10W heater for the pump and one 10W heaters for the manifold. The critical components shall be working.
 
