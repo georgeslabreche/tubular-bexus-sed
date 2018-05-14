@@ -1,17 +1,24 @@
-\begin{longtable}{|m{0.03\textwidth}| m{0.3\textwidth} |m{0.14\textwidth} |m{0.16\textwidth}|m{0.13\textwidth}| m{0.14\textwidth} |}
+
+
+\begin{longtable}{|m{0.05\textwidth}| m{0.3\textwidth} |m{0.14\textwidth} |m{0.16\textwidth}|m{0.13\textwidth}| m{0.14\textwidth} |}
 \hline
 \textbf{ID}             & \textbf{Component}                                                   & \textbf{Voltage {[}V{]}} & \textbf{Current {[}mA{]}} & \textbf{Power {[}W{]}} & \textbf{Total {[}Wh{]}} \\ \hline
-1 & Arduino Due & 12& 30  & 0.36  & 36  \\ \hline
-3 & KNF   850.1.2.KNDC   B Miniature Diaphragm Pump & 24 & 320 & 7.68 & 7.68 \\ \hline
-4  & Barometric Pressure Sensor MS5607-02BA03 & 3.3 & 1.4 & 0.00462 & 0.4  \\ \hline
-5  & Electromagnetically controlled valve & 24 & 458 & 11  & 22 \\ \hline
-6 & Airflow sensor AWM40000 Series  & 10  & 6   & 0.060 & 0.6 \\ \hline
+E1 & Arduino Due & 12& 30  & 0.36  & 36  \\ \hline
+E3 & Miniature Diaphragm air Pump & 24 & 200 & 7.68 & 7.68 \\ \hline
+E4  & Pressure Sensor  & 3.3 & 1.4 & 0.032 & 0.32  \\ \hline
+E5  & Sampling Valve (inlet and outlet 1/8"" female) & 24 & 125 & 24  & 39 \\ \hline
+E6 & Airflow sensor & 12  & 8.3   & 0.1 & 1 \\ \hline
 
-8   & Polyimide Thermofoil Heaters HK5160R157L12  & 28 & 179  & 5 & 100 \\ \hline
-9  & Temperature sensor VSSOP-8, LM70, LM70CIMM-5/NOPB & 5.5 & 0.49 & 0.002695  & 0.3   \\ \hline
-10  & DC-DC step converter   & 28   & 500 (output) & 0.09 & 0.9 \\ \hline
-11 & HDC2010 Low Power Humidity Digital Sensors & 3.3  & 0.0005   & 1.65$\times10^{-6}$  & 16.5$\times10^{-6}$ \\ \hline
-\multicolumn{1}{|c|}{-} & \textbf{Total}                                  & \multicolumn{1}{c|}{-}                      & \multicolumn{1}{c|}{1120}                    & \multicolumn{1}{c|}{27}                 & 197                                        \\ \hline
+E7   &  Heaters & 28 & 179  & 15 & 80 \\ \hline
+E9  & Temperature sensor & 3.3 & 0.28 & 0.011  & 0.11   \\ \hline
+
+E11 & Humidity sensors & 3.3  & 0.0005   & 1.65$\times10^{-3}$  & 0.01 \\
+\hline
+E8  & Voltage Regulator   & 24   & 8 & 0.028 & 0.28 \\ \hline
+
+
+E10  & DC-DC step converter   & 28   & 37 (2500 output) & 2 (60 output) & 11.69 \\ \hline
+\multicolumn{1}{|c|}{-} & \textbf{Total}                                  & \multicolumn{1}{c|}{-}                      & \multicolumn{1}{c|}{1100}                    & \multicolumn{1}{c|}{32}                 & 172                                        \\ \hline
 \multicolumn{1}{|c|}{-} & \textbf{Available from gondola}                 & \multicolumn{1}{c|}{-}                      & \multicolumn{1}{c|}{-}                       & \multicolumn{1}{c|}{-}                    & 374                                        \\ \hline
 
 \caption{Power Design Table}

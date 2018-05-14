@@ -1,6 +1,5 @@
-\renewcommand\thempfootnote{\arabic{mpfootnote}}
 
-\begin{table}[H]
+\begin{table}[!ht]
 \centering
 \begin{minipage}{\textwidth}
 \begin{tabular}{|m{0.3\textwidth}| m{0.7\textwidth} |}
@@ -9,16 +8,18 @@
 \textbf{Test Type} & - \\ \hline
 \textbf{Test Facility} & - \\ \hline
 \textbf{Tested Item} & -\\ \hline
-\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}l@{}}Test Level/ Procedure \\ and Duration\footnote[12]{All test procedure and duration's are subject to change. \label{fn:testing}}\end{tabular}}} & Test procedure: -\\ & Test duration: - \\ \hline
+\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}l@{}}Test Level/ Procedure \\ and Duration\end{tabular}}} & Test procedure: -\\ & Test duration: - \\ \hline
 \textbf{Test Campaign Duration} & - \\ \hline
 \textbf{Test Campaign Date} & - \\ \hline
 \textbf{Test Completed} & - \\ \hline
 \end{tabular}
-\caption{Test 1: REMOVED - COMBINED INTO TESTS 4, 5 AND 24.}
+\caption{Test 1: REMOVED - COMBINED INTO TESTS 4, 5 AND 24}
 \label{tab:valves-test}
 \end{minipage}
 \end{table}
 \raggedbottom
+
+%{\textbf{\begin{tabular}[c]{@{}l@{}}Test Level/ Procedure \\ and Duration\footnote[12]{All test procedure and duration's are subject to change. \label{fn:testing}}\end{tabular}}}
 
 
 % Test valves work at different air pressures and temperatures. Check valves respond to commands as expected. Ensure valve series are properly connected and properly sealed

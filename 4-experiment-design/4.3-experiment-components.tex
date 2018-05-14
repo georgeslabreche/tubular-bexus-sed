@@ -1,17 +1,23 @@
 \begin{landscape}
-\subsection{Experiment Components}
+\subsection{Experiment Components} \label{components}
+\label{sec:experiment-components}
+
+Component tables were generated from the project budget spreadsheet in Appendix \ref{sec:appO} using the scripts included in Appendix \ref{sec:appK}. Table headers are letter coded and correspond to the following:
+
+\textbf{A} - Components Name\\
+\textbf{B} - Manufacturer\\
+\textbf{C} - Manufacturer Code\\
+\textbf{D} - Quantity\\
+\textbf{E} - Total Cost [EUR]\\
+\textbf{F} - Total Mass [g]\\
+\textbf{G} - Note\\
+\textbf{H} - Status\\
+
 \subsubsection{Electrical Components}
 
-Table \ref{tab:electrical-components} shows all required electrical components with mass and price.
+Table \ref{tab:components-table-electrical} shows all required electrical components with their total mass and price.\\
 
-\input{4-experiment-design/tables/electricalcomponenttable.tex}
-
-% \begin{table}[H]
-%     \begin{align*}
-%         \includegraphics[height=10cm]{4-experiment-design/img/electrical-components-table.png}
-%     \end{align*}
-%     \caption{Table showing all required electrical components.}\label{tab:electrical-components}
-% \end{table}
+\input{4-experiment-design/tables/component-table-electronics.tex}
 
 \end{landscape}
 
@@ -19,22 +25,20 @@ Table \ref{tab:electrical-components} shows all required electrical components w
 
 \subsubsection{Mechanical Components}
 
-Table \ref{tab:mechanical-components} shows all required mechanical components with mass and price. Table cells highlighted in yellow denote values that have yet to be determined.
+Table \ref{tab:components-table-mechanical} shows all required mechanical components with their total mass and price.\\
 
-\input{4-experiment-design/tables/mechanicalcomponenttable.tex}
 
-%\begin{table}[H]
-%%    \begin{align*}
-%        \includegraphics{4-experiment-design/img/mechanical-components-table.png}
-%    \end{align*}
-%    \caption{Table showing all required mechanical components.}\label{tab:mechanical-components}
-%\end{table}
+\input{4-experiment-design/tables/component-table-mechanical.tex}
 
+\raggedbottom
 \end{landscape}
 
+\begin{landscape}
 \subsubsection{Other Components}
+Table \ref{tab:component-table-other} shows other components which contribute to the mass and/or price.\\
 
-Other components are included in the full budget previously presented in Table \ref{tab:budget-table}.
+\input{4-experiment-design/tables/component-table-other.tex}
 
 
 \raggedbottom
+\end{landscape}

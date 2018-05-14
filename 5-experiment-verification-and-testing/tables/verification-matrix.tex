@@ -2,22 +2,22 @@
 \renewcommand\@makefntext[1]{\leftskip=3em\hskip-1em\@makefnmark#1}
 \makeatother
 
-\begin{longtable}[]{|m{0.06\textwidth}| m{0.48\textwidth} |m{0.13\textwidth} |m{0.1\textwidth}|m{0.1\textwidth}|}
+\begin{longtable}[]{|m{0.06\textwidth}| m{0.48\textwidth} |m{0.13\textwidth} |m{0.1\textwidth}|m{0.15\textwidth}|}
 
 \hline
-ID   & Written requirement                                                                                                                                                     & Verification & Test number & Status \\ \hline
+\textbf{ID}   & \textbf{Written requirement}                                                                                                                                                     & \textbf{Verification} & \textbf{Test number} & \textbf{Status} \\ \hline
 F.1  & \st{The experiment \textit{shall} collect air samples.}\textsuperscript{\ref{fn:unnecessary-requirement}}     &- &- &- \\ \hline
-F.2  & The experiment \textit{shall} collect air samples by the CAC.&  A, R & - & Pass \\ \hline
-F.3  & The experiment \textit{shall} collect air samples by the AAC. & A, T& 2, 16 & \\ \hline
-F.4  & \st{The experiment's AAC System \textit{shall} be able to collect air samples during the ascent phase.}\textsuperscript{\ref{fn:unnecessary-requirement}} & - & -& \\ \hline
-F.5  & \st{The experiment's AAC System \textit{shall} be able to collect air samples during the descent phase.}\textsuperscript{\ref{fn:unnecessary-requirement}} & - & - & \\ \hline
-F.6  & The altitude from which a sampling bag will start sampling \textit{shall} be programmable. & A,T&  10, 14  & Analysis passed\\ \hline
-F.7  & The altitude from which a sampling bag will stop sampling \textit{shall} be programmable.& A,T & 10  & Analysis passed\\ \hline
+F.2  & The experiment \textit{shall} collect air samples by the CAC.&  A, R & - & Pass by similarity \cite{AircoreFlights} \\ \hline
+F.3  & The experiment \textit{shall} collect air samples by the AAC. & A, T& 2, 16 & Analysis passed, see Section \ref{sec:aac-analysis}\\ \hline
+F.4  & \st{The experiment's AAC System \textit{shall} be able to collect air samples during the Ascent Phase.}\textsuperscript{\ref{fn:unnecessary-requirement}} & - & -& \\ \hline
+F.5  & \st{The experiment's AAC System \textit{shall} be able to collect air samples during the Descent Phase.}\textsuperscript{\ref{fn:unnecessary-requirement}} & - & - & \\ \hline
+F.6  & The altitude from which a sampling bag will start sampling \textit{shall} be programmable. & A,T&  10, 14  & Analysis passed, see Section \ref{sec:4.8.2}\\ \hline
+F.7  & The altitude from which a sampling bag will stop sampling \textit{shall} be programmable.& A,T & 10  & Analysis passed, see Section \ref{sec:4.8.2}\\ \hline
 F.8  &\st{The experiment \textit{shall} pump air into the AAC Sampling Bags.}\textsuperscript{\ref{fn:unnecessary-requirement}}  & - & -&\\ \hline
-F.9  & The experiment \textit{should} collect data on the air intake flow to the AAC. & A, T & 24, 31 & \\ \hline
-F.10 & The experiment \textit{shall} collect data on the air pressure. & A, T& 24, 31 & \\ \hline
-F.11 & The experiment \textit{shall} collect data on the temperature. &  A, T& 24, 31 & \\ \hline
-F.12 & The experiment \textit{shall} collect data on the humidity. & A, T & 24, 31  & \\ \hline
+F.9  & The experiment \textit{should} collect data on the air intake flow to the AAC. & A, T & 24, 31 & Pass by similarity\footnote{sensor libraries are available online and used by many users\label{fn:sensor-libraries}}\\ \hline
+F.10 & The experiment \textit{shall} collect data on the air pressure. & A, T& 24, 31 & Pass by similarity\textsuperscript{\ref{fn:sensor-libraries}}\\ \hline
+F.11 & The experiment \textit{shall} collect data on the temperature. &  A, T& 24, 31 & Pass by similarity\textsuperscript{\ref{fn:sensor-libraries}}\\ \hline
+F.12 & The experiment \textit{shall} collect data on the humidity. & A, T & 24, 31  & Pass by similarity\textsuperscript{\ref{fn:sensor-libraries}}\\ \hline
 F.13 & \st{The experiment \textit{shall} measure the temperature inside the AAC Valve Box.} \textsuperscript{\ref{fn:unnecessary-requirement}}&- & -& \\ \hline
 F.14 & \st{The experiment \textit{should} measure the humidity inside the AAC Valve Box.}\textsuperscript{\ref{fn:unnecessary-requirement}} & -&- & \\ \hline
 F.15 & \st{The experiment \textit{shall} measure the time.} \textsuperscript{\ref{fn:unverifiable-requirement}}&- &-&\\ \hline
@@ -33,7 +33,7 @@ F.24 & \st{The experiment \textit{may} accept telecommand instructions to turn o
 F.25 & \st{The experiment \textit{may} accept telecommand instructions to turn off the Valve Heater.}\textsuperscript{\ref{fn:unnecessary-requirement}}                                                                                         &      -        & -            &        \\ \hline
 F.26 & \st{The experiment \textit{may} accept telecommand instructions to turn on the Electronics Box Heater.}\textsuperscript{\ref{fn:unnecessary-requirement}}                                                                                     &      -        & -            &        \\ \hline
 F.27 & \st{The experiment \textit{may} accept telecommand instructions to turn off the Electronics Box Heater.}\textsuperscript{\ref{fn:unnecessary-requirement}}                                                                                    &      -        & -            &        \\ \hline
-P.1  & \st{The telecommand data rate \textit{shall} not be over 10Kb/s.}\textsuperscript{\ref{designRequirement}}                                                                                                                           &        -      & -          &        \\ \hline
+P.1  & \st{The telecommand data rate \textit{shall} not be over 10 Kb/s.}\textsuperscript{\ref{designRequirement}}                                                                                                                           &        -      & -          &        \\ \hline
 P.2  & \st{The default sampling rate of the ambient pressure sensor during Standby mode \textit{shall} be 0.1 Hz.}\footnote{Replaced by P.23\label{replaceSoftVeri}}                                                                       &      -  & -  &        \\ \hline
 P.3  & \st{The default sampling rate of the ambient pressure sensor during Normal operation-ascent mode \textit{shall} be 0.2 Hz.}\textsuperscript{\ref{replaceSoftVeri}}                                                           &    -        & -        &        \\ \hline
 P.4  & \st{The default sampling rate of the ambient pressure sensor during Normal operation-descent mode \textit{shall} be 10 Hz.}\textsuperscript{\ref{replaceSoftVeri}}                                                           &   -     & -    &        \\ \hline
@@ -48,28 +48,28 @@ P.12 & The accuracy of the ambient pressure measurements \textit{shall} be -1.5/
 P.13 & The accuracy of the temperature measurements \textit{shall} be +3.5/-3$\degree$C(max) for condition of -55$\degree$C to 150$\degree$C.                                   &       I       & -            &    Pass    \\ \hline
 P.14 & The accuracy of the ambient humidity measurements \textit{shall} be +-3\%.                                                                                                         &       I         &  -           & Pass        \\ \hline
 P.15 & \st{The accuracy of the AAC Valve Box temperature measurements \textit{shall} be +3.5/-2$\degree$C(max).}\textsuperscript{\ref{fn:combi-p13}}   & - &- & - \\ \hline
-P.16 & \st{The air intake rate of the air pump \textit{shall} be 3L/min.} \textsuperscript{\ref{designRequirement}}   & - &- & - \\ \hline
+P.16 & \st{The air intake rate of the air pump \textit{shall} be 3 L/min.} \textsuperscript{\ref{designRequirement}}   & - &- & - \\ \hline
 P.17 & \st{The temperature of the Electronics Box \textit{shall} be between 0$\degree$C and 25$\degree$C.} \textsuperscript{\ref{designRequirement}}   & - &- & - \\ \hline
 P.18 & \st{The temperature of the Electronics Box \textit{shall} not exceed 25$\degree$C.}\textsuperscript{\ref{fn:combi-p17}}   & - &- & - \\ \hline
-P.19 & \st{The temperature of the AAC Valve Box \textit{shall} be between 0$\degree$C and 25$\degree$C.}\textsuperscript{\ref{fn:design-requirement}}   & - &- & - \\ \hline
+P.19 & \st{The temperature of the AAC Valve Box \textit{shall} be between 0$\degree$C and 25$\degree$C.}\textsuperscript{\ref{designRequirement}}   & - &- & - \\ \hline
 P.20 & \st{The temperature of the AAC Valve Box \textit{shall} not exceed 25$\degree$C.}\textsuperscript{\ref{fn:combi-p19}}   & - &- & - \\ \hline
-P.21 & \st{The AAC air sampling \textit{shall} filter out all water molecules before filling the sampling bags.}\textsuperscript{\ref{fn:design-requirement}}   & - &- & - \\ \hline
+P.21 & \st{The AAC air sampling \textit{shall} filter out all water molecules before filling the sampling bags.}\textsuperscript{\ref{designRequirement}}   & - &- & - \\ \hline
 P.22 & \st{The CAC air sampling \textit{shall} filter out all water molecules before filling the tube.}\textsuperscript{\ref{fn:combi-p21}}                                                                                    &         -   & -           &        \\ \hline
 
 P.23 & The sampling rate shall be 2Hz.                                                                                    &         A,T     & 10            &        \\ \hline
-P.24 & The temperature of the Pump \textit{shall} be between 5$\degree$C and 40$\degree$C.                                                                                                    &       A, T       & 5           &        \\ \hline
-P.25 & The minimum volume of air in the bags for analysis \textit{shall} be 0.2L at ground level.                                                                                                    &       A, T       & 16, 17, 28            &                          \\ \hline
+P.24 & The temperature of the Pump \textit{shall} be between 5$\degree$C and 40$\degree$C.                                                                                                    &       A, T       & 5           & Analysis passed, see Section \ref{sec:4.6.5}       \\ \hline
+P.25 & The minimum volume of air in the sampling bags for analysis \textit{shall} be 0.18 L at ground level.                                                                                                    &       A, T       & 16, 17            &  Pass by similarity \cite{LISA}. Analysis passed, see Section \ref{sec:appH}                        \\ \hline
 
 
-D.1  & The experiment \textit{shall} operate in the temperature profile of the BEXUS vehicle flight and launch.                                                                         &       A, T       & 5            &        \\ \hline
+D.1  & The experiment \textit{shall} operate in the temperature profile of the BEXUS vehicle flight and launch.                                                                         &       A, T       & 5            & Verification is ongoing.     \\ \hline
 D.2  & The experiment \textit{shall} operate in the vibration profile of the BEXUS vehicle flight and launch.                                                                           &       A, T       & 9            &        \\ \hline
 D.3  & \st{The experiment \textit{shall} not disturb or harm the launch vehicle.}\textsuperscript{\ref{fn:unnecessary-requirement}}                                                                                                             &      -      & -          &        \\ \hline
-D.4  & The experiment's communication system \textit{shall} be compatible with the gondola's E-link system.                                                                             &      A, T        & 8            &    Analysis passed    \\ \hline
+D.4  & The experiment's communication system \textit{shall} be compatible with the gondola's E-link system.                                                                             &      A, T        & 8            &    Analysis passed, see Section \ref{sec:4.8.2}    \\ \hline
 D.5  & The experiment's power supply \textit{shall
-} be compatible with the gondola's provided power.                                                                                    &      A       &  -           &        \\ \hline
+} be compatible with the gondola's provided power.                                                                                    &      A       &  -           & Analysis passed, see Sections \ref{sec:4.2.2} and \ref{sec:4.5.1}      \\ \hline
 D.6  & \st{The experiment \textit{shall} not disturb other experiments on the gondola.}\textsuperscript{\ref{fn:unnecessary-requirement}}                                                                                                       &      -      & -           &        \\ \hline
-D.7  & The total DC current draw \textit{should} be below 1.8 A.                                                                                                                        &      A, T        & 10, 19, 20, 29            &        \\ \hline
-D.8  & The total power consumption \textit{should} be below 374 Wh.                                                                                                                      &       A       &            &        \\ \hline
+D.7  & The total DC current draw \textit{should} be below 1.8 A. &      A, T        & 10, 19, 20, 29            & Analysis passed, see Table \ref{tab:power-design-table}        \\ \hline
+D.8  & The total power consumption \textit{should} be below 374 Wh.& A & - & Analysis passed, see Table \ref{tab:power-design-table} \\ \hline
 D.9  & \st{The experiment \textit{shall} be able to operate in low pressure conditions (10-15 mbar) up to 30 km altitude.}\textsuperscript{\ref{fn:repeat-d18}} &- &  - &        \\ \hline
 D.10 & \st{The components of the experiment \textit{shall} operate within their temperature ranges.}\textsuperscript{\ref{fn:unnecessary-requirement}}                                                                                          &       -     & -           &        \\  \hline
 D.11 & \st{The OBC \textit{shall} be able to autonomously control the heaters.}\textsuperscript{\ref{fn:unnecessary-requirement}}                                                                                                               &        -    &  -            &        \\ \hline
@@ -78,10 +78,10 @@ D.13 & \st{The experiment \textit{shall} be able to survive and operate between 
 D.14 & \st{The external components that are directly exposed to the outside environment \textit{shall} be able to operate in -70\degree C.}\textsuperscript{\ref{fn:unnecessary-requirement}}                                                   &    -        & -           &        \\ \hline
 D.15 & \st{The watchdog \textit{should} be able to reset the system.}\textsuperscript{\ref{fn:unnecessary-requirement}}  &  - & -  &        \\ 
  \hline
-D.16 & The experiment \textit{shall} be able to autonomously turn itself off just before landing.                                                                                       &       R, T      &  7, 10, 31           &        \\ \hline
+D.16 & The experiment \textit{shall} be able to autonomously turn itself off just before landing.                                                                                       &       R, T      &  7, 10, 31           &    To be done    \\ \hline
 D.17 & The experiment box \textit{shall} be placed with at least one face exposed to the outside.                                                                                &     R, A         & -            &        
 \\ \hline
-D.18 & The  experiment \textit{shall} operate  in  the  pressure  profile  of  the BEXUS flight.                                                                              &    A, T         & 4, 18, 30 &  Pump Passed Test     
+D.18 & The  experiment \textit{shall} operate  in  the  pressure  profile  of  the BEXUS flight.                                                                              &    A, T         & 4, 18, 30 &  Pump Passed Test 18     
 \\ \hline
 D.19 & The  experiment \textit{shall} operate  in  the  vertical  and  horizontal  acceleration  profile  of  the BEXUS flight.                                                                              &    A, T         & 9, 25, 27            &       
 \\ \hline
@@ -89,19 +89,19 @@ D.20 & \st{The  experiment \textit{shall} operate  in  the  horizontal  accelera
 \\ \hline
 D.21 & The experiment \textit{shall} be attached to the gondola’s rails.                                                                                &     R         & -            &       
 \\ \hline
-D.22 & The telecommand data rate \textit{shall} not be over 10kb/s.                                                                               &     A, R         & -            &    Analysis passed   
+D.22 & The telecommand data rate \textit{shall} not be over 10 kb/s.                                                                               &     A, R         & -            &    Analysis passed, see Section \ref{sec:4.8.2}.   
 \\  \hline
 
-D.23 & The air intake rate of the air pump \textit{shall} be 3L/min at 24km altitude.                                                                                                                        &       A, T        & 4, 18            &  Initial test passed, test 4 required to confirm.      \\ \hline
+D.23 & The air intake rate of the air pump \textit{shall} be 3 L/min at 24 km altitude.                                                                                                                        &       A, T        & 4, 18            &  Initial Test passed, Test 4 required to confirm.      \\ \hline
 
-D.24 & The temperature of the Electronics Box \textit{shall} be between 0$\degree$C and 25$\degree$C.                                                                                                 &       A, T       & 5           &        \\    \hline
+D.24 & The temperature of the Brain \textit{shall} be between -10$\degree$C and 25$\degree$C.                                                                                                 &       A, T       & 5           & Analysis passed, see Section \ref{sec:4.6.5}       \\    \hline
 
-D.25 & The temperature of the AAC Valve Box \textit{shall} be between 0$\degree$C and 25$\degree$C.                                                                                                    &      A, T       & 5            &        \\   \hline
-D.26 & The AAC air sampling \textit{shall} filter out all water molecules before filling the sampling bags.                                                                             &        A, T      & 17            &        \\
+D.25 & \st{The temperature of the Brain level 2 \textit{shall} be between 0$\degree$C and 25$\degree$C.}\textsuperscript{\ref{fn:combi-d24}}                                                                                                     &      -       & -          &     \\   \hline
+D.26 & The AAC air sampling \textit{shall} filter out all water molecules before filling the sampling bags.                                                                             &        A, T      & 17            &  Analysis passed, see Section \ref{sec:4.4.5}        \\
 \hline
-D.27 & The total weight of the experiment \textit{shall} be less than 28kg.
- & R, T & 3 &\\\hline
- D.28 & The AAC box \textit{shall} be able to ﬁt at least 6 air sampling bags. & R & - &\\\hline
+D.27 & The total weight of the experiment \textit{shall} be less than 28 kg.
+ & R, T & 3 & Review of design passed, explained in Section \ref{sec:3.2.2} \\\hline
+ D.28 & The AAC box \textit{shall} be able to ﬁt at least 6 air sampling bags. & R & - & Review of design passed, explained in Section \ref{sec:4.4.5}\\\hline
 D.29 &  The CAC box \textit{shall} take less than 3 minutes to be removed from the gondola without removing the whole experiment.
  & R, T & 12 &\\\hline
  D.30 & The AAC \textit{shall} be re-usable for future balloon flights.                                                                           &        R, T      & 7, 16            &        \\
@@ -118,9 +118,9 @@ O.9  & \st{The heaters \textit{should} be controllable from the ground station.}
 O.10 & \st{The watchdog\footnote{An electronic timer that is used to detect and recover from computer malfunctions} \textit{should} be able to reset the system.}\textsuperscript{\ref{fn:unnecessary-requirement}}               &    -        & -          &        \\ \hline
 O.11 & \st{The system \textit{should} be able to be reset with a command from the ground station.}\textsuperscript{\ref{fn:unnecessary-requirement}}                                                                                &     -      & -            &        \\ \hline
 O.12 & \st{The experiment \textit{should} enter different modes with a telecommand from the ground station.}\textsuperscript{\ref{fn:unnecessary-requirement}}                                                                      &      -        & -    &        \\ \hline
-O.13 & The experiment \textit{should} function automatically.                                                           &      R, T        & 7, 8, 10            &        \\ \hline
-O.14 & The experiment's air sampling mechanisms \textit{shall} have a manual override.                                                           &      R, T        & 8, 10            &        \\ \hline
-C.1  & Constraints specified in the BEXUS User Manual                                                                                                                          &       I       & -            &        \\ \hline
+O.13 & The experiment \textit{should} function automatically.                                                           &      R, T        & 7, 8, 10            &    Review of design passed, explained in Section \ref{sec:4.8.3}    \\ \hline
+O.14 & The experiment's air sampling mechanisms \textit{shall} have a manual override.                                                           &      R, T        & 8, 10            &    Review of design passed, explained in Section \ref{sec:4.9}    \\ \hline
+C.1  & Constraints specified in the BEXUS User Manual                                                                                                                          &       I       & -            & Verification is ongoing     \\ \hline
 C.2  & \st{The person-hours allocated to project implementation is limited by university related factors such as exams, assignments, and lectures.} \textsuperscript{\ref{fn:unnecessary-requirement}}                                &      -        & -            &        \\ \hline
 C.3  & \st{Budget limited to TBD.} \textsuperscript{\ref{fn:unnecessary-requirement}}                                                                                                                                                 &      -        & -            &        \\ \hline
 

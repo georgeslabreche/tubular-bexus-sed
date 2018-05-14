@@ -1,0 +1,17 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+ & \textbf{\begin{tabular}[c]{@{}l@{}}Minimum \\ Sampling Volume\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Sampling \\ Altitudes\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Ambient \\ Pressure\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Ambient \\ Temperature\end{tabular}} \\ \hline
+\multirow{2}{*}{\textbf{Ascent Phase}} & 1.8 L & 18 km & 75.0 hPa & 216.7 K \\ \cline{2-5} 
+ & 2.4 L & 21 km & 46.8 hPa & 217.6 K \\ \hline
+\multirow{4}{*}{\textbf{Descent Phase}} & 1.7 L & 17.5 km & 81.2 hPa & 216.7 K \\ \cline{2-5} 
+ & 1.3 L & 16 km & 102.9 hPa & 216.7 K \\ \cline{2-5} 
+ & 1.0 L & 14 km & 141.0 hPa & 216.7 K \\ \cline{2-5} 
+ & 0.7 L & 12 km & 193.3 hPa & 216.7 K \\ \hline
+\end{tabular}
+\caption{Minimum Sampling Volume at Each Altitude to Obtain Enough Air to Perform a Proper Analysis (0.18 L at sea level), Appendix \ref{sec:appH}}
+\label{tab:minimum-volume}
+\end{table}

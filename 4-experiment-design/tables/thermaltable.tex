@@ -3,35 +3,61 @@
 %Added this space to help us see all of the numbers. This "Track changes" sign blocks them every time!
 
 
-\begin{longtable}{|m{1cm}|m{3.5cm}|m{1.5cm}|m{1.5cm}|m{1.5cm}|m{1.5cm}|}
+\begin{longtable}{|m{1cm}|m{3.5cm}|m{1.3cm}|m{1.3cm}|m{1.4cm}|m{1.3cm}|m{1.3cm}|m{1.3cm}|}
 \hline
-\multirow{2}{*}{\textbf{ID}} & \multirow{2}{*}{\textbf{Components}}                                 & \multicolumn{2}{l|}{\textbf{Operating T (°C)}} & \multicolumn{2}{l|}{\textbf{Survivable (°C)}} \\ \cline{3-6} &                                                                      & Min.                   & Max.                  & Min.                  & Max.                  \\ \hline
-E1 & Arduino Due & -40 & 85 & -60 & 150 \\ \hline
-E2 & Arduino Ethernet Shield & -40 & 85 & -65 & 150 \\ \hline
-E3 & Pump NMP85012KNDCB & 5 & 40 & TBD\textsuperscript{\ref{fn:thermran1}} & TBD\textsuperscript{\ref{fn:thermran1}} \\ \hline
-E4 & Pressure Sensor & -40 & 85 & -40 & 125 \\ \hline
-E5-1 & Valve VDW23-5G-1-H-Q & -20 & 50 & (-20)\textsuperscript{\ref{fn:thermran2}} & (50)\textsuperscript{\ref{fn:thermran2}} \\ \hline
-E5-2 & Valve VDW22UANXB & -20 & 50 & (-20)\textsuperscript{\ref{fn:thermran2}} & (50)\textsuperscript{\ref{fn:thermran2}} \\ \hline
-E5-3 & 4M4F-V6LN-SS (Parker)\footnote{Item will be used solely for testing purposes to serve as reference for other component boundaries. \label{fn:thermran3}} & -54 & 232 & (-54)\textsuperscript{\ref{fn:thermran2}} & (232)\textsuperscript{\ref{fn:thermran2}} \\ \hline
-E6 & Airflow sensor AWM43300V & \multicolumn{4}{l|}{Item under revision. New selection TBD.} \\ \hline
-E7 & Heater ($12.7\times 101.6 mm$) & -200 & 200 & (-200)\textsuperscript{\ref{fn:thermran2}} & (200)\textsuperscript{\ref{fn:thermran2}} \\ \hline
-E8 & Heater ($12.7\times 50.8 mm$) & -200 & 200 & (-200)\textsuperscript{\ref{fn:thermran2}} & (200)\textsuperscript{\ref{fn:thermran2}} \\ \hline
-E9 & Temperature Sensor & -55 & 125 & -65 & 150 \\ \hline
-E10-1 & DCDC 12V & -40 & 85 & -55 & 125 \\ \hline
-E10-2 & DCDC 24V & -40 & 85 & -55 & 125 \\ \hline
-E11 & Humidity Sensor & -40 & 85 & -40 & 125 \\ \hline
-M1 & Sample Bag & TBD\footnote{Values must be determined either via inquiry to supplying vendor, or through testing upon aquisition of product.
-\label{fn:thermran1}} & 82 & TBD\textsuperscript{\ref{fn:thermran1}} & (82)\footnote{If survivable temperatures were not given, operating temperatures were used as survivable limits.
-\label{fn:thermran2}} \\ \hline
-M2 & Sample Bag Valve & TBD\textsuperscript{\ref{fn:thermran1}} & TBD\textsuperscript{\ref{fn:thermran1}} & TBD\textsuperscript{\ref{fn:thermran1}} & TBD\textsuperscript{\ref{fn:thermran1}} \\ \hline
-M3 & Swagelok fitting (3/16 inch) & TBD\textsuperscript{\ref{fn:thermran1}} & 232 & TBD\textsuperscript{\ref{fn:thermran1}} & (232)\textsuperscript{\ref{fn:thermran2}}  \\ \hline
-M4 & Manifold VV2DW2-H0401N-F-Q & -10 & 50 & TBD\textsuperscript{\ref{fn:thermran1}} & (50)\textsuperscript{\ref{fn:thermran2}} \\ \hline
-M5 & Magnesium dryer & \multicolumn{4}{l|}{Item under revision. New selection TBD.} \\ \hline
-M6 & Tube 4mm ID - T Series Nylon & -40 & 100 & (-40)\textsuperscript{\ref{fn:thermran2}} & (100)\textsuperscript{\ref{fn:thermran2}} \\ \hline
-M7 & T-Union & \multicolumn{4}{l|}{Item under revision. New selection TBD.} \hline
+\multirow{2}{*}{\textbf{ID}} & \multirow{2}{*}{\textbf{Components}}                                 & \multicolumn{2}{l|}{\textbf{Operating (°C)}} & \multicolumn{2}{l|}{\textbf{Survivable (°C)}} & \multicolumn{2}{l|}{\textbf{Expected (°C)}} \\ \cline{3-8} &   & Min.  & Max.  & Min.  & Max.  &  Min.   &  Max.            \\ \hline
+E1 & Arduino Due & -40 & 85 & -60 & 150 & -10 & 26 \\ \hline
+E2 & Ethernet Shield & -40 & 85 & -65 & 150 & -10 & 26 \\ \hline
+E3 & Miniature diaphragm air pump & 5 & 40 & -10 & 40 & 0 & 37.8 \\ \hline
+E4 & Pressure Sensor & -40 & 85 & -40 & 125 & -10 & 20 \\ \hline
+E5 & Sampling Valve (inlet and outlet 1/8"" female) & -20 & 50 & -20\footnote{If survivable temperatures were not given, operating temperatures were used as survivable limits.\label{fn:erik}} & 50\textsuperscript{\ref{fn:erik}} & -15 & 20 \\ \hline
+E6 & Airflow sensor AWM43300V & -20 & 70 & -20\textsuperscript{\ref{fn:erik}} & 70\textsuperscript{\ref{fn:erik}} & -10 & 26 \\ \hline
+E7 & Heater ($12.7\times 50.8 mm$) & -200 & 200 & -200\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & -20 & 36 \\ \hline
+E8 & Voltage Regulator & -40 & 125 & -40\textsuperscript{\ref{fn:erik}} & 125\textsuperscript{\ref{fn:erik}} & -20 & 20 \\ \hline
+E9 & Temperature Sensor & -55 & 125 & -65 & 150 & -10 & 20 \\ \hline
+E10 & DCDC 24 V & -40 & 85 & -55 & 125 & -31 & 17 \\ \hline
+E11 & Humidity Sensor & -40 & 85 & -40 & 125 & -10 & 20 \\ \hline
+E12 & Micro SD & -25 & 85 & -200\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & -10 & 26 \\ \hline
+% E13 & Logic CAT5E & -20 & 75 & (-20)\textsuperscript{\ref{fn:erik}} & (75)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+% E14 & Resistors (33, 150 and 100 ohm) & -55 & 155 & (-55)\textsuperscript{\ref{fn:erik}} & (155)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+% E15 & Capacitors $(0.1 \mu$ F and $10 \mu$ F) & -30 & 85 & (-200)\textsuperscript{\ref{fn:erik}} & (200)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+E16 & Mosfet for current control & -55 & 175 & -55 & 175 & -20 & -20 \\ \hline
+E17 & Diodes for DCDC converters & -65 & 175 & -65\textsuperscript{\ref{fn:erik}} & 175\textsuperscript{\ref{fn:erik}} & -20 & 20 \\ \hline
+E18 & 3.3V LED & -40 & 85 & -40\textsuperscript{\ref{fn:erik}} & 85\textsuperscript{\ref{fn:erik}} & -15 & 20 \\ \hline 
+E19 & 15-pin D-SUB Female connector with pins & -55 & 120 & -200\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & -15 & 20 \\ \hline
+E20 & 9-pin D-SUB Female connector with pins & -55 & 120  & -200\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & -15 & -20  \\ \hline
+E21 & 9-pin D-SUB Female connector with soldering cups & -55 & 105 & -55\textsuperscript{\ref{fn:erik}} & 105\textsuperscript{\ref{fn:erik}} & -34 & 30  \\ \hline
+E22 & 9-pin D-SUB Male connector with soldering cups & -55 & 105 & -55\textsuperscript{\ref{fn:erik}} & 105\textsuperscript{\ref{fn:erik}} & -34 & 30 \\ \hline
+E23 & 15-pin D-SUB Male connector with soldering cups & -55  & 105 & -55\textsuperscript{\ref{fn:erik}} & 105\textsuperscript{\ref{fn:erik}} & -10 & 20 \\ \hline
+E24 & 9-pin D-SUB backing & -40 & 120 & -40\textsuperscript{\ref{fn:erik}} & 120 & -15 & 20  \\ \hline
+E25 & 15-pin D-SUB backing & -40 & 120 & -40\textsuperscript{\ref{fn:erik}} & 120 & -15 & 20  \\ \hline
+% E26 & Wall mounting bolts & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+E27 & D-SUB cable CAC to AAC & -40 & 85 & -55 & 125 & -40 & 40 \\ \hline
+% E28 & 3.3 Zener diode & TBD\textsuperscript{\ref{fn:ivan}} & 175 & TBD\textsuperscript{\ref{fn:ivan}} & (175)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+E29 & Male connector on PCB & -40 & 85 & -40\textsuperscript{\ref{fn:erik}} & 85 & -15 & 20 \\ \hline
+E30 & Female connector from wall & -40 & 85 & -40\textsuperscript{\ref{fn:erik}} & 85 & - & - \\ \hline
+% E31 & Grounding contact & -55 & 125 & (-55)\textsuperscript{\ref{fn:erik}} & (125)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+E32 & Logic CAT5 E-link for inside box &-20 & 75 & -20\textsuperscript{\ref{fn:erik}} & 75\textsuperscript{\ref{fn:erik}} & -15 & 20 \\ \hline
+E33 & Signal Wires & -60 & 200 & -60\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & - & - \\ \hline
+E34 & Flushing valve (inlet and outlet 1/8"" female) & -10 & 50 & -10\textsuperscript{\ref{fn:erik}} & 50\textsuperscript{\ref{fn:erik}} & -27 & 20 \\ \hline
+E35 & Valves manifold (outlet 1/8"" female) & -10 & 50 & -10\textsuperscript{\ref{fn:erik}} & 50\textsuperscript{\ref{fn:erik}} & -15 & 20 \\ \hline
+E36 & Power wire black & -60 & 200 & -60\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & - & - \\ \hline
+% E37 & Electrical Tape for marking wires (White) & -10 & 90 & (-10)\textsuperscript{\ref{fn:erik}} & (90)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+% E38 & Electrical Tape for marking wires (Black) & -10 & 90 & (-10)\textsuperscript{\ref{fn:erik}} & (90)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+% E39 & Electrical Tape for marking wires (Green) & -10 & 90 & (-10)\textsuperscript{\ref{fn:erik}} & (90)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+% E40 & Electrical Tape for marking wires (Violet) & -10 & 90 & (-10)\textsuperscript{\ref{fn:erik}} & (90)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+% E41 & Electrical Tape for marking wires (Gray) & -10 & 90 & (-10)\textsuperscript{\ref{fn:erik}} & (90)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+% E42 & Electrical Tape for marking wires (Brown) & -10 & 90 & (-10)\textsuperscript{\ref{fn:erik}} & (90)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+% E43 & Electrical Tape for marking wires (Blue) & -10 & 90 & (-10)\textsuperscript{\ref{fn:erik}} & (90)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+% E44 & Heat shrinking tube 2.5 x 1mm & -55 & 125 & (-55)\textsuperscript{\ref{fn:erik}} & (125)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+E45 & 25-pin D-SUB female connector with pins & -10 & 90 & -10\textsuperscript{\ref{fn:erik}} & 90\textsuperscript{\ref{fn:erik}} & -15 & 20 \\ \hline
+E46 & 25-pin D-SUB male connector with soldering cups & -10 & 90 & -10\textsuperscript{\ref{fn:erik}} & 90\textsuperscript{\ref{fn:erik}} & -15 & 20 \\ \hline
+E47 & 25-pin D-SUB backing & -10 & 90 & -10\textsuperscript{\ref{fn:erik}} & 90\textsuperscript{\ref{fn:erik}} & -15 & 20 \\ \hline
+E48 & Power wire red & -60 & 200 & -60\textsuperscript{\ref{fn:erik}} & 200
+\textsuperscript{\ref{fn:erik}} & - & -  \\ \hline
+% E49 & Potentiometer 1k ohm & -55 & 125 & (-55)\textsuperscript{\ref{fn:erik}} & (120)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
 
-
-\caption{Thermal Table}
+\caption{Table of Component Temperature Ranges}
 \label{tab:thermal-table}
 \end{longtable}
 \raggedbottom

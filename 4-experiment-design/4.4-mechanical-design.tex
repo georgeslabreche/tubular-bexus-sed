@@ -1,32 +1,44 @@
 \pagebreak
 \subsection{Mechanical Design} \label{Mechanical_Design}
 
+ \begin{figure}[H]
+     \centering
+     \includegraphics[width=1\textwidth]{4-experiment-design/img/Mechanical/tubular_dimensions.jpg}
+     \caption{General Dimensions of the Experiment.}
+     \label{overview}
+\end{figure}
+
+\input{4-experiment-design/tables/mechanics_summary.tex}
+
+The Center Of Gravity appears to be located just on the third level of The Brain. The latter %continua tu Jordi
+
+ \begin{figure}[H]
+     \centering
+     \includegraphics[width=0.7\textwidth]{4-experiment-design/img/Mechanical/COG.jpg}
+     \caption{Center of Gravity axis reference.}
+     \label{COG}
+\end{figure}
+
+
 
 \subsubsection{Structure}
 
-The experiment consists on two cubic boxes, one stacked next to the other. The smallest box -in red in Figure \ref{overview}- allocates the heaviest element, the CAC. The main box-in grey in Figure \ref{overview}- contains the AAC system as well as the general Electronic Box (EB). The frame of these two boxes will be made of aluminum bars which have a characteristic cross-section of 20x20 mm, see Figure \ref{cross-section}. The rails will allow an easy interface between bars and other elements. Bars will be joined together by using 90-degree angles and corner cubes, see Figure \ref{3_bars_joined}.
+The experiment consists of two rectangular boxes, one stacked next to the other. The box higher but narrower box - CAC box in Figure \ref{overview}- allocates the heaviest element, the CAC. The main box - AAC box in Figure \ref{overview}- contains the AAC system as well as the central command unit: The Brain. The Brain contains the general Electronic box (EB) as well as the pneumatic sampling system. The frame of these two boxes will be made of aluminum bars which have a characteristic cross-section of 20x20 mm. The rails will allow an easy interface between bars and other elements. Bars will be joined together by using 90-degree angles and corner cubes.
 
-%% Cross section of one aluminum bar
 
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.5\textwidth]{4-experiment-design/img/1_cross_section.jpg}
-    \caption{Cross section of the structural bars.}
-    \label{cross-section}
+
+% % Figure of 3 bars
+
+ \begin{figure}[H]
+     \centering
+     \includegraphics[width=0.9\textwidth]{4-experiment-design/img/Mechanical/structure_pic.jpg}
+     \caption{Structure Overview.}
+     \label{structure}
 \end{figure}
 
-% Figure of 3 bars
+The frame is designed to withstand all vibrations and ensure a reliable stability of the entire system. Test 9 in Table \ref{tab:vibration-test} will help to confirm and update the design if necessary. 
 
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/structure_cut_name.jpg}
-    \caption{Interface between structural bars.}
-    \label{3_bars_joined}
-\end{figure}
-
-The frame is designed to withstand all vibrations and ensure a reliable stability of the entire system. Further tests will help to confirm and update the design if necessary. 
-
-The two-box design will allow ease of access and manipulation of both the CAC and AAC subsystems, see Figure \ref{overview}. In addition, the AAC sampling system is designed to be re-usable for future handover to FMI, as such, it will be mountable on any standard balloon flight without having to introduce major design changes. The latter would imply to introduce a battery as a power unit, hence less bags could be carried (around 6 bags) in this potential future setup.
+The two-box design will allow ease of access and manipulation of both the CAC and AAC subsystems, see Figure \ref{overview}. In addition, the AAC sampling system is designed to be re-usable for future handover to FMI, as such, it will be mountable on any standard balloon flight without having to introduce major design changes. The latter would imply to introduce a battery as a power unit, hence less bags could be carried (around six bags) in this potential future setup.
 
 % Figure of the two structures
 %\begin{figure}[!ht]
@@ -36,105 +48,317 @@ The two-box design will allow ease of access and manipulation of both the CAC an
 %    \label{strucutre}
 %\end{figure}
 
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{4-experiment-design/img/overview_names.png}
-    \caption{General configuration of the experiment.}
-    \label{overview}
-\end{figure}
 
+\input{4-experiment-design/tables/materials_prop.tex}
+
+\pagebreak
 \subsubsection{CAC Subsystem}
 
-The CAC subsystem is designed to fit a 300-meter stainless steel coiled tube, a solenoid valve governing it and three temperature sensor. Schematic of this subsystem is in Figure \ref{fig:CAC-schematic}. The AirCore consists a combination of a 200m coiled tube of 1/8 in. and a 100m coiled tube of 1/4 in. Outlet of the AirCore is sealed with a quick connector provided by FMI. The inlet will be sealed in the same way but it will be open. A filter is placed between this orifice and the solenoid valve. The filter will be custom made by FMI, the set up is a tube containing magnesium perchlorate powder with stone wool at both ends of the tube. It will ensure that no moisture will enter during any testing or sampling. Another tube is attached to the solenoid valve that goes outside the box, thus having a direct outside outlet and inlet for the whole CAC system, as seen Figure \ref{overview} represent by the blue tube.
+The CAC subsystem is designed to fit a 300  stainless steel coiled tube, a solenoid valve governing it, interfaces, an air filter and three temperature sensors. A cshematic of this subsystem can be seen in Figure \ref{fig:CAC-schematic}. The CAC consists in a combination of a 200 m coiled tube of 1/8 in. and a 100 m coiled tube of 1/4 in. The outlet of the CAC is sealed with a quick connector provided by FMI. The inlet will be sealed in the same way but it will be open by means of another interfaced plugged to the quick connector. A filter is placed between this orifice and the solenoid valve. The filter will be custom made by FMI. The set up is a tube containing magnesium perchlorate powder with stone wool at both ends of the tube. It will ensure that no moisture will enter the coil during any testing or sampling. Another tube is attached to the solenoid valve that goes outside the box, thus having a direct outside outlet and inlet for the whole CAC system, as seen Figure \ref{overview}.
 
 \smallskip
-The total electronics in the CAC box will three temperature sensor and the solenoid valve. In order to send signals to these components, a D-sub connector will be placed at a positon on the wall of the box, where it is shortest distance to the electronic box in the AAC box. A identical D-sub connector will also be placed on that wall of AAC box. The connection between these connectors is through a wire. 
+The electronic components in the CAC box will be: three temperature sensor and the solenoid valve. In order to connect to these components, a male D-sub connector will be placed at a position on the wall of the box, where it is shortest distance to the EB in the AAC box (3rd level of The Brain). A female D-sub connector will also be placed on that wall of the AAC box. The connection between these plugs is made through a D-Sub wire. 
 % mechanical issues and gondola constraints 
 
-\begin{figure}[h]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/CAC_interior_labels.jpg}
+    \caption{3D model of the CAC box.}
+    \label{fig:CAC-cad-model}
+\end{figure}
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{4-experiment-design/img/CAC-schematic-v3.PNG}
     \caption{Schematic of CAC}
     \label{fig:CAC-schematic}
 \end{figure}
-Since CAC will be the heaviest component in the whole experiment, its positioning and orientation inside the gondola will affect directly the stress analysis of the structure, hence it must be considered.
+
+Since the CAC will be the heaviest component in the whole experiment, its positioning and orientation inside the gondola will affect directly the stress analysis of the structure, hence it must be considered.
 
 \smallskip
-Firstly, it is possible to identify the interface to attach the experiment box to the gondola as one of the most critical points in terms of mechanics performance. In the worst case scenario, with a heavy experiment and without a proper study of the aforesaid interface, shear in the screws could be produced after a violent landing stress. Since the CAC will be the heaviest component in the whole experiment, its location and orientation will affect directly the stress analysis of the structure. The larger the distance to the fixed points, the bigger the momentum produced by the component. Nevertheless, due to fast recovery implementation, the CAC tube will be placed vertically. Therefore, its dedicated box will be properly attached to the AAC box by means of 4 anchor points, in black in Figure \ref{overview}. The fast recovery then will only imply unscrewing 4 screws and disconnecting a wire. 
+Firstly, it is possible to identify the interface to attach the experiment box to the gondola as one of the most critical points in terms of mechanics performance. In the worst case scenario, with a heavy experiment and without a proper study of the aforesaid interface, shear in the screws could be produced after a violent landing stress or unexpected shaking. Since the CAC will be the heaviest component in the whole experiment, its location and orientation will affect directly the stress analysis of the structure. The larger the distance to the fixed points, the bigger the momentum produced by the component. Nevertheless, due to fast recovery implementation, the CAC tube will be placed vertically. Therefore, its dedicated box will be properly attached to the AAC box by means of four anchor points, fast recovery fixing interface in Figure \ref{overview}. The fast recovery then will only imply unscrewing 12 screws and unplugging a D-Sub connector. 
 
-\subsubsection{AAC Subsystem}
 
-The AAC Subsystem consists of 10 three-liter sampling bags. Each bag will have a dedicated valve in the Valve Center (VC) to allow emptying and filling processes as well as to close the bag when needed. The bags will be placed vertically and will have two anchor points: on the top through a  multiple anchor interface (see Figure \ref{anchor_bags}) and on the bottom by means of the tubes connecting them to the valves.
+\pagebreak
+\subsubsection{AAC Subsystem}\label{sec:aac-analysis}
+
+
+The AAC Subsystem consists of six  3 L sampling bags. Each bag will have a dedicated valve in the Valve Center (VC) to allow emptying and filling processes as well as to close the bag when needed. The bags will be placed vertically and will have two anchor points: on the top through a  multiple anchor interface (see Figure \ref{anchor_bags}) and on the bottom by means of the tubes connecting them to the valves.
 
 %% Several Figures of the top box with its inside elements: isometric, top view and front view.
 
-\begin{figure}[!ht]
+\input{4-experiment-design/tables/bags_dimensions.tex}
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{4-experiment-design/img/bags_assembly.jpg}
-    \caption{Sampling bags with fixing interface.}
+    \includegraphics[width=0.7\textwidth]{4-experiment-design/img/Mechanical/Bags_Fixing_Interface.png}
+    \caption{Sampling Bags with Fixing Interface and the AAC Box handles}
     \label{anchor_bags}
 \end{figure}
 
-\subsubsection{Electronics Box}
 
-The OBC and its external elements will be allocated in a bottom corner of the experiment box, inside AAC box, and on the opposite side of the CAC box. This will allow an easy access and manipulation as well as the required external interfaces, holes in Figure \ref{overview}. The smallest side of the EB will have the outer connections interfaces. Hence, the wall will have the necessary holes. The EB will be fixed to the AAC box structure bars in 3 different points.
+\bigskip
+\underline{Distribution}
 
-From the electronics box, there will be total 25 connections that are linked to other sections. Four of them will go to CAC box and the rest to the AAC subsystem. The list in table \ref{tab:list_of_components_CAC} and \ref{tab:list_of_components_AAC} give a more clearly view over the connections to respective section, which is divided into colors. 
+The AAC box has been designed in order to be as compact as possible. Nonetheless, the latter was a challenging iterative process since the bags dimensions vary during the flight. All in all, the process led to a square base box that is able to fit six sampling bags together with a control center called The Brain that includes the pneumatic system and the electronic box. The distribution layout can be seen in Figure .
+
+% Figure: Top view to show the distribution of the AAC Box
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/AAC_isometric_view.png}
+    \caption{Isometric view of the AAC Box.}
+    \label{iso_aac}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/AAC_lateral_view.png}
+    \caption{Lateral view of the AAC Box.}
+    \label{lateral_aac}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/AAC_front_view.png}
+    \caption{Front view of the AAC Box.}
+    \label{front_aac}
+\end{figure}
+
+In order to reach to all the bags from the Valve Center, the tubes are brought to the base of the box. More detail on its positioning in the following section. 
+
+\smallskip
+Since the AAC box is expected to be handed out to FMI, the design also takes into consideration the possibility to include a battery for power supply. This would be allocated next to the Brain. The latter would imply reducing the sampling bags down to five, see Figure \ref{battery_distribution}.
+
+% Figure with a a top view without the 6th bag and with a red box simulating the battery
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/Battery_Top_View.png}
+    \caption{Layout including a battery (in red).}
+    \label{battery_distribution}
+\end{figure}
+
+
+\pagebreak
+\subsubsection{The Brain}
+
+The control unit, so called The Brain, is an essential part of the experiment. It is a three-level structure containing both the pneumatic system and the electronics of the experiment. Its design aimed to make it compact enough for both allow a proper thermal control and to fit into the space left next to the sampling bags. It is placed in a corner of the AAC box. 
+
+Therefore, the Brain takes advantage of the vertical space inside the AAC box. It has three different levels: 
+
+\begin{itemize}
+    \item Level 1: Pump
+    \item Level 2: Valve Center
+    \item Level 3: Electronics
+\end{itemize}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/Brain_Isometric_Open.png}
+    \caption{Isometric view of The Brain without walls.}
+    \label{brain_isometric_open}
+\end{figure}
+
+
+Level 1 is the base of the AAC box and together with Level 2 contain the main pneumatic system. This is commanded by the electronics in the top level. This distribution allows easy access to the PCB from the top and provides the physical desired separation between electronics and pneumatic circuit. 
+
+The fact of having different levels implies the need of having dedicated holes to bring all the wires to the third level and the tube to the second level. This is shown in the dedicated section for each level.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/Brain_Lateral.png}
+    \caption{Lateral view of The Brain.}
+    \label{brain_lateral}
+\end{figure}
+
+\smallskip
+The structure of the Brain provides versatility in terms of implementation and construction. It is made out of four aluminum 90-degree angle bars and five flat bars to join them together. The bars have custom-made holes that allow to fix the 1 mm thick aluminum plate of each level by means of two bolts on each column, one over and one below it. They allow as well the possibility to provide the anchor point for the lateral and top styrofoam shield as well as to fix the whole unit to the box structure bars. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/Brain_Structure.png}
+    \caption{Structure of The Brain.}
+    \label{brain_structure}
+\end{figure}
+
+\smallskip
+The bulk dimensions of the brain are 260 mm long, 150mm wide and 290 mm high. If the shielding styrofoam walls are taken into account, the dimensions are 290 mm long, 180 mm wide and 300 mm high.
+Therefore, accounting for the space the column bars take, each plate has a surface of 258 mm x 158 mm. The distance between levels is variable depending on the components dimensions. Level 1 has a height if 7 cm, Level 2 has a height of 9cm and Level 3 has 8cm until the top styrofoam shielding.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/Brain_Isometric.png}
+    \caption{Isometric view of The Brain.}
+    \label{brain_isometric}
+\end{figure}
+
+\smallskip
+In order to allocate the electrical interfaces required (E-Link, Power Supply and D-Sub Connectors) as well as to allow the tubes of the sampling system to reach the outside environment, the outside facing wall is divided in three pieces. Two small pieces are fixed to the Brain structure. The latter provides easiness of manipulation when having to open the box wall since the little pieces containing the interfaces and the tubes holes, will remain attached. The bottom piece covers Level 1 and 2 while the other, which contains the electrical connections, protects Level 3. This pieces have the same layout as the main wall. 
+
+
+\pagebreak
+\underline{Level 1 - Pump}
+
+\smallskip
+List of components of Level 1:
+
+\begin{enumerate}[label=\Alph*.]
+    \item 1 Magnesium filter (M48)
+    \item 1 Pump (E3)
+    \item 1 Airflow sensor (E6)
+    \item 1 Temperature sensor (E9)
+    \item 2 Heaters (E7)
+    \item 4 Tubes (M45)
+    \item 3 Straight union interfaces (M41)
+    \item 3 Female to tube interfaces (M42)
+\end{enumerate}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/Level_1.png}
+    \caption{Isometric view of Level 1.}
+    \label{level_1}
+\end{figure}
+
+\smallskip
+The bottom level of this relevant unit is lying on the base styrofoam. It contains the beginning of the pneumatic sampling system. The inlet tube passes through the panel wall and interfaces with the filter. From here the system continues through the pump, airflow sensor and to Level 2.
+The reason of having the pump in Level 1 is to have the minimum vibration transmitted to the other components. The pump will have two heaters close by that will be used to regulate its temperature. 
+
+
+\pagebreak
+\underline{Level 2 - Valve Center}
+
+
+List of components of Level 2:
+
+\begin{enumerate}[label=\Alph*.]
+    \item 1 Sensor Box (M49)
+    \item 3 Pressure sensors (E4)
+    \item 1 Humidity sensor (E11)
+    \item 1 Temperature sensor (E9)
+    \item 1 Heater (E7)
+    \item 1 Manifold (M50)
+    \item 8 Sampling valves (E36)
+    \item 1 Flushing valve (E37)
+    \item 12 Male to tube interfaces (M40)
+    \item 2 Caps (M47)
+    \item 12 Tubes (M45)
+\end{enumerate}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/Level_2.png}
+    \caption{Isometric view of Level 2.}
+    \label{level_2}
+\end{figure}
+
+\smallskip
+This level of the Brain is responsible of the distribution of the air to the selected sampling bag. The manifold with 8 solenoid valves is the main component. From here, the tubes connect with the bags. A T-Union connection is used just before the bag valve. This interface allows the pre-flight flushing of the tubes connecting with the valves as explained previously. 
+
+\smallskip
+The flushing valve is the responsible to ensure a proper flushing of the system before each sampling period. From the flushing valve, a the outlet tube (in red) reaches the outside environment. 
+
+
+
+\pagebreak
+\underline{Level 3 - Electronics}
+
+
+List of components of Level 3:
+\begin{enumerate}[label=\Alph*.]
+    \item 1 PCB
+    \item 2 D-Sub female connectors (E23)
+    \item 1 E-link socket (E35)
+    \item 1 Power socket (E33)
+\end{enumerate}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/Level_3.png}
+    \caption{Isometric view of Level 3.}
+    \label{level_3}
+\end{figure}
+
+\smallskip
+The OBC and its external elements will be allocated in the third level of the Brain. The PCB will be fixed to the aluminum plate by means of 5 standoffs. As shown in Figure \ref{Level_3_1}, it has a hole, as well as the level plate, to collect all the wires connecting with levels 1 and 2. This level has its own outside wall which contains the electrical interfaces. The latter allows to open the wall without having to remove all the sockets attached with screws and a female in the inside of the wall. The styrofoam shielding the Brain has a hole at this height to allow the temperature sensors wires to reach the inside of the AAC Box. 
 
 \input{4-experiment-design/tables/electronicsboxlistCAC.tex}
 \input{4-experiment-design/tables/electronicsboxlistAAC.tex}
 
 
-%% Figure of the electronics box inside the coil, only bottom cube, isometric top view, explosion
 
-%\begin{figure}[!ht]
- %   \centering
-  %  \includegraphics[width=0.7\textwidth]{4-experiment-design/img/explos_CAC.jpg}
-   % \caption{.}
-    %\label{electronics_box}
-%\end{figure}
+\pagebreak
+\underline{Shielding and anchor points}
 
-\subsubsection{Valve Center}
-
-The valve center consists of a coated box to which the AAC's 10 air sampling bags will be attached to. This box will serve as airflow chamber. It will be connected to a pipe from which outside air will be pumped and also enable pre-sample collection flushing. The pump providing the airflow will be allocated on the inlet side and protected by an air filter. It will be allocated inside a shielding box, more detailed information in section \ref{Thermal_section}. The pipes used for both intake and outlet can be seen in blue in the grey box in Figure \ref{overview}.
+The most critical components in terms of required thermal control are inside the Brain. These are the pump (E3) and the valves (E36 and E37). In order to provide a passive thermal shielding, 3cm thick removable styrofoam walls are placed in the three walls (top and laterals) facing the interior of the AAC box. 
+The lateral walls are fixed by means of four bolts attached to the structure bars that penetrate inside the styrofoam. The top wall is fixed in place taking advantage of the structure columns which penetrate inside it.
+The larger lateral wall, where the tubes from the valves are, is divided in two pieces so it can be removed without having to disconnect the tubes. 
 
 \smallskip
-Both the pump box and the valve center will be allocated above the EB so all the command center is at the same place. Having them together will provide as well a proper cooling system monitored by several temperature sensors. %A sketch of the setup can be seen in Figure ....
+The Brain is fixed to the structure of the AAC box by means of two anchor points. In order to keep it in its place, the structure bars penetrate 3 cm into the styrofoam base.
 
-%% Figure of the valve center with the pipe and small tubes
-
-%\begin{figure}[!ht]
-%    \centering
-%    \includegraphics[width=0.9\textwidth]{4-experiment-design/img/valve_collector.jpg}
-%    \caption{Valve center with all the tubes to the sampling bags and to the outside environment.}
-%    \label{valve_center_and_pipes}
-%\end{figure}
-
-%% Add figure with EB and external interface + VC + Pump Box + Pipes + fixing elements
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{4-experiment-design/img/Mechanical/Panel_Front.png}
+    \caption{Front view of the Brain where the styrofoam walls can be identified.}
+    \label{brain_front}
+\end{figure}
 
 
+\pagebreak
+\subsubsection{Pneumatic System}
+\label{sec:4.4.5}
+
+In order to be able to collect separated samples of air, a pneumatic system has been developed. The schematics and components of this can be seen in Figure \ref{pneumatic_system} . The circuit is formed by a total of 81 components located inside the Brain and the AAC Box. 
+
+
+The air is sucked from the outside through the inlet tube (No.1) and it goes through the filter (No.3) inside the pump (No.7). From here, it passes through the airflow sensor (No.11), which allows to monitor the flow rate, before changing to Level 2. There, the sensor box (No.15) containing three pressure sensors and one humidity sensor, is the first component the air passes through before getting to the 8 stations manifold (No.19). It is in here where the air is directed to the desired bag (No.31) thanks to its dedicated solenoid valve (No.26). 
+When flushing the circuitry before each sampling period, the flushing valve (No.23) is opened so the outlet of the system is opened so new air runs through the main circuit. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/Pneumatic_System_Top_View_Level_1.png}
+    \caption{Pneumatic System top view of Level 1.}
+    \label{level_1_pneumatic_system_top_view}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/Pneumatic_System_Top_View_Level_2.png}
+    \caption{Pneumatic System top view of Level 2.}
+    \label{level_2_pneumatic_system_top_view}
+\end{figure}
+
+% Figure with the diagram
+
+\newpage
+\begin{landscape}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.5\textwidth]{4-experiment-design/img/Mechanical/AAC_Subsystem.png}
+    \caption{AAC Pneumatic System diagram and components.}
+    \label{pneumatic_system}
+\end{figure}
+\end{landscape}
+
+
+\pagebreak
 \subsubsection{Protection}
 
-In order to protect the components from all kind of external elements, the experiment box will be shielded with removable aluminum walls along with a thick layer of Styrofoam combined with Polyethylene foam attached to each wall. No internal space will be lost since the total foam thickness is the same as that of the structural bars. Isolating sheets will also be glued in the walls to reinforce the temperature shielding.
-
-The walls will properly protect both the CAC coiled tube and the AAC sampling bags from any external element, unexpected rapid movements, and a probable hard landing impact.
-%see in Figure \ref{walls}. 
+In order to protect the components from all kind of external elements, the experiment box will be shielded with removable aluminum walls along with a thick layer of Styrofoam attached to each wall. No internal space will be lost since the total foam thickness is the same as that of the structural bars in the majority of the walls. 
 
 
-%% Cut: Figure CAC+EB, AAC+valve center, and walls + Styrofoam. Label all the parts
+The walls will properly protect both the CAC coiled tube and the AAC sampling bags from any external element, unexpected rapid movements, and a probable hard landing impact. %see in Figure \ref{walls}. 
 
-%\begin{figure}[!ht]
-%    \centering
-%    \includegraphics[width=0.2\textwidth]{4-experiment-design/img/tall_frontal.jpg}
-%    \caption{Wall layers.}
-%    \label{walls}
-%\end{figure}
 
-The front walls, face of the experiment box exposed to the outside, will have several holes: to allow the tubes providing air flow to collect clean air from the outside, and to manipulate the electric connections.
-
-%The top lateral walls will have four holes to allow the introduction of the circular bars used as anchor points for the sampling bags, see Figure \ref{anchor_bags}.
-
-Bolts shall be used to attach all walls to the structure's railed bars.
+Bolts shall be used to attach all walls to the structure's railed bars.See next section for detail on fixing points.
 
 %% Figure front wall holes: isometric Include labels
 
@@ -144,32 +368,5 @@ Bolts shall be used to attach all walls to the structure's railed bars.
 %    \caption{External view of the experiment.}
 %    \label{front_wall_holes}
 %\end{figure}
-
-
-\subsubsection{Fixing Interface}
-
-The two experiment box subsystem structures will be joined together by four anchor points, in black in Figure \ref{overview}. On the front and back side, two flat plates with two bolts each will interface both structures. 
-
-This method will allow for easy and fast recovery of the CAC box. 
- 
-
-%% Figure with the two boxes attached
-
-
-\subsubsection{Manipulation Interface}
-
-The two-box system will be fixed to the gondola rails by using four 90-degree angles, 2 per rail. All the anchor points to the gondola will be in the AAC box since the CAC box will be already attached to it. The latter also ensures that the AAC box will remain properly fixed in the gondola after the CAC fast recovery. 
-
-\smallskip
-In order to access the experiment once fixed in the gondola, the walls could be removed when necessary providing access in all three directions. They can be screwed in again once the manipulation is done.
-
-
-Several handles will be placed to allow an easy and safe manipulation of both the CAC and the AAC boxes. 
-
-
-\subsubsection{Mechanical Components}
-
-All the components used in the mechanical design can be found in Table \ref{tab:mechanical-components}. Spare elements are not included. 
-
 
 \raggedbottom

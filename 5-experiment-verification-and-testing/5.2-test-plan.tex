@@ -10,7 +10,7 @@ The tests have been split into three different levels of priority, low, medium a
 The planned tests are as follows:
 
 \begin{enumerate}
-    \item \st{Valves test}.\footnote{Has been combined with tests 4, 5 and 24.\label{fn:test-combined}}
+    \item \st{Valves test}.\footnote{Has been combined with Tests 4, 5 and 24.\label{fn:test-combined}}
     \item Data collection test in Table \ref{tab:data-coll-test}.
     \item Weight verification in Table \ref{tab:weight-test}.
     \item Low pressure test in Table \ref{tab:vacuum-test}.
@@ -20,60 +20,62 @@ The planned tests are as follows:
     \item E-Link test in Table \ref{tab:e-link-test}.
     \item Vibration test in Table \ref{tab:vibration-test}.
     \item Software operation test in Table \ref{tab:software-op-test}.
-    \item \st{Power systems test.}\footnote{Has been combined with test 10.\label{fn:test-combined10}}
+    \item \st{Power systems test.}\footnote{Has been combined with Test 10.\label{fn:test-combined10}}
     \item Experiment removal test in Table \ref{tab:removal-test}.
     \item \st{Ground station - OBC connection test} \textsuperscript{\ref{fn:test-combined10}}
-    \item \st{Ground station - OBC parameters reprogram test}\textsuperscript{\ref{fn:test-removed}}
-    \item Ground station invalid commands test in Table \ref{tab:software-invalidcommand-test}.
-    \item Sampling test in Table \ref{tab:Sampling system-test}.
+    \item Ground station - OBC parameters reprogram test in Table \ref{tab:software-reprogram-test}
+    \item \st{Ground station invalid commands test}\textsuperscript{\ref{fn:test-removed}}
+    \item Sampling test in Table \ref{tab:sampling-system-test}.
     \item Samples' condensation test in Table \ref{tab:samples-condensation-test}.
     \item Pump low pressure test in Table \ref{tab:pump-low-pressure-test}.
     \item PCB operations test in Table \ref{tab:pcb-test}.
     \item Switching circuit testing and verification in Table \ref{tab:switching-test}.
-    \item \st{Arduino sensor operation test.}\footnote{Has been combined with test 24.\label{fn:test-combined24}}
+    \item \st{Arduino sensor operation test.}\footnote{Has been combined with Test 24.\label{fn:test-combined24}}
     \item \st{Arduino, pump and valves operation test}.\textsuperscript{\ref{fn:test-combined24}}
-    \item \st{Pump thermal test.}\footnote{Has been combined with test 5.\label{fn:test-combined5}}
+    \item \st{Pump thermal test.}\footnote{Has been combined with Test 5.\label{fn:test-combined5}}
     \item Software and electronics integration testing in Table \ref{tab:soft-elec-integ-test}.
     \item Mechanical structural testing in Table \ref{tab:structural-test}.
-    \item \st{Insulating foam low pressure test.}\footnote{Has been combined with test 4.\label{fn:test-combined4}}
-    \item Mechanical interfaces test in Table \ref{tab:mech-interface-test}.
+    \item \st{Insulating foam low pressure test.}\footnote{Has been combined with Test 4.\label{fn:test-combined4}}
+    \item Shock test in Table \ref{tab:shock-test}.
     \item Pump operation test in Table \ref{tab:pump-operation-test}.
-    \item Pump current in low pressure Test test in Table \ref{tab:pump-current-pressure-test}.
-    \item Bag bursting test in Table \ref{tab:bag-burst}.
+    \item Pump current in low pressure test in Table \ref{tab:pump-current-pressure-test}.
+    \item Sampling bag bursting test in Table \ref{tab:bag-burst}.
     \item On-board software unit test in Table \ref{tab:onboard-software-unit-test}.
     % \item  test in Table \ref{tab:}.
 \end{enumerate}
 
 \subsubsection{Test Descriptions}
 
-If a non-destructive test is not proceeding as expected \st{and} it is thought there is a risk to components it will be aborted. If a test is aborted for this reason an investigation must be completed to discover why it did not proceed as expected and the issue resolved before a re-test can occur.
+If a non-destructive test is not proceeding as expected \textit{and} it is thought there is a risk to components it will be aborted. If a test is aborted for this reason an investigation must be completed to discover why it did not proceed as expected and the issue resolved before a re-test can occur.
 
-\input{5-experiment-verification-and-testing/tables/test-tables/01-valves-test.tex}
+All test procedure and duration's are subject to change.
+
+%\input{5-experiment-verification-and-testing/tables/test-tables/01-valves-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/02-data-collection-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/03-weight-verification.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/04-low-pressure-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/05-thermal-test.tex}
-\input{5-experiment-verification-and-testing/tables/test-tables/06-assembly-test.tex}
+%\input{5-experiment-verification-and-testing/tables/test-tables/06-assembly-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/07-bench-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/08-e-link-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/09-vibration-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/10-software-operation-test.tex}
-\input{5-experiment-verification-and-testing/tables/test-tables/11-electronics-test.tex}
+%\input{5-experiment-verification-and-testing/tables/test-tables/11-electronics-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/12-removal.tex}
-\input{5-experiment-verification-and-testing/tables/test-tables/13-gs-obc-connection-test.tex}
+%\input{5-experiment-verification-and-testing/tables/test-tables/13-gs-obc-connection-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/14-gs-software-paramreprogram-test.tex}
-\input{5-experiment-verification-and-testing/tables/test-tables/15-gs-obc-invalidcommand-test.tex}
+%\input{5-experiment-verification-and-testing/tables/test-tables/15-gs-obc-invalidcommand-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/16-sampling-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/17-samples-condensation-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/18-pump-low-pressure-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/19-PCB-testing.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/20-switching-circuit.tex}
-\input{5-experiment-verification-and-testing/tables/test-tables/21-arduino-sensor-op-test.tex}
-\input{5-experiment-verification-and-testing/tables/test-tables/22-arduino-pump-valves-test.tex}
-\input{5-experiment-verification-and-testing/tables/test-tables/23-pump-thermal-test.tex}
+%\input{5-experiment-verification-and-testing/tables/test-tables/21-arduino-sensor-op-test.tex}
+%\input{5-experiment-verification-and-testing/tables/test-tables/22-arduino-pump-valves-test.tex}
+%\input{5-experiment-verification-and-testing/tables/test-tables/23-pump-thermal-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/24-soft-elec-integ-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/25-structual-test.tex}
-\input{5-experiment-verification-and-testing/tables/test-tables/26-insulation-low-pressure-test.tex}
+%\input{5-experiment-verification-and-testing/tables/test-tables/26-insulation-low-pressure-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/27-mechanical-interfaces-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/28-pump-operation-test.tex}
 \input{5-experiment-verification-and-testing/tables/test-tables/29-pump-current-pressure-test.tex}

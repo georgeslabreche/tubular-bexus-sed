@@ -1,14 +1,19 @@
 \pagebreak
-\subsection{Power Design}
+\subsection{Power System}
 
 \subsubsection{Power System Requirements}
 \begin{centering}
-The Gondola provides 28.8 V or 13 Ah battery with a recommended maximum current draw of 1.8A \cite{BexusManual}. The experiment must run on external power from 4 hours before launch during the countdown phase and for the entire flight duration, lasting approximately 4 hours. As a factor of safety the experiment should be able to run for an additional 2 hours. Therefore in total the experiment must be able to run for 10 hours on external power.
+The Gondola provides a 28.8 V, 374 Wh or 13 Ah battery with a recommended maximum current draw of 1.8 A . However, more typical values are 196 Wh or 7 Ah \cite{BexusManual}.The experiment must run on external power for four hours before launch during the countdown phase and for the entire flight duration, lasting approximately four hours. As a factor of safety, in case of unexpected delays, the experiment should be able to run for an additional two hours. Therefore the experiment must be able to run on external power for a total of 10 hours. For this reason, all the calculations have been done using a 10 hour total time.
 \end{centering}
+
 
 \input{4-experiment-design/tables/powertable.tex}
 
-\subsubsection{Power System Control and Regulation}
-The power on board will be split using three DC-DC converters and one linear regulator. The pump and valves both have a high peak current. Therefore it was decided to use two DC-DC converters to step down from 28.8V to 24V giving the pump its own dedicated DC-DC converter. This is as the pump and valves both have a high rush in current. The Arduino will also have its own DC-DC converter stepping the voltage down from 28.8V to 12V. The linear regulator will be placed after the 24V DC-DC converter to act as redundancy for the 12V DC-DC converter. If for some reason the 12V DC-DC converter should fail it will take over ensuring that power to the Arduino is not lost. To ensure takeover does not occur when the 12V DC-DC converter is operating a diode shall be placed along the connection. It is thought using three DC-DC converters will provide the best compromise between efficiency, cost and heating.
+
+The estimated total power consumption 172 Wh, Table \ref{tab:power-design-table}, is within the limits of the available power. Other calculations for the average, peak, and minimum power values are 21 W, 32 W, and 16 W respectively. In addition the different expected current consumption for the average, peak, and minimum values are 0.64 A, 1.1 A, and 0.22 A respectively.
+
+The 24 V DC-DC converters have 2.5 A output current and 60 W output power with the efficiency of 93\%. This fulfills the peak requirements for both power and current. Moreover, the dissipated power and current across the DC-DCs are calculated as 6 Wh and 37 mA respectively and have been added to the total power budget. 
+
+
 
 \raggedbottom
