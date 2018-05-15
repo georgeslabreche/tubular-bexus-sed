@@ -25,19 +25,19 @@ This theoretical model will give an estimation of the time needed to fill the ba
 % context study, critical scenarios identification, equations, matlab simulation, verification with empirical measures.
 
 For this purpose, a mathematical model was created using MATLAB. In order to make sure that this model is reliable, it is going to be tested for the atmospheric conditions in the Arctic, and then compared with the 1976 US Standard atmosphere model that is used for this region. What is more, the model will be compared with past BEXUS flight data. The goal of the model is to be as close as possible with these past data. 
-After the tests, and making sure that the mathematical model is accurate, it will be adjusted with the TUBULAR's experiment requirements. In this way, the team will get a general picture of the experiment's layout. Hence, the results of the experiment will be more or less expected, and in the case of complications, the mathematical model will be used as a reference of understanding what went wrong.
+After the tests, and making sure that the mathematical model is accurate, it will be adjusted with the TUBULAR's experiment requirements. In this way, the TUBULAR Team will get a general picture of the experiment's layout. Hence, the results of the experiment will be more or less expected, and in the case of complications, the mathematical model will be used as a reference of understanding what went wrong.
 
 
 \subsection{Scientific and Empirical Background}
 
-\subsubsection{Study of previous BEXUS flights}
+\subsubsection{Study of Previous BEXUS Flights}
 This section has been elaborated based on the flight data files located in the previous BEXUS flights folders in the REXUS/BEXUS teamsite. This data was recorded by the Esrange Balloon Service System (EBASS).
 
 \smallskip
 This unit is responsible of the piloting of the balloon is done by Esrange. It provides the communication link between the gondola and the ground station. The EBASS airborne unit, receives the data from the on board sensors, and then it sends them to the EBASS ground unit. It is also responsible for the payload control, providing functions like the altitude control, by valve and ballast release or the flight termination. What is more, EBASS keeps track of the filght trajectory with an on-board GPS system.
 
 \smallskip
-Tables \ref{table:pre-flight} and \ref{table:post-flight} below gather some general information before and after the BEXUS flights. The pre-flight and the post-flight data are more or less in agreement in estimating for example, the ascent/descent time, the cut-off altitude and the float time. Knowing those information and that the estimations are close enough to the real data, will help the team to define the experiment's parameters with higher accuracy. 
+Tables \ref{table:pre-flight} and \ref{table:post-flight} below gather some general information before and after the BEXUS flights. The pre-flight and the post-flight data are more or less in agreement in estimating for example, the ascent/descent time, the cut-off altitude and the float time. Knowing those information and that the estimations are close enough to the real data, will help the TUBULAR Team to define the experiment's parameters with higher accuracy. 
 
 \smallskip
 It is worth mentioning that the ascent speed in Table \ref{table:post-flight} is lower than the predicted $5\sim 6 m/s$ which is mentioned in the BEXUS manual. That is because it is the average velocity value of all the data points.  
@@ -105,10 +105,10 @@ The velocity of the gondola at each phase can give us information about its dyna
     \caption{Altitude Profile [up] and Vertical Velocity Profile [down] Over the Flight Time During BEXUS 22 Flight}\label{fig:altitudevelocity}
 \end{figure}
 
-Figure \ref{fig:velocity} below, illustrates the velocity changes throughout the different phases.It works like a combination of both graphics form previous Figure \ref{fig:altitudevelocity}, however it provides a better representation of the velocity values at each phase. Specially during the Descent Phase, which is the most determinant for the air sampling process.
+Figure \ref{fig:velocity} below, illustrates the velocity changes throughout the different phases.It works like a combination of both graphics form previous Figure \ref{fig:altitudevelocity}, however it provides a better representation of the velocity values at each phase. Especially during the Descent Phase, which is the most determinant for the air sampling process.
 
 \smallskip
-For each altitude, there are two velocity values, one for the Ascent and one for the Descent Phase. Constant and positive velocities indicate the Ascent Phase. During Ascent Phase the velocity is 6 m/s and almost constant, in agreement with the ascent speed value in the BEXUS manual. A zero velocity value indicates the Float Phase. Then the velocity becomes negative which indicates the Descent Phase. Once again, the velocity value close to the ground is 8 m/s as mentioned in the BEXUS manual.
+For each altitude, there are two velocity values, one for the Ascent and one for the Descent Phase. Constant and positive velocities indicate the Ascent Phase. During Ascent Phase the velocity is 6 m/s and almost constant, in agreement with the ascent speed value in the BEXUS manual. A zero velocity value indicates the Float Phase. Then the velocity becomes negative which indicates the Descent Phase. Once again, the velocity value close to the ground is 8 m/s as mentioned in the BEXUS manual\cite{BexusManual}.
 
 \begin{figure}[H]
     \begin{align*}
@@ -131,7 +131,7 @@ In order to see how the atmospheric conditions change during a BEXUS flight, the
     \noindent\makebox[\textwidth]{%
         \includegraphics[width=1.3\textwidth]{appendix/img/atmospheric_variables.png}}
     \end{align*}
-    \caption{Variations In Temperature, Pressure and Air Density During the Ascent and Descent Phase  for BEXUS flight 22}\label{fig:atmosphericconditions}
+    \caption{Variations in Temperature, Pressure and Air Density During the Ascent and Descent Phase  for BEXUS Flight 22}\label{fig:atmosphericconditions}
 \end{figure}
 
 
@@ -214,11 +214,11 @@ Based on the vertical distribution profiles obtained from past researches, seems
 
 %Air viscosity at ambient temperature (25ºC) and atmospheric pressure (1 atm = 101325 Pa) is about $10^-5$. This value decreases with the temperature and also with the pressure, which means that it is negligible in Artic conditions provided by Esrange location and specially in high altitudes. 
 
-\subsubsection{Pump efficiency}
+\subsubsection{Pump Efficiency}
 
-For the air sampling process, the micro diaphragm gas pum \emph{850 1.2 KNDC B} from KNFUSA company will be used.
+For the air sampling process, the micro diaphragm gas pum \emph{850 1.2 KNDC B} from KNF company will be used.
 
-By now, the team has already tested this pump in vacuum conditions in IRF facilities in Kiruna. Since the set of sensors required to obtain extra data such as the air flow rate, the pressure inside the bags and so on is not ready, the corresponding data is missing in Table \ref{tab:pump-flowrate-efficiency}. However, it has been proved that the pump is operative down to $20 mbar$.
+By now, the TUBULAR Team has already tested this pump in vacuum conditions in IRF facilities in Kiruna. Since the set of sensors required to obtain extra data such as the air flow rate, the pressure inside the bags and so on is not ready, the corresponding data is missing in Table \ref{tab:pump-flowrate-efficiency}. However, it has been proved that the pump is operative down to $20 mbar$.
 
 \begin{table}[H]
 
@@ -248,9 +248,9 @@ By now, the team has already tested this pump in vacuum conditions in IRF facili
 \label{tab:pump-flowrate-efficiency}
 \end{table}
 
-\subsection{Sampling strategy tests}
+\subsection{Sampling Strategy Tests}
 
-\subsubsection{Past research sampling strategy test}
+\subsubsection{Past Research Sampling Strategy Test}
 Some of the most important parameters to be determined in this experiment are vertical resolution, sample size, sampling time and sampling flow rate amongst others. The difficulty in determining them lies on the fact that they are all interrelated. For example, the vertical resolution depends on the vertical speed and the effective sampling time. The amount of air samples that can be collected in each sampling bag is a function of the sampling time and the sampling flow rate. This is the reason why testing the pump's performance will be helpful to make a decision.
 
 \smallskip
@@ -267,7 +267,7 @@ The procedure for the test will be as follows: reach the desired pressure in the
     \caption{Sampling Time (s) - Sampled Volume (L at STP)  \cite{LISA}}\label{fig:sampling-time-volume}
 \end{figure}
 
-As it can be seen in Figure \ref{fig:sampling-time-volume}, there is a lineal increase of the volume that corresponds to the first twenty seconds when the bag is expanding to its full size. Until then the pressure readings are constant but after that point is reached, the pressure inside the sampling bag starts to increase due to air compression. All the data points are calculated using the data logged from the sensors and the ideal gas law.
+As it can be seen in Figure \ref{fig:sampling-time-volume}, there is a linear increase of the volume that corresponds to the first twenty seconds when the bag is expanding to its full size. Until then the pressure readings are constant but after that point is reached, the pressure inside the sampling bag starts to increase due to air compression. All the data points are calculated using the data logged from the sensors and the ideal gas law.
 
 \smallskip
 The next step is to use a non-linear least squares method to obtain an empirical model of the parameter named a(t) which is relating the volume at STP with the chamber pressure by the equation $V_{STP}=a(t)\cdot p_a$. The model is only valid for $t>19.7$ seconds which means that the sampling bag has reached total expansion. The fitted values for a(t) are represented in Figure \ref{fig:least-squares-a-fitting}. Once a(t) is obtained, Figure \ref{fig:vessel-p-volume} can be represented just to see the relationship between the vessel pressure and the sampled volume. Three arbitrary sampling times are chosen for this representation and an horizontal line represents the maximum pressure that the sampling bag can withstand. This implies another procedure during the test: fill the bag until the sealing breaks and calculate the differential pressure that was achieved between the inside and the outside.  
@@ -301,14 +301,14 @@ The objective of the above explained test and the calculations that follow will 
     \caption{Sampled Volume (L at STP) - Atmospheric Pressure (hPa) \cite{LISA}}\label{fig:sampled-volume-atm-p}
 \end{figure}
 
-\subsubsection{Test results}
-The above described test is Test 18 in Table \ref{tab:pump-low-pressure-test} the results of which can be found in section  \ref{subsection:pumplowpressuretest} 
+\subsubsection{Test Results}
+The above described test is Test 18 in Table \ref{tab:pump-low-pressure-test} the results of which can be found in Section  \ref{subsection:pumplowpressuretest} 
 
 % \subsection{Heat transfer}
 
-\subsection{Discussion of the results}
+\subsection{Discussion of the Results}
 
-\subsubsection{Computational methods vs. Flight measurements}
+\subsubsection{Computational Methods vs. Flight Measurements}
 % Kalman filter (empiric data vs. mathematical model) Error estimation
 
 \bigskip
@@ -418,7 +418,7 @@ Figure \ref{fig:masseffects}, shows how the descent time changes with different 
 
 \subsubsection{Discrete Sampling Volumes}
 
-Figure \ref{fig:samplingvolume} supports the team's decision to use a pump if sampling at high altitudes is meant, even though there is a single point failure risk. At $20 km$ of altitude, the minimum amount of air that would be needed to be sampled, in order to ensure that there is enough left for analysis at ground, would be almost $3 L$. Considering the low pressure at this high altitude, and the time it would be needed to fill the bag, it would be impossible to fulfill the experiment's objectives without using a pump. Moreover, without a pump, sampling at altitudes higher than $22 km$, and also during Ascent Phase, would be impossible.
+Figure \ref{fig:samplingvolume} supports the TUBULAR Team's decision to use a pump if sampling at high altitudes is meant, even though there is a single point failure risk. At $20 km$ of altitude, the minimum amount of air that would be needed to be sampled, in order to ensure that there is enough left for analysis at ground, would be almost $3 L$. Considering the low pressure at this high altitude, and the time it would be needed to fill the bag, it would be impossible to fulfill the experiment's objectives without using a pump. Moreover, without a pump, sampling at altitudes higher than $22 km$, and also during Ascent Phase, would be impossible.
 
 \begin{figure}[H]
     \begin{align*}
@@ -474,7 +474,7 @@ Since the experiment uses a single pump, it is not possible to sample more than 
 
 After testing the pump at low pressure environment, an overall idea about the performance of the pump at high altitudes is now known and an approximation of the sampling strategy is possible.   
 The total weight of the gondola is not known yet, but the balloon is expected to reach 25-27 km altitude, following the trajectory of the BEXUS 24 flight as shown in figure \ref{fig:bexustrajectories}. 
-This serves the objectives of the TUBULAR experiment since, as indicated in section \ref{tracegases} the altitudes with higher differences in trace gases concentrations, are between 10 and 25 km. These are the altitudes where the sampling will be done. Sampling six bags in total, is enough to fulfil the objectives of the experiment and it is also feasible. Two bags will be sampled during Ascent Phase and four during Descent Phase. The ascent speed of the gondola, as shown in figure \ref{fig:altitudevelocity}, is estimated to be 6 m/s. A velocity of this rate, makes sampling of two bags possible while achieving a good resolution. It is important to mention here that the two bags that will be sampled during Ascent Phase, shall not be fully filled, since their volume will increase with decreasing pressure and may burst. For that reason, only about 80\% of their volume will be filled. On the other hand, during Descent Phase the four remaining bags shall be filled with the full 3 L. Since their volume will decrease with increasing pressure it has to be made sure that there will be enough sample left for analysis. 
+This serves the objectives of the TUBULAR experiment since, as indicated in Section \ref{tracegases} the altitudes with higher differences in trace gases concentrations, are between 10 and 25 km. These are the altitudes where the sampling will be done. Sampling six bags in total, is enough to fulfil the objectives of the experiment and it is also feasible. Two bags will be sampled during Ascent Phase and four during Descent Phase. The ascent speed of the gondola, as shown in Figure \ref{fig:altitudevelocity}, is estimated to be 6 m/s. A velocity of this rate, makes sampling of two bags possible while achieving a good resolution. It is important to mention here that the two bags that will be sampled during Ascent Phase, shall not be fully filled, since their volume will increase with decreasing pressure and may burst. For that reason, only about 80\% of their volume will be filled. On the other hand, during Descent Phase the four remaining bags shall be filled with the full 3 L. Since their volume will decrease with increasing pressure it has to be made sure that there will be enough sample left for analysis. 
 
 The sampling of the first bag will start at 18 km of altitude. The sampling time is estimated to be 44s with an achieved resolution of 262m. The second bag will be sampled at 21 km of altitude, and it will take 47 s to fill the desired volume of air, with a resolution of 279 m. Before sampling, flushing of the AAC system for 1min is taking into account. During that, the gondola will cover a distance of 360 m. 
 
@@ -489,19 +489,19 @@ The flow rates of the pump, at each sampling altitude were taken from Figure \re
 %---------------------------------------------
 \subsubsection{Discusion of the Results}
 Overall, the mathematical model is in good agreement with the data from the past BEXUS flights as well as, with the atmospheric model used for the Arctic region.
-Making this document, helped the team to cross-check some theoretical values, important for the layout and the planning of the experiment. Tables \ref{table:pre-flight} and \ref{table:post-flight} show that the estimated data before each flight are pretty close with the real data obtained by the flights which will help the team to define the experiment's parameters with higher accuracy. 
-In order to make a sampling plan, it is important to know the duration time of each phase. Figure \ref{fig:trajectories}, shows the trajectories of the different BEXUS flights, giving the team a general idea of what the trajectory of the flight can look like and how the duration of each phase changes regarding the maximum altitude that the gondola reaches.
+Making this document, helped the TUBULAR Team to cross-check some theoretical values, important for the layout and the planning of the experiment. Tables \ref{table:pre-flight} and \ref{table:post-flight} show that the estimated data before each flight are pretty close with the real data obtained by the flights which will help the TUBULAR Team to define the experiment's parameters with higher accuracy. 
+In order to make a sampling plan, it is important to know the duration time of each phase. Figure \ref{fig:trajectories}, shows the trajectories of the different BEXUS flights, giving the TUBULAR Team a general idea of what the trajectory of the flight can look like and how the duration of each phase changes regarding the maximum altitude that the gondola reaches.
 
-The velocity profile, figure \ref{fig:velocity}, is of high importance since the velocity during ascent and Descent Phase, will determine the resolution of the samples. In general, the velocity values are in agreement with the BEXUS manual, with an ascent speed of 6 m/s and a descent speed, fluctuating after cutoff, before stabilizing at 8 m/s at the last kilometers of the flight. Another important thing that has to be mentioned here, is the team's decision to sample during Ascent Phase too and not only during Descent Phase. As seen in figure \ref{fig:velocity} the gondola is turbulent after the cutoff with velocities up to 83 m/s, and needs more or less 6 km before stabilizing its velocity as figure \ref{fig:altitudevelocity} indicates. Hence, the altitudes that the gondola will be turbulent, will be covered by sampling during Ascent Phase. This will not affect the comparison with the CAC that will be sampled during Descent Phase only, since the horizontal displacement of the gondola is much smaller than the vertical. 
+The velocity profile, Figure \ref{fig:velocity}, is of high importance since the velocity during ascent and Descent Phase, will determine the resolution of the samples. In general, the velocity values are in agreement with the BEXUS manual, with an ascent speed of 6 m/s and a descent speed, fluctuating after cutoff, before stabilizing at 8 m/s at the last kilometers of the flight. Another important thing that has to be mentioned here, is the TUBULAR Team's decision to sample during Ascent Phase too and not only during Descent Phase. As seen in figure \ref{fig:velocity} the gondola is turbulent after the cutoff with velocities up to 83 m/s, and needs more or less 6 km before stabilizing its velocity as figure \ref{fig:altitudevelocity} indicates. Hence, the altitudes that the gondola will be turbulent, will be covered by sampling during Ascent Phase. This will not affect the comparison with the CAC that will be sampled during Descent Phase only, since the horizontal displacement of the gondola is much smaller than the vertical. 
 
-Atmospheric conditions play a crucial role for the TUBULAR experiment. The team should know, the different pressures at each altitude, since the pressure is the parameter that will trigger the sampling of the bags. What is more, the pressure will determine the performance of the pump and it is crucial to know under what pressures the pump needs to be tested depending on the sample altitude. The temperature is of high importance too and the trickier to predict especially at high altitudes. The team should be able to keep the temperature of the pump within its working temperature range in order to assure that the pump will start working. To do so, the air temperature must be known at each altitude which will help the team to come up with a good thermal plan. 
+Atmospheric conditions play a crucial role for the TUBULAR experiment. The TUBULAR Team should know, the different pressures at each altitude, since the pressure is the parameter that will trigger the sampling of the bags. What is more, the pressure will determine the performance of the pump and it is crucial to know under what pressures the pump needs to be tested depending on the sample altitude. The temperature is of high importance too and the trickier to predict especially at high altitudes. The TUBULAR Team should be able to keep the temperature of the pump within its working temperature range in order to assure that the pump will start working. To do so, the air temperature must be known at each altitude which will help the TUBULAR Team to come up with a good thermal plan. 
 
-The sampling altitude range will not be chosen randomly. The idea is to find the altitude range, where the trace gases show the bigger differences in concentration. In section \ref{tracegases}, were presented some theoretical trace gases concentration values as well as, some results from past research papers. According to them, the more interesting area to sample is between 10 and 25 km of altitude. The team, plans to sample between 17 and 22 km during Ascent Phase and 17 to 10 km during Descent Phase. 
+The sampling altitude range will not be chosen randomly. The idea is to find the altitude range, where the trace gases show the bigger differences in concentration. In Section \ref{tracegases}, were presented some theoretical trace gases concentration values as well as, some results from past research papers. According to them, the more interesting area to sample is between 10 and 25 km of altitude. The TUBULAR Team, plans to sample between 17 and 22 km during Ascent Phase and 17 to 10 km during Descent Phase. 
 
 Additionally, the sampling software revealed some limitations of the sampling system and also which parameters should be taken into account for the experiment's layout and which not. 
 The weight of the gondola, will affect the maximum altitude that the balloon will reach, and the time needed for the gondola to land, but it doesn't contribute to the decision of how many bags will be used.
 
-The decision of the team to use a pump was questioned at the beginning, as a single point failure risk. However, this decision is justified by the need of sampling during Ascent Phase, ohterwise the sampling would not be possile.  Figure \ref{fig:samplingvolume}, supports the use of a pump because without a pump, sampling at 22 km of altitude, would be impossible considering the low pressure and the time it would take to fill a bag. 
+The decision of the TUBULAR Team to use a pump was questioned at the beginning, as a single point failure risk. However, this decision is justified by the need of sampling during Ascent Phase, ohterwise the sampling would not be possile.  Figure \ref{fig:samplingvolume}, supports the use of a pump because without a pump, sampling at 22 km of altitude, would be impossible considering the low pressure and the time it would take to fill a bag. 
 
 Note that even with the pump, some limitations still exist. The sampling of the bags cannot be continuous since the system has to be flushed before sampling a bag. Furthermore, the flow rate of the pump will be lower at high altitudes than it is on the ground, due to pressure differences. Figure \ref{fig:limits} points out that even with an ideal flow rate of 1 L/min and sampling continuously, it is not possible to sample more than five bags, because it takes a lot of time to sample a bag at high altitude atmospheric conditions. Additionally, it makes clear why the maximum altitude that the gondola will reach, does not affect the experiment's outcome. As the gondola ascents, the pressure gets lower and takes more time to sample a bag. So, sampling more bags would not be possible even if the balloon reaches a higher altitude. The same applies for the Descent Phase and the cutoff altitude. 
 

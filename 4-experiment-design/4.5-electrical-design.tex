@@ -4,7 +4,7 @@
 \subsubsection{Block Diagram}
 \label{sec:4.5.1}
 
-The electronics design can be seen in Figure \ref{fig:electronics-block-diagram} which shows the connections, voltages, and signals. 
+The electronics design can be seen in Figure \ref{fig:electronics-block-diagram} which shows the connections, grounding, voltages, and signals. 
 
 \begin{figure}[H]
     \begin{align*}
@@ -28,8 +28,8 @@ From the PCB, on level 3, five D-sub connectors will be used to connect to the o
 
 All of the power distribution will take place on the PCB using two 24 V DC-DC converters in parallel with a forwarding diode which feed a 12 V voltage regulator. 
 \begin{itemize}
-  \item $28.8 V \Longrightarrow 24 V $  
-  \item $24 V \Longrightarrow 12 V$ 
+  \item $28.8 \, V \Longrightarrow 24 \, V $ By DC-DC converters
+  \item $24 \, V \Longrightarrow 12 \, V$ By voltage regulator
   \end{itemize}
 The heaters will not require the voltage to be stepped down and so will be powered directly from the gondola battery.
 
@@ -40,7 +40,7 @@ The LEDs are used as visual indicators that display whether different parts of t
 Grounding will be following a distributed single point grounding, with all ground connections meeting at a single star point to ensure there are no floating grounds. As not all components are connected via DC-DC converters the experiment will not be isolated from the gondola power supply therefore there will be a connection between the star point and the gondola ground. The star point will be located on the main PCB board which will then be grounded to the experiment box. The grounding can be seen in Figure \ref{fig:electronics-block-diagram} where it is indicated by dashed lines labeled GND. 
 
 \subsubsection{Miniature Diaphragm Air Pump}
-The pump which has been selected is the 850.1.2. KNDC B, Figure \ref{fig:pumppic}, which is manufactured by KNF. One of the reasons this pump has been selected is that it has successfully been flown on a similar flight in the past where it managed to pump enough air at 25 km altitude to have 180 mL remaining at sea level \cite{LISA}. However, to ensure the pump will operate as intended, several tests will still be carried out. These tests --- 4, 5, 18, 28 and 29, can be seen in Tables \ref{tab:vacuum-test}, \ref{tab:thermal-test}, \ref{tab:pump-low-pressure-test}, \ref{tab:pump-operation-test}, and \ref{tab:pump-current-pressure-test}. The pump has already passed three of these tests and their results can be seen in \ref{sec:test28result} for Test 28, \ref{subsection:pumplowpressuretest} for Test 18 and \ref{sec:test29result} for Test 29.
+The pump which has been selected is the 850.1.2. KNDC B, Figure \ref{fig:pumppic}, which is manufactured by KNF. One of the reasons this pump has been selected is that it has successfully been flown on a similar flight in the past where it managed to pump enough air at 25 km altitude to have 180 mL remaining at sea level \cite{LISA}. However, to ensure the pump will operate as intended, several tests will still be carried out. These tests --- 4, 5, 18, 28 and 29, can be seen in Tables \ref{tab:vacuum-test}, \ref{tab:thermal-test}, \ref{tab:pump-low-pressure-test}, \ref{tab:pump-operation-test}, and \ref{tab:pump-current-pressure-test}. The pump has already passed three of these tests and their results can be seen in Section \ref{sec:test28result} for Test 28, Section \ref{subsection:pumplowpressuretest} for Test 18 and Section \ref{sec:test29result} for Test 29.
 
 At sea level conditions the pump was tested and found to have a flow rate of 8.0 L/min and a current draw of 250 mA. The peak current draw was recorded as 600 mA which lasts for less than one second and occurs when the pump is switched on. 
 
@@ -91,13 +91,13 @@ The schematics show all the components and how they are connected, the full sche
 
 \begin{itemize}
 
-    \item $28.8 V$ for the heaters.  
+    \item $28.8 \, V$ for the heaters.  
     
-    \item $28.8 V \Longrightarrow 24 V$ for the pump and valves.
+    \item $28.8 \, V \Longrightarrow 24 \, V$ for the pump and valves.
     
-    \item $24 V \Longrightarrow 12 V$ for the airflow sensor and Arduino due.
+    \item $24 \, V \Longrightarrow 12 \, V$ for the airflow sensor and Arduino due.
     
-    \item $3.3 V$ for the temperature, pressure and humidity sensors. 
+    \item $3.3 \, V$ for the temperature, pressure and humidity sensors. 
     
 \end{itemize}
 
