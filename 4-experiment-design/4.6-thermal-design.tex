@@ -3,7 +3,7 @@
 
 \subsubsection{Thermal Environment}
 \begin{centering}
-The experiment will experience wide temperature fluctuations during the flight and it must be able to continue to operate despite these changes. As seen in Figure \ref{fig:temperature-profile} the coldest point of the flight will be between 10 km and 15 km where the air temperature can drop to $-80\degree$ C outside. Past flights have recorded temperatures on the gondola as low as $-40\degree$ C during the Float Phase\cite{BexusManual}. Sampling with the AAC will begin when the balloon has risen to 18 km during the Ascent Phase and will last until the Float Phase. Sampling will resume when the gondola has fallen to 19 km during the Descent Phase. This means the experiment will be above the coldest part of the atmosphere and the critical components will have time to achieve their operating temperature before sampling time commences. In addition, launching from Kiruna in late October means the temperature on the ground could be as low as $-10\degree$ C. 
+The experiment will experience wide temperature fluctuations during the flight and it must be able to continue to operate despite these changes. As seen in Figure \ref{fig:temperature-profile} the coldest point of the flight will be between 10 km and 15 km where the air temperature can drop to $-70\degree$ C outside. Past flights have recorded temperatures on the gondola as low as $-55\degree$ C during the Ascent and Descent Phases\cite{BexusManual}. Sampling with the AAC will begin when the balloon has risen to 18 km during the Ascent Phase and will last until the Float Phase. Sampling will resume when the gondola has fallen to 17.5 km during the Descent Phase. This means the experiment will be above the coldest part of the atmosphere and the critical components will have time to achieve their operating temperature before sampling time commences. In addition, launching from Kiruna in late October means the temperature on the ground could be as low as $-10\degree$ C. 
 As the component with the highest lower limit operating temperature must be at a minimum of $5\degree$ C (E3 in Table \ref{tab:thermal-table}), heating may need to be switched on while the experiment is still on the ground.
 \end{centering}
 
@@ -11,7 +11,7 @@ As the component with the highest lower limit operating temperature must be at a
     \begin{align*}
         \includegraphics[height=8cm]{4-experiment-design/img/temperature-profile.png}
     \end{align*}
-    \caption{Diagram Showing the Temperature Profile of the Atmosphere \cite{jacob}}\label{fig:temperature-profile}
+    \caption{Diagram Showing the Temperature Profile of the Atmosphere \cite{jacob}.}\label{fig:temperature-profile}
 \end{figure}
 
 \subsubsection{The Critical Stages}
@@ -32,16 +32,16 @@ These stages have been accounted for in further calculations and simulations.
 To protect the components against the cold, thermal protection will need to be designed. Insulation and internal heating will both come into play in keeping all the components functional throughout the duration of the flight. The two components with the most critical thermal ranges are the pump and the valve manifold system (E3 and E5 in Table \ref{tab:thermal-table}). Thermal regulation is mainly focused on the AAC however, a thermal analysis of the CAC can be found in Appendix \ref{sec:appI} under Section \ref{sssec:CAC-trial-flight} where the  CAC box the valve is identified as the critical component in terms of thermal regulation (refer to component E5 in Table \ref{tab:thermal-table}). It will have a current through it throughout the flight heating it self up.
 
 % New for the SED v2
-The main protection against the cold environment in the stratosphere is a passive thermal design by means of  insulating layers added to the walls of the experiment. It will be comprised of two layers: one outer sheet of aluminum and a thicker sheet of Styrofoam. The main insulating factor is the 20 mm thick Styrofoam which will significantly reduce the heat exchange between the otherwise exposed experiment box, and will also provide shock absorption when the gondola lands after separating from the balloon.
+The main protection against the cold environment in the stratosphere is a passive thermal design by means of  insulating layers added to the walls of the experiment. It will be comprised of two layers: one outer sheet of aluminum and a thicker sheet of Styrofoam. The main insulating factor is Styrofoam which will significantly reduce the heat exchange between the otherwise exposed experiment box, and will also provide shock absorption when the gondola lands after separating from the balloon.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{4-experiment-design/img/Thermal/higlighted-heater-pump.JPG}
-    \caption{Highlight of the Heater On the Pump}
+    \caption{Highlight of the Heater On the Pump.}
     \label{fig:highlight-heater-on-pump}
 \end{figure}
 
-An active thermal control system will also be included consisting of three heaters. Two heaters will regulate the pump's temperature as seen in Figure \ref{fig:highlight-heater-on-pump} and a single heater will regulate the valve manifold temperature. To control these heaters, two temperature sensors will also be on board in close proximity to the heaters. If the reading from one of the temperature sensors is lower than the predefined threshold, then the heater will turn on to warm up the cooling component. If it is above the higher threshold the heater will turn off.
+An active thermal control system will also be included consisting of four heaters. Two heaters will regulate the pump's temperature as seen in Figure \ref{fig:highlight-heater-on-pump} and a single heater will regulate the flushing valve temperature and one heater for the manifold. To control these heaters, two temperature sensors will also be on board in close proximity to the heaters. If the reading from one of the temperature sensors is lower than the predefined threshold, then the heater will turn on to warm up the cooling component. If it is above the higher threshold the heater will turn off.
 
 Simulation in MATLAB (code can be found in Appendix \ref{sec:appJ}) where used to determine the uniform heat inside the experiment. The ANSYS thermal modelling platform was used to the simulate the thermal conditions inside the Brain.
 
@@ -59,6 +59,7 @@ The pump has the most critical temperature range as it is a single point of fail
 As the most temperature-sensitive equipment will all be housed within the Brain, it is important to know what heat will be lost through the different heat transfer mechanisms as this will affect the amount of time the heaters will need to be active. This has been addressed through calculations and simulations to find required insulation. All calculations concerning heat transfer can be found in Appendix \ref{sec:appI}. As a worst-case scenario for heat distribution, it is assumed that \textit{all} of the power dissipated through resistance in the electrical components will reach the marked boundaries of the experiment's walls.
 
 Aluminum sheeting will be used as the outer layer of insulation for the experiment and Styrofoam brand foam will be used as the inner layer. Aluminum may have among the highest of thermal conductivities, but its arrangement around the Styrofoam, creating one large heat bridge with the inner layer, would provide a useful thermoregulatory mechanism \cite{EngTool}. The high ratio between the absorptivity (0.3) and emissivity (0.09) of the material may be used to its advantage \cite{EngTool}. Because the ratio for polished aluminum is higher than 1.0, the element will get hotter as it gets exposed to the radiation from the sun and the power-dissipating components \cite{RedRok}. The low emissivity coefficient for the aluminum cover means it will not get significantly hotter than the surrounding ambient temperature, but its increased temperature may negate some of the heat being lost from the experiment's interior via some of the heat from the aluminum propagating into the experiment, reducing the net heat loss by a small amount. As conservation of power is imperative, the heaters should be used sparingly, and instead methods like the use of aluminum for shielding should be employed as passive heating. The aluminum layer will be 0.5 mm in thickness, while the Styrofoam layer beneath it would span 20 mm in thickness. The Styrofoam, in contrast to the aluminum has a low thermal conductivity even when compared to similar polymer structures \cite{EngTool}. The Styrofoam would handle the bulk of the thermal resistance in keeping the experiment from losing the heat it would have obtained prior to being moved to the launchpad. The aluminum would come into play as the experiment rises into colder altitudes and encounters increased sun exposure. While the warmed aluminum will have little impact on the experiment's heat loss, this also means that the experiment's internal temperatures will be prevented from rising to the upper allowed operating limit of the experiment made possible because of the aluminum's low absorptivity of sunlight.
+Another heat bridge that is needed is the fastening of the experiment the gondola. The aluminum frame of the gondola will be colder then the experiment and with normal screws there will be a lot of heat transfer. In this case rubber bumper screw, suggested at CDR will be used to fasten and will reduce the heat transfer between the experiment and the gondola.
 
 
 \subsubsection{Calculations and Simulation Reports}
@@ -67,33 +68,54 @@ Aluminum sheeting will be used as the outer layer of insulation for the experime
 The temperature ranges can vary for the different stages but the most critical moment is during the Ascent Phase. While ascending, the main source of heat to maintain the pump and manifold's operating temperature is the heaters. During the Float and Descent Phases, heat originating from the sun will be enough to maintain these component's operational temperatures. According to the thermal analysis, the heaters would not be required during descent but there is power reserved in the worst case scenario that they need to be run during the Descent Phase.
 All simulation equations and their details can be seen in Appendix \ref{sec:appI}. 
 
-An estimate of the temperature in the Brain at the sampling times during the Ascent Phase is visualized in Figure \ref{fig:Air-in-brain-4-6}. The higher temperature is in the lower left corner where the pump is located. A cooler area exists around the middle of the right edge where the pipe from the manifold leads to the outside of the experiment. The legend in the Figure shows the temperature in Celsius.
+An estimate of the temperature in the Brain at the sampling times during the Ascent Phase is visualized in Figure \ref{fig:Air-in-brain-4-6}. The higher temperature is in the lower right corner where the pump is located. A cooler area exists around the middle of the left edge where no heaters are applied. The legend in the Figure shows the temperature in Celsius.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{4-experiment-design/img/Thermal/air-sampling-with-box}
-    \caption{Cross Section of the Air in the Brain at the Time to Start Sample During Ascent}
+    \caption{Cross Section of the Air in the Brain at the Time to Start Sample During Ascent.}
     \label{fig:Air-in-brain-4-6}
 \end{figure}
 
-A MATLAB simulated test flight is presented in Figure \ref{fig:test-flight-AAC-4-6}. The blue line is the temperature of the uniform inside air temperature in the AAC experiment box. The BEXUS 25 flight data is the ambient temperature of the outside air.
+In Figure \ref{fig:test-flight-AAC-4-6} the average temperature off the pump with data from ANSYS is presented. One is simulated with no air in the Brain and the other have air with the same density as sea level. In between the vertical dotted line is when the experiment is above 15km. At 4h in the figure the experiment is launched. It can be seen that the pump will have an average temperature over 5 degrees during the flight.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{4-experiment-design/img/Thermal/AAC-test-flight.jpg}
-    \caption{Simulated Test Flight AAC}
+    \includegraphics[width=\textwidth]{4-experiment-design/img/Thermal/pump-temperature-air-no-air.jpg}
+    \caption{Temperature of the Pump Over a Simulated Flight.}
     \label{fig:test-flight-AAC-4-6}
 \end{figure}
 
 The following two figures in Figure \ref{fig:Pump-Valve-ascent-sample-4-6} are a visualization of the pump and the manifold at the time in which the AAC sampling begins during ascent. 
 \begin{figure}[H]
     \centering
-    \subfloat{\includegraphics[width=0.45\linewidth]{4-experiment-design/img/Thermal/Pump-sampling-with-box}}
+    \subfloat{\includegraphics[width=0.46\linewidth]{4-experiment-design/img/Thermal/Pump-sampling-with-box}}
     \hifll
     \subfloat{\includegraphics[width=0.45\linewidth]{4-experiment-design/img/Thermal/valve-sampling-with-box}}
-    \caption{Pump and Manifold at the Time to Sample During Descent}
+    \caption{Pump and Manifold at Sampling Time During Descent With No Air in the Brain.}
     \label{fig:Pump-Valve-ascent-sample-4-6}
 \end{figure}
 
-During a worst case simulation that is shown in Figure \ref{fig:Pump-Valve-ascent-sample-4-6} the three heaters were used for 57.5 Wh in total together over the course of the simulation. Only the pump heaters might require more time if it is colder outside and there is dedicated 80 Wh in the power budget table, Table \ref{tab:power-design-table}. So there is a margin to keep the pump heaters on for a longer time if needed.
+\begin{figure}[H]
+    \begin{align*}
+        \includegraphics[width=0.5\linewidth]{appendix/img/Thermal/flushing-valve-no-air-ascent.JPG}
+    \end{align*}
+    \caption{Flushing Valve Prior to Sampling Commencing With No Air in the Brain.}
+    \label{fig:flushing-valve-4-6}
+\end{figure}
 
-Based on the calculations and thermal simulations, it can be concluded the thermal designed passive and active thermal control mechanisms detailed in this section will ensure that the AAC's pump and manifold will operate nominally during the entire flight flight. It has been concluded that the CAC has a sufficiently adequate thermal design to operate throughout the whole flight.
+During a worst case simulation that is shown in Figure \ref{fig:Pump-Valve-ascent-sample-4-6} the four heaters were used for 26.66 Wh in total together over the course of the simulation the figures are from. Only the pump heaters might require more time if it is colder outside and there is dedicated 80 Wh in the power budget table, Table \ref{tab:power-design-table}. So there is a margin to keep the pump heaters on for a longer time if needed.
+
+Based on the calculations and thermal simulations, it can be concluded the thermal designed passive and active thermal control mechanisms detailed in this section will ensure that the AAC's pump and manifold will operate nominally during the entire flight flight. It has been concluded that the CAC has a sufficiently adequate thermal design to operate throughout the whole flight. 
+
+%\subsubsection{Passive Thermal Control}
+%\label{sec:4.6.6}
+
+% Description of the insulation applied (size, distribution, type of material, implementation, etc)
+%It is in the appendix the thermal insulation applied - Erik
+% How to deal with gaps?
+% Heat sinks? (to spread high temperatures in hot spots)
+
+%\subsubsection{Active Thermal Control}
+%\label{sec:4.6.7}
+
+% Description of the heaters performance (pictures, characteristics, locations, goal temperatures, when they work? for how long? etc.)

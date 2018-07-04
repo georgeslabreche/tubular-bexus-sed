@@ -67,10 +67,9 @@
 \usepackage{etoolbox}
 \usepackage{nameref}
 \usepackage{ragged2e}
-\usepackage{enumitem}
 \usepackage{xcolor}
 \usepackage{pdfpages}
-\usepackage{appendix}
+\usepackage[title]{appendix}
 \usepackage[bottom]{footmisc}
 \usepackage{spreadtab} %% Vince added this to test table sum function [2017-01-25, 15:27]
 % For prettifying Matlab code.
@@ -132,6 +131,8 @@
 \title{SED}
 \author{tba}
 
+\renewcommand*{\appendixsection}{Appendix~\arabic{section}}
+
 \newcommand{\highlight}[1]{%
   \colorbox{yellow}{$\displaystyle#1$}}
   \makeatletter
@@ -161,7 +162,7 @@
 {
    \fancyhf{}
    \renewcommand{\footrulewidth}{0.5pt}  
-   \lfoot{\centering\textit{BX26\_TUBULAR\_SEDv2-0\_14May18}}
+   \lfoot{\centering\textit{BX26\_TUBULAR\_SEDv3-0\_11July18}}
   %\cfoot{}
   % \rfoot{} 
 }
@@ -172,7 +173,7 @@
     \renewcommand{\headrulewidth}{0pt}
    \chead{-\hspace{0.05cm}\thepage \hspace{0.05cm}-}
    \renewcommand{\footrulewidth}{0pt}  
-   \fancyfoot[RE,LO]{\textit{BX26\_TUBULAR\_SEDv2-0\_14May18}}
+   \fancyfoot[RE,LO]{\textit{BX26\_TUBULAR\_SEDv3-0\_11July18}}
    \fancyfoot[RO]{Page \thepage}
 }
 
@@ -198,7 +199,7 @@
 \vspace{-1cm}
 {{\hspace{-8pt}\huge{\textbf{SED}}} \vspace{15pt} \newline \vspace{15pt}
 {\hspace{-11pt}\large{\textbf{Student Experiment Documentation}}} \newline \vspace{30pt}
-{\hspace{-11pt}\footnotesize{Document ID: BX26\_TUBULAR\_SEDv2-0\_13May18}}}
+{\hspace{-11pt}\footnotesize{Document ID: BX26\_TUBULAR\_SEDv3-0\_11July18}}}
 & \hspace{3pt}\multirow{3}{*}{\includegraphics[width=.25\textwidth]{0-cover/img/logo-rexus-bexus-tubular.png}}
 \end{tabular}
 \end{flushright}
@@ -218,7 +219,7 @@
 \vspace{20pt}
 \begin{tabular}{p{.33\textwidth} p{.34\textwidth} p{.33\textwidth}}
 \textbf{Team} & \textbf{Name}  \\
-Student Team Leader:  &  Georges L. J. Labr\`{e}che \\
+Student Team Leader: & Natalie Lawton \\
 \end{tabular}
 \vspace{5pt}
 \begin{tabular}{p{.33\textwidth} p{.34\textwidth} p{.33\textwidth}}
@@ -228,7 +229,7 @@ Team Members:  & N\'{u}ria Ag\"{u}es Paszkowsky \\
 & Jordi Coll Ortega \\
 & Gustav Dyrssen \\
 & Erik Fagerström \\
-& Natalie Lawton \\
+& Georges L. J. Labr\`{e}che\\
 & Pau Molas Roca \\
 & Emil Nordqvist \\
 & Muhammad Ansyar Rafi Putra \\
@@ -244,7 +245,7 @@ University: & Lule\aa \ University of Technology
 
 \begin{tabular}{p{.15\textwidth} p{.3\textwidth} p{.25\textwidth} p{.25\textwidth}}
 \footnotesize{Version:}     & \footnotesize{Issue Date:} & \footnotesize{Document Type:} & \footnotesize{Valid from} \\
-\textbf{2.0}          & \textbf{May 14, 2018}    & \textbf{Spec}   & \textbf{May 14, 2018} \\ 
+\textbf{3.0}          & \textbf{July 11, 2018}    & \textbf{Spec}   & \textbf{July 11, 2018} \\ 
 \end{tabular}
 
 \vspace{10pt}

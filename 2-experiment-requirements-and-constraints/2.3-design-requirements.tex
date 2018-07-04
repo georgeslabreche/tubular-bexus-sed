@@ -1,35 +1,26 @@
 \subsection{Design Requirements}
 
-\begin{enumerate}[label=D.\arabic*]
-    \item The experiment \textit{shall} operate in the temperature profile of the BEXUS flight.
-    \item The experiment \textit{shall} operate in the vibration profile of the BEXUS flight.
-    \item \st{The experiment \textit{shall} not disturb or harm the launch vehicle.}\textsuperscript{\ref{fn:unnecessary-requirement}}
-    \item The experiment's communication system \textit{shall} be compatible with the gondola's E-link system.
-    \item The experiment's power supply \textit{shall} be compatible with the gondola's provided power.
-    \item \st{The experiment \textit{shall} not disturb other experiments on the gondola.}\textsuperscript{\ref{fn:unnecessary-requirement}}
-    \item The total DC current draw \textit{should} be below 1.8 A.
-    \item The total power consumption \textit{should} be below 374 Wh.
-    \item \st{The experiment \textit{shall} be able to operate in low pressure conditions (10-15 mbar) up to 30 km altitude.}\footnote{Repeated in D18\label{fn:repeat-d18}}
-    \item \st{The components of the experiment \textit{shall} operate within their temperature ranges.}\textsuperscript{\ref{fn:unnecessary-requirement}}
-    \item \st{The OBC \textit{shall} be able to autonomously control the heaters.}\textsuperscript{\ref{fn:unnecessary-requirement}}
-    \item \st{The ground station GC \textit{shall} be able to display some of the received data.}\textsuperscript{\ref{fn:unnecessary-requirement}}
-    \item \st{The experiment \textit{shall} be able to survive and operate between -30\degree C and 60\degree C.}\textsuperscript{\ref{fn:unnecessary-requirement}}
-    \item \st{The external components that are directly exposed to the outside environment \textit{shall} be able to operate at -70\degree C.}\textsuperscript{\ref{fn:unnecessary-requirement}}
-    \item \st{The watchdog \textit{should} be able to reset the system.}\textsuperscript{\ref{fn:unnecessary-requirement}}
-    \item The experiment \textit{shall} be able to autonomously turn itself off just before landing.
-    \item The experiment box \textit{shall} be placed with at least one face exposed to the outside.
-    \item The experiment \textit{shall} operate in the pressure profile of the BEXUS flight.
-    \item The experiment \textit{shall} operate in the vertical and horizontal accelerations profile of the BEXUS flight.
-    \item \st{The experiment \textit{shall} operate in the
-    horizontal accelerations profile of the BEXUS flight.}\footnote{Combined with D19\label{fn:combi-d19}}
-    \item The experiment \textit{shall} be attached to the gondola's rails.
-    \item The telecommand data rate \textit{shall} not be over 10 kb/s.
-    \item The air intake rate of the air pump \textit{shall} be minimum 3 L/min at 24 km altitude.
-    \item The temperature of the Brain \textit{shall} be between -10$\degree$C and 25$\degree$C.
-    \item \st{The temperature of the Brain level 2 \textit{shall} be between 0$\degree$C and 25$\degree$C.} \footnote{Combined with D24\label{fn:combi-d24}}
-    \item The air sampling systems \textit{shall} filter out all water molecules before filling the sampling bags.
-    \item The total weight of the experiment \textit{shall} be less than 28 kg.
-    \item The AAC box \textit{shall} be able to fit at least $6$ air sampling bags.
-    \item The CAC box \textit{shall} take less than 3 minutes to be removed from the gondola without removing the whole experiment.
-    \item The AAC \textit{shall} be re-usable for future balloon flights.
+\begin{enumerate}
+    \item[D.1] The experiment \textit{shall} operate in the temperature profile of the BEXUS flight\cite{BexusManual}.
+    \item[D.2] The experiment \textit{shall} operate in the vibration profile of the BEXUS flight\cite{BexusManual}.
+    \item[D.3] The experiment \textit{shall} not have sharp edges or loose connections to the gondola that can harm the launch vehicle, other experiments, and people.%\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[D.4] The experiment's communication system \textit{shall} be compatible with the gondola's E-link system with the RJF21B connector over UDP for down-link and TCP for up-link.
+    \item[D.5] The experiment's power supply \textit{shall} have a 24v, 12v, 5v and 3.3v power output and be able to take 28.8v input through the Amphenol PT02E8-4P connector supplied from the gondola. 
+    \item[D.7] For the supplied voltage of 28.8 V, the total continuous DC current draw \textit{should} be below 1.8 A.
+    \item[D.8] The total power consumption \textit{should} be below 374 Wh.
+    \item[D.16] The experiment \textit{shall} be able to autonomously turn itself off just before landing.
+    \item[D.17] The experiment box \textit{shall} be placed with at least one face exposed to the outside.
+    \item[D.18] The experiment \textit{shall} operate in the pressure profile of the BEXUS flight\cite{BexusManual}.
+    \item[D.19] The experiment \textit{shall} operate in the vertical and horizontal accelerations profile of the BEXUS flight\cite{BexusManual}.
+    \item[D.21] The experiment \textit{shall} be attached to the gondola's rails.
+    \item[D.22] The telecommand data rate \textit{shall} not be over 10 kb/s.
+    \item[D.23] The air intake rate of the air pump \textit{shall} be minimum 3 L/min at 24 km altitude.
+    \item[D.24] The temperature of the Brain \textit{shall} be between -10$\degree$C and 25$\degree$C.
+    \item[D.26] The air sampling systems \textit{shall} filter out all water molecules before filling the sampling bags.
+    \item[D.27] The total weight of the experiment \textit{shall} be less than 28 kg.
+    \item[D.28] The AAC box \textit{shall} be able to fit at least $6$ air sampling bags.
+    \item[D.29] The CAC box \textit{shall} take less than 3 minutes to be removed from the gondola without removing the whole experiment.
+    \item[D.30] The AAC \textit{shall} be re-usable for future balloon flights.
+    \item[D.31] The altitude from which a sampling bag will start sampling \textit{shall} be programmable.
+    \item[D.32] The altitude from which a sampling bag will stop sampling \textit{shall} be programmable.
 \end{enumerate}

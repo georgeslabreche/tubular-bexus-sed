@@ -1,0 +1,123 @@
+\section{Full List of Requirements}\label{sec:appFullListOfRequirements}
+
+\subsection{Functional Requirements}
+
+\begin{enumerate}
+    \item[F.1] \st{The experiment \textit{shall} collect air samples.}\footnote{Unnecessary requirement that has been removed.\label{fn:unnecessary-requirement}}
+    \item[F.2] The experiment \textit{shall} collect air samples by the CAC.
+    \item[F.3] The experiment \textit{shall} collect air samples by the AAC.
+    \item[F.4] \st{The experiment's AAC System \textit{shall} be able to collect air samples during the Ascent Phase.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.5] \st{The experiment's AAC System \textit{shall} be able to collect air samples during the Descent Phase.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.6] \st{The altitude from which a sampling bag will start sampling \textit{shall} be programmable.} \footnote{Moved to design requirements.\label{designRequirement}}
+    \item[F.7] \st{The altitude from which a sampling bag will stop sampling \textit{shall} be programmable.}\textsuperscript{\ref{designRequirement}}
+    \item[F.8] \st{The experiment \textit{shall} pump air into the AAC Sampling Bags.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.9] The experiment \textit{should} measure the air intake flow to the AAC.
+    \item[F.10] The experiment \textit{shall} measure the air pressure.
+    \item[F.11] The experiment \textit{shall} measure the temperature.
+    \item[F.12] The experiment \textit{shall} collect data on the humidity.
+    \item[F.13] \st{The experiment \textit{shall} measure the temperature inside the AAC Valve Box.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.14] \st{The experiment \textit{should} measure the humidity inside the AAC Valve Box.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.15] \st{The experiment \textit{shall} collect data on the time.}\footnote{Unverifiable requirement that has been removed.\label{fn:unverifiable-requirement}}
+    \item[F.16] \st{The experiment \textit{shall} accept telecommand instructions to program AAC sampling altitudes for each sampling bag.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.17] \st{The experiment \textit{shall} accept telecommand instructions to open designated valves.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.18] \st{The experiment \textit{shall} accept telecommand instructions to close designated valves.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.19] \st{The experiment \textit{may} accept telecommand instructions to change the sampling rate of the ambient pressure sensor.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.20] \st{The experiment \textit{may} accept telecommand instructions to change the sampling rate of the ambient temperature sensor.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.21] \st{The experiment \textit{may} accept telecommand instructions to change the sampling rate of the AAC Valve Box temperature sensor.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.22] \st{The experiment \textit{may} accept telecommand instructions to turn on the air pump.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.23] \st{The experiment \textit{may} accept telecommand instructions to turn off the air pump.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.24] \st{The experiment \textit{may} accept telecommand instructions to turn on the Valve Heater.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.25] \st{The experiment \textit{may} accept telecommand instructions to turn off the Valve Heater.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.26] \st{The experiment \textit{may} accept telecommand instructions to turn on the Electronics Box Heater.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[F.27] \st{The experiment \textit{may} accept telecommand instructions to turn off the Electronics Box Heater.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+\end{enumerate}
+
+\subsection{Performance Requirements}
+
+\begin{enumerate}
+    \item[P.1] \st{The telecommand data rate \textit{shall} be 10 Kb/s.}\textsuperscript{\ref{designRequirement}}
+    \item[P.2] \st{The default sampling rate of the ambient pressure sensor during Standby mode \textit{shall} be 0.1 Hz.}\footnote{Replaced by \ref{newsamplerate}\label{replaceSampleRate}}
+    \item[P.3] \st{The default sampling rate of the ambient pressure sensor during Normal operation-ascent mode \textit{shall} be 0.2 Hz.}\textsuperscript{\ref{replaceSampleRate}}
+    \item[P.4] \st{The default sampling rate of the ambient pressure sensor during Normal operation-descent mode \textit{shall} be 10 Hz.}\textsuperscript{\ref{replaceSampleRate}}
+    %\item The default sampling rate of the ambient pressure sensor \textit{shall} be TBD.
+    \item[P.5] \st{The default sampling rate of the AAC Valve Box temperature sensor \textit{shall} be 1 Hz.}\textsuperscript{\ref{replaceSampleRate}}
+    \item[P.6] \st{The programmable sampling rate of the ambient pressure sensor \textit{shall} not be lesser than 0.1 Hz.}\textsuperscript{\ref{replaceSampleRate}}
+    \item[P.7] \st{The programmable sampling rate of the ambient pressure sensor \textit{shall} not be greater than 100 Hz.}\textsuperscript{\ref{replaceSampleRate}}
+    \item[P.8] \st{The programmable sampling rate of the Electronics Box temperature sensor \textit{shall} not be lesser than 1 Hz.}\textsuperscript{\ref{replaceSampleRate}}
+    \item[P.9] \st{The programmable sampling rate of the Electronics Box temperature sensor \textit{shall} not be greater than 7 Hz.}\textsuperscript{\ref{replaceSampleRate}}
+    \item[P.10] \st{The programmable sampling rate of the AAC Valve Box temperature sensor \textit{shall} not be lesser than 1 Hz.}\textsuperscript{\ref{replaceSampleRate}}
+    \item[P.11] \st{The programmable sampling rate of the AAC Valve Box temperature sensor \textit{shall} not be greater than 7 Hz.}\textsuperscript{\ref{replaceSampleRate}}
+    %\item The programmable sampling rate of the pressure sensor \textit{shall} not be lesser than .
+    \item[P.12] The accuracy of the ambient pressure measurements \textit{shall} be -1.5/+1.5 mbar for 25$\degree$C.
+    \item[P.13] The accuracy of temperature measurements \textit{shall} be +3.5/-3$\degree$C (max) for condition of -55$\degree$C to 150$\degree$C.
+    \item[P.14] The accuracy of the ambient humidity measurements \textit{shall} be ±3\%. \cite{Humiditysensor}
+    \item[P.15] \st{The accuracy of the AAC Valve Box temperature measurements \textit{shall} be +3.5/-2$\degree$C(max).}\footnote{Combined with P13\label{fn:combi-p13}}
+    \item[P.16] \st{The air intake rate of the air pump \textit{shall} be minimum 3 L/min.}\textsuperscript{\ref{designRequirement}}
+    \item[P.17] \st{The temperature of the Electronics Box \textit{shall} be between 0$\degree$C and 25$\degree$C.} \textsuperscript{\ref{designRequirement}}
+    \item[P.18] \st{The temperature of the Electronics Box \textit{shall} not exceed 25$\degree$C.}\footnote{Combined with P17 and moved to design requirements.\label{fn:combi-p17}}
+    \item[P.19] \st{The temperature of the AAC Valve Box \textit{shall} be between 0$\degree$C and 25$\degree$C.}\textsuperscript{\ref{designRequirement}}
+    \item[P.20] \st{The temperature of the AAC Valve Box \textit{shall} not exceed 25$\degree$C.}\footnote{Combined with P19 and moved to design requirements.\label{fn:combi-p19}}
+    \item[P.21] \st{The air sampling systems \textit{shall} filter out all water molecules before filling the sampling containers.} \textsuperscript{\ref{designRequirement}}
+    \item[P.22] \st{The CAC air sampling \textit{shall} filter out all water molecules before filling the tube.}\footnote{Combined with P21 and moved to design requirements.\label{fn:combi-p21}}
+    \item[P.23] The sensors sampling rate \textit{shall} be 2 Hz.\label{newsamplerate}
+    \item[P.24] The temperature of the Pump \textit{shall} be between 5$\degree$C and 40$\degree$C. 
+    \item[P.25] The minimum volume of air in the bags for analysis \textit{shall} be 0.18 L at ground level.
+ \end{enumerate} 
+
+\subsection{Design Requirements}
+
+\begin{enumerate}
+    \item[D.1] The experiment \textit{shall} operate in the temperature profile of the BEXUS flight\cite{BexusManual}.
+    \item[D.2] The experiment \textit{shall} operate in the vibration profile of the BEXUS flight\cite{BexusManual}.
+    \item[D.3] The experiment \textit{shall} not have sharp edges that can harm the launch vehicle, other experiments, and people.%\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[D.4] The experiment's communication system \textit{shall} be compatible with the gondola's E-link system.
+    \item[D.5] The experiment's power supply \textit{shall} be compatible with the gondola's provided power.
+    \item[D.6] \st{The experiment \textit{shall} not disturb other experiments on the gondola.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[D.7] The total DC current draw \textit{should} be below 1.8 A.
+    \item[D.8] The total power consumption \textit{should} be below 374 Wh.
+    \item[D.9] \st{The experiment \textit{shall} be able to operate in low pressure conditions (10-15 mbar) up to 30 km altitude.}\footnote{Repeated in D18\label{fn:repeat-d18}}
+    \item[D.10] \st{The components of the experiment \textit{shall} operate within their temperature ranges.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[D.11] \st{The OBC \textit{shall} be able to autonomously control the heaters.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[D.12] \st{The ground station GC \textit{shall} be able to display some of the received data.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[D.13] \st{The experiment \textit{shall} be able to survive and operate between -30\degree C and 60\degree C.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[D.14] \st{The external components that are directly exposed to the outside environment \textit{shall} be able to operate at -70\degree C.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[D.15] \st{The watchdog \textit{should} be able to reset the system.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[D.16] The experiment \textit{shall} be able to autonomously turn itself off just before landing.
+    \item[D.17] The experiment box \textit{shall} be placed with at least one face exposed to the outside.
+    \item[D.18] The experiment \textit{shall} operate in the pressure profile of the BEXUS flight\cite{BexusManual}.
+    \item[D.19] The experiment \textit{shall} operate in the vertical and horizontal accelerations profile of the BEXUS flight\cite{BexusManual}.
+    \item[D.20]  \st{The experiment \textit{shall} operate in the
+    horizontal accelerations profile of the BEXUS flight\cite{BexusManual}.}\footnote{Combined with D19\label{fn:combi-d19}}
+    \item[D.21] The experiment \textit{shall} be attached to the gondola's rails.
+    \item[D.22] The telecommand data rate \textit{shall} not be over 10 kb/s.
+    \item[D.23] The air intake rate of the air pump \textit{shall} be minimum 3 L/min at 24 km altitude.
+    \item[D.24] The temperature of the Brain \textit{shall} be between -10$\degree$C and 25$\degree$C.
+    \item[D.25] \st{The temperature of the Brain level 2 \textit{shall} be between 0$\degree$C and 25$\degree$C.} \footnote{Combined with D24\label{fn:combi-d24}}
+    \item[D.26] The air sampling systems \textit{shall} filter out all water molecules before filling the sampling bags.
+    \item[D.27] The total weight of the experiment \textit{shall} be less than 28 kg.
+    \item[D.28] The AAC box \textit{shall} be able to fit at least $6$ air sampling bags.
+    \item[D.29] The CAC box \textit{shall} take less than 3 minutes to be removed from the gondola without removing the whole experiment.
+    \item[D.30] The AAC \textit{shall} be re-usable for future balloon flights.
+    \item[D.31] The altitude from which a sampling bag will start sampling \textit{shall} be programmable.
+    \item[D.32] The altitude from which a sampling bag will stop sampling \textit{shall} be programmable.
+\end{enumerate}
+
+\pagebreak
+\subsection{Operational Requirements}
+
+\begin{enumerate}
+    \item[O.1] \st{The TUBULAR Team \textit{shall} send telecommands from the ground station to the experiment before and during the flight.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[O.2] \st{The TUBULAR Team \textit{shall} receive telemetry from the experiment during the flight.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[O.3] \st{The experiment \textit{shall} change modes autonomously.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[O.4] \st{The heating mechanism \textit{shall} work autonomously.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[O.5] \st{The experiment \textit{shall} store data autonomously.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[O.6] \st{The Air sampling control system \textit{shall} work autonomously.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[O.7] \st{The valves in air sampling control system \textit{should} be controllable from the ground station.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[O.8] \st{The experiment \textit{should} be able to handle a timeout or drop in the network connection.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[O.9] \st{The heaters \textit{should} be controllable from the ground station.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[O.10] \st{The watchdog\footnote{Explained in subsection 4.8. Software Design} \textit{should} be able to reset the system.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[O.11] \st{The system \textit{should} be able to be reset with a command from the ground station.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[O.12] \st{The experiment \textit{should} enter different modes with a telecommand from the ground station.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[O.13] The experiment \textit{should} function automatically.
+    \item[O.14] The experiment's air sampling mechanisms \textit{shall} have a manual override.
+\end{enumerate} 
