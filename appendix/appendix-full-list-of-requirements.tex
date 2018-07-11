@@ -14,7 +14,7 @@
     \item[F.9] The experiment \textit{should} measure the air intake flow to the AAC.
     \item[F.10] The experiment \textit{shall} measure the air pressure.
     \item[F.11] The experiment \textit{shall} measure the temperature.
-    \item[F.12] The experiment \textit{shall} collect data on the humidity.
+    \item[F.12] \st{The experiment \textit{shall} collect data on the humidity.} \textsuperscript{\ref{fn:unnecessary-requirement}}
     \item[F.13] \st{The experiment \textit{shall} measure the temperature inside the AAC Valve Box.}\textsuperscript{\ref{fn:unnecessary-requirement}}
     \item[F.14] \st{The experiment \textit{should} measure the humidity inside the AAC Valve Box.}\textsuperscript{\ref{fn:unnecessary-requirement}}
     \item[F.15] \st{The experiment \textit{shall} collect data on the time.}\footnote{Unverifiable requirement that has been removed.\label{fn:unverifiable-requirement}}
@@ -50,7 +50,7 @@
     %\item The programmable sampling rate of the pressure sensor \textit{shall} not be lesser than .
     \item[P.12] The accuracy of the ambient pressure measurements \textit{shall} be -1.5/+1.5 mbar for 25$\degree$C.
     \item[P.13] The accuracy of temperature measurements \textit{shall} be +3.5/-3$\degree$C (max) for condition of -55$\degree$C to 150$\degree$C.
-    \item[P.14] The accuracy of the ambient humidity measurements \textit{shall} be ±3\%. \cite{Humiditysensor}
+    \item[P.14] \st{The accuracy of the ambient humidity measurements \textit{shall} be ±3\%.} \cite{Humiditysensor}\textsuperscript{\ref{fn:unnecessary-requirement}}
     \item[P.15] \st{The accuracy of the AAC Valve Box temperature measurements \textit{shall} be +3.5/-2$\degree$C(max).}\footnote{Combined with P13\label{fn:combi-p13}}
     \item[P.16] \st{The air intake rate of the air pump \textit{shall} be minimum 3 L/min.}\textsuperscript{\ref{designRequirement}}
     \item[P.17] \st{The temperature of the Electronics Box \textit{shall} be between 0$\degree$C and 25$\degree$C.} \textsuperscript{\ref{designRequirement}}
@@ -86,8 +86,8 @@
     \item[D.17] The experiment box \textit{shall} be placed with at least one face exposed to the outside.
     \item[D.18] The experiment \textit{shall} operate in the pressure profile of the BEXUS flight\cite{BexusManual}.
     \item[D.19] The experiment \textit{shall} operate in the vertical and horizontal accelerations profile of the BEXUS flight\cite{BexusManual}.
-    \item[D.20]  \st{The experiment \textit{shall} operate in the
-    horizontal accelerations profile of the BEXUS flight\cite{BexusManual}.}\footnote{Combined with D19\label{fn:combi-d19}}
+    \item[D.20] \st{The experiment \textit{shall} operate in the
+    horizontal accelerations profile of the BEXUS flight.} \cite{BexusManual} \footnote{Combined with D19 \label{fn:combi-d19}}
     \item[D.21] The experiment \textit{shall} be attached to the gondola's rails.
     \item[D.22] The telecommand data rate \textit{shall} not be over 10 kb/s.
     \item[D.23] The air intake rate of the air pump \textit{shall} be minimum 3 L/min at 24 km altitude.
@@ -121,3 +121,13 @@
     \item[O.13] The experiment \textit{should} function automatically.
     \item[O.14] The experiment's air sampling mechanisms \textit{shall} have a manual override.
 \end{enumerate} 
+
+
+\subsection{Constraints}
+
+\begin{enumerate}
+    \item[C.1] Constraints specified in the BEXUS User Manual.
+    \item[C.2] \st{The person-hours allocated to project implementation is limited by university related factors such as exams, assignments, and lectures.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[C.3] \st{Budget limited to TBD.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[C.4] \st{The dimensions show a minimum print area of 50 x 50 cm and 65 cm height experiment box.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+\end{enumerate}

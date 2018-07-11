@@ -16,9 +16,9 @@ The electronics design can be seen in Figure \ref{fig:electronics-block-diagram}
 Most of the electronics will be located in the Brain inside the AAC box. However, there will be six distinct areas:
 
 \begin{enumerate}
-    \item The Brain level 3, where the PCB is located with the Arudino and shield, two 24 V DC-DC, one 12 V voltage regulator, one temperature sensor, 11 MOSFETs and 14 LEDs.
-    \item The Brain level 2, where the valve manifolds with six sampling valves\footnote{There will be eight valves connected mechanically in the manifold to ensure it is sealed but only six will be connected to the bags and electronics.\label{fn:extravalve}}, the flushing valve, one heater and one temperature sensor are located.
-    \item The Brain level 1, where the pump, airflow sensor and sensor box containing 3 pressure sensors, 1 temperature sensor and 1 humidity sensor are located.
+    \item The Brain level 3, where the PCB is located with the Arudino and shield, two 24 V DC-DC, two 12 V DC-DC, one temperature sensor, 11 MOSFETs and 16 LEDs.
+    \item The Brain level 2, where the valve manifolds with six sampling valves, the flushing valve, two heaters and one temperature sensor are located.
+    \item The Brain level 1, where the pump, two heaters, airflow sensor, one temperature sensor and an inline pressure sensor are located.
     \item The AAC box, where 3 ambient temperature sensors are located.
     \item The CAC box, where the CAC valve and 3 ambient temperature sensors are located.
     \item Outside of the experiment box, where 3 ambient pressure sensors are located.
@@ -26,10 +26,10 @@ Most of the electronics will be located in the Brain inside the AAC box. However
 
 From the PCB, on level 3, five D-sub connectors will be used to connect to the other five areas. A 25 pin connector will be used for level 1, 15 pin connector will be used for level 2 and nine pin connectors will be used for the CAC box, AAC box sampling bags area, and the external pressure sensors. In addition there will be a connection to the gondola power and gondola E-link.
 
-All of the power distribution will take place on the PCB using two 24 V DC-DC converters in parallel with a forwarding diode which feed a 12 V voltage regulator. 
+All of the power distribution will take place on the PCB using two 24 V DC-DC and two 12 V DC-DC converters in parallel with a forwarding diode.  
 \begin{itemize}
   \item $28.8 \, V \Longrightarrow 24 \, V $ By DC-DC converters
-  \item $24 \, V \Longrightarrow 12 \, V$ By voltage regulator
+  \item $28.8 \, V \Longrightarrow 12 \, V$ By DC-DC converters
   \end{itemize}
 The heaters will not require the voltage to be stepped down and so will be powered directly from the gondola battery.
 
@@ -37,7 +37,7 @@ The Arduino will control all of the sensors, valves, heaters and the pump from t
 
 The LEDs are used as visual indicators that display whether different parts of the circuit are alive or not. They give indications on the status of the valves, pump, heaters, DC-DC converters and Arduino. 
 
-Grounding will be following a distributed single point grounding, with all ground connections meeting at a single star point to ensure there are no floating grounds. As not all components are connected via DC-DC converters the experiment will not be isolated from the gondola power supply therefore there will be a connection between the star point and the gondola ground. The star point will be located on the main PCB board which will then be grounded to the experiment box. The grounding can be seen in Figure \ref{fig:electronics-block-diagram} where it is indicated by dashed lines labeled GND. 
+Grounding will be following a distributed single point grounding, with all ground connections meeting at a single star point to ensure there are no floating grounds. As not all components are connected via DC-DC converters the experiment will not be isolated from the gondola power supply therefore there will be a connection between the star point and the gondola ground. The star point will be located on the main PCB board which will then be grounded to the experiment box. The grounding can be seen in Figure \ref{fig:electronics-block-diagram} where it is indicated by dashed lines labeled GND. The analog sensors that are used on level 1 in the brain use a separate grounding wire(AGND) onto the main PCB where there is a separate trace connecting to the ground pins on the Arduino board. Furthermore the upper and lower level of the main PCB board will make use of one common grounding plane.
 
 \subsubsection{Miniature Diaphragm Air Pump}
 The pump which has been selected is the 850.1.2. KNDC B, Figure \ref{fig:pumppic}, which is manufactured by KNF. One of the reasons this pump has been selected is that it has successfully been flown on a similar flight in the past where it managed to pump enough air at 25 km altitude to have 180 mL remaining at sea level \cite{LISA}. However, to ensure the pump will operate as intended, several tests will still be carried out. These tests --- 4, 5, 18, 28 and 29, can be seen in Tables \ref{tab:vacuum-test}, \ref{tab:thermal-test}, \ref{tab:pump-low-pressure-test}, \ref{tab:pump-operation-test}, and \ref{tab:pump-current-pressure-test}. The pump has already passed three of these tests and their results can be seen in Section \ref{sec:test28result} for Test 28, Section \ref{subsection:pumplowpressuretest} for Test 18 and Section \ref{sec:test29result} for Test 29.
@@ -95,13 +95,13 @@ The schematics show all the components and how they are connected, the full sche
     
     \item $28.8 \, V \Longrightarrow 24 \, V$ for the pump and valves.
     
-    \item $24 \, V \Longrightarrow 12 \, V$ for the airflow sensor and Arduino due.
+    \item $28.8 \, V \Longrightarrow 12 \, V$ for the airflow sensor and Arduino due.
     
-    \item $3.3 \, V$ for the temperature, pressure and humidity sensors. 
+    \item $3.3 \, V$ for the temperature and pressure sensors. 
     
 \end{itemize}
 
-The voltage available from gondola power is 28.8 V, therefore the heaters have been connected directly to the main power supply. For the rest of the components, two 24 V DC-DCs in parallel has been used to make sure if one of them fails then the other can take over. The circuitry can be seen in Figure \ref{fig:dc-dc-redun}. All the valves and the pump are then powered through the 24 V DC-DCs. To step down the voltage from 24 V to 12 V to power the airflow sensor and the Arduino, a voltage regulator has been used at the output of the DC-DCs. Finally, to power the temperature, humidity and pressure sensors, 3.3 V is required which is supplied by the Arduino board. 
+The voltage available from gondola power is 28.8 V, therefore the heaters have been connected directly to the main power supply. For the rest of the components, two 24 V and two 12 V DC-DCs in parallel has been used to make sure if one of them fails then the other can take over. The circuitry can be seen in Figure \ref{fig:dc-dc-redun}. All the valves and the pump are then powered through the 24 V DC-DCs. To step down the voltage from 28.8 V to 12 V to power the airflow sensor and the Arduino, two 12 V DC-DCs in parallel has been used for the redundancy purposes. Finally, to power the temperature and pressure sensors, 3.3 V is required which is supplied by the Arduino board. 
 
 
 \begin{figure}[H]
@@ -113,9 +113,9 @@ The voltage available from gondola power is 28.8 V, therefore the heaters have b
 
 \begin{figure}[H]
     \begin{align*}
-        \includegraphics[width=16cm]{4-experiment-design/img/DCDC-converter-redundancy.png}
+        \includegraphics[width=13cm]{4-experiment-design/img/DCDC-converter-redundancy.png}
     \end{align*}
-    \caption{Schematic Showing the DC-DC Redundancy of Both 24 V DC-DC Converters and the 12 V Voltage Regulator.}\label{fig:dc-dc-redun}
+    \caption{Schematic Showing the DC-DC Redundancy of Both 24 V  and the 12 V DC-DC Converters.}\label{fig:dc-dc-redun}
 \end{figure}
 
 
@@ -131,7 +131,7 @@ All electronic control circuits will be gathered on a single PCB on level 3 of t
     \caption{PCB Layout.}\label{fig:PCBLayout}
 \end{figure}
 
-The PCB was made using Eagle software. The traces has a width designed to fit the IPC-2221 standards\cite{IPC-2221B}. The PCB layout can be seen in in Section \ref{sec:pcbSchematics}. 
+The PCB was made using Eagle software. The traces have a width designed to fit the IPC-2221 standards\cite{IPC-2221B}. The PCB layout can be seen in in Section \ref{sec:pcbSchematics}. 
 
 
 

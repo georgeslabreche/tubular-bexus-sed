@@ -117,7 +117,9 @@
 \usepackage[xindy]{imakeidx}
 \makeindex
 \usepackage{makecell} % natalie added 15/01/18 this lets you put breaks inside table boxes :3
-
+\usepackage{siunitx}
+\usepackage{dcolumn} 
+  \newcolumntype{d}[1]{D{.}{.}{#1}} %hopefully one of these aligns tables decimal places, natalie
 
 
 \DeclareCaptionType[fileext=ext]{Test}
@@ -155,7 +157,7 @@
     \chead{-\hspace{0.05cm}\thepage \hspace{0.05cm}-}
     
     %\renewcommand{\footrulewidth}{0pt}
-    \fancyfoot[RE,LO]{\textit{BX26\_TUBULAR\_SEDv2-0\_14May18}}
+    \fancyfoot[RE,LO]{\textit{BX26\_TUBULAR\_SEDv3-0\_11July18}}
     \fancyfoot[RO]{Page \thepage}
 }
 \fancypagestyle{cover}

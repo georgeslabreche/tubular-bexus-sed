@@ -13,7 +13,7 @@ The software shall also transmit data to the ground so that the team can monitor
 \subsubsection{Design} \label{sec:4.8.2}
 \begin{enumerate}[label=(\alph*)]
 \item{Process Overview}\\
-The software which run on the Arduino reads from the sensors through the analog, I2C, and SPI interfaces. The sensors provides temperature, pressure, airflow, and humidity data. The acquired data will be time-stamped and stored in the on-board SD card and transmitted via the E-Link System to the ground station. Then according to the pressure/altitude, the software controls the valves which will allow the air to flow inside the tube and bags. Figure \ref{processOverview} visually explain the process flow.
+The software which run on the Arduino reads from the sensors through the analog, I2C, and SPI interfaces. The sensors provides temperature, pressure and airflow data. The acquired data will be time-stamped and stored in the on-board SD card and transmitted via the E-Link System to the ground station. Then according to the pressure/altitude, the software controls the valves which will allow the air to flow inside the tube and bags. Figure \ref{processOverview} visually explain the process flow.
 
 \begin{figure}[H]
     \centering
@@ -33,26 +33,26 @@ Every transmission to/from the ground will utilize the E-link connection. The da
 \\
 The protocol that has been chosen are UDP for telemetry and TCP for telecommand. The UDP is used to prevent software getting stuck waiting for handshake from the ground if the connection is temporarily lost.\\
 \\
-The telecommand contain the following services:
+The telecommand contains the following services:
 \begin{itemize}
     \item Changing instrument modes
     \item Manually control valves, pump, and heaters
 \end{itemize}
 
-Furthermore, telemetry contain the services below:
+Furthermore, telemetry contains the services below:
 \begin{itemize}
-    \item Data from temperature, pressure, humidity, and airflow sensor
+    \item Data from temperature, pressure and airflow sensor
     \item Current instrument modes
     \item Instrument housekeeping data (valve, pump, and heater states)
 \end{itemize}
 \item{Data Acquisition and Storage}\\
-Data will be stored on the SD memory card on the Arduino Ethernet Shield using the FAT16 and FAT32 filesystems. To minimize the data loss in the event of an reset we will only write to the same file in an set amount of time before closing it and open a new file. It is estimated that for the entire flight, all the sensors will produce $4.896$ MB of data. The sampling rate will be fixed at 2 sampling per second.\\
+Data will be stored on the SD memory card on the Arduino Ethernet Shield using the FAT16 and FAT32 filesystems. To minimize data loss in the event of an reset we will only write to the same file in a set amount of time before closing it and open a new file. It is estimated that for the entire flight, all the sensors will produce less than $5$ MB of data. The sampling rate will be fixed at 1 sampling per second.\\
 \\
 The data will be collected and presented as a matrix, where the first column is the time frame, the following columns are the sensors data. After the sensors data, there will also be housekeeping data, that keeps track of the valves, and heaters states. However, the size of the housekeeping data is not expected to surpass 20 bits per sampling.\\
 \\
-Data will be continuously down-linked two times per second and the total telemetry size is $7.128$ MB for 10 hours of flight. On the other hand, the telecommand size will vary based on how many subcommand is sent each time. If all of the subcommand are enabled, the total size is 128 bytes. Considering the telecommand will not be sent more than once per second, the telecommand data rate is 126 bytes/sec.
+Data will be continuously down-linked two times per second and the total telemetry size is less than $4$ MB for 10 hours of flight. On the other hand, the telecommand size will vary based on how many subcommand is sent each time. If all of the subcommand are enabled, the total size is 128 bytes. Considering the telecommand will not be sent more than once per second, the telecommand data rate is 126 bytes/sec.
 \item{Process Flow}\\
-The process flow can be explained with the mode diagram in Figure \ref{fig:modediag}. The software will start with Standby Mode, in which the software will get samples from all sensors. The on-board memory card contains the default sampling schedule parameters (when the sampling will start and stop), which will be read by the software in Standby Mode. This will allow users to change the sampling schedule without changing the internal code. When the software receives decreasing pressure changes readings, it will change to Normal - Ascent mode, where the software will trigger emptying of the CAC's tube by opening the valves. Then, at certain altitudes, air sampling will be conducted during Ascent Phase. During Float Phase, no sampling will be conducted. The software will go to Normal - Descent mode when it detects the increment of pressure is considerably big at which point the software will sample the air by opening the valves for each bag in their designated altitude. Considering that the gondola might not have smooth ascending/descending, the mode changes will only happen if the changes exceed certain threshold. Currently, $\SI{-20}{\pascal}$ and $\SI{20}{\pascal}$ are considered and might be changed depends on further analysis and testing. The experiment goes to SAFE mode approximately 500 m before the landing, and triggers all the valves to be closed. The Manual mode is entered with a telecommand and one for leaving it. When entering the manual mode the groundstation automatically retransmits the signal for manual mode at a set interval. If the signal is not received by the OBC within a certain amount of time it leaves manual mode and enters into standby mode.
+The process flow can be explained with the mode diagram in Figure \ref{fig:modediag}. The software will start with Standby Mode, in which the software will get samples from all sensors. The on-board memory card contains the default sampling schedule parameters (when the sampling will start and stop), which will be read by the software in Standby Mode. This will allow users to change the sampling schedule without changing the internal code. When the software receives negative increment of pressure changes, it will change to Normal - Ascent mode, where the software will trigger emptying of the CAC's coiled tube by opening the valves. Then, at certain altitudes, air sampling will be conducted during Ascent Phase. During Float Phase, no sampling will be conducted. The software will go to Normal - Descent mode when it detects the increment of pressure is considerably big at which point the software will sample the air by opening the valves for each bag in their designated altitude. Considering that the gondola might not have smooth ascending/descending, the mode changes will only happen if the changes exceed certain threshold. Currently, $\SI{-20}{\pascal}$ and $\SI{20}{\pascal}$ are considered as the threshold and might be changed depending on further analysis and testing. The experiment goes to SAFE mode approximately 500 m before the landing, and triggers all the valves to be closed. The manual mode is entered with a telecommand and left with another one. When entering the manual mode the groundstation automatically retransmits the signal for manual mode at a set interval. If the signal is not received by the OBC within a certain amount of time it leaves manual mode and enters into standby mode.
 
 \begin{figure}[H]
     \begin{align*}
