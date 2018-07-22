@@ -18,7 +18,7 @@ Most of the electronics will be located in the Brain inside the AAC box. However
 \begin{enumerate}
     \item The Brain level 3, where the PCB is located with the Arudino and shield, two 24 V DC-DC, two 12 V DC-DC, one temperature sensor, 11 MOSFETs and 16 LEDs.
     \item The Brain level 2, where the valve manifolds with six sampling valves, the flushing valve, two heaters and one temperature sensor are located.
-    \item The Brain level 1, where the pump, two heaters, airflow sensor, one temperature sensor and an inline pressure sensor are located.
+    \item The Brain level 1, where the pump, two heaters, airflow sensor, one temperature sensor and static pressure sensor are located.
     \item The AAC box, where 3 ambient temperature sensors are located.
     \item The CAC box, where the CAC valve and 3 ambient temperature sensors are located.
     \item Outside of the experiment box, where 3 ambient pressure sensors are located.
@@ -95,20 +95,22 @@ The schematics show all the components and how they are connected, the full sche
     
     \item $28.8 \, V \Longrightarrow 24 \, V$ for the pump and valves.
     
-    \item $28.8 \, V \Longrightarrow 12 \, V$ for the airflow sensor and Arduino due.
+    \item $28.8 \, V \Longrightarrow 12 \, V$ for the airflow sensor, static pressure sensor and Arduino due.
     
     \item $3.3 \, V$ for the temperature and pressure sensors. 
     
 \end{itemize}
 
-The voltage available from gondola power is 28.8 V, therefore the heaters have been connected directly to the main power supply. For the rest of the components, two 24 V and two 12 V DC-DCs in parallel has been used to make sure if one of them fails then the other can take over. The circuitry can be seen in Figure \ref{fig:dc-dc-redun}. All the valves and the pump are then powered through the 24 V DC-DCs. To step down the voltage from 28.8 V to 12 V to power the airflow sensor and the Arduino, two 12 V DC-DCs in parallel has been used for the redundancy purposes. Finally, to power the temperature and pressure sensors, 3.3 V is required which is supplied by the Arduino board. 
+The voltage available from gondola power is 28.8 V, therefore the heaters have been connected directly to the main power supply. For the rest of the components, two 24 V and two 12 V DC-DCs in parallel has been used to make sure if one of them fails then the other can take over. The circuitry can be seen in Figure \ref{fig:dc-dc-redun}. All the valves and the pump are then powered through the 24 V DC-DCs. To step down the voltage from 28.8 V to 12 V to power the airflow sensor, static pressure sensor and the Arduino, two 12 V DC-DCs in parallel has been used for the redundancy purposes. Finally, to power the temperature and external pressure sensors, 3.3 V is required which is supplied by the Arduino board. 
+
+To meet the requirements of the pneumatic subsystem, a static pressure sensor has been chosen to measure the pressure inside the tubes and bags. This analogue pressure sensor operates on 12 V so can share the same power line as the airflow sensor and Arduino.
 
 
 \begin{figure}[H]
     \begin{align*}
         \includegraphics[width=16cm]{4-experiment-design/img/Schematics.png}
     \end{align*}
-    \caption{Schematic for All of the Electronics on Board TUBULAR.}\label{fig:Schematic}
+    \caption{Schematic for All of the Electronics on Board TUBULAR. This can also be Found at https://rexusbexus.github.io/tubular/img/electrical-design-schematics.png}\label{fig:Schematic}
 \end{figure}
 
 \begin{figure}[H]
@@ -124,14 +126,7 @@ The voltage available from gondola power is 28.8 V, therefore the heaters have b
 All electronic control circuits will be gathered on a single PCB on level 3 of the Brain. The PCB contains the Arduino due, switching circuits, indication LEDs, a temperature sensor, the power system and all necessary connectors. The connectors have been divided so that each connector's wires goes to the same level of the Brain to improve cable management. To further improve cable management the shared pins for I2C and SPI are connected to a single pin on each respective D-SUB connector and should be split up on the respective level. The PCB Layout can be seen in Figure \ref{fig:PCBLayout}.
 
 
-\begin{figure}[H]
-    \begin{align*}
-        \includegraphics[width=0.9\textwidth]{4-experiment-design/img/PCB_Prelim_2.jpg}
-    \end{align*}
-    \caption{PCB Layout.}\label{fig:PCBLayout}
-\end{figure}
-
-The PCB was made using Eagle software. The traces have a width designed to fit the IPC-2221 standards\cite{IPC-2221B}. The PCB layout can be seen in in Section \ref{sec:pcbSchematics}. 
+The PCB was made using Eagle software. The traces have a width designed to fit the IPC-2221 standards\cite{IPC-2221B} with extra width added. The PCB layout can be seen in in Section \ref{sec:pcbSchematics}. On the main PCB the traces are 1.4mm wide for the nets containing components that consumes higher amounts of current and the ones with lower current requirements have a trace width of 0.3mm. On the pressure sensor PCB all traces are 0.5mm wide.
 
 
 

@@ -8,9 +8,9 @@
 \textbf{ID}   & \textbf{Written requirement}                                                                                                                                                     & \textbf{Verification} & \textbf{Test number} & \textbf{Status} \\ \hline
 F.2  & The experiment \textit{shall} collect air samples by the CAC.&  A, R & - & Pass by similarity \cite{AircoreFlights} \\ \hline
 F.3  & The experiment \textit{shall} collect air samples by the AAC. & A, T& 2, 16 & Analysis passed, see Section \ref{sec:aac-analysis}\\ \hline
-F.9  & The experiment \textit{should} collect data on the air intake flow to the AAC. & A, T & 24, 31 & Pass by similarity\footnote{sensor libraries are available online and used by many users\label{fn:sensor-libraries}}\\ \hline
-F.10 & The experiment \textit{shall} collect data on the air pressure. & A, T& 24, 31 & Pass by similarity\textsuperscript{\ref{fn:sensor-libraries}}\\ \hline
-F.11 & The experiment \textit{shall} collect data on the temperature. &  A, T& 24, 31 & Pass by similarity\textsuperscript{\ref{fn:sensor-libraries}}\\ \hline
+F.9  & The experiment \textit{should} collect data on the air intake flow to the AAC. & A, T & 24, 31, 32 & Pass by similarity, testing ongoing\footnote{sensor libraries are available online and used by many users\label{fn:sensor-libraries}}\\ \hline
+F.10 & The experiment \textit{shall} collect data on the air pressure. & A, T& 24, 31, 32 & Pass by similarity, testing ongoing\textsuperscript{\ref{fn:sensor-libraries}}\\ \hline
+F.11 & The experiment \textit{shall} collect data on the temperature. &  A, T& 24, 31, 32 & Pass by similarity, testing ongoing\textsuperscript{\ref{fn:sensor-libraries}}\\ \hline
 
 
 
@@ -35,12 +35,12 @@ D.3  & The experiment \textit{shall} not have sharp edges or loose connections t
 D.4  & 
     \item[D.4] The experiment's communication system \textit{shall} be compatible with the gondola's E-link system with the RJF21B connector over UDP for down-link and TCP for up-link.                                                                             &      A, T        & 8            &    Analysis passed, see Section \ref{sec:4.8.2}    \\ \hline
 D.5  & The experiment's power supply \textit{shall} have a 24v, 12v, 5v and 3.3v power output and be able to take 28.8v input through the Amphenol PT02E8-4P connector supplied from the gondola.                                                                                    &      A       &  -           & Analysis passed, see Sections \ref{sec:4.2.2} and \ref{sec:4.5.1}      \\ \hline
-D.7  & The total DC current draw \textit{should} be below 1.8 A. &      A, T        & 10, 19, 20, 29            & Analysis passed, see Table \ref{tab:power-design-table}        \\ \hline
+D.7  & The total DC current draw \textit{should} be below 1.8 A. &      A, T        & 10, 19, 20, 29, 33            & Analysis passed, see Table \ref{tab:power-design-table}, testing ongoing.        \\ \hline
 D.8  & The total power consumption \textit{should} be below 374 Wh.& A & - & Analysis passed, see Table \ref{tab:power-design-table} \\ \hline
-D.16 & The experiment \textit{shall} be able to autonomously turn itself off just before landing.                                                                                       &       R, T      &  7, 10, 31           &    To be done    \\ \hline
+D.16 & The experiment \textit{shall} be able to autonomously turn itself off just before landing.                                                                                       &       R, T      &  7, 10, 31, 32           &   Testing ongoing    \\ \hline
 D.17 & The experiment box \textit{shall} be placed with at least one face exposed to the outside.                                                                                &     R, A         & -            &   Review of design passed, explained in Section \ref{sec:4.2.1}     
 \\ \hline
-D.18 & The  experiment \textit{shall} operate  in  the  pressure  profile  of  the BEXUS flight.\cite{BexusManual}                                                                              &    A, T         & 4, 18, 30 &  Pump Passed Test 18     
+D.18 & The  experiment \textit{shall} operate  in  the  pressure  profile  of  the BEXUS flight.\cite{BexusManual}                                                                              &    A, T         & 4, 18, 30 &  Pump Passed Test 18, further testing ongoing     
 \\ \hline
 D.19 & The  experiment \textit{shall} operate  in  the  vertical  and  horizontal  acceleration  profile  of  the BEXUS flight.\cite{BexusManual}                                                                              &    A, T         & 9, 25, 27            &   Analysis passed, see Section \ref{Experiment_Setup}    
 \\ \hline
@@ -49,7 +49,7 @@ D.21 & The experiment \textit{shall} be attached to the gondola’s rails.      
 D.22 & The telecommand data rate \textit{shall} not be over 10 kb/s.                                                                               &     A, R         & -            &    Analysis passed, see Section \ref{sec:4.8.2}.   
 \\  \hline
 
-D.23 & The air intake rate of the air pump \textit{shall} be 3 L/min at 24 km altitude.                                                                                                                        &       A, T        & 4, 18            &  Initial Test passed, Test 4 required to confirm.      \\ \hline
+D.23 & The air intake rate of the air pump \textit{shall} be 3 L/min at 24 km altitude.                                                                                                                        &       A, T        & 4, 18            &  Initial Test passed, Test 4 ongoing.      \\ \hline
 
 D.24 & The temperature of the Brain \textit{shall} be between -10$\degree$C and 25$\degree$C.                                                                                                 &       A, T       & 5           & Analysis passed, see Section \ref{sec:4.6.5}       \\    \hline
 D.26 & The AAC air sampling \textit{shall} filter out all water molecules before filling the sampling bags.                                                                             &        A, T      & 17            &  Analysis passed, see Section \ref{sec:4.4.5}        \\

@@ -65,3 +65,22 @@ A possible explanation for this results could be that the emptying of the sampli
 The general outcome of this test is that the team has realized that the flushing of the sampling bags is a very delicate process. This test will be repeated but using the set-up described in Section 4. This test has also been useful to decide that the flushing of the sampling bags should be done with dry gas instead of nitrogen in order to minimize the effects of the nitrogen diluting in the samples. 
 
 % Flushing with nitrogen may alter the results. 
+
+\subsubsection{Test 4: Low Pressure}
+
+The same vacuum chamber was used as in Tests 18 and 29. The Styrofoam was measured on each side before it was placed in the chamber. It was then taken down to 5 hPa and held there for 75 minutes. It was then removed and the sides were measured again. It was found that there was no significant change in dimensions. The results can be seen in Table \ref{tab:styrofoam-test-result}.
+
+\input{5-experiment-verification-and-testing/tables/test-results/styrofoamvacuum.tex}
+
+As some sides are measured slightly bigger after and some slightly smaller it is thought this is due to the measuring technique and not due to changes in the Styrofoam. It is thought the result from side A could be due to deforming the Styrofoam with calipers or a misread original length.
+
+The pump and the airflow sensor were connected together and tested at 16 different pressures. Due to some issues in the data logging with time stamping it is not possible to verify the pump performance until this issue is resolved. A re-test will be made as soon as possible.
+
+\subsubsection{Test 20: Switching Circuit Testing and Verification}
+
+This has begun on breadboards with LEDs replacing the valves until the valves arrive. 
+So far DC-DC's have been set up and tested. Sensors have been connected electronically and the next step is to get them to communicate with the Arduino. Mosfets connecting to the pump and the heaters have been tested for switching on and off with good results.
+
+\subsubsection{Test 32: Software Failure}
+
+So far testing has revealed that losing the SD card does not interrupt ground station data, it just means no data will be written to the SD card. However, if you reconnect the SD after removing it currently it will not connect back to the SD card and it as if the SD card has been permanently lost.

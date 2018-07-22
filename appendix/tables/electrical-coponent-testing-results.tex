@@ -1,0 +1,17 @@
+\begin{table}[H]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Complete & Test \# & Test & Description & Results \\ \hline
+NO & 1 & Test Voltage divider (Airflow + Pressure sensor) & Test the airflow sense with voltage divider and check the voltage output with divider vs without to control that signal does not get interfered & 220(top) + 100(bot) Airflow \\ \hline
+YES & 2 & Test MOSFET & Test the MOSFETS by applying 3.3v to the gate from something else than Arduino &  \\ \hline
+YES & 3 & Test LED Configuration & Test the resistance and zener diode configuration & 1k on 12v  3.9k for 24v \\ \hline
+NO & 4 & Test Valves with MOSFET & Test to open and close valves through the MOSFETS without Arduino 3.3v &  \\ \hline
+YES & 5 & Test Pump + MOSFET & Same as valves but for pump &  \\ \hline
+YES & 6 & Test DCDCs in parallel with LED & Test that the parallel configuration of the dcdc converters with the indication lights and make sure it works as expected &  \\ \hline
+NO & 7 & Test interface connections & Test the dsub and power cables that will be inside the brain by checking for connectivity and wire resistances. &  \\ \hline
+YES & 8 & Test Potentiometer trimming for DCDC & Test the DCDC trimming by using the potentiometers &  \\ \hline
+NO & 9 & Test grounding for analog components & Test the grounding configuration for the analog components and compare it with non isolated ground wile turning on other power hungry components &  \\ \hline
+\end{tabular}
+\caption{Electrical Component Testing Detailed Procedure and Results}
+\label{tab:test33-result-electrical-component}
+\end{table}
