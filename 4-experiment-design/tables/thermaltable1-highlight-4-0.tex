@@ -1,0 +1,73 @@
+
+
+%Added this space to help us see all of the numbers. This "Track changes" sign blocks them every time!
+
+
+\begin{longtable}{|m{1cm}|m{3.5cm}|m{1.3cm}|m{1.3cm}|m{1.4cm}|m{1.3cm}|m{2.0cm}|m{1.6cm}|}
+\hline
+\multirow{2}{*}{\textbf{ID}} & \multirow{2}{*}{\textbf{Components}}                                 & \multicolumn{2}{l|}{\textbf{Operating (°C)}} & \multicolumn{2}{l|}{\textbf{Survivable (°C)}} & \multicolumn{2}{l|}{\textbf{Expected (°C)}} \\ \cline{3-8} &   & Min.  & Max.  & Min.  & Max.  &  Min.   &  Max.            \\ \hline
+E1 & Arduino Due & -40 & 85 & -60 & 150 & \color{red}{\st{-30.62}}\color{blue}{-15.7} & \color{red}{\st{24.01}}\color{blue}{54.0} \\ \hline
+E2 & Ethernet Shield & -40 & 85 & -65 & 150 & \color{red}{\st{-30.62}} \color{blue}{-15.7} & \color{red}{\st{24.01}}\color{blue}{54.0} \\ \hline
+E3 & Miniature diaphragm air pump & 5 & 40 & -10 & 40 & 10 & \color{red}{\st{34.93}}\color{blue}{34.9} \\ \hline
+E4 & Pressure Sensor & -40 & 85 & -40 & 125 & \color{red}{\st{-19.70}}\color{blue}{-15.7} & \color{red}{\st{34.93}}\color{blue}{54.0} \\ \hline
+E5 & Sampling Valve (inlet and outlet 1/8"" female) & -20 & \color{red}{\st{50}}\color{blue}{68} & -20\footnote{If survivable temperatures were not given, operating temperatures were used as survivable limits.\label{fn:erik}} & \color{red}{\st{50}}\color{blue}{68}\textsuperscript{\ref{fn:erik}} & -15 & 20 \\ \hline
+E6 & Airflow sensor AWM43300V & -20 & 70 & -20\textsuperscript{\ref{fn:erik}} & 70\textsuperscript{\ref{fn:erik}} & \color{red}{\st{-8.77}}\color{blue}{-8.8} & \color{red}{\st{34.93}}\color{blue}{34.9} \\ \hline
+E7 & Heater ($12.7\times 50.8 mm$) & -200 & 200 & -200\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & -20 & 36 \\ \hline
+\color{red}\st{E8} & \color{red}\st{Voltage Regulator} & \color{red}\st{-40} & \color{red}\st{125} & \color{red}\st{-40\textsuperscript{\ref{fn:erik}}} & \color{red}\st{125\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-30.62} & \color{red}\st{34.93} \\ \hline
+E9 & Temperature Sensor & -55 & 125 & -65 & 150 & \color{red}{\st{-19.70}}\color{blue}{-19.7} & \color{red}{\st{34.93}}\color{blue}{43} \\ \hline
+E10 & DCDC 24 V & -40 & 85 & -55 & 125 & \color{red}{\st{-19.70}}\color{blue}{-15.7} & \color{red}{\st{34.93}}\color{blue}{54.0} \\ \hline
+E12 & Micro SD & -25 & 85 & -200\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & \color{red}{\st{-19.70}}\color{blue}{-15.7} & \color{red}{\st{34.93}}\color{blue}{54.0} \\ \hline
+%E13 & Logic CAT5E & -55 & 60 & -55\textsuperscript{\ref{fn:erik}} & 60\textsuperscript{\ref{fn:erik}} & -34 & 15 \\ \hline
+% E14 & Resistors (33, 150 and 100 ohm) & -55 & 155 & (-55)\textsuperscript{\ref{fn:erik}} & (155)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+% E15 & Capacitors $(0.1 \mu$ F and $10 \mu$ F) & -30 & 85 & (-200)\textsuperscript{\ref{fn:erik}} & (200)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+E16 & \color{red}{\st{Mosfet}}\color{blue}{MOSFET} for current control & -55 & 175 & -55 & 175 & \color{red}{\st{-20}}\color{blue}{-15.7} & \color{red}{\st{-20}}\color{blue}{54.0} \\ \hline
+E17 & Diodes for DCDC converters & -65 & 175 & -65\textsuperscript{\ref{fn:erik}} & 175\textsuperscript{\ref{fn:erik}} & \color{red}{\st{-19.70}}\color{blue}{-15.7} & \color{red}{\st{34.93}}\color{blue}{54.0} \\ \hline
+E18 & 3.3V LED & -40 & 85 & -40\textsuperscript{\ref{fn:erik}} & 85\textsuperscript{\ref{fn:erik}} & \color{red}{\st{-19.70}}\color{blue}{-15.7} & \color{red}{\st{24.01}}\color{blue}{54.0} \\ \hline 
+\color{red}\st{E19} & \color{red}\st{15-pin D-SUB Female connector with pins} & \color{red}\st{-55} & \color{red}\st{120} & \color{red}\st{-200\textsuperscript{\ref{fn:erik}}} & \color{red}\st{200\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-15.7} & \color{red}\st{54.0} \\ \hline
+\color{red}\st{E20} & \color{red}\st{9-pin D-SUB Female connector with pins} & \color{red}\st{-55} & \color{red}\st{120}  & \color{red}\st{-200\textsuperscript{\ref{fn:erik}}} & \color{red}\st{200\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-15.7} & \color{red}\st{54.0} \\ \hline
+\color{red}\st{E21} & \color{red}\st{9-pin D-SUB Female connector with soldering cups} & \color{red}\st{-55} & \color{red}\st{105} & \color{red}\st{-55\textsuperscript{\ref{fn:erik}}} & \color{red}\st{105\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-15.7} & \color{red}\st{54.0} \\ \hline
+\color{red}\st{E22} & \color{red}\st{9-pin D-SUB Male connector with soldering cups} & \color{red}\st{-55} & \color{red}\st{105} & \color{red}\st{-55\textsuperscript{\ref{fn:erik}}} & \color{red}\st{105\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-15.7} & \color{red}\st{54.0} \\ \hline
+\color{red}\st{E23} & \color{red}\st{15-pin D-SUB Male connector with soldering cups} & \color{red}\st{-55}  & \color{red}\st{105} & \color{red}\st{-55\textsuperscript{\ref{fn:erik}}} & \color{red}\st{105\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-15.7} & \color{red}\st{54.0} \\ \hline
+\color{red}\st{E24} & \color{red}\st{9-pin D-SUB backing} & \color{red}\st{-40} & \color{red}\st{120} & \color{red}\st{-40\textsuperscript{\ref{fn:erik}}} & \color{red}\st{120} & \color{red}\st{-15.7} & \color{red}\st{54.0}  \\ \hline
+\color{red}\st{E25} & \color{red}\st{15-pin D-SUB backing} & \color{red}\st{-40} & \color{red}\st{120} & \color{red}\st{-40\textsuperscript{\ref{fn:erik}}} & \color{red}\st{120} & \color{red}\st{-15.7} & \color{red}\st{54.0}  \\ \hline
+\color{red}\st{E26} & \color{red}\st{Wall mounting bolts} & \color{red}\st{TBD\textsuperscript{\ref{fn:ivan}}} & \color{red}\st{TBD\textsuperscript{\ref{fn:ivan}}} & \color{red}\st{TBD\textsuperscript{\ref{fn:ivan}}} & \color{red}\st{TBD\textsuperscript{\ref{fn:ivan}}} & \color{red}\st{TBD\textsuperscript{\ref{fn:ivan}}} & \color{red}\st{TBD\textsuperscript{\ref{fn:ivan}}} \\ \hline
+\color{red}\st{E27} & \color{red}\st{D-SUB cable CAC to AAC} & \color{red}\st{-40} & \color{red}\st{85} & \color{red}\st{-55} & \color{red}\st{125} & \color{red}\st{-40} & \color{red}\st{40} \\ \hline
+E28 & \color{red}{\st{D-SUB cable CAC to AAC}}\color{blue}{3.3 Zener diode} & \color{red}{\st{-40}}\color{blue}{-65} & \color{red}{\st{85}}\color{blue}{175} & \color{red}{\st{-40}}\color{blue}{-65}\textsuperscript{\ref{fn:erik}} & \color{red}{\st{-40}}\color{blue}{175}\textsuperscript{\ref{fn:erik}} & \color{red}{\st{85}}\color{blue}{-15.7} & \color{red}{\st{-}}\color{blue}{54.0} \\ \hline
+\color{red}\st{E29} & \color{red}\st{Male connector on PCB} & \color{red}\st{-40} & \color{red}\st{85} & \color{red}\st{-40\textsuperscript{\ref{fn:erik}}} & \color{red}\st{85} & \color{red}\st{-15.7} & \color{red}\st{54.0} \\ \hline
+\color{red}\st{E30} & \color{red}\st{Female connector from wall} & \color{red}\st{-40} & \color{red}\st{85} & \color{red}\st{-40\textsuperscript{\ref{fn:erik}}} & \color{red}\st{85} & \color{red}\st{-} & \color{red}\st{-} \\ \hline
+%E31 & Grounding contact & -55 & 125 & -55\textsuperscript{\ref{fn:erik}} & 125\textsuperscript{\ref{fn:erik}} & - & - \\ \hline
+E32 & Logic CAT5 E-link for inside box &\color{red}{\st{-20}}\color{blue}{-55} & \color{red}{\st{75}}\color{blue}{60} & \color{red}{\st{-20}}\color{blue}{-55}\textsuperscript{\ref{fn:erik}} & \color{red}{\st{75}}\color{blue}{60}\textsuperscript{\ref{fn:erik}} & \color{red}{\st{-15}}\color{blue}{-34} & \color{red}{\st{20}}\color{blue}{15} \\ \hline
+\color{red}\st{E33} & \color{red}\st{Signal Wires} & \color{red}\st{-60} & \color{red}\st{200} & \color{red}\st{-60\textsuperscript{\ref{fn:erik}}} & \color{red}\st{200\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-} & \color{red}\st{-} \\ \hline
+E34 & Flushing valve (inlet and outlet 1/8"" female) & \color{red}{\st{-10}}\color{blue}{-20} & \color{red}{\st{50}}\color{blue}{68} & \color{red}{\st{-10}}\color{blue}{-20}\textsuperscript{\ref{fn:erik}} & \color{red}{\st{50}}\color{blue}{68} & \color{red}{\st{-7.36}}\color{blue}{-7.4} & \color{red}{\st{42.53}}\color{blue}{68} \\ \hline
+E35 & Valves manifold (outlet 1/8"" female) & -10 & 50 & -10\textsuperscript{\ref{fn:erik}} & 50\textsuperscript{\ref{fn:erik}} & \color{red}{\st{6.77}}\color{blue}{3} & \color{red}{\st{40.504}}\color{blue}{18} \\ \hline
+\color{red}\st{E36} & \color{red}\st{Power wire black} & \color{red}\st{-60} & \color{red}\st{200} & \color{red}\st{-60\textsuperscript{\ref{fn:erik}}} & \color{red}\st{200\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-} & \color{red}\st{-} \\ \hline
+% E44 & Heat shrinking tube 2.5 x 1mm & -55 & 125 & (-55)\textsuperscript{\ref{fn:erik}} & (125)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+\color{red}\st{E45} & \color{red}\st{25-pin D-SUB female connector with pins} & \color{red}\st{-10} & \color{red}\st{90} & \color{red}\st{-10\textsuperscript{\ref{fn:erik}}} & \color{red}\st{90\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-8.77} & \color{red}\st{24.01} \\ \hline
+\color{red}\st{E46} & \color{red}\st{25-pin D-SUB male connector with soldering cups} & \color{red}\st{-10} & \color{red}\st{90} & \color{red}\st{-10\textsuperscript{\ref{fn:erik}}} & \color{red}\st{90\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-8.77} & \color{red}\st{24.01} \\ \hline
+\color{red}\st{E47} & \color{red}\st{25-pin D-SUB backing} & \color{red}\st{-10} & \color{red}\st{90} & \color{red}\st{-10\textsuperscript{\ref{fn:erik}}} & \color{red}\st{90\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-8.77} & \color{red}\st{24.01} \\ \hline
+\color{red}\st{E48} & \color{red}\st{Power wire red} & \color{red}\st{-60} & \color{red}\st{200} & \color{red}\st{-60\textsuperscript{\ref{fn:erik}}} & \color{red}\st{200\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-} & \color{red}\st{-}  \\ \hline
+% E49 & Potentiometer 1k ohm & -55 & 125 & (-55)\textsuperscript{\ref{fn:erik}} & (120)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+\color{red}\st{E50} & \color{red}\st{6-pin male} & \color{red}\st{-55} & \color{red}\st{105} & \color{red}\st{-55\textsuperscript{\ref{fn:erik}}} & \color{red}\st{105\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-8.8} & \color{red}\st{24.0}  \\ \hline
+\color{red}\st{E51} & \color{red}\st{8-pin male single row header}& \color{red}\st{-40} & \color{red}\st{105} & \color{red}\st{-40\textsuperscript{\ref{fn:erik}}} & \color{red}\st{105\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-8.8} & \color{red}\st{24.0}  \\ \hline
+\color{red}\st{E52} & \color{red}\st{10-pin male single row header} & \color{red}\st{-55} & \color{red}\st{105} & \color{red}\st{-55\textsuperscript{\ref{fn:erik}}} & \color{red}\st{105\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-8.8} & \color{red}\st{24.0}  \\ \hline
+\color{red}\st{E53} & \color{red}\st{36-pin male double row header} & \color{red}\st{-40} & \color{red}\st{105} & \color{red}\st{-40} & \color{red}\st{125} & \color{red}\st{-8.8} & \color{red}\st{24.0}  \\ \hline
+\color{red}\st{E54} & \color{red}\st{12 V DC/DC converter} & \color{red}\st{-40} & \color{red}\st{85} & \color{red}\st{-55} & \color{red}\st{125} & \color{red}\st{-15.7} & \color{red}\st{54.0}  \\ \hline
+%E55 & 50 k$\Omega$ Potentiometer & -55 & 125 & -55\textsuperscript{\ref{fn:erik}} & 125\textsuperscript{\ref{fn:erik}} & -15.7 & 54.0  \\ \hline
+\color{red}\st{E56} & \color{red}\st{Static pressure sensor} & \color{red}\st{-40} & \color{red}\st{120} & \color{red}\st{-40\textsuperscript{\ref{fn:erik}}} & \color{red}\st{120\textsuperscript{\ref{fn:erik}}} & \color{red}\st{-8.8} & \color{red}\st{34.9} \\ \hline
+%E57 & Connector for static pressure sensor & -25 & 80 & -25\textsuperscript{\ref{fn:erik}} & 80\textsuperscript{\ref{fn:erik}} &  -8.8 & 34.9 \\ \hline
+\color{blue}{E58} & \color{red}{\st{}}\color{blue}{PCB} & \color{red}{\st{-55}}\color{blue}{-50} & \color{red}{\st{105}}\color{blue}{110} & \color{red}{\st{-55}}\color{blue}{-50}\textsuperscript{\ref{fn:erik}} & \color{red}{\st{105}}\color{blue}{110}\textsuperscript{\ref{fn:erik}} & \color{red}{\st{-8.77}}\color{blue}{-15.7} & \color{red}{\st{24.01}}\color{blue}{54.0} \\ \hline
+\color{red}{\st{E51}}\color{blue}{E59}  & \color{red}{\st{8-pin male single row header}}\color{blue}{Pressure Sensor PCB} & \color{red}{\st{-40}}\color{blue}{-50} & \color{red}{\st{105}}\color{blue}{110} & \color{red}{\st{-40}}\color{blue}{-50}\textsuperscript{\ref{fn:erik}} & \color{red}{\st{105}}\color{blue}{110}\textsuperscript{\ref{fn:erik}} & \color{red}{\st{-8.77}}\color{blue}{-50} & \color{red}{\st{24.01}}\color{blue}{39} \\ \hline
+
+
+\caption{Table of Component Temperature Ranges.}
+\label{tab:thermal-table}
+\end{longtable}
+\raggedbottom
+
+
+
+
+
+
+
+
