@@ -1,0 +1,73 @@
+
+
+%Added this space to help us see all of the numbers. This "Track changes" sign blocks them every time!
+
+
+\begin{longtable}{|m{1cm}|m{3.5cm}|m{1.3cm}|m{1.3cm}|m{1.4cm}|m{1.3cm}|m{1.3cm}|m{1.3cm}|}
+\hline
+\multirow{2}{*}{\textbf{ID}} & \multirow{2}{*}{\textbf{Components}}                                 & \multicolumn{2}{l|}{\textbf{Operating (°C)}} & \multicolumn{2}{l|}{\textbf{Survivable (°C)}} & \multicolumn{2}{l|}{\textbf{Expected (°C)}} \\ \cline{3-8} &   & Min.  & Max.  & Min.  & Max.  &  Min.   &  Max.            \\ \hline
+E1 & Arduino Due & -40 & 85 & -60 & 150 & -15.7 & 54.0 \\ \hline
+E2 & Ethernet Shield & -40 & 85 & -65 & 150 & -15.7 & 54.0 \\ \hline
+E3 & Miniature diaphragm air pump & 5 & 40 & -10 & 40 & 10 & 34.9 \\ \hline
+E4 & Pressure Sensor & -40 & 85 & -40 & 125 & -15.7 & 54.0 \\ \hline
+E5 & Sampling Valve (inlet and outlet 1/8"" female) & -20 & 68 & -20\footnote{If survivable temperatures were not given, operating temperatures were used as survivable limits.\label{fn:erik}} & 68\textsuperscript{\ref{fn:erik}} & -15 & 20 \\ \hline
+E6 & Airflow sensor AWM43300V & -20 & 70 & -20\textsuperscript{\ref{fn:erik}} & 70\textsuperscript{\ref{fn:erik}} & -8.8 & 34.9 \\ \hline
+E7 & Heater ($12.7\times 50.8 mm$) & -200 & 200 & -200\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & -20 & 36 \\ \hline
+%E8 & Voltage Regulator & -40 & 125 & -40\textsuperscript{\ref{fn:erik}} & 125\textsuperscript{\ref{fn:erik}} & -30.62 & 34.93 \\ \hline
+E9 & Temperature Sensor & -55 & 125 & -65 & 150 & -19.7 & 43 \\ \hline
+E10 & DCDC 24 V & -40 & 85 & -55 & 125 & -15.7 & 54.0 \\ \hline
+E12 & Micro SD & -25 & 85 & -200\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & -15.7 & 54.0 \\ \hline
+%E13 & Logic CAT5E & -55 & 60 & -55\textsuperscript{\ref{fn:erik}} & 60\textsuperscript{\ref{fn:erik}} & -34 & 15 \\ \hline
+% E14 & Resistors (33, 150 and 100 ohm) & -55 & 155 & (-55)\textsuperscript{\ref{fn:erik}} & (155)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+% E15 & Capacitors $(0.1 \mu$ F and $10 \mu$ F) & -30 & 85 & (-200)\textsuperscript{\ref{fn:erik}} & (200)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+E16 & MOSFET for current control & -55 & 175 & -55 & 175 & -15.7 & 54.0 \\ \hline
+E17 & Diodes for DCDC converters & -65 & 175 & -65\textsuperscript{\ref{fn:erik}} & 175\textsuperscript{\ref{fn:erik}} & -15.7 & 54.0 \\ \hline
+E18 & 3.3V LED & -40 & 85 & -40\textsuperscript{\ref{fn:erik}} & 85\textsuperscript{\ref{fn:erik}} & -15.7 & 54.0 \\ \hline 
+%E19 & 15-pin D-SUB Female connector with pins & -55 & 120 & -200\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & -15.7 & 54.0 \\ \hline
+%E20 & 9-pin D-SUB Female connector with pins & -55 & 120  & -200\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & -15.7 & 54.0 \\ \hline
+%E21 & 9-pin D-SUB Female connector with soldering cups & -55 & 105 & -55\textsuperscript{\ref{fn:erik}} & 105\textsuperscript{\ref{fn:erik}} & -15.7 & 54.0 \\ \hline
+%E22 & 9-pin D-SUB Male connector with soldering cups & -55 & 105 & -55\textsuperscript{\ref{fn:erik}} & 105\textsuperscript{\ref{fn:erik}} & -15.7 & 54.0 \\ \hline
+%E23 & 15-pin D-SUB Male connector with soldering cups & -55  & 105 & -55\textsuperscript{\ref{fn:erik}} & 105\textsuperscript{\ref{fn:erik}} & -15.7 & 54.0 \\ \hline
+%E24 & 9-pin D-SUB backing & -40 & 120 & -40\textsuperscript{\ref{fn:erik}} & 120 & -15.7 & 54.0  \\ \hline
+%E25 & 15-pin D-SUB backing & -40 & 120 & -40\textsuperscript{\ref{fn:erik}} & 120 & -15.7 & 54.0  \\ \hline
+% E26 & Wall mounting bolts & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+%E27 & D-SUB cable CAC to AAC & -40 & 85 & -55 & 125 & -40 & 40 \\ \hline
+E28 & 3.3 Zener diode & -65 & 175 & -65\textsuperscript{\ref{fn:erik}} & 175\textsuperscript{\ref{fn:erik}} & -15.7 & 54.0 \\ \hline
+%E29 & Male connector on PCB & -40 & 85 & -40\textsuperscript{\ref{fn:erik}} & 85 & -15.7 & 54.0 \\ \hline
+%E30 & Female connector from wall & -40 & 85 & -40\textsuperscript{\ref{fn:erik}} & 85 & - & - \\ \hline
+%E31 & Grounding contact & -55 & 125 & -55\textsuperscript{\ref{fn:erik}} & 125\textsuperscript{\ref{fn:erik}} & - & - \\ \hline
+E32 & Logic CAT5 E-link for inside box &-55 & 60 & -55\textsuperscript{\ref{fn:erik}} & 60\textsuperscript{\ref{fn:erik}} & -34 & 15 \\ \hline
+%E33 & Signal Wires & -60 & 200 & -60\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & - & - \\ \hline
+E34 & Flushing valve (inlet and outlet 1/8"" female) & -20 & 68 & -20\textsuperscript{\ref{fn:erik}} & 68 & -7.4 & 68 \\ \hline
+E35 & Valves manifold (outlet 1/8"" female) & -10 & 50 & -10\textsuperscript{\ref{fn:erik}} & 50\textsuperscript{\ref{fn:erik}} & 3 & 18 \\ \hline
+%E36 & Power wire black & -60 & 200 & -60\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & - & - \\ \hline
+% E44 & Heat shrinking tube 2.5 x 1mm & -55 & 125 & (-55)\textsuperscript{\ref{fn:erik}} & (125)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+%E45 & 25-pin D-SUB female connector with pins & -10 & 90 & -10\textsuperscript{\ref{fn:erik}} & 90\textsuperscript{\ref{fn:erik}} & -8.77 & 24.01 \\ \hline
+%E46 & 25-pin D-SUB male connector with soldering cups & -10 & 90 & -10\textsuperscript{\ref{fn:erik}} & 90\textsuperscript{\ref{fn:erik}} & -8.77 & 24.01 \\ \hline
+%E47 & 25-pin D-SUB backing & -10 & 90 & -10\textsuperscript{\ref{fn:erik}} & 90\textsuperscript{\ref{fn:erik}} & -8.77 & 24.01 \\ \hline
+%E48 & Power wire red & -60 & 200 & -60\textsuperscript{\ref{fn:erik}} & 200\textsuperscript{\ref{fn:erik}} & - & -  \\ \hline
+% E49 & Potentiometer 1k ohm & -55 & 125 & (-55)\textsuperscript{\ref{fn:erik}} & (120)\textsuperscript{\ref{fn:erik}} & TBD\textsuperscript{\ref{fn:ivan}} & TBD\textsuperscript{\ref{fn:ivan}} \\ \hline
+%E50 & 6-pin male & -55 & 105 & -55\textsuperscript{\ref{fn:erik}} & 105\textsuperscript{\ref{fn:erik}} & -8.8 & 24.0  \\ \hline
+%E51 & 8-pin male single row header& -40 & 105 & -40\textsuperscript{\ref{fn:erik}} & 105\textsuperscript{\ref{fn:erik}} & -8.8 & 24.0  \\ \hline
+%E52 & 10-pin male single row header & -55 & 105 & -55\textsuperscript{\ref{fn:erik}} & 105\textsuperscript{\ref{fn:erik}} & -8.8 & 24.0  \\ \hline
+%E53 & 36-pin male double row header & -40 & 105 & -40 & 125 & -8.8 & 24.0  \\ \hline
+%E54 & 12 V DC/DC converter & -40 & 85 & -55 & 125 & -15.7 & 54.0  \\ \hline
+%E55 & 50 k$\Omega$ Potentiometer & -55 & 125 & -55\textsuperscript{\ref{fn:erik}} & 125\textsuperscript{\ref{fn:erik}} & -15.7 & 54.0  \\ \hline
+%E56 & Static pressure sensor & -40 & 120 & -40\textsuperscript{\ref{fn:erik}} & 120\textsuperscript{\ref{fn:erik}} &  -8.8 & 34.9 \\ \hline
+%E57 & Connector for static pressure sensor & -25 & 80 & -25\textsuperscript{\ref{fn:erik}} & 80\textsuperscript{\ref{fn:erik}} &  -8.8 & 34.9 \\ \hline
+E58 & PCB & -50 & 110 & -50\textsuperscript{\ref{fn:erik}} & 110\textsuperscript{\ref{fn:erik}} & -15.7 & 54.0 \\ \hline
+E59 & Pressure Sensor PCB & -50 & 110 & -50\textsuperscript{\ref{fn:erik}} & 110\textsuperscript{\ref{fn:erik}} & -50 & 39 \\ \hline
+
+
+\caption{Table of Component Temperature Ranges.}
+\label{tab:thermal-table}
+\end{longtable}
+\raggedbottom
+
+
+
+
+
+
+
+

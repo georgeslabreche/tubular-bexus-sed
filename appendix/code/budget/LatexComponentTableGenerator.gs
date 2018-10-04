@@ -1,4 +1,4 @@
-RANGE_TABLE = 'B5:P202';
+RANGE_TABLE = 'B5:P226';
 
 var sheet = SpreadsheetApp.getActiveSpreadsheet();
 var tableRange = sheet.getRange(RANGE_TABLE);
@@ -8,8 +8,8 @@ var tableRange = sheet.getRange(RANGE_TABLE);
  */ 
 function generateAllComponentTables(){
   generateTable_('M', 'Mechanical Components Table', 'tab:components-table-mechanical', 'E300');
-  generateTable_('E', 'Electrical Components Table', 'tab:components-table-electrical', 'E301');
-  generateTable_('O', 'Other Components Table', 'tab:component-table-other', 'E302');
+  generateTable_('E', 'Electrical Components Table', 'tab:components-table-electrical', 'E302');
+  generateTable_('O', 'Other Components Table', 'tab:component-table-other', 'E304');
 }
 
 /**
@@ -18,9 +18,9 @@ function generateAllComponentTables(){
 function generateTable_(divisionCode, caption, label, outputCell) {
 
   var header = '\\ begin{longtable} ' +
-  '{|m{0.05\\ textwidth}|m{0.25\\ textwidth}|m{0.15\\ textwidth}|m{0.2\\ textwidth}|m{0.05\\ textwidth}|m{0.05\\ textwidth}|m{0.05\\ textwidth}|m{0.25\\ textwidth}|m{0.095\\ textwidth}|} ' +
+  '{|m{0.05\\ textwidth}|m{0.25\\ textwidth}|m{0.15\\ textwidth}|m{0.2\\ textwidth}|m{0.05\\ textwidth}|m{0.07\\ textwidth}|m{0.07\\ textwidth}|m{0.25\\ textwidth}|m{0.11\\ textwidth}|} ' +
   '\\ hline ' +
-  '\\ textbf{ID} & \\ textbf{A} & \\ textbf{B} & \\ textbf{C} & \\ textbf{D} & \\ textbf{E} & \\ textbf{F}  & \\ textbf{G}  & \\ textbf{H} \\\\  \\ hline ';
+  '\\ textbf{ID} & \\ textbf{Component Name} & \\ textbf{Manufacturer} & \\ textbf{Manufacturer Code} & \\ textbf{Qty} & \\ textbf{Total Mass [g]} & \\ textbf{Total Cost [Eur]}  & \\ textbf{Note}  & \\ textbf{Status} \\\\  \\ hline ';
   
   var footer = '\\ caption{' + caption + '} ' +
     '\\ label{' + label + '} ' +
@@ -75,7 +75,7 @@ function generateTable_(divisionCode, caption, label, outputCell) {
       var note = tableRange.getCell(i, 15).getValue();
       
       var key = padStart_(id.substr(1), 2, "0")
-      rowArray[key] = '' + id + ' & ' + component + ' & ' + manufacturer + ' & ' + manufacturerCode + ' & '  + quantity + ' & ' + unitMass + ' & ' + unitCost + ' & ' + note + ' & ' + status + ' \\\\  \\ hline ';
+      rowArray[key] = '' + id + ' & ' + component + ' & ' + manufacturer + ' & ' + manufacturerCode + ' & '  + quantity + ' & ' + totalMass + ' & ' + totalCost + ' & ' + note + ' & ' + status + ' \\\\  \\ hline ';
       
     }
      

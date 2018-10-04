@@ -6,67 +6,66 @@
 
 \hline
 \textbf{ID}   & \textbf{Written requirement}                                                                                                                                                     & \textbf{Verification} & \textbf{Test number} & \textbf{Status} \\ \hline
-F.2  & The experiment \textit{shall} collect air samples by the CAC.&  A, R & - & Pass by similarity \cite{AircoreFlights} \\ \hline
-F.3  & The experiment \textit{shall} collect air samples by the AAC. & A, T& 2, 16 & Analysis passed, see Section \ref{sec:aac-analysis}\\ \hline
-F.9  & The experiment \textit{should} collect data on the air intake flow to the AAC. & A, T & 24, 31, 32 & Pass by similarity, testing ongoing\footnote{sensor libraries are available online and used by many users\label{fn:sensor-libraries}}\\ \hline
-F.10 & The experiment \textit{shall} collect data on the air pressure. & A, T& 24, 31, 32 & Pass by similarity, testing ongoing\textsuperscript{\ref{fn:sensor-libraries}}\\ \hline
-F.11 & The experiment \textit{shall} collect data on the temperature. &  A, T& 24, 31, 32 & Pass by similarity, testing ongoing\textsuperscript{\ref{fn:sensor-libraries}}\\ \hline
+F.2  & The experiment \textit{shall} collect air samples by the CAC.&  A, R & - & Pass \\ \hline % by similarity \cite{AircoreFlights}
+F.3  & The experiment \textit{shall} collect air samples by the AAC. & A, T& 2, 16 & Pass\\ \hline %Analysis passed, see Section \ref{sec:aac-analysis}
+F.9  & The experiment \textit{should} collect data on the air intake flow to the AAC. & A, T & 24, 31, 32 & Pass \footnote{sensor libraries are available online and used by many users\label{fn:sensor-libraries}}\\ \hline
+F.10 & The experiment \textit{shall} collect data on the air pressure. & A, T& 24, 31, 32 & Pass \textsuperscript{\ref{fn:sensor-libraries}}\\ \hline
+F.11 & The experiment \textit{shall} collect data on the temperature. &  A, T& 24, 31, 32 & Pass \textsuperscript{\ref{fn:sensor-libraries}}\\ \hline
 
 
 
-P.12 & The accuracy of the ambient pressure measurements \textit{shall} be -1.5/+1.5 mbar for 25$\degree$.                                                                              &        R      &  -          & Pass from data sheet       \\ \hline
-P.13 & The accuracy of the temperature measurements \textit{shall} be +3.5/-3$\degree$C(max) for condition of -55$\degree$C to 150$\degree$C.                                   &       R       & -            &    Pass from data sheet    \\ \hline
+P.12 & The accuracy of the ambient pressure measurements \textit{shall} be -1.5/+1.5 hPa for 25$\degree{C}$.                                                                              &        R      &  -          & Pass        \\ \hline %from data sheet
+P.13 & The accuracy of the temperature measurements \textit{shall} be +3.5/-3$\degree{C}$(max) for condition of -55$\degree{C}$ to 150$\degree{C}$.                                   &       R       & -            &    Pass   \\ \hline %from data sheet
 
 
-P.23 & The sampling rate of the temperature sensor \textit{shall} be 1 Hz.                                                                                    &         A,T     & 10            &  Analysis passed, see Section \ref{sec:4.8.2}      \\ \hline
-P.24 & The temperature of the Pump \textit{shall} be between 5$\degree$C and 40$\degree$C.                                                                                                    &       A, T       & 5           & Analysis passed, see Figure \ref{fig:test-flight-AAC-4-6}        \\ \hline
-P.25 & The minimum volume of air in the sampling bags for analysis \textit{shall} be 0.18 L at ground level.                                                                                                    &       A, T       & 16, 17            &  Pass by similarity \cite{LISA}. Analysis passed, see Section \ref{sec:appH}                        \\ \hline
+P.23 & The sampling rate of the temperature sensor \textit{shall} be 1 Hz.                                                                                    &         A,T     & 10            &  Pass       \\ \hline %Section \ref{sec:4.8.2}
+P.24 & The temperature of the Pump \textit{shall} be between 5$\degree{C}$ and 40$\degree{C}$.                                                                                                    &       A, T       & 5           & Analysis passed, see Figure \ref{fig:test-flight-AAC-4-6}, Test ongoing.        \\ \hline
+P.25 & The minimum volume of air in the sampling bags for analysis \textit{shall} be 0.18 L at ground level.                                                                                                    &       A, T       & 16, 17            &  Pass                     \\ \hline
 
-P.26 & The flow rate of the pump \textit{shall} be between 8 to 3 L/min from ground level up to 24 km altitude. & T & 18 & Test passed, see section 4.5.2 \\ \hline
+P.26 & The equivalent flow rate of the pump \textit{shall} be between 8 to 3 L/min from ground level up to 24 km altitude. & T & 18 & Pass \\ \hline
 
-P.27 &  The accuracy range of the sampling time, or the resolution, \textit{shall} be less than 52.94 s, or 423.53 m. & T & 16 & To be done \\ \hline
-P.28 & The sampling rate of the pressure sensor \textit{shall} be 1 Hz.                                                                                    &         A,T     & 10            &  Analysis passed, see Section \ref{sec:4.8.2}      \\ \hline
-P.29 & The sampling rate of the airflow sensor \textit{shall} be 1 Hz.                                                                                    &         A,T     & 10            &  Analysis passed, see Section \ref{sec:4.8.2}      \\ \hline
-P.30 & The accuracy of the pressure measurements inside the tubing and sampling bags \textit{shall} be -0.005/+0.005 bar for 25$\degree$C.                                                                              &        R      &  -          & Pass from data sheet       \\ \hline
+P.27 &  The accuracy range of the sampling time, or the resolution, \textit{shall} be less than 52.94 s, or 423.53 m. & T & 16 & Pass \\ \hline
+P.28 & The sampling rate of the pressure sensor \textit{shall} be 1 Hz.                                                                                    &         A,T     & 10            &  Pass \\ \hline
+P.29 & The sampling rate of the airflow sensor \textit{shall} be 1 Hz.                                                                                    &         A,T     & 10            & Pass  \\ \hline
+P.30 & The accuracy of the pressure measurements inside the tubing and sampling bags \textit{shall} be -0.005/+0.005 bar for 25$\degree{C}$.                                                                              &        R      &  -          & Pass     \\ \hline %from data sheet   
 
-D.1  & The experiment \textit{shall} operate in the temperature profile of the BEXUS vehicle flight and launch.\cite{BexusManual}                                                                         &       A, T       & 5            & Verification is ongoing.     \\ \hline
-D.2  & The experiment \textit{shall} operate in the vibration profile of the BEXUS vehicle flight and launch.\cite{BexusManual}                                                                          &       A, T       & 9            &  Analysis passed, see Section \ref{sec:4.4.1}       \\ \hline
-D.3  & The experiment \textit{shall} not have sharp edges or loose connections to the gondola that can harm the launch vehicle, other experiments, and people.                                                                                                           &      R, I      & -          &        \\ \hline %\textsuperscript{\ref{fn:unnecessary-requirement}}  
-D.4  & 
-    \item[D.4] The experiment's communication system \textit{shall} be compatible with the gondola's E-link system with the RJF21B connector over UDP for down-link and TCP for up-link.                                                                             &      A, T        & 8            &    Analysis passed, see Section \ref{sec:4.8.2}    \\ \hline
-D.5  & The experiment's power supply \textit{shall} have a 24v, 12v, 5v and 3.3v power output and be able to take 28.8v input through the Amphenol PT02E8-4P connector supplied from the gondola.                                                                                    &      A       &  -           & Analysis passed, see Sections \ref{sec:4.2.2} and \ref{sec:4.5.1}      \\ \hline
-D.7  & The total DC current draw \textit{should} be below 1.8 A. &      A, T        & 10, 19, 20, 29, 33            & Analysis passed, see Table \ref{tab:power-design-table}, testing ongoing.        \\ \hline
-D.8  & The total power consumption \textit{should} be below 374 Wh.& A & - & Analysis passed, see Table \ref{tab:power-design-table} \\ \hline
-D.16 & The experiment \textit{shall} be able to autonomously turn itself off just before landing.                                                                                       &       R, T      &  7, 10, 31, 32           &   Testing ongoing    \\ \hline
-D.17 & The experiment box \textit{shall} be placed with at least one face exposed to the outside.                                                                                &     R, A         & -            &   Review of design passed, explained in Section \ref{sec:4.2.1}     
+D.1  & The experiment \textit{shall} operate in the temperature profile of the BEXUS vehicle flight and launch.\cite{BexusManual}                                                                         &       A, T       & 5            & Simulations passed see section \ref{Thermal_section}, Test ongoing.     \\ \hline
+D.2  & The experiment \textit{shall} operate in the vibration profile of the BEXUS vehicle flight and launch.\cite{BexusManual}                                                                          &       A, T       & 9            &  Pass \\ \hline %Analysis passed, see Section \ref{sec:4.4.1}  
+D.3  & The experiment \textit{shall} not have sharp edges or loose connections to the gondola that can harm the launch vehicle, other experiments, and people.                                                                                                           &      R, I      & -          &   Pass     \\ \hline %\textsuperscript{\ref{fn:unnecessary-requirement}}  
+D.4  & The experiment's communication system \textit{shall} be compatible with the gondola's E-link system with the RJF21B connector over UDP for down-link and TCP for up-link.                                                                             &      A, T        & 8            &    Analysis passed, see Section \ref{sec:4.8.2}    \\ \hline
+D.5  & The experiment's power supply \textit{shall} have a 24v, 12v, 5v and 3.3v power output and be able to take 28.8v input through the Amphenol PT02E8-4P connector supplied from the gondola.                                                                                    &      A       &  -           & Pass      \\ \hline %, see Sections \ref{sec:4.2.2} and \ref{sec:4.5.1}
+D.7  & The total DC current draw \textit{should} be below 1.8 A. &      A, T        & 10, 19, 20, 29, 33            & Pass        \\ \hline
+D.8  & The total power consumption \textit{should} be below 374 Wh.& A & - & Pass \\ \hline %, Table \ref{tab:power-design-table}
+D.16 & The experiment \textit{shall} be able to autonomously turn itself off just before landing.                                                                                       &       R, T      &  7, 10, 31, 32           &   Pass    \\ \hline
+D.17 & The experiment box \textit{shall} be placed with at least one face exposed to the outside.                                                                                &     R, A         & -            &   Pass      
+\\ \hline %Section \ref{sec:4.2.1}
+D.18 & The  experiment \textit{shall} operate  in  the  pressure  profile  of  the BEXUS flight.\cite{BexusManual}                                                                              &    A, T         & 4, 18, 30 &  Pass
 \\ \hline
-D.18 & The  experiment \textit{shall} operate  in  the  pressure  profile  of  the BEXUS flight.\cite{BexusManual}                                                                              &    A, T         & 4, 18, 30 &  Pump Passed Test 18, further testing ongoing     
+D.19 & The  experiment \textit{shall} operate  in  the  vertical  and  horizontal  acceleration  profile  of  the BEXUS flight.\cite{BexusManual}                                                                              &    A, T         & 9, 25, 27            &   Pass   
 \\ \hline
-D.19 & The  experiment \textit{shall} operate  in  the  vertical  and  horizontal  acceleration  profile  of  the BEXUS flight.\cite{BexusManual}                                                                              &    A, T         & 9, 25, 27            &   Analysis passed, see Section \ref{Experiment_Setup}    
-\\ \hline
-D.21 & The experiment \textit{shall} be attached to the gondola’s rails.                                                                                &     R         & -            &  Review of design passed, explained in Section \ref{sec:4.2.1}     
-\\ \hline
-D.22 & The telecommand data rate \textit{shall} not be over 10 kb/s.                                                                               &     A, R         & -            &    Analysis passed, see Section \ref{sec:4.8.2}.   
-\\  \hline
+D.21 & The experiment \textit{shall} be attached to the gondola’s rails.                                                                                &     R         & -            &  Pass
+\\ \hline %Section \ref{sec:4.2.1}     
+D.22 & The telecommand data rate \textit{shall} not be over 10 kb/s.                                                                               &     A, R         & -            &    Pass
+\\  \hline%Analysis passed, see Section \ref{sec:4.8.2}.   
 
-D.23 & The air intake rate of the air pump \textit{shall} be 3 L/min at 24 km altitude.                                                                                                                        &       A, T        & 4, 18            &  Initial Test passed, Test 4 ongoing.      \\ \hline
+D.23 & The air intake rate of the air pump \textit{shall} be equivalent to a minimum of 3 L/min at 24 km altitude.                                                                                                                        &       A, T        & 4, 18            &  Pass      \\ \hline
 
-D.24 & The temperature of the Brain \textit{shall} be between -10$\degree$C and 25$\degree$C.                                                                                                 &       A, T       & 5           & Analysis passed, see Section \ref{sec:4.6.5}       \\    \hline
-D.26 & The AAC air sampling \textit{shall} filter out all water molecules before filling the sampling bags.                                                                             &        A, T      & 17            &  Analysis passed, see Section \ref{sec:4.4.5}        \\
+D.24 & The temperature of the Brain \textit{shall} be between -10$\degree{C}$ and 25$\degree{C}$.                                                                                                 &       A, T       & 5           & Analysis passed, see Section \ref{sec:4.6.5}, Test ongoing.       \\    \hline
+D.26 & The AAC air sampling \textit{shall} filter out all water molecules before filling the sampling bags.                                                                             &        A, T      & 17            &  Pass       \\
 \hline
 D.27 & The total weight of the experiment \textit{shall} be less than 28 kg.
- & R, T & 3 & Review of design passed, explained in Section \ref{sec:3.2.2} \\\hline
- D.28 & The AAC box \textit{shall} be able to ﬁt at least 6 air sampling bags. & R & - & Review of design passed, explained in Section \ref{sec:4.4.5}\\\hline
+ & R, T & 3 & Pass \\\hline %Review of design passed, explained in Section \ref{sec:3.2.2}
+D.28 & The AAC box \textit{shall} be able to fit at least 6 air sampling bags. & R & - & Pass \\\hline %Review of design passed, explained in Section \ref{sec:4.4.5}
 D.29 &  The CAC box \textit{shall} take less than 3 minutes to be removed from the gondola without removing the whole experiment.
- & R, T & 12 & Review of design passed, explained in Section \ref{sec:4.2.1}\\\hline
- D.30 & The AAC \textit{shall} be re-usable for future balloon flights.                                                                           &        R, T      & 7, 16            & Review of design passed, explained in Section \ref{Mechanical_Design}      \\
-\hline
-D.31  & The altitude from which a sampling bag will start sampling \textit{shall} be programmable. & A,T&  10, 14  & Analysis passed, see Section \ref{sec:4.8.2}\\ \hline
-D.32  & The altitude from which a sampling bag will stop sampling \textit{shall} be programmable.& A,T & 10  & Analysis passed, see Section \ref{sec:4.8.2}\\ \hline
+ & R, T & 12 & Pass\\\hline
+ D.30 & The AAC \textit{shall} be re-usable for future balloon flights.                                                                           &        R, T      & 7, 16            & Pass  \\
+\hline %Review of design passed, explained in Section \ref{Mechanical_Design}     
+D.31  & The altitude from which a sampling bag will start sampling \textit{shall} be programmable. & A,T&  10, 14  & Pass\\ \hline
+D.32  & The altitude from which a sampling bag will stop sampling \textit{shall} be programmable.& A,T & 10  & Pass\\ \hline
 
-O.13 & The experiment \textit{should} function automatically.                                                           &      R, T        & 7, 8, 10            &    Review of design passed, explained in Section \ref{sec:4.8.3}    \\ \hline
-O.14 & The experiment's air sampling mechanisms \textit{shall} have a manual override.                                                           &      R, T        & 8, 10            &    Review of design passed, explained in Section \ref{sec:4.9}    \\ \hline
-C.1  & Constraints specified in the BEXUS User Manual.                                                                                                                          &       I       & -            & Verification is ongoing     \\ \hline
+O.13 & The experiment \textit{should} function automatically.                                                           &      R, T        & 7, 8, 10            &    Pass test 7 and 10, test 8 to take place at campaign.    \\ \hline %Review of design passed, explained in Section \ref{sec:4.8.3}
+O.14 & The experiment's air sampling mechanisms \textit{shall} have a manual override.                                                           &      R, T        & 8, 10            &    Pass test 10, test 8 to be completed at campaign.    \\ \hline %Review of design passed, explained in Section \ref{sec:4.9}
+C.1  & Constraints specified in the BEXUS User Manual.                                                                                                                          &       I       & -            & Pass     \\ \hline
 
 \caption{Verification Matrix.}
 \label{tab:var-mat}

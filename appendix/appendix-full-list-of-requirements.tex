@@ -48,22 +48,27 @@
     \item[P.10] \st{The programmable sampling rate of the AAC Valve Box temperature sensor \textit{shall} not be lesser than 1 Hz.}\textsuperscript{\ref{replaceSampleRate}}
     \item[P.11] \st{The programmable sampling rate of the AAC Valve Box temperature sensor \textit{shall} not be greater than 7 Hz.}\textsuperscript{\ref{replaceSampleRate}}
     %\item The programmable sampling rate of the pressure sensor \textit{shall} not be lesser than .
-    \item[P.12] The accuracy of the ambient pressure measurements \textit{shall} be -1.5/+1.5 mbar for 25$\degree$C.
-    \item[P.13] The accuracy of temperature measurements \textit{shall} be +3.5/-3$\degree$C (max) for condition of -55$\degree$C to 150$\degree$C.
+    \item[P.12] The accuracy of the ambient pressure measurements \textit{shall} be -1.5/+1.5 hPa for 25$\degree{C}$.
+    \item[P.13] The accuracy of temperature measurements \textit{shall} be +3.5/-3$\degree{C}$ (max) for condition of -55$\degree{C}$ to 150$\degree{C}$.
     \item[P.14] \st{The accuracy of the ambient humidity measurements \textit{shall} be $\pm 3\%$ .} \cite{Humiditysensor}\textsuperscript{\ref{fn:unnecessary-requirement}}
-    \item[P.15] \st{The accuracy of the AAC Valve Box temperature measurements \textit{shall} be +3.5/-2$\degree$C(max).}\footnote{Combined with P13\label{fn:combi-p13}}
+    \item[P.15] \st{The accuracy of the AAC Valve Box temperature measurements \textit{shall} be +3.5/-2$\degree{C}$(max).}\footnote{Combined with P13\label{fn:combi-p13}}
     \item[P.16] \st{The air intake rate of the air pump \textit{shall} be minimum 3 L/min.}\textsuperscript{\ref{designRequirement}}
-    \item[P.17] \st{The temperature of the Electronics Box \textit{shall} be between 0$\degree$C and 25$\degree$C.} \textsuperscript{\ref{designRequirement}}
-    \item[P.18] \st{The temperature of the Electronics Box \textit{shall} not exceed 25$\degree$C.}\footnote{Combined with P17 and moved to design requirements.\label{fn:combi-p17}}
-    \item[P.19] \st{The temperature of the AAC Valve Box \textit{shall} be between 0$\degree$C and 25$\degree$C.}\textsuperscript{\ref{designRequirement}}
-    \item[P.20] \st{The temperature of the AAC Valve Box \textit{shall} not exceed 25$\degree$C.}\footnote{Combined with P19 and moved to design requirements.\label{fn:combi-p19}}
+    \item[P.17] \st{The temperature of the Electronics Box \textit{shall} be between 0$\degree{C}$ and 25$\degree{C}$.} \textsuperscript{\ref{designRequirement}}
+    \item[P.18] \st{The temperature of the Electronics Box \textit{shall} not exceed 25$\degree{C}$.}\footnote{Combined with P17 and moved to design requirements.\label{fn:combi-p17}}
+    \item[P.19] \st{The temperature of the AAC Valve Box \textit{shall} be between 0$\degree{C}$ and 25$\degree{C}$.}\textsuperscript{\ref{designRequirement}}
+    \item[P.20] \st{The temperature of the AAC Valve Box \textit{shall} not exceed 25$\degree{C}$.}\footnote{Combined with P19 and moved to design requirements.\label{fn:combi-p19}}
     \item[P.21] \st{The air sampling systems \textit{shall} filter out all water molecules before filling the sampling containers.} \textsuperscript{\ref{designRequirement}}
     \item[P.22] \st{The CAC air sampling \textit{shall} filter out all water molecules before filling the tube.}\footnote{Combined with P21 and moved to design requirements.\label{fn:combi-p21}}
     \item[P.23] The sensors sampling rate \textit{shall} be 1 Hz.
-    \item[P.24] The temperature of the Pump \textit{shall} be between 5$\degree$C and 40$\degree$C. 
+    \item[P.24] The temperature of the Pump \textit{shall} be between 5$\degree{C}$ and 40$\degree{C}$. 
     \item[P.25] The minimum volume of air in the bags for analysis \textit{shall} be 0.18 L at ground level.
+    \item[P.26] The equivalent flow rate of the pump \textit{shall} be between 8 to 3 L/min from ground level up to 24 km altitude.
+    \item[P.27] The accuracy range of the sampling time, or the resolution, \textit{shall} be less than 52.94 s, or 423.53 m.
+    \item[P.28] The sampling rate of the pressure sensor \textit{shall} be 1 Hz.
+    \item[P.29] The sampling rate of the airflow sensor \textit{shall} be 1 Hz. 
+    \item[P.30] The accuracy of the pressure measurements inside the tubing and sampling bags \textit{shall} be -0.005/+0.005 bar for 25$\degree{C}$.
  \end{enumerate} 
-
+ 
 \subsection{Design Requirements}
 
 \begin{enumerate}
@@ -75,12 +80,12 @@
     \item[D.6] \st{The experiment \textit{shall} not disturb other experiments on the gondola.}\textsuperscript{\ref{fn:unnecessary-requirement}}
     \item[D.7] The total DC current draw \textit{should} be below 1.8 A.
     \item[D.8] The total power consumption \textit{should} be below 374 Wh.
-    \item[D.9] \st{The experiment \textit{shall} be able to operate in low pressure conditions (10-15 mbar) up to 30 km altitude.}\footnote{Repeated in D18\label{fn:repeat-d18}}
+    \item[D.9] \st{The experiment \textit{shall} be able to operate in low pressure conditions (10-15 hPa) up to 30 km altitude.}\footnote{Repeated in D18\label{fn:repeat-d18}}
     \item[D.10] \st{The components of the experiment \textit{shall} operate within their temperature ranges.}\textsuperscript{\ref{fn:unnecessary-requirement}}
     \item[D.11] \st{The OBC \textit{shall} be able to autonomously control the heaters.}\textsuperscript{\ref{fn:unnecessary-requirement}}
     \item[D.12] \st{The ground station GC \textit{shall} be able to display some of the received data.}\textsuperscript{\ref{fn:unnecessary-requirement}}
-    \item[D.13] \st{The experiment \textit{shall} be able to survive and operate between -30\degree C and 60\degree C.}\textsuperscript{\ref{fn:unnecessary-requirement}}
-    \item[D.14] \st{The external components that are directly exposed to the outside environment \textit{shall} be able to operate at -70\degree C.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[D.13] \st{The experiment \textit{shall} be able to survive and operate between -30$\degree{C}$ and 60$\degree{C}$.}\textsuperscript{\ref{fn:unnecessary-requirement}}
+    \item[D.14] \st{The external components that are directly exposed to the outside environment \textit{shall} be able to operate at -70$\degree{C}$.}\textsuperscript{\ref{fn:unnecessary-requirement}}
     \item[D.15] \st{The watchdog \textit{should} be able to reset the system.}\textsuperscript{\ref{fn:unnecessary-requirement}}
     \item[D.16] The experiment \textit{shall} be able to autonomously turn itself off just before landing.
     \item[D.17] The experiment box \textit{shall} be placed with at least one face exposed to the outside.
@@ -90,9 +95,9 @@
     horizontal accelerations profile of the BEXUS flight.} \cite{BexusManual} \footnote{Combined with D19 \label{fn:combi-d19}}
     \item[D.21] The experiment \textit{shall} be attached to the gondola's rails.
     \item[D.22] The telecommand data rate \textit{shall} not be over 10 kb/s.
-    \item[D.23] The air intake rate of the air pump \textit{shall} be minimum 3 L/min at 24 km altitude.
-    \item[D.24] The temperature of the Brain \textit{shall} be between -10$\degree$C and 25$\degree$C.
-    \item[D.25] \st{The temperature of the Brain level 2 \textit{shall} be between 0$\degree$C and 25$\degree$C.} \footnote{Combined with D24\label{fn:combi-d24}}
+    \item[D.23] The air intake rate of the air pump \textit{shall} be equivalent to a minimum of 3 L/min at 24 km altitude.
+    \item[D.24] The temperature of the Brain \textit{shall} be between -10$\degree{C}$ and 25$\degree{C}$.
+    \item[D.25] \st{The temperature of the Brain level 2 \textit{shall} be between 0$\degree{C}$ and 25$\degree{C}$.} \footnote{Combined with D24\label{fn:combi-d24}}
     \item[D.26] The air sampling systems \textit{shall} filter out all water molecules before filling the sampling bags.
     \item[D.27] The total weight of the experiment \textit{shall} be less than 28 kg.
     \item[D.28] The AAC box \textit{shall} be able to fit at least $6$ air sampling bags.

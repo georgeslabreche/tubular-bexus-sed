@@ -8,43 +8,43 @@ The electronics design can be seen in Figure \ref{fig:electronics-block-diagram}
 
 \begin{figure}[H]
     \begin{align*}
-        \includegraphics[width=16cm]{block-diagram-2.png}
+        \includegraphics[width=16cm]{4-experiment-design/img/Electrical_Block_diagram.png}
     \end{align*}
     \caption{Block Diagram for all Electronic Components Showing the Connection, Signal and Power Connections.}\label{fig:electronics-block-diagram}
 \end{figure}
 
-Most of the electronics will be located in the Brain inside the AAC box. However, there will be six distinct areas:
+Most of the electronics are located in the Brain inside the AAC box. However, there are six distinct areas:
 
 \begin{enumerate}
-    \item The Brain level 3, where the PCB is located with the Arudino and shield, two 24 V DC-DC, two 12 V DC-DC, one temperature sensor, 11 MOSFETs and 16 LEDs.
-    \item The Brain level 2, where the valve manifolds with six sampling valves, the flushing valve, two heaters and one temperature sensor are located.
-    \item The Brain level 1, where the pump, two heaters, airflow sensor, one temperature sensor and static pressure sensor are located.
+    \item The Brain level 3, where the PCB is located with the Arudino and shield, two 24 V DC-DC, two 12 V DC-DC, 11 MOSFETs and 16 LEDs.
+    \item The Brain level 2, where the valve manifolds with six sampling valves, the flushing valve, two heaters, airflow sensor, static pressure sensor and one temperature sensor are located.
+    \item The Brain level 1, where the pump, two heaters and one temperature sensor are located.
     \item The AAC box, where 3 ambient temperature sensors are located.
     \item The CAC box, where the CAC valve and 3 ambient temperature sensors are located.
     \item Outside of the experiment box, where 3 ambient pressure sensors are located.
 \end{enumerate}
 
-From the PCB, on level 3, five D-sub connectors will be used to connect to the other five areas. A 25 pin connector will be used for level 1, 15 pin connector will be used for level 2 and nine pin connectors will be used for the CAC box, AAC box sampling bags area, and the external pressure sensors. In addition there will be a connection to the gondola power and gondola E-link.
+From the PCB, on level 3, five D-sub connectors have been used to connect to the other five areas. Fifteen pin connectors have been used for level 1 and level 2. For the CAC box, AAC box sampling bags area, and the external pressure sensors, nine pin connectors have been used. In addition there is a connection to the gondola power and gondola E-link.
 
-All of the power distribution will take place on the PCB using two 24 V DC-DC and two 12 V DC-DC converters in parallel with a forwarding diode.  
+All of the power distribution has been done through the PCB using two 24 V DC-DC and two 12 V DC-DC converters in parallel with a forwarding diode.  
 \begin{itemize}
   \item $28.8 \, V \Longrightarrow 24 \, V $ By DC-DC converters
   \item $28.8 \, V \Longrightarrow 12 \, V$ By DC-DC converters
   \end{itemize}
-The heaters will not require the voltage to be stepped down and so will be powered directly from the gondola battery.
+The heaters do not require the voltage to be stepped down and so will be powered directly from the gondola battery.
 
-The Arduino will control all of the sensors, valves, heaters and the pump from the PCB. Sensors will be directly connected to the Arduino. The valves, heaters and the pump will be connected via a switching circuit.
+The Arduino will control all of the sensors, valves, heaters and the pump from the PCB. Sensors have been directly connected to the Arduino. The valves, heaters and the pump have been connected via a switching circuit.
 
-The LEDs are used as visual indicators that display whether different parts of the circuit are alive or not. They give indications on the status of the valves, pump, heaters, DC-DC converters and Arduino. 
+The LEDs are used as visual indicators that display whether different parts of the circuit are active or not. They give indications on the status of the valves, pump, heaters, DC-DC converters and Arduino. 
 
-Grounding will be following a distributed single point grounding, with all ground connections meeting at a single star point to ensure there are no floating grounds. As not all components are connected via DC-DC converters the experiment will not be isolated from the gondola power supply therefore there will be a connection between the star point and the gondola ground. The star point will be located on the main PCB board which will then be grounded to the experiment box. The grounding can be seen in Figure \ref{fig:electronics-block-diagram} where it is indicated by dashed lines labeled GND. The analog sensors that are used on level 1 in the brain use a separate grounding wire(AGND) onto the main PCB where there is a separate trace connecting to the ground pins on the Arduino board. Furthermore the upper and lower level of the main PCB board will make use of one common grounding plane.
+Grounding has been done to follow a distributed single point grounding, with all ground connections meeting at a single star point to ensure there are no floating grounds. As not all components are connected via DC-DC converters the experiment will not be isolated from the gondola power supply therefore there will be a connection between the star point and the gondola ground. The star point is located on the main PCB board which is then  grounded to the experiment box. The grounding can be seen in Figure \ref{fig:electronics-block-diagram} where it is indicated by dashed lines labeled GND. The analog sensors that are used on level 1 in the brain use a separate grounding wire(AGND) onto the main PCB where there is a separate trace connecting to the ground pins on the Arduino board. Furthermore  the  upper  and  lower  level  of  the  main PCB board are making use of the common grounding plane where possible.
 
 \subsubsection{Miniature Diaphragm Air Pump}
-The pump which has been selected is the 850.1.2. KNDC B, Figure \ref{fig:pumppic}, which is manufactured by KNF. One of the reasons this pump has been selected is that it has successfully been flown on a similar flight in the past where it managed to pump enough air at 25 km altitude to have 180 mL remaining at sea level \cite{LISA}. However, to ensure the pump will operate as intended, several tests will still be carried out. These tests --- 4, 5, 18, 28 and 29, can be seen in Tables \ref{tab:vacuum-test}, \ref{tab:thermal-test}, \ref{tab:pump-low-pressure-test}, \ref{tab:pump-operation-test}, and \ref{tab:pump-current-pressure-test}. The pump has already passed three of these tests and their results can be seen in Section \ref{sec:test28result} for Test 28, Section \ref{subsection:pumplowpressuretest} for Test 18 and Section \ref{sec:test29result} for Test 29.
+The pump which has been selected is the 850.1.2. KNDC B, Figure \ref{fig:pumppic}, which is manufactured by KNF. One of the reasons this pump has been selected is that it has successfully been flown on a similar flight in the past where it managed to pump enough air at 25 km altitude to have 180 mL remaining at sea level \cite{LISA}. However, to ensure the pump will operate as intended, several tests will still be carried out. These tests --- 4, 5, 18, 28 and 29, can be seen in Tables \ref{tab:vacuum-test}, \ref{tab:thermal-test}, \ref{tab:pump-low-pressure-test}, \ref{tab:pump-operation-test}, and \ref{tab:pump-current-pressure-test}. The pump has already passed four of these tests and their results can be seen in Appendix \ref{sec:test28result} for Test 28, Appendix \ref{sec:test4results} for test 4, Appendix \ref{subsection:pumplowpressuretest} for Test 18 and Appendix \ref{sec:test29result} for Test 29.
 
 At sea level conditions the pump was tested and found to have a flow rate of 8.0 L/min and a current draw of 250 mA. The peak current draw was recorded as 600 mA which lasts for less than one second and occurs when the pump is switched on. 
 
-From the results of Test 18, in Section \ref{subsection:pumplowpressuretest}, the flow rate is estimated to be 3.0 L/min at the lowest pressure that will be seen in flight. This is in line with requirement D23. The results found in Test 28, in Section \ref{sec:test28result}, appear to be inline with the information given by the manufacturer, seen in Figure \ref{fig:pumpflowcur}.  The highest continuous current draw expected from the pump is 185 mA when the experiment is at 12 km altitude and is expected to decrease as we increase in altitude. While it appears the pump increases in current draw at around 6 km there is no plan to sample below 12 km therefore the highest current draw can be taken from 12 km. As the pump has a peak current of 600 mA when it switches on, the mosfet and DC-DC power have been chosen to be able to withstand this demand. 
+From the results of Test 18, in Section \ref{sec:ExpecterResults}, the flow rate is shown to be around 3.36 L/min at the lowest pressure that will be seen in flight. This is in line with requirement D23. The results found in Test 28, in Section \ref{sec:test28result}, appear to be inline with the information given by the manufacturer, seen in Figure \ref{fig:pumpflowcur}.  The highest continuous current draw expected from the pump is 185 mA when the experiment is at 12 km altitude and is expected to decrease as we increase in altitude. While it appears the pump increases in current draw at around 6 km there is no plan to sample below 12 km therefore the highest current draw can be taken from 12 km. As the pump has a peak current of 600 mA when it switches on, the mosfet and DC-DC power have been chosen to be able to withstand this demand. 
 
 \begin{figure}[H]
     \begin{align*}
@@ -63,7 +63,7 @@ From the results of Test 18, in Section \ref{subsection:pumplowpressuretest}, th
 
 
 \subsubsection{Electromagnetically Controlled Valves}
-Filling the sampling bags will be controlled by solenoid valves. The solenoid valves which have been selected are model VDW23-5G-1-H-Q, seen in Figure \ref{fig:valve}, manufactured by SMC. These valves will be normally closed through out the experiment with zero power consumption and will open, when given power, to fill up the sampling bags at specific altitudes. In addition one valve will be on the CAC, in order to seal the coil at the end of the flight and another at the end of the AAC tubing, flushing valve, in order to flush the system.  The valves selected for these are model VDW22UANXB, Figure \ref{fig:valve}. The CAC valve will be opened shortly after take off and remain open the whole flight. This valve will be closed shortly before landing. The flushing valve will be opened before sampling in order to ensure the air in the tubes is from the correct altitude.
+Filling the sampling bags will be controlled by solenoid valves. The solenoid valves which have been selected are model VDW23-5G-1-H-Q, seen in Figure \ref{fig:valve}, manufactured by SMC. These valves will be normally closed through out the experiment with zero power consumption and will open, when given power, to fill up the sampling bags at specific altitudes. In addition one valve is on the CAC, in order to seal the coil at the end of the flight and another at the end of the AAC tubing, flushing valve, in order to flush the system.  The valves selected for these are model VDW22UANXB, Figure \ref{fig:valve}. The CAC valve will be opened shortly after take off and remain open the whole flight. This valve will be closed shortly before landing. The flushing valve will be opened before sampling in order to ensure the air in the tubes is from the correct altitude.
 
 \begin{figure}[H]
     \begin{align*}
@@ -73,10 +73,10 @@ Filling the sampling bags will be controlled by solenoid valves. The solenoid va
     \label{fig:valve}
 \end{figure}
 
-The port size of the valves is 1/8" which is compatible with the gas analyzer. The coil inside can withstand temperatures from -20 to 50 °C which is suitable for flight operations at high altitudes. These valves can operate under a maximum pressure drop of 133 Pa. Valves from the same series have been flown before to the stratosphere and provided successful results \cite{LISA} however, the valves will be tested at low temperature and pressure to check they still operate as intended. These planned tests can be seen in Test 4, Table \ref{tab:vacuum-test} and Test 5, Table \ref{tab:thermal-test}.
+The port size of the valves is 1/8" which is compatible with the gas analyzer. The coil inside can withstand temperatures from -20 to 50 $\degree{C}$ which is suitable for flight operations at high altitudes. These valves can operate under a maximum pressure drop of 133 Pa. Valves from the same series have been flown before to the stratosphere and provided successful results \cite{LISA} however, the valves have been tested at low temperature and pressure to check they still operate as intended. The test results can be seen in Test 4, Table \ref{tab:vacuum-test} and Test 5, Table \ref{tab:thermal-test}.
  
 \subsubsection{Switching Circuits}
-The valves, pump and heaters will not be powered by the Arduino but they still need to be controlled by it. In order to allow this control a connection will be made for each component to the Arduino with a switching circuit. This switching circuit will use a eleven MOSFETs, model IRLB8748PBF, Figure \ref{fig:mosfet}, to control which components are turned on at which time.
+The valves, pump and heaters are not powered by the Arduino but they are still controlled by it.In order to allow this control a connection will be made for each component to the Arduino with a switching circuit. This switching circuit uses eleven MOSFETs, model IRLB8748PBF, Figure \ref{fig:mosfet}, to control which components are turned on at which time.
 
 \begin{figure}[H]
     \begin{align*}
@@ -101,7 +101,7 @@ The schematics show all the components and how they are connected, the full sche
     
 \end{itemize}
 
-The voltage available from gondola power is 28.8 V, therefore the heaters have been connected directly to the main power supply. For the rest of the components, two 24 V and two 12 V DC-DCs in parallel has been used to make sure if one of them fails then the other can take over. The circuitry can be seen in Figure \ref{fig:dc-dc-redun}. All the valves and the pump are then powered through the 24 V DC-DCs. To step down the voltage from 28.8 V to 12 V to power the airflow sensor, static pressure sensor and the Arduino, two 12 V DC-DCs in parallel has been used for the redundancy purposes. Finally, to power the temperature and external pressure sensors, 3.3 V is required which is supplied by the Arduino board. 
+The voltage available from gondola power is 28.8 V, therefore the heaters have been connected directly to the main power supply. For the rest of the components, two 24 V and two 12 V DC-DCs in parallel has been used to make sure if one of them fails then the other can take over. The circuitry can be seen in Figure \ref{fig:dc-dc-redun}. All the valves and the pump are then powered through the 24 V DC-DCs. To step down the voltage from 28.8 V to 12 V to power the airflow sensor, static pressure sensor and the Arduino, two 12 V DC-DCs in parallel have been used for redundancy purposes. Finally, to power the temperature and external pressure sensors, 3.3 V is required which is supplied by the Arduino board. 
 
 To meet the requirements of the pneumatic subsystem, a static pressure sensor has been chosen to measure the pressure inside the tubes and bags. This analogue pressure sensor operates on 12 V so can share the same power line as the airflow sensor and Arduino.
 
@@ -123,10 +123,17 @@ To meet the requirements of the pneumatic subsystem, a static pressure sensor ha
 
 \subsubsection{PCB Layout}
 
-All electronic control circuits will be gathered on a single PCB on level 3 of the Brain. The PCB contains the Arduino due, switching circuits, indication LEDs, a temperature sensor, the power system and all necessary connectors. The connectors have been divided so that each connector's wires goes to the same level of the Brain to improve cable management. To further improve cable management the shared pins for I2C and SPI are connected to a single pin on each respective D-SUB connector and should be split up on the respective level. The PCB Layout can be seen in Figure \ref{fig:PCBLayout}.
+All electronic control circuits are gathered on a single PCB on level 3 of the Brain. The PCB contains the Arduino due, switching circuits, indication LEDs, a temperature sensor, the power system and all necessary connectors. The connectors have been divided so that each connector's wires goes to the same level of the Brain to improve cable management. Due to the relocation of components there are some components on level 2, Static pressure sensor and the airflow sensor, which are connected to the level 1 connector. Although this did not produce major problems since both those components have separate connectors on the cable going down to level 1 and does not share any connections with any components on level 1. Thus you can still unplug each level separately since the wires to these two components could just be broken of from the cable loom at the appropriate point. To further improve cable management the shared pins for I2C and SPI have been connected to a single pin on each respective D-SUB connector and split up on the respective level. The PCB's components layout can be seen in Figure \ref{fig:PCB-Components-Layout}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{4-experiment-design/img/PCBLayout.png}
+    \caption{PCB Components Layout}
+    \label{fig:PCB-Components-Layout}
+\end{figure}
 
 
-The PCB was made using Eagle software. The traces have a width designed to fit the IPC-2221 standards\cite{IPC-2221B} with extra width added. The PCB layout can be seen in in Section \ref{sec:pcbSchematics}. On the main PCB the traces are 1.4mm wide for the nets containing components that consumes higher amounts of current and the ones with lower current requirements have a trace width of 0.3mm. On the pressure sensor PCB all traces are 0.5mm wide.
+The PCB was made using Eagle software and fully sponsored by the Eurocircuits for manufacturing. The traces have a width designed to fit the IPC-2221 standards\cite{IPC-2221B} with extra width added. The PCB layout with traces can be seen in in Appendix \ref{sec:pcbSchematics}. On the main PCB the traces are 1.4mm wide for the nets containing components that consumes higher amounts of current and the ones with lower current requirements have a trace width of 0.3mm. On the pressure sensor PCB all traces are 0.5mm wide.
 
 
 

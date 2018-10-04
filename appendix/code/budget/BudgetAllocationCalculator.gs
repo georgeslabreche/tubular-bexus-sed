@@ -1,25 +1,31 @@
 // Define constants for range and cell locations.
-var COLUMN_RANGE_SPONSOR = 'K5:K197';
-var COLUMN_RANGE_COST = 'J5:J197';
+var COLUMN_RANGE_SPONSOR = 'K5:K221';
+var COLUMN_RANGE_COST = 'J5:J221';
 
-var CELL_SPONSOR_SHIPPING = 'K200';
-var CELL_SPONSOR_ERROR_MARGIN = 'K201';
+var CELL_SHIPPING_COST = 'J224';
+var CELL_ERROR_MARGIN_COST = 'J225';
 
-var CELL_SHIPPING_COST_PERCENTAGE = 'F209';
-var CELL_ERROR_MARGIN_PERCENTAGE = 'F210';
+var CELL_SPONSOR_SHIPPING = 'K224';
+var CELL_SPONSOR_ERROR_MARGIN = 'K225';
 
-var CELL_SHIPPING_COST = 'F226';
-var CELL_ERROR_MARGIN_COST = 'F227';
+var CELL_SHIPPING_COST_PERCENTAGE = 'F233';
+var CELL_ERROR_MARGIN_PERCENTAGE = 'F234';
+
 
 // Mapping between sponsors and the total allocated funds cell
 var SPONSORS_TOTAL_ALLOCATION_CELL_DICT = {
-  'LTU': 'G215',
-  'SNSB': 'G216',
-  'FMI': 'G217',
-  'RESTEK': 'G218',
-  'TEKNOLAB': 'G219',
-  'SMC': 'G220',
-  'PARKER': 'G221'};
+  'LTU': 'G239',
+  'SNSB': 'G240',
+  'FMI': 'G241',
+  'RESTEK': 'G242',
+  'TEKNOLAB': 'G243',
+  'SMC': 'G244',
+  'PARKER': 'G245',
+  'SWAGELOK': 'G246',
+  'KNF': 'G247',
+  'SILCOTEK': 'G248',
+  'EUROCIRCUITS': 'G249'
+  };
 
 // Sheet and ranges.
 var sheet = SpreadsheetApp.getActiveSpreadsheet();
@@ -90,6 +96,10 @@ function calculateAllSponsorBudgetAllocations(){
   var amountTEKNOLAB = calculateSponsorBudgetAllocation_('TEKNOLAB');
   var amountSMC = calculateSponsorBudgetAllocation_('SMC');
   var amountPARKER = calculateSponsorBudgetAllocation_('PARKER');
+  var amountSWAGELOK = calculateSponsorBudgetAllocation_('SWAGELOK');
+  var amountKNF = calculateSponsorBudgetAllocation_('KNF');
+  var amountSILCOTEK = calculateSponsorBudgetAllocation_('SILCOTEK');
+  var amountEUROCIRCUITS = calculateSponsorBudgetAllocation_('EUROCIRCUITS');
   
   // Calculate error margin.
   // Error margin only applies to components purchased with LTU and SNSB funds.
@@ -111,5 +121,3 @@ function calculateAllSponsorBudgetAllocations(){
   allocateShippingCostToSponsor_(shippingCost, 'SNSB');
   allocateErrorMarginCostToSponsor_(errorMarginCost, 'SNSB');
 }
-
-

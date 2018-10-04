@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt,twoside]{article}
+\documentclass[a4paper,12pt,oneside]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \renewcommand\familydefault{\sfdefault}
@@ -72,6 +72,7 @@
 \usepackage{tablefootnote}
 \usepackage[title]{appendix}
 \usepackage[bottom]{footmisc}
+\usepackage{rotating}
 \usepackage{spreadtab} %% Vince added this to test table sum function [2017-01-25, 15:27]
 % For prettifying Matlab code.
 \usepackage{courier}
@@ -154,18 +155,18 @@
 \fancypagestyle{SED}
 {
     \fancyhf{}
-    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\headrulewidth}{0.5pt}
     \chead{-\hspace{0.05cm}\thepage \hspace{0.05cm}-}
     
     %\renewcommand{\footrulewidth}{0pt}
-    \fancyfoot[RE,LO]{\textit{BX26\_TUBULAR\_SEDv3-1\_22July18}}
-    \fancyfoot[RO]{Page \thepage}
+    \fancyfoot[RE,LO]{\textit{BX26\_TUBULAR\_SEDv4-0\_04Oct18}}
+    %\fancyfoot[RO]{Page \thepage}  % <--- uncomment this if you want DOUBLE page number on every other page
 }
 \fancypagestyle{cover}
 {
    \fancyhf{}
    \renewcommand{\footrulewidth}{0.5pt}  
-   \lfoot{\centering\textit{BX26\_TUBULAR\_SEDv3-1\_22July18}}
+   \lfoot{\centering\textit{BX26\_TUBULAR\_SEDv4-0\_04Oct18}}
   %\cfoot{}
   % \rfoot{} 
 }
@@ -175,9 +176,9 @@
     \fancyhf{}
     \renewcommand{\headrulewidth}{0pt}
    \chead{-\hspace{0.05cm}\thepage \hspace{0.05cm}-}
-   \renewcommand{\footrulewidth}{0pt}  
-   \fancyfoot[RE,LO]{\textit{BX26\_TUBULAR\_SEDv3-1\_22July18}}
-   \fancyfoot[RO]{Page \thepage}
+   \renewcommand{\footrulewidth}{0.5pt}  
+   \fancyfoot[RE,LO]{\textit{BX26\_TUBULAR\_SEDv4-0\_04Oct18}}
+   %\fancyfoot[RO]{Page \thepage}
 }
 
 % \pagestyle{cover}
@@ -202,7 +203,7 @@
 \vspace{-1cm}
 {{\hspace{-8pt}\huge{\textbf{SED}}} \vspace{15pt} \newline \vspace{15pt}
 {\hspace{-11pt}\large{\textbf{Student Experiment Documentation}}} \newline \vspace{30pt}
-{\hspace{-11pt}\footnotesize{Document ID: BX26\_TUBULAR\_SEDv3-1\_22July18}}}
+{\hspace{-11pt}\footnotesize{Document ID: BX26\_TUBULAR\_SEDv4-0\_04Oct18}}}
 & \hspace{3pt}\multirow{3}{*}{\includegraphics[width=.25\textwidth]{0-cover/img/logo-rexus-bexus-tubular.png}}
 \end{tabular}
 \end{flushright}
@@ -248,7 +249,7 @@ University: & Lule\aa \ University of Technology
 
 \begin{tabular}{p{.15\textwidth} p{.3\textwidth} p{.25\textwidth} p{.25\textwidth}}
 \footnotesize{Version:}     & \footnotesize{Issue Date:} & \footnotesize{Document Type:} & \footnotesize{Valid from} \\
-\textbf{3.1}          & \textbf{July 22, 2018}    & \textbf{Spec}   & \textbf{July 22, 2018} \\ 
+\textbf{4.0}          & \textbf{October 4, 2018}    & \textbf{Spec}   & \textbf{October 4, 2018} \\ 
 \end{tabular}
 
 \vspace{10pt}
@@ -290,11 +291,11 @@ Approved by:\\
 \addcontentsline{toc}{section}{CHANGE RECORD}%
 
 \input{change-record.tex}
+\newpage
 
 \vspace{1cm}
 \begin{tabular}{p{.15\textwidth} p{.85\textwidth}}
-\textbf{Abstract:}     &  %Document Abstract  \\
-\input{0-cover/abstract.tex}  &  \\
+\textbf{Abstract:}     & \input{0-cover/abstract.tex} \\ %Document Abstract
 \textbf{Keywords:}     & %Document Keywords
 \input{0-cover/keywords.tex}
 \end{tabular}

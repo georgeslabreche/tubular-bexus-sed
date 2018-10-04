@@ -32,7 +32,7 @@ The experiment box will be fixed to the gondola rails by means of $10$ brackets 
 \underline{CAC - AAC joining}
 
 \smallskip
-A simple but reliable fixing interface between the two boxes of the experiment has been designed to ensure the fast recovery of the CAC box. The latter requires only unscrewing 12 bolts as well as unplugging a D-Sub connector. Once the CAC box is detached, the AAC Box will still remain perfectly fixed in the gondola. Table \ref{table:attaching-components} gathers up all the components required to fix the experiment to the gondola.
+A simple but reliable fixing interface between the two boxes of the experiment has been designed to ensure the fast recovery of the CAC box. The latter requires only unscrewing 12 bolts as well as unplugging a D-Sub connector marked in RED, see Figure \ref{fig:electrical_interfaces}. Once the CAC box is detached, the AAC Box will still remain perfectly fixed in the gondola. Table \ref{table:attaching-components} includes all the components required to fix the experiment to the gondola.
 
 \bigskip
 \underline{Handles}
@@ -42,7 +42,7 @@ Four top handles, as shown in Figure \ref{fig:handles} will be mounted to facili
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/handles.jpg}
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/Figure_8.png}
     \caption{Handling Interfaces.}
     \label{fig:handles}
 \end{figure}
@@ -52,16 +52,23 @@ Four top handles, as shown in Figure \ref{fig:handles} will be mounted to facili
 \label{subsec:pipes}
 
 \smallskip
-In order to collect reliable air samples, the experiment requires to be mounted at least with one side exposed to the outside. The later will reduce the pipe length used to collect clean air. As it can be seen in Figure \ref{fig:3D_tubular_render}, three pipes will extend from the experiment box face: one for the CAC sampling and two, input and output, for the AAC sampling. The one-way selected method will provide a proper flushing of the pipe and thus ensure a reliable sampling as explained in Section \ref{Experiment_Setup}.
+In order to collect reliable air samples, the experiment requires to be mounted with at least one side exposed to the outside. This will reduce the pipe length used to collect clean air. As it can be seen in Figure \ref{fig:3D_tubular_render}, three pipes will extend from the experiment box face: one for the CAC sampling and two, input and output, for the AAC sampling. 
 
 These pipes are welded/drawn $304$ grade stainless steel tubes from RESTEK company, which are specially recommended for chromatography applications and gas delivery systems with low pressures and inert environments. These tubes are sulfinert, which is a required treatment for metal components when analyzing for parts-per-billion levels of organo-sulfur compounds.
 
 The tubes, which are the same that will be used in the pneumatic system of the \emph{Brain} (see Section \ref{sec:4.4.5}), have an outer diameter $OD = 6.35\ mm$ ($1/4$ inches) and an inner diameter $ID = 4.57\ mm$ ($0.18$ inches).
 
+\bigskip
+\underline{Pump vibration}
+\label{subsec:vibration}
+
+To mitigate the vibrations produced by the pump, an extra piece of styrofoam has been added between the pump's anchor plate and the surface of the level 1 of the brain, where this key component is fixed. 
+
+
 \subsubsection{Thermal Interfaces}
 \label{sec:4.2.2}
 
-Both main structural components and external walls of the two boxes of the experiment are made by aluminum and steel components. For this reason, since these are conductive materials, a direct attachment to the gondola creates many heat paths with the internal space and subsystems of the experiment. Considering that the temperature gradient between the gondola and the operative requirements of the electronic components can be quite high, this conductive connections drastically decrease the efficiency of the thermal insulation. Therefore, a system based on rubber bumpers and styrofoam bars (see Figure \ref{fig:thermal_interface}) has been designed to add heat bridges and minimize temperature leaks from the inside of the experiment to the outside.
+Both main structural components and external walls of the two boxes of the experiment are made by aluminum and steel components. For this reason, since these are conductive materials, a direct attachment to the gondola creates many heat paths with the internal space and subsystems of the experiment. Considering that the temperature gradient between the gondola and the operative requirements of the electronic components can be quite high, this conductive connections drastically decrease the efficiency of the thermal insulation. Therefore, a system based on rubber bumpers and styrofoam bars (see Figure \ref{fig:thermal_interface}) has been designed to remove heat bridges and minimize temperature leaks from the inside of the experiment to the outside.
 
 Figure \ref{fig:rubber_bumper} shows a CAD model of the bumper component and how it looks like when attached to the gondola with the brackets explained in the previous section.
 
@@ -82,7 +89,7 @@ The styrofoam bars will be attached directly to the rails of the experiment stru
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/thermal_interfaces.jpg}
+    \includegraphics[width=0.6\textwidth]{4-experiment-design/img/Mechanical/gondola_fixation.png}
     \caption{Thermal Interfaces TUBULAR-Gondola.}
     \label{fig:thermal_interface}
 \end{figure}
@@ -97,12 +104,12 @@ An uncoupled quick connector, shown in Figure \ref{fig:Quick-connector-body}, wi
     \label{fig:Quick-connector-body}
 \end{figure}
 
-The interfaces between the other parts in the CAC set up will be joined with specific tube fittings, listed in Table \ref{tab:CAC-interfaces}. All the chosen interfaces are from Swagelok. Using products from the same manufacture minimize the risk for leakage or mismatched interfaces in the system. 
+The interfaces between the other parts in the CAC set up will be joined with specific tube fittings, listed in Table \ref{tab:CAC-interfaces}. All the chosen interfaces are from Swagelok. Using products from the same manufacture minimizes the risk for leakage or mismatched interfaces in the system. 
 
 \input{4-experiment-design/tables/cac_interfaces.tex}
 
 \subsubsection{AAC Interfaces}
-In the AAC system, the interfaces between various components are a mixture of five different types of tube fittings from Swagelok. The selected types are straight union, T-union, male elbow, female and male connectors with a certain  size, shown in Figure \ref{fig:AAC-interfaces-fittings}. Information regarding the fitting's placement in the AAC and fitting sizes are summarized in Table \ref{tab:AAC-interfaces}. 
+In the AAC system, the interfaces between various components are a mixture of eleven different types of tube fittings from Swagelok. The selected types are straight and elbow union, T-union, female and male elbows, male and female connectors, tube fittings, and quick coupling with a certain  specifications. Some of them are shown in Figure \ref{fig:AAC-interfaces-fittings}. Information regarding the fitting's placement in the AAC and fitting sizes are summarized in Table \ref{tab:AAC-interfaces}. 
 
 \begin{figure}[H]
     \centering
@@ -133,6 +140,13 @@ The CAC and AAC will be connected together with a D-SUB 9-pin connector where po
 Another female D-SUB 9-pin connector will be located on the wall of the AAC in which the connections for the three ambient pressure sensors will be located. Connectors with different pin configuration are shown in Figure \ref{fig:connectors}.
 
 The expected data rate is 1.58 kbits/s for downlink and 1.08 kbits/s for uplink.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4-experiment-design/img/Mechanical/Figure_Detail_Interfaces.png}
+    \caption{Electrical Interfaces.}
+    \label{fig:electrical_interfaces}
+\end{figure}
 
 
 
