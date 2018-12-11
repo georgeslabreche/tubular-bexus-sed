@@ -352,7 +352,7 @@ It was discovered that the pressure sensor on board the PCB wouldn't function wh
 When all the sensors had been integrated the sensors where tested together. The result was all the sensors, exept the PCB pressure sensor, working without interfering with each other.
 
 \subsubsection{Test 5: Thermal Test}\label{thermaltestresults}
-The thermal chamber used was the one at FMI. It could go down to between $-40\degree{C}$ and $-90\degree{C}$. A few long run tests were done slowly going down to a temperature and stabilizing before lowering the temperature again to safely test that everything worked when it was below $-20\degree{C}$ outside and if it would handle a 4h $-40\degree{C}$ test. The long run test for $-40\degree{C}$ still needs to be done, because the temperature sensors gave an error and stopped showing data meaning the test was interrupted. With no temperature data the heaters could not be operated properly and the risk for damage was high enough to stop the testing to make sure no components were harmed.
+The thermal chamber used was the one at FMI and Esrange. At FMI it could go down to between $-40\degree{C}$ and $-90\degree{C}$ and at Esrange it were tested down to $-60\degree{C}$. A few long run tests were done slowly going down to a temperature and stabilizing before lowering the temperature again to safely test that everything worked when it was below $-20\degree{C}$ outside and if it would handle a 4h $-40\degree{C}$ test. The long run test for $-40\degree{C}$ still needs to be done, because the temperature sensors gave an error and stopped showing data meaning the test was interrupted. With no temperature data the heaters could not be operated properly and the risk for damage was high enough to stop the testing to make sure no components were harmed.
 
 To start with, only the AAC was put into the freezer. In the following Figures the vertical dotted line indicates where the sensor started to throw the error.
 The first test slowly went down to $-20\degree{C}$ before it stabilized, then it went down to $-30\degree{C}$ and then the communication received an error after a while as seen in Figure \ref{fig:test-2-thermal}.
@@ -423,8 +423,17 @@ The average temperature difference between the pressure sensor and the ambient t
     \label{tab:resistor-temp-dif}
 \end{table}
 
-Further testing has to be done to complete a 4h $-50\degree{C}$ operating test now when the issue of temperature sensors giving error is solved.
+A final thermal test were done at Esrange. The test were 3h and 30min at $-50\degree{C}$ where all functions were tested and then went down to $-60\degree{C}$ to try the experiment a little more. In the end the test lasted 4h 40min. 
+%Natalie can add some about the setup with images here.
 
+As seen in Figure \ref{fig:thermal-test-esrange-O-4-3} the temperature of the pump (pink) and the valve (black) have their heating cycles fully working. After a little more then an hour the flushing were tested. Then soon after the pump and it can be seen that the temperature of the pump drop bellow zero. It were confirmed then if the pump is operating it can drop bellow zero and keep going. It were found out that when it were $-55\degree{C}$ and colder the valve heater could not keep up fully and started to drop in temperature when the valves were not operating. Even while the temperature were dropping it were so slow and that it will not drop bellow operating temperature during flight and if the valves are operating they generate some heat as well. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{5-experiment-verification-and-testing/img/Thermal-test-esrange.jpg}
+    \caption{Thermal Chamber Test.}
+    \label{fig:thermal-test-esrange-O-4-3}
+\end{figure}
+In Figure \ref{fig:thermal-test-esrange-O-4-3} it can be seen a lot of spikes and it is when the software returns an error value. It is not an issue because the error rate is so low and goes back to working directly after so it does not affect the heating system.
 
 \subsubsection{Test 20: Switching Circuit Testing and Verification}
 

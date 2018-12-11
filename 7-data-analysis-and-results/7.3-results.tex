@@ -1,10 +1,91 @@
 \subsection{Results}
 
-No results for now. More will come after the launch campaign in an updated version of the SED. 
+The results gained from the TUBULAR flight can be broken down into the various subsystems as follows
+
+\subsubsection{Mechanical Subsystem Performance}
+
+\textbf{Structural Performance}
+
+\smallskip
+The frame structure and the aluminum walls withstood all the flight phases providing the required protection to all the components inside both boxes. 
+
+Regarding the frame, the most critical load that it had to face was during landing. The gondola landed on the side where the boxes where allocated, thus they experienced a high load. Thanks to the use of bumpers as anchors of the boxes to the gondola rails and the styrofoam as a sitting surface, the force was damped, see Figures \ref{fig:bumpers_landing} and \ref{fig:styrofoam_landing}. Consequently the boxes did not move from its original place.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{7-data-analysis-and-results/img/Bumpers_Post_Flight.jpg}
+    \caption{Position of the bumpers after landing.}
+    \label{fig:bumpers_landing}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{7-data-analysis-and-results/img/Styrofoam_Post_Flight.jpg}
+    \caption{Sytrofoam below the boxes after landing.}
+    \label{fig:styrofoam_landing}
+\end{figure}
+
+The walls did not suffer any remarkable damage apart from the dirt that stuck to them as a cause of the sideways landing and some scratches from trees during landing. 
+
+
+\textbf{Pneumatic circuit Performance}
+
+\smallskip
+The experiment had two separate pneumatic circuits, on each box. 
+
+The air sampling with the CAC system was nominal. The valve opened and closed upon both automated and manual commands. This allowed to empty the 300-meter coiled tube during ascent and filling with stratospheric air during the descent phase.
+
+On the other hand, the large pneumatic system of the AAC system experienced a failure in the pump which lead to the failure of the this alternative sampling system. Although the bags could not be filled with stratospheric air for later analysis, data of both airflow and pressure sensor was received as expected and all the valves worked nominally (manifold and flushing). 
+
+The failure analysis of the pump can be found in Section \ref{post_flight}.
+
+\subsubsection{Electrical Subsystem Performance}
+
+Throughout the flight, none of the previous sensor dropouts that had been experienced were seen. This is thought to be due to the absence of larger electromagnetic interference's.
+
+All other electrical parts worked as intended.
+
+%However, during the campaign when all the teams were mounting their experiments onto the gondola and integration testing was underway, the digital communication lines started to react abnormally especially temperature sensors began to give unusual readings. After some investigation, the reason discovered behind this kind of behaviour was interference due to the close by wireless radio communication. The frequency at which the radio (walkie talkie) operating was actually charging up our experiment box. As a result, the grounding plane started to fluctuate between different levels which caused the experiment box to behave like an antenna. Because of this, once total communication black out between the experiment and ground station was witnessed. After getting familiar this with problem, the wireless radio communication has been avoided close to the experiment box. 
+For details on the full failure analysis of the pump see Section \ref{sec:failureanalysis}.
+
+\subsubsection{Software Subsystem Performance}
+The software managed to control the experiment through the majority of the phases of the mission. The software worked even with frequent telemetry connection cutoff before the takeoff, during take-off it switched to Ascent mode successfully. When the failure with the pump occurred it successfully reset and put itself in the correct mode. Since sampling caused a reset it was decided that the software would be kept in Manual mode for the remainder of the flight.\par 
+An unforeseen behavior was observed during descent when the choice was made to change the mode from Manual mode to Normal-Descent mode. Directly after this change a loss of communication happened before it reestablished itself a few seconds later, with all valves closed and the experiment in Standby mode. This is was indicative of a reset. Why it reset itself was most likely brought on by the fact the experiment passed several sampling points in Manual mode. Manual mode was thought to only be used for a short while and not to skip a sampling point. Incapable of taking a sample in Manual mode it is believed that the ASC performed a sampling when the software had the authority to do so, in which the pump was involved and therefor a reset happened. After the reset the software successfully went into Normal-Descent mode without taking a sample using the AAC. The choice was the made to take it into Safe mode which closed every valve successfully.\par
+During the flight the only intermission of telemetry was during the reboot of the software after a reset. A permanent loss of telemetry happened at a low altitude due to limitations with line-of-sight. The on board software continued to record sensor data for several hours after landing. 
+
+\subsubsection{Thermal Subsystem Performance}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{4-experiment-design/img/Termal_flight_true.jpg}
+    \caption{The Temperature for the Different Sensors During Whole Fight.}
+    \label{fig:Termal_flight_true}
+\end{figure}
+The thermal result for the flight are as seen in Figure \ref{fig:Termal_flight_true}. Both the critical components did not go lower than the operating threshold. The heaters operated as expected and kept the pump and manifold in their respective threshold limits. During the float phase a test were done to see if the pump issue were thermal related. The pump were then heated up to the upper limit and tried to start but did not work. It could then be concluded that the issue with pump during the flight were not thermal related. The simulations estimated the heaters would use 26.66Wh and during flight (calculated from Figure \ref{fig:Termal_flight_true}) 27.667Wh were used so the simulations were a good estimation.
+
+
+
+
+
+
+\subsubsection{Scientific Results}\label{sec:scientificresults}
+Raw data was only obtained on the 5th December therefore analysis is still ongoing and there are no official results as of yet. FMI has also sent over some preliminary results which can be seen in Figure \ref{fig:verticalprofiles}.
+
+\begin{figure}[H]
+    \begin{align*}
+        \includegraphics[width=1\linewidth]{7-data-analysis-and-results/img/verticalprofiles.png}
+    \end{align*}
+    \caption{Preliminary Vertical Profiles for (Left) CO$_2$, (Middle) CH$_4$, and (Right) CO.\label{fig:verticalprofiles}}
+\end{figure}
+
+As seen in Figure \ref{fig:verticalprofiles}, the preliminary results follow the general pattern of the expected results of the Section \ref{sec:ExpecterResults}. In general, the concentrations of CO$_2$, CH$_4$, and CO are decreasing with decreasing pressure i.e increasing altitude. The vertical axis represents the pressure but in the final profiles it will represent the corresponding altitudes. The maximum value of CO$_2$ is 405 ppm, for CH$_4$ is approximately 2 ppm, and for the CO is close to 90 ppb.  
+
+The vertical resolution of the sample follow the one of the High-Resolution AirCore-HR (red line) in Figure \ref{fig:resolution-lenght} since the same length tube was used. Since the analysis was performed after 13 hours, the vertical resolution decrease is closer to the one represented by the green line in Figure \ref{fig:resolution-time}.
+
+Further investigations are ongoing and the results will be updated. 
 
 \subsubsection{Expected Results}
 \label{sec:ExpecterResults}
-After the analysis of the samples, the expected results are the vertical profiles of CO, CO$_2$, and CH$_4$. The profiles will present a similar pattern to that of Figure \ref{fig:vertical-profile-karion}. The continuous profile (dashed line) belongs to the CAC while the discrete values (black dots) belongs to the AAC (\cite{Karion}). Both profiles are showing a decrease in concentration of CH$_2$ and CH$_4$ with increasing altitude.
+After the analysis of the samples, the expected results were the vertical profiles of CO, CO$_2$, and CH$_4$. The profiles presented a similar pattern to that of Figure \ref{fig:vertical-profile-karion}. The continuous profile (dashed line) belongs to the CAC while the discrete values (black dots) belongs to the AAC (\cite{Karion}). Both profiles are showing a decrease in concentration of CH$_2$ and CH$_4$ with increasing altitude.
 \begin{figure}[H]
     \begin{align*}
         \includegraphics[width=1\linewidth]{7-data-analysis-and-results/img/ExpectedVerticalProfilesKarion.png}
@@ -12,7 +93,7 @@ After the analysis of the samples, the expected results are the vertical profile
     \caption{Pressure Profiles for (Left) CO$_2$ and (Right) CH$_4$ by Three Different Methods \cite{Karion}.\label{fig:vertical-profile-karion}}
 \end{figure}
 
-The experiment's goal is to achieve the highest vertical resolution possible. Since the vertical resolution is determined by the length and the diameter of the tube \cite{Membrive}, a 300 m long tube will be used, consisting of 2 smaller tubes. One of 200 m length with \num{3e-3} m outside diameter and \num{1.3e-4} m wall thickness, and another one of 100 m length with \num{6e-3} m outside diameter and \num{1.3e-4} m wall thickness. For achieving higher stratospheric resolution, the tube with the smaller diameter will be used to sample the higher altitudes and the one with the bigger diameter for the lower ones.
+The experiment's goal was to achieve the highest vertical resolution possible. Since the vertical resolution was determined by the length and the diameter of the tube \cite{Membrive}, a 300 m long tube was used, consisting of 2 smaller tubes. One of 200 m length with \num{3e-3} m outside diameter and \num{1.3e-4} m wall thickness, and another one of 100 m length with \num{6e-3} m outside diameter and \num{1.3e-4} m wall thickness. For achieving higher stratospheric resolution, the tube with the smaller diameter was used to sample the higher altitudes and the one with the bigger diameter for the lower ones.
 Figure \ref{fig:resolution-lenght} by Olivier Membrive \cite{Membrive} compares the vertical resolution that can be expected with three different AirCores.
 
 \begin{figure}[H]

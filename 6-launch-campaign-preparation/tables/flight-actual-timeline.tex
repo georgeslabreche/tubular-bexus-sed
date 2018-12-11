@@ -1,0 +1,38 @@
+
+
+\begin{longtable}{|m{0.1\textwidth}|m{0.15\textwidth}|m{0.7\textwidth}|} 
+    \hline
+        \textbf{Time} & \textbf{Altitude} & \textbf{Event}\\ \hline
+        T-03:54 & 0 & Go to manual mode for 6 seconds then back to standby\\ \hline
+        T-03:07 & 0 & Restart Ground Station\\ \hline
+        T-03:02 & 0 & Groundstation Back Online and reciving data\\ \hline
+        T-00:00 & 0 & Liftoff and automatic Accent mode \\ \hline
+        T+00:31 & 10.1-10.3 km & Pump heater on 12 minutes\\ \hline
+        T+00:58 & 18.8-19.1 km & First flushing was suposed to start, instead the Arduino resets and resulting in CAC valve closing \\ \hline
+        T+00:58 & 18.8-19.1 km & Enter Manual Mode\\ \hline
+        T+01:01 & 19.7-20 km & Flushing Valve opens for 20 seconds\\ \hline
+        T+01:05 & 20.9-21.2 km & CAC Valve Reopened\\ \hline
+        T+01:06 & 21.2-21.6 km & Pump Heater is on for 6 minutes \\ \hline
+        T+01:11 & 22.8-23.1 km & Board Resets Due to attempting to start pump\\ \hline
+        T+01:12 & 23.1-23.5 km & Pump Heater is on for 4 minutes \\ \hline
+        T+01:17 & 24.4-24.5 km & Board resets due to attempt to start pump and open flushing Valve\\ \hline
+        T+01:20 & 24.4-24.4 km & Flush Valve and Valve 1 is turned on to check if it would induce an error \\ \hline
+        T+01:21 & 24.4-24.5 km & Float Phase Entered\\ \hline
+        T+01:32 & 24.5-24.5 km & Change scheduler to 1 - 2 mbar for all bags as an atempt to make sure the system would not attempt to automaticaly sample \\ \hline
+        T+01:36 & 24.4-24.4 km & Pump and Valve Heater on \\ \hline
+        T+02:10 & 24.3-24.4 km & Pump and Valve Heater off\\ \hline
+        T+02:10 & 24.3-24.4 km & Attempt to start Pump, fails and resets board\\ \hline
+        T+02:12 & 24.3-24.3 km & CAC Valve opens and prepare for decent\\ \hline
+        T+02:55 & 24.1-24.1 km& Decent Phase Entered\\ \hline
+        T+03:04 & 14.9-14.1 km & Valve 2 is opened in an attempt to fill bags with ambient pressure difference \\ \hline
+        T+03:09 & 11.0-10.4 km & Valve 2 is closed \\ \hline
+        T+03:10 & 10.4-9.8 km & Valve 3 is opened in an attempt to fill bags with ambient pressure difference \\ \hline
+        T+03:14 & 7.9-7.3 km & Valve 3 i closed \\ \hline
+        T+03:15 & 7.3-6.7 km & Valve 4 i opened in an attempt to fill bags with ambient pressure difference \\ \hline
+        T+03:16 & 6.7-6.2 km & Valve 4 is closed \\ \hline
+        T+03:16 & 6.7-6.2 km & Accidental closing of CAC valve to early \\ \hline
+        T+03:17 & 6.2-5.7 km & CAC Valve accidentally reopens for 1 second. \\ \hline
+    \caption{TUBULAR BEXUS 26 Launch Timeline}
+    \label{tab:LaunchTimelineActuall}
+\end{longtable}
+    

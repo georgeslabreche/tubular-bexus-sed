@@ -2,7 +2,7 @@
 \section{Experiment Thermal Analysis} \label{sec:appI}
 \subsection{Component Temperature Ranges}
 
-Table {\ref{tab:thermal-table}}, below covers the thermal ranges of all components to be included in the experiment's flight stage as listed in Section \ref{sec:experiment-components}:
+Table {\ref{tab:thermal-table}}, below covers the thermal ranges of all components included in the experiment's flight stage as listed in Section \ref{sec:experiment-components}:
 
 \input{appendix/tables/thermaltable1.tex}
 
@@ -88,61 +88,61 @@ Table {\ref{tab:thermal-table}}, below covers the thermal ranges of all componen
 
 
 \subsection{Thermal calculations in MATLAB}
-For the MATLAB calculations a few assumptions were made, they are as follows.
+For the MATLAB calculations, a few assumptions were made. They were as follows:
 \begin{itemize}
-    \item Taking the average of MATLAB calculations for calculations with or without sun.
-    \item Calculate the average temperature on the outside wall of the experiment.
+    \item Taking the average of MATLAB calculations for calculations with or without sunlight.
+    \item Calculating the average temperature on the outside wall of the experiment.
     \item Assuming the inner temperature at the bags section is uniform.
-    \item The pipes letting cold air in have not been taken into account in MATLAB.
-    \item Assume no interference between the two experiment boxes.
-    \item All conduction is uniform from the inside.
+    \item Ignoring the pipes letting cold air into the experiment.
+    \item Assuming no interference between the two experiment boxes.
+    \item All conduction was uniform from the inside.
     \item Assume steady flow through the walls from conduction.
     \item Assume radiation and convection from/on 6 walls not 5.
 \end{itemize}
 
 \subsubsection{Solar flux and Albedo}
-The albedo is the reflected solar flux from earth so it can be put into the same equation as the solar flux. It is assumed that the sun hit two sides of the experiment at a $45\degree$ angle at all time over 10 km. In the mid of October at the time for launch the sun will hit the experiment with a maximum inclination of $15\degree$ from the horizon.
+The albedo is the reflected solar flux from earth so it was put into the same equation as the solar flux. It was assumed that the sun hit two sides of the experiment at a $45\degree$ angle at all times while over 10 km altitude. In the middle of October at the time of launch the sun was expected to hit the experiment with a maximum inclination of $15\degree$ from the horizon.
 \begin{equation*}
     Q_{Sun+Albedo} = \alpha_{Al}\cdot S \cdot cos(15) \cdot (A_{Sun} \cdot cos(45) + Albedo \cdot A_{Albedo})
 \end{equation*}
 
 \subsubsection{Conduction}
-For calculating the outer walls temperature, the assumption of steady flow through walls is used.
+For calculating the outer walls temperature, the assumption of steady flow through walls was used.
 \begin{equation*}
     Q_{Conduction} = [\text{Steady flow through wall}] = \text{Dissipated power} = P
 \end{equation*}
 
 \subsubsection{Earth IR flux}
-The earth IR flux is the flux that comes from earth as a black body radiating. It is calculated from finding the IR flux at the ground then scale it to the altitude the experiment will fly at. The following equations were found from \cite{BalloonAscent}.
+The earth IR flux is the flux that comes from earth as a black body radiating. It was calculated from the determined IR flux at ground level then scaled to the altitude the experiment would reach. The following equations were found from \cite{BalloonAscent}:
 \begin{gather*}
     IR_{Ground} = \varepsilon_{earth} \cdot \sigma \cdot T_{ground}^4 \\
     \tau_{atmIR} = 1.716 - 0.5\cdot \Bigg[e^{-0.65\frac{P_{25km}}{P_{ground}}} + e^{-0.95\frac{P_{25km}}{P_{ground}}}\Bigg] \\
     IR_{25km} = \tau_{atmIR} \cdot IR_{Ground}
 \end{gather*}
-After the IR has been calculated for the floating altitude it is put into the following equation. 
+After the IR was calculated for the floating altitude it was put into the following equation. 
 \begin{equation*}
     Q_{IR} = \varepsilon_{earth} \cdot A_{IR} \cdot IR_{25km}
 \end{equation*}
 
 \subsubsection{Radiation}
-It is assumed that the experiment will experience radiation from all 6 sides. In reality it will experience radiation from 5 sides because the CAC box will be in contact with one of the AAC box's sides. It was decided to leave it at 6 for the calculations in order to compensate for having no holes to let cold air in to the pump.
+It was assumed that the experiment would experience radiation from all 6 sides. In reality it would experience radiation from 5 sides because the CAC box will be in contact with one of the AAC box's sides. It was decided to leave the simulation with input from the 6 sides for the calculations in order to compensate for having no holes to let cold air in to the pump.
 \begin{equation*}
     Q_{Radiation} = \sigma \cdot \varepsilon_{Al} \cdot A_{Radiation} \cdot (T_{Out}^4 - T_{Ambient}^4 )
 \end{equation*}
 
 \subsubsection{Convection}
-At an altitude of 25 km there is far lower air density than at sea level. Therefore, it gives that a scaling factor $K$ has to be taken into account when calculating the convection and K can be seen in Table \ref{tab:heat-loss} for different altitudes.
+At an altitude of 25 km there is far lower air density than at sea level. This therefore gave a scaling factor $K$ that had to be taken into account when calculating the convection and K can be seen in Table \ref{tab:heat-loss} for different altitudes.
 \begin{equation*}
     Q_{Convection} = h \cdot K \cdot A_{Convection} \cdot (T_{Out} - T_{Ambient})
 \end{equation*}
 
-The equation for approximating the heat transfer coefficient for air is outlined as:
+The equation for approximating the heat transfer coefficient for air was outlined as:
 \begin{equation*}
 h = 10.45 - v + 10\cdot\sqrt{v}
 \end{equation*}
 Where $v$ is the velocity of the fluid medium.
 
-As the balloon is expected to rise at approximately $5 m/s$ for the duration of the Ascent Phase, the starting value for the convective heat transfer coefficient $h$ is expected to be $27.811$, assuming negligible wind currents perpendicular to the direction of ascent. %I will probably move this paragraph to our Thermal Design section, since this is important information.
+As the balloon was expected to rise at approximately $5 m/s$ for the duration of the Ascent Phase, the starting value for the convective heat transfer coefficient $h$ was expected to be $27.811$, assuming negligible wind currents perpendicular to the direction of ascent. %I will probably move this paragraph to our Thermal Design section, since this is important information.
 
 The equations used to obtain the value of $K$ are listed below:
 
@@ -185,33 +185,33 @@ Table \ref{tab:heat-loss} combines the previously listed convection and radiatio
 \raggedbottom
 
 
-\subsubsection{Thermal equation}
-If there is no sun on the experiment.
+\subsubsection{Thermal equations}
+If there is no incident sunlight on the experiment.
 \begin{gather*}
     Q_{IR} + Q_{Conduction} = Q_{Radiation} + Q_{Convection} \\
     \updownarrow \\
     \varepsilon_{earth} \cdot A_{IR} \cdot IR_{25km} + P \\ = \sigma \cdot \varepsilon_{Al} \cdot A_{Radiation} \cdot (T_{Out}^4 - T_{Ambient}^4 ) + h \cdot K \cdot A_{Convection} \cdot (T_{Out} - T_{Ambient})
 \end{gather*}
-If there is sun on the experiment it is the same but adding $Q_{Sun+Albedo}$.
+If there is incident sunlight on the experiment, existing parameters stay included, and the parameter $Q_{Sun+Albedo}$ is also included.
 \begin{gather*}
     Q_{IR} + Q_{Conduction} + Q_{Sun+Albedo} = Q_{Radiation} + Q_{Convection} \\
     \updownarrow \\
     \varepsilon_{earth} \cdot A_{IR} \cdot IR_{25km} + P + \alpha_{Al}\cdot S \cdot cos(15) \cdot (A_{Sun} \cdot cos(45) + Albedo \cdot A_{Albedo}) \\ = \sigma \cdot \varepsilon_{Al} \cdot A_{Radiation} \cdot (T_{Out}^4 - T_{Ambient}^4 ) + h \cdot K \cdot A_{Convection} \cdot (T_{Out} - T_{Ambient})
 \end{gather*}
-From those equations $T_{Out}$ can be calculated and it is the average temperature on the aluminum sheets facing the outside air.
-After $T_{Out}$ have been found the inner temperature can be calculated by using heat transfer through the wall.
+From these equations $T_{Out}$ could be calculated and it was found to be the average temperature on the aluminum sheets facing the outside air.
+After $T_{Out}$ was found, the inner temperature could be calculated by determining the heat transfer through the wall.
 \begin{gather*}
     P = \frac{T_{Inside} - T_{Outside}}{A \cdot (\frac{L_{Al}}{k_{Al}} + \frac{L_{PS}}{k_{PS}})} \\
      \updownarrow \\
     T_{Inside} = P \cdot A \cdot (\frac{L_{Al}}{k_{Al}} + \frac{L_{PS}}{k_{PS}}) + T_{Outside}
 \end{gather*}
-$T_{Inside}$ is then assumed to be the uniform air temperature in the experiment.
+$T_{Inside}$ was then assumed to be the uniform air temperature in the experiment.
 
 
 
 \subsubsection{Trial run with BEXUS 25 air temperature data for altitudes}
-The air temperature data varying over altitude from old BEXUS flight could be found on the REXUS/BEXUS website. To do a simulated test flight for the calculations done in MATLAB, to see how it would be for a real flight it was calculated and plotted in with data from BEXUS 25 flight. 
-Because of there being approx 42000 data points it had to be scaled down and only every $25^{th}$ data point was used to save time and there was not much detail loss by taking every $25^{th}$. In Figure \ref{fig:thermal-testflight-AAC} the TUBULAR test flight is the uniform temperature on the inside with a insulation consisting as specified in Table \ref{tab:Wall-thickness-AAC-CAC}.
+The air temperature data varying over altitude from previous BEXUS flights could be found on the REXUS/BEXUS website. To do a simulated test flight for the calculations done in MATLAB (with the intention of seeing how the temperature profile would appear for a real flight), it was calculated and plotted in with data from BEXUS 25 flight.
+Because of it originally having approximately 42000 data points, the profile had to be scaled down. Only every $25^{th}$ data point was used to reduce processing time and this resulted in little detail loss. In Figure \ref{fig:thermal-testflight-AAC}, the TUBULAR test flight is the uniform temperature on the inside with a insulation consisting as specified in Table \ref{tab:Wall-thickness-AAC-CAC}.
 
 \begin{figure}[H]
     \begin{align*}
@@ -223,7 +223,7 @@ Because of there being approx 42000 data points it had to be scaled down and onl
 When the data was found it was checked in ANSYS to determine and add heaters to control the most critical parts of the model.
 
 \subsubsection{Trial flight for the CAC} \label{sssec:CAC-trial-flight}
-The CAC box does not require as much thermal design as the AAC box. The only part to consider is the valve, which has a lower limit of the operating temperature of $-10\degree{ C}$. It will not be a problem because the valve will open a little before launch and have a current throughout the whole flight heating it self up. If the thermal analysis is proven wrong by a test, showing that it is not sufficient to use only self heating, a heater can be applied at a later date. The passive thermal design for the CAC box will consist of aluminum sheets and Styrofoam as specified in \ref{tab:Wall-thickness-AAC-CAC}.
+The CAC box did not require as much thermal design as the AAC box. The only part to be considered was the valve, which had a lower limit of the operating temperature of $-10\degree{ C}$. It would not be a problem because the valve would open just prior launch and have current running through it throughout the whole flight --- heating it self up. If the thermal analysis was proven wrong by a test, showing that it was not sufficient to use only self-heating, a heater could be applied at a later date. The passive thermal design for the CAC box would consist of aluminum sheets and Styrofoam as specified in \ref{tab:Wall-thickness-AAC-CAC}.
 \begin{figure}[H]
     \begin{align*}
         \includegraphics[width=1\linewidth]{appendix/img/Thermal/CAC-test-flight.jpg}
@@ -251,8 +251,7 @@ By running the MATLAB script, the hottest and coldest case for $0.02 m$ on the w
 
 
 \subsection{Thermal Simulations in ANSYS}
-In ANSYS, FEA simulations were done using both Steady-State Thermal and Transient Thermal analysis.
-Because of the limitations in ANSYS student license a simplified model has been used, which can be seen in Figure \ref{fig:Ansys-CAD-model}. It is in a lower corner of the experiment showing the Brain and has three walls to the sampling bags and the air is uniform on the inside. The uniform inside air can be taken from the data from the test flight in Figure (\ref{fig:thermal-testflight-AAC}). These simulations were done to see what temperature the pump and manifolds will be as they are the most critical components.
+The CAD model used is seen in the figure \ref{fig:Ansys-CAD-model}. The side exterior walls were $0.02 m$ in height, the interior walls of the Brain to the bags were $0.03 m$ in length and the top and bottom wall consisted of $0.03 m$ long Styrofoam as well. The outer parts of the pipes were set to stainless steel with a constant temperature (the same as the ambient outside). The tubes closest to the pump and the one leading from the pump to the manifold were set to include air to be able to vary during the simulation depending on the temperature outside of the experiment and the pump heating up from the heater.
 
 \begin{figure}[H]
     \begin{align*}
@@ -262,9 +261,10 @@ Because of the limitations in ANSYS student license a simplified model has been 
     \label{fig:Ansys-CAD-model}
 \end{figure}
 
-The CAD model is as seen in the figure \ref{fig:Ansys-CAD-model}. The side exterior walls are $0.02 m$, the interior walls of the Brain to the bags are $0.03 m$ and the top and bottom wall consist of $0.03 m$ Styrofoam as well. The outer parts of the pipes are set to stainless steel with a constant temperature (the same as the ambient outside). The tubes closest to the pump and the one going from pump to the manifold were set to air to simulate and be able to vary depending on the temperature outside and the pump heating up from the heater.
+In ANSYS, FEA simulations were done using both Steady-State Thermal and Transient Thermal analysis.
+Because of the limitations in ANSYS student license, a simplified model was used, which can be seen in Figure \ref{fig:Ansys-Brain-model}. It was focused on the corner region of the experiment housing the Brain and had three walls to the sampling bags and assumed the air was uniformly heated on the inside. The uniform inside air could be taken from the data from the test flight in Figure (\ref{fig:thermal-testflight-AAC}). These simulations were done to find what temperature the pump and manifolds would reach, as they were the most critical components in the experiment.
 
-A transient thermal analysis was also performed by simulating a test flight with data from BEXUS 25 using results from MATLAB. It was performed so the thickness of the wall could be verified to see if it was good enough and whether adding heaters was required. By being flexible with adding heaters, moving them around, changing their strength and their on time, it is possible to enable the pump and the manifold to operate in their required temperature ranges.
+A transient thermal analysis was also performed by simulating a test flight with data from BEXUS 25 using results from MATLAB. It was performed so the thickness of the wall could be verified to see if it was good enough and whether adding heaters was required. Through the addition of, correct placement, adequate assigned power, and activation time for the heaters, it was possible to enable the pump and the manifold to operate in their required temperature ranges.
 
 \subsection{ANSYS Result}
 \subsubsection{Including Air With Same Density as Sea Level in the Brain}
@@ -273,7 +273,7 @@ A transient thermal analysis was also performed by simulating a test flight with
         \includegraphics[width=0.5\linewidth]{appendix/img/Thermal/Air-inside-AAC-sampling-ascent.JPG}
     \end{align*}
     \caption{Cross Section of the Air in the Brain at the Time to Sample During Ascent.}
-    \label{fig:Ansys-CAD-model}
+    \label{fig:Ansys-Brain-model} %Ivan was here
 \end{figure}
 
 \begin{figure}[H]
@@ -338,7 +338,7 @@ A transient thermal analysis was also performed by simulating a test flight with
     \hifll
     \subfloat{\includegraphics[width=0.442\linewidth]{appendix/img/Thermal/no-air-sampling-descent.JPG}}
     \caption{The Structure of the Brain at the Time to Sample During Ascent (left) and Descent (right).}
-    \label{fig:structure-no-air}
+    \label{fig:structure-no-air2}
 \end{figure}
 
 \begin{figure}[H]
@@ -350,11 +350,11 @@ A transient thermal analysis was also performed by simulating a test flight with
 \end{figure}
 
 \subsection{Result}
-The main objective from performing first the MATLAB calculations and then the ANSYS simulations has been to iterate and find the wall thickness of Styrofoam between the Brain and the inside of the AAC box. The next objective was to iterate the design with adding heaters to find the required amount and find approximately how long they need to run. By running a transient thermal analysis for the test flight there was the possibility to simulate heaters that will be on and off to determine how strong they need to be.
+The main objective from first performing the MATLAB calculations and then the ANSYS simulations was to find the wall thickness of Styrofoam between the Brain and the inside of the AAC box and make updated iterations of the result. The next objective was to iterate the design by adding heaters to find the required amount and find approximately how long they need to run. By running a transient thermal analysis for the test flight it was possible to simulate heaters that will be on and off to determine how strong they need to be.
 
-The results from the ANSYS simulations assumed a worst case scenario. It was to be expected that the results were not fully accurate, and instead were slightly warmer in reality. The worst case is with air inside at normal density. In reality when it is time to sample (at 17km), the air density will be less then 15\% of the air density at sea level \cite{EngToolair}. It means there will be less heat loss from components to the air inside the brain. Figures \ref{fig:Pump-Valve-ascent-sample} and \ref{fig:Pump-Valve-ascent-sample-descent} show that the temperature of the pump is above $5\degree{C}$ and the manifold is above $-10\degree{C}$. It is only during a portion of the Ascent Phase, just prior to the start of sampling that the heater should be on in order for the pump to be above $5\degree{C}$, and it shall only be needed to be on during this Phase. By having a heater on the flushing valve and the manifold it is possible to get all the valves to the operating temperature. The flushing tube that goes out to the open air outside will cool down the flushing valve so adding a heater there to compensate is required. When it is time to flush right before sample can be seen in Figure \ref{fig:flushing-valve}. The manifold would still need a heater because it will be affected by the cold outer air and help heat up all the components
+The results from the ANSYS simulations assumed a worst case scenario. It was to be expected that the results were not fully accurate, and instead were slightly warmer in reality. The worst case was with air inside the experiment at normal density. In reality when it was time to sample (at 17km), the air density would be less then 15\% of the air density at sea level \cite{EngToolair}. This meant that there would be less heat loss from components to the air inside the brain than predicted. Figures \ref{fig:Pump-Valve-ascent-sample} and \ref{fig:Pump-Valve-ascent-sample-descent} show that the temperature of the pump was above $5\degree{C}$ and the manifold was above $-10\degree{C}$. It was only during a portion of the Ascent Phase, just prior to the start of sampling that the heater would need to be on in order for the pump to be above $5\degree{C}$, and it would only need to be on during this Phase. By having a heater on the flushing valve and the manifold it was possible to get all the valves to the operating temperature. The flushing tube that led out to the open air outside would cool down the flushing valve, so a heater there to compensate for the heat loss would be required. It would then be time to flush right before sample can be seen in Figure \ref{fig:flushing-valve}. The manifold would still need a heater because it will be affected by the cold outer air and help heat up all the components.
 
-The insulation for the AAC will be as specified in Table \ref{tab:Wall-thickness-AAC-CAC}. For the three inner walls between the Brain and the bags there will be a $0.03 m$ wall of Styrofoam. By using two $5\,W$ heaters for the pump, one on top and one on bottom side, a 5 W heater for the flushing valve and one for the manifold. The thermal simulations predict that they will be within the operating limits with a satisfactory margin. For the heater controller, it will be set that if the pump is below $15\degree{C}$ it will turn on. As for the flushing valve, the heater will be set to turn on if the flushing valve and manifold is below $-5 \degree{C}$.
+The insulation for the AAC used is specified in Table \ref{tab:Wall-thickness-AAC-CAC}. For the three inner walls between the Brain and the bags there was a $0.03 m$ long wall of Styrofoam. Two $5\,W$ heaters for the pump (one on top and one on bottom side), a 5 W heater for the flushing valve and one for the manifold were used. The thermal simulations predicted that they would be within the operating limits with a satisfactory margin. For the heater controller, it would be set such that if the pump fell below $15\degree{C}$, it would turn on. As for the flushing valve, the heater would be set to turn on if the flushing valve and manifold fell below $-5 \degree{C}$.
 
 %The insulation elements will be attached to the rails and to each other through the use of glue as an adhesive. Due to its strength, glue can provide sufficiently strong bonds over small areas of contact between materials. This means only a handful of additional heat bridges to be factored and none of them particularly conductive. For remaining portions near the edges of each wall of insulation, the materials may be connected together with tape owing to its adhesive strength being similar to that of the glue. The tape would prevent convection (at the cost of slightly increased conduction at the points/edges of contact) at lower altitudes from occurring due to air flowing in between the otherwise exposed gaps between the Styrofoam, the aluminum sheets, and the rails. In the event that tape would not be a suitable candidate, the Styrofoam may be milled to match the groove profile of the supporting rails so that it may be fitted in between them directly - leaving the whole structure secure while only using glue for connecting the Styrofoam to the aluminum sheeting.
 
