@@ -37,7 +37,7 @@ The air sampling with the CAC system was nominal. The valve opened and closed up
 
 On the other hand, the large pneumatic system of the AAC system experienced a failure in the pump which lead to the failure of the this alternative sampling system. Although the bags could not be filled with stratospheric air for later analysis, data of both airflow and pressure sensor was received as expected and all the valves worked nominally (manifold and flushing). 
 
-The failure analysis of the pump can be found in Section \ref{post_flight}.
+The failure analysis of the pump can be found in Section \ref{sec:failureanalysis}.
 
 \subsubsection{Electrical Subsystem Performance}
 
@@ -64,28 +64,9 @@ The thermal result for the flight are as seen in Figure \ref{fig:Termal_flight_t
 
 
 
-
-
-
-\subsubsection{Scientific Results}\label{sec:scientificresults}
-Raw data was only obtained on the 5th December therefore analysis is still ongoing and there are no official results as of yet. FMI has also sent over some preliminary results which can be seen in Figure \ref{fig:verticalprofiles}.
-
-\begin{figure}[H]
-    \begin{align*}
-        \includegraphics[width=1\linewidth]{7-data-analysis-and-results/img/verticalprofiles.png}
-    \end{align*}
-    \caption{Preliminary Vertical Profiles for (Left) CO$_2$, (Middle) CH$_4$, and (Right) CO.\label{fig:verticalprofiles}}
-\end{figure}
-
-As seen in Figure \ref{fig:verticalprofiles}, the preliminary results follow the general pattern of the expected results of the Section \ref{sec:ExpecterResults}. In general, the concentrations of CO$_2$, CH$_4$, and CO are decreasing with decreasing pressure i.e increasing altitude. The vertical axis represents the pressure but in the final profiles it will represent the corresponding altitudes. The maximum value of CO$_2$ is 405 ppm, for CH$_4$ is approximately 2 ppm, and for the CO is close to 90 ppb.  
-
-The vertical resolution of the sample follow the one of the High-Resolution AirCore-HR (red line) in Figure \ref{fig:resolution-lenght} since the same length tube was used. Since the analysis was performed after 13 hours, the vertical resolution decrease is closer to the one represented by the green line in Figure \ref{fig:resolution-time}.
-
-Further investigations are ongoing and the results will be updated. 
-
-\subsubsection{Expected Results}
+\subsubsection{Past Results}
 \label{sec:ExpecterResults}
-After the analysis of the samples, the expected results were the vertical profiles of CO, CO$_2$, and CH$_4$. The profiles presented a similar pattern to that of Figure \ref{fig:vertical-profile-karion}. The continuous profile (dashed line) belongs to the CAC while the discrete values (black dots) belongs to the AAC (\cite{Karion}). Both profiles are showing a decrease in concentration of CH$_2$ and CH$_4$ with increasing altitude.
+After the analysis of the samples, the expected results were the vertical profiles of CO, CO$_2$, and CH$_4$. The profiles presented a similar pattern to that of Figure \ref{fig:vertical-profile-karion} which was found in an experiment by Karion et al (AirCore: An Innovative Atmospheric Sampling System) \cite{Karion}. The continuous profile (dashed line) belongs to the CAC while the discrete values (black dots) belongs to the AAC (\cite{Karion}). Both profiles are showing a decrease in concentration of CH$_2$ and CH$_4$ with increasing altitude.
 \begin{figure}[H]
     \begin{align*}
         \includegraphics[width=1\linewidth]{7-data-analysis-and-results/img/ExpectedVerticalProfilesKarion.png}
@@ -93,7 +74,7 @@ After the analysis of the samples, the expected results were the vertical profil
     \caption{Pressure Profiles for (Left) CO$_2$ and (Right) CH$_4$ by Three Different Methods \cite{Karion}.\label{fig:vertical-profile-karion}}
 \end{figure}
 
-The experiment's goal was to achieve the highest vertical resolution possible. Since the vertical resolution was determined by the length and the diameter of the tube \cite{Membrive}, a 300 m long tube was used, consisting of 2 smaller tubes. One of 200 m length with \num{3e-3} m outside diameter and \num{1.3e-4} m wall thickness, and another one of 100 m length with \num{6e-3} m outside diameter and \num{1.3e-4} m wall thickness. For achieving higher stratospheric resolution, the tube with the smaller diameter was used to sample the higher altitudes and the one with the bigger diameter for the lower ones.
+This experiment's goal was to achieve the highest vertical resolution possible. Since the vertical resolution was determined by the length and the diameter of the tube \cite{Membrive}, a 300 m long tube was used, consisting of 2 smaller tubes. One of 200 m length with \num{3e-3} m outside diameter and \num{1.3e-4} m wall thickness, and another one of 100 m length with \num{6e-3} m outside diameter and \num{1.3e-4} m wall thickness. For achieving higher stratospheric resolution, the tube with the smaller diameter was used to sample the higher altitudes and the one with the bigger diameter for the lower ones.
 Figure \ref{fig:resolution-lenght} by Olivier Membrive \cite{Membrive} compares the vertical resolution that can be expected with three different AirCores.
 
 \begin{figure}[H]
@@ -111,36 +92,36 @@ The longer AirCore, AirCore-HR, achieved a higher resolution throughout the whol
 
 In addition, the vertical resolution depends on the the mixing inside the tube. 
 
-The experiment takes into account two types of mixing. Molecular diffusion and the shear flow diffusion, known as Taylor dispersion. The effect of molecular diffusion is described by the root-mean-square of the distance of molecular travel, 
+This experiment took into account two types of mixing. Molecular diffusion and the shear flow diffusion, known as Taylor dispersion. The effect of molecular diffusion was described by the root-mean-square of the distance of molecular travel, 
 \begin{equation}
     X_{rms} = \sqrt{2Dt}
 \end{equation}
-where, D is the molecular diffusivity of the molecule in the surrounding gas, and t is the time over which travel occurs, \cite{Karion}.
-For the tubing dimension that will be used in this experiment, the flow of air through the CAC, will be laminar. In such a flow, a parabolic velocity profile exists inside the tube, causing longitudinal mixing (Taylor dispersion). 
+where, D was the molecular diffusivity of the molecule in the surrounding gas, and t was the time over which travel occurs, \cite{Karion}.
+For the tubing dimension that were used in this experiment, the flow of air through the CAC, was laminar. In such a flow, a parabolic velocity profile existed inside the tube, causing longitudinal mixing (Taylor dispersion). 
 
-Before the experiment is recovered, only molecular diffusion will affect the sample, but during analysis both molecular diffusion and Taylor dispersion will affect the sample. Combining both of them, an effective diffusion coefficient can be calculated as,
+Before their experiment was recovered, only molecular diffusion affected the sample, but during analysis both molecular diffusion and Taylor dispersion affected the sample. Combining both of them, an effective diffusion coefficient was calculated as,
  \begin{equation}
      D{eff} = D + \frac{a^2\overline{V^2}}{48D}
  \end{equation}
-where D is the molecular diffusivity, a is the tube's inner radius, and $\overline{V}$ is the average velocity \cite{Membrive}. The first term translates into the longitudinal direction, while the second one is the Taylor dispersion. 
+where D was the molecular diffusivity, a was the tube's inner radius, and $\overline{V}$ was the average velocity \cite{Membrive}. The first term translated into the longitudinal direction, while the second one was the Taylor dispersion. 
 
 After completing Test 4 and Test 18 as seen in Tables \ref{tab:vacuum-test}, and \ref{tab:pump-low-pressure-test} respectively, the team managed to get the standard flow rate readings for the different altitudes. Standard flow rate is the volumetric flow rate of a gas corrected to standarized conditions of temperature and pressure. In this case the logged flow rates correspond to sea level conditions. Table \ref{tab:flow-rates} shows the standard flow rates at the sampling altitudes.  
 
 \input{7-data-analysis-and-results/tables/flow-rates.tex}
 
-It is necessary to also calculate the actual flow rates at the different altitudes. The conversion was done using the equation \cite{flowrateswebsite}:
+It was necessary to also calculate the actual flow rates at the different altitudes. The conversion was done using the equation \cite{flowrateswebsite}:
 $ Volumetric flow = (Standard flow rate) \cdot \Big(\frac{T_{alt}}{T_{std}}\Big) \cdot \Big(\frac{P_{std}}{P_{alt}}\Big) $
 where, \\
-$P_{std}= 1013 hPa$ is the standard pressure. \\
-$T_{std}=294.25K$ is the standard temperature.\\
-$T_{alt}$ is the temperature at the different altitudes.\\
-$P_{alt}$ is the pressure at the different altitudes.\\
+$P_{std}= 1013 hPa$ was the standard pressure. \\
+$T_{std}=294.25K$ was the standard temperature.\\
+$T_{alt}$ was the temperature at the different altitudes.\\
+$P_{alt}$ was the pressure at the different altitudes.\\
 
 Table \ref{tab:normal-flow-rates}, shows the actual flow rates at the sampling altitudes.
 
 \input{7-data-analysis-and-results/tables/normal-flow-rates.tex}
 
-Finally, storage time, that is the time from the moment the tube is sealed until the end of the analysis, is a key factor that affects the experiment's results in terms of resolution.
+Finally, storage time, that was the time from the moment the tube was sealed until the end of the analysis, was a key factor that affected the experiment's results in terms of resolution.
 
 Figure \ref{fig:resolution-time} shows the effect of time delay between landing and analysis, on the expected vertical resolution. 
 \begin{figure}[H]
@@ -150,15 +131,71 @@ Figure \ref{fig:resolution-time} shows the effect of time delay between landing 
     \caption{Expected Vertical Resolution of AirCore-HR, for a Storage Time of 3h (Black), 6h (Blue), 12h (Green), 24h (Orange) and 1 Week (Red) \cite{Membrive}.\label{fig:resolution-time}}
 \end{figure}
 
-It is clear that the sooner the samples are going to be analyzed, the better the results for the vertical resolution of the CAC sample. At an altitude of 20 km the resolution decreases significantly from 300 m to 500 m for 6h and 12h of delay, respectively, \cite{Membrive}. But even after a week of storage, a vertical profile can still be achieved with lower resolution.
+It is clear that the sooner the samples were analyzed, the better the results for the vertical resolution of the CAC sample. At an altitude of 20 km the resolution decreased significantly from 300 m to 500 m for 6h and 12h of delay, respectively, \cite{Membrive}. But even after a week of storage, a vertical profile could still be achieved with lower resolution.
 
-Based on past BEXUS projects, the time to experiment recovery is estimated at 12 to 24 hours, if not multiple days. As such, it is expected that the desired vertical resolution of gas analysis will favour AAC configuration over that of CAC due to mixing of gases in the latter configuration, resulting in poorer vertical resolution.
+Based on past BEXUS projects, the time to experiment recovery was estimated at 12 to 24 hours, if not multiple days. As such, it was expected that the desired vertical resolution of gas analysis favoured AAC configuration over that of CAC due to mixing of gases in the latter configuration, resulting in poorer vertical resolution.
 
-The vertical resolution for the AAC is approximately 500 m. This will be achieved assuring the airflow intake rate. For Ascent Phase, a nominal speed of 5 m/s is considered, which means that it will take 28.57 seconds to fill a sampling bag with 1.8L of air while ascending 142.85 m, and an  actual airflow intake rate of approximately 3.78 L/min at 18 km of altitude. For Descent Phase, the nominal speed is assumed to be 8 m/s. While descending 156.4 m a sampling bag will be filled in 19.55 seconds, with 1.3 L of air and an actual airflow intake rate of 3.99 L/min at 16 km of altitude. However, taking into account that the volume of the samples, at sea level, will be lower, the sampling time will be longer and the vertical resolution closer to 500m. 
+The vertical resolution for the AAC was expected to be approximately 500 m. This would have been achieved assuring the airflow intake rate. For Ascent Phase, a nominal speed of 5 m/s was considered, which meant that it would take 28.57 seconds to fill a sampling bag with 1.8L of air while ascending 142.85 m, and an  actual airflow intake rate of approximately 3.78 L/min at 18 km of altitude. For Descent Phase, the nominal speed was assumed to be 8 m/s. While descending 156.4 m a sampling bag would be filled in 19.55 seconds, with 1.3 L of air and an actual airflow intake rate of 3.99 L/min at 16 km of altitude. However, taking into account that the volume of the samples, at sea level, would have been lower, the sampling time would have been longer and the vertical resolution closer to 500m. 
 %However, considering the fact that the pump will not have the same efficiency at higher altitudes, the sampling time may be longer and the airflow intake rate may be higher. The exact numbers will be included in the upcoming version of the SED.  
 
-For a 500 m of vertical displacement, the horizontal resolution of the AAC has been approximated based on past BEXUS flights data obtained from the BEXUS manual \cite{BexusManual}. The average horizontal resolution obtained for Ascent Phase is 588m and for Descent Phase is 186.5 m. This means that the square area covered by the sample will be 500 m x 588 m and 500 m x 186.5 m for ascent and Descent Phases respectively.
-
-It is expected that the AAC will serve as model enabling a cost-effective large scale deployment scheme for regular high altitude greenhouse gas measurement. Unlike CAC, the design of AAC will not impose experimental restrictions based on the proximity of infrastructure for shipping and analysis. As such, a successful proof of concept of AAC sampling system will serve as a basis to enable reliable cost-effective measurements in remote areas.
+For a 500 m of vertical displacement, the horizontal resolution of the AAC was approximated based on past BEXUS flights data obtained from the BEXUS manual \cite{BexusManual}. The average horizontal resolution obtained for Ascent Phase was 588m and for Descent Phase was 186.5 m. This meant that the square area covered by the sample would have been 500 m x 588 m and 500 m x 186.5 m for ascent and Descent Phases respectively.
 
 
+\subsubsection{Scientific Results}\label{sec:scientificresults}
+%Raw data was only obtained on the 5th December therefore analysis is still ongoing and there are no official results as of yet. FMI has also sent over some preliminary results which can be seen in Figure \ref{fig:verticalprofiles}.
+
+%\begin{figure}[H]
+%    \begin{align*}
+%        \includegraphics[width=1\linewidth]{7-data-analysis-and-results/img/verticalprofiles.png}
+%    \end{align*}
+%    \caption{Preliminary Vertical Profiles for (Left) CO$_2$, (Middle) CH$_4$, and (Right) CO.\label{fig:verticalprofiles}}
+%\end{figure}
+Figure \ref{fig:verticalprofiles} shows the CO$_2$, CH$_4$, and CO profiles measured during the BEXUS 26 flight. Each profile comprises about 3000 points on the vertical axis. The data from 400 hPa down to 1000 hPa were deleted. At that time the CAC valve was closed and the gases were leaking inside the coil with some unknown delay, and from inside the box (not from the troposphere). From the ambient temperature profile, seen in Figure \ref{fig:temperatureprofile}, the tropopause was estimated to be at 165.2 hPa.  
+  %The profiles stop at 400 hPa due to the CAC valve closure at about 6 km of altitude. Uncertainties of the profiles are possible due to the CAC valve leakage after landing, where air from the surface, as well as the box entered the coil.
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{7-data-analysis-and-results/img/temperatureprofile.png}
+    \caption{Ambient Temperature in $\degree$C Over Ambient Pressure in hPa.}
+    \label{fig:temperatureprofile}
+\end{figure} 
+  
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{7-data-analysis-and-results/img/Finalprofilesmast.png}
+    \caption{Vertical Profiles Retrieved from the Air Sampled with the CAC on the BEXUS 26 flight. Left: CO (ppb), Middle: CO$_2$ (ppm), Right: CH$_4$ (ppm).}
+    \label{fig:verticalprofiles}
+\end{figure}
+
+As seen in Figure \ref{fig:verticalprofiles}, the preliminary results follow the general pattern of the past results of the Section \ref{sec:ExpecterResults}. In general, the concentrations of CO$_2$, CH$_4$, and CO are decreasing with decreasing pressure i.e increasing altitude. The maximum value of CO$_2$ is 405 ppm, for CH$_4$ is approximately 2 ppm, and for the CO is close to 90 ppb. The red star represents the concentrations at 1000 hPa (surface) as they measured just about 20 km away from the landing site.
+
+The vertical resolution of the sample follow the one of the High-Resolution AirCore-HR (red line) in Figure \ref{fig:resolution-lenght} since the same length tube was used. Since the analysis was performed after 13 hours, the vertical resolution decrease is closer to the one represented by the green line in Figure \ref{fig:resolution-time}.
+
+In the middle figure of Figure \ref{fig:verticalprofiles}, a strong decrease of CO$_2$ can be observed in the first layers above 6 km. CO$_2$ reaches its highest value of 405 ppm just above the tropopause ($\sim$ 162.5 hPa). In the stratosphere, CO$_2$ values are lower since the exchange rate between upper troposphere and lower stratosphere takes several years \cite{Membrive}. 
+
+The CH$_4$ vertical profile is presented in the right side of Figure \ref{fig:verticalprofiles}. Mixing ratios of CH$_4$ have a small variability in the troposphere. The strong decrease of CH$_4$ in the
+stratosphere is easy to see in Figure \ref{fig:verticalprofiles}, with values of  1.9 ppm near the tropopause at $\sim$ 162.5 hPa to 1.2 ppm at
+$\sim$ 20 hPa. 
+
+A comparison between the middle and the right profile of Figure \ref{fig:verticalprofiles} shows CO$_2$ variability is higher near the ground, whereas CH$_4$ variability is higher in the mid-to-upper troposphere and in the stratosphere. This is in agreement with the fact that CO$_2$ may have negative and positive anomalies at the surface (associated mainly with vegetation uptake and anthropogenic emissions), whereas CH$_4$ has mostly positive anomalies coming from the surface and negative anomalies coming from the stratosphere \cite{Membrive}.
+
+
+A comparison was performed to the CO, CO$_2$ and CH$_4$ estimated profiles based on the map files that have been made using the combination of earlier measurements with a meteorological model based adjustments. The measured profiles were compared to the estimated profiles, showing relatively good agreement.  This comparison is presented in Figure \ref{fig:mapcomparison}. 
+%It is worth mentioning that the profiles from the forecast are from the next day of the BEXUS 26 flight due to meteorological adjustment (tropopause and latitude).   
+
+\begin{figure}[H]
+    \begin{align*}
+        \includegraphics[width=1\linewidth]{7-data-analysis-and-results/img/Finalprofileswithmap.png}
+    \end{align*}
+    \caption{Comparison of CAC Left: CO, Middle: CO$_2$, and Right: CH$_4$ vertical profiles (blue) with co-located forecast (red)\label{fig:mapcomparison}.}
+\end{figure}
+
+The agreement between both CO and CH$_4$ profiles (Figure \ref{fig:mapcomparison}, left and right profiles) is satisfying throughout the sampling range in terms of structures. For higher altitudes, the decrease of CH$_4$ measured by the CAC is much more pronounced than the
+one simulated by the forecast.
+At first, one can say that the forecast for the CO$_2$ profiles (Figure \ref{fig:mapcomparison}, middle profile) displays different structures than those measured by the CAC. But, it correctly reproduces the strong decrease in CO$_2$ in the troposphere, as well as the increase in concentration close to the tropopause ($\sim$ 165.2 hPa). The CAC and the forecast both reveal a decrease in CO$_2$ starting from above the tropopause up to the top of the profile. 
+
+\subsubsection{Future Work}\label{sec:futurework}
+
+
+It was expected that the AAC would serve as model enabling a cost-effective large scale deployment scheme for regular high altitude greenhouse gas measurement. Unlike CAC, the design of AAC would have not imposed experimental restrictions based on the proximity of infrastructure for shipping and analysis. As such, a successful proof of concept of AAC sampling system would have served as a basis to enable reliable cost-effective measurements in remote areas. For these reasons whilst the BEXUS programme has now ended for the TUBULAR Team, there is sufficient interest from FMI and team members that it is intended to fly the experiment again. A different battery set will be used to overcome the problems discovered during the BEXUS 26 campaign and the TUBULAR Team still hopes to complete all the aims of the TUBULAR experiment. It is hoped a re-flight may be possible during the spring of 2019. If this goes well the TUBULAR Team will be pleased to present the comparison results at The 24th ESA Symposium on European Rocket and Balloon Programmes and Related Research alongside the results from the BEXUS 26 campaign. 
+
+The TUBULAR Team is also still intending to publish a scientific paper on the results of the experiment, however it has been decided to wait until further data has been collected during the reflight to do this. 

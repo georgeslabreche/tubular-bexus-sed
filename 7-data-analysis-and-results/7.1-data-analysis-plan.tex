@@ -1,4 +1,4 @@
-\subsection{Data Analysis Plan}
+\subsection{Data Analysis Plan}\label{sec:data-analysis-plan}
 
 \subsubsection{Picarro G2401}
 
@@ -40,56 +40,118 @@ The Picarro analyzer did not only give information about the displayed parameter
 
 \begin{figure}[H]
     \begin{align*}
-        \includegraphics[width=0.9\linewidth]{7-data-analysis-and-results/img/duringanalysis.png}
+        \includegraphics[width=0.9\linewidth]{7-data-analysis-and-results/img/duringanalysis.jpg}
     \end{align*}
     \caption{Picarro Graphical User Interface. From Top to Bottom: $CO_2$ ppm, $CO$ ppm, $CH_4$ ppm and Cavity Pressure. \label{fig:picarro-GUI}}
 \end{figure}
 
 
-\subsubsection{Analysis Strategy}
+\subsubsection{Analysis Strategy}\label{sec:analysisstrategy}
 
-As it has been mentioned in the previous section, during the flight, calibrating gas was flowing through the Picarro G2401. After the flight, the collected samples from the CAC were analyzed. As it is shown in Figure \ref{fig:aircore-analysis}, the end of the CAC tube that remained closed during sampling was connected to the Picarro inlet. The other end of the CAC was connected to the fill gas that was acting as a push gas. As soon as this connection was done, the valve shown in Figure \ref{fig:picarro-connections} was switched from calibrating gas to "AIRCORE" position. Then the Picarro GUI showed a sudden increase in concentrations similar to the one shown in Figure \ref{fig:picarro-GUI} due to the difference between the calibrating gas and the sample concentrations. Note that the magnesium perchlorate dryer shown in Figure \ref{fig:aircore-analysis} was removed during analysis.  
+%As it has been mentioned in the previous section, during the flight, calibrating gas was flowing through the Picarro G2401. After the flight, the collected samples from the CAC were analyzed. As it is shown in Figure \ref{fig:aircore-analysis}, the end of the CAC tube that remained closed during sampling was connected to the Picarro inlet. The other end of the CAC was connected to the fill gas that was acting as a push gas. As soon as this connection was done, the valve shown in Figure \ref{fig:picarro-connections} was switched from calibrating gas to "AIRCORE" position. Then the Picarro GUI showed a sudden increase in concentrations similar to the one shown in Figure \ref{fig:picarro-GUI} due to the difference between the calibrating gas and the sample concentrations. Note that the magnesium perchlorate dryer shown in Figure \ref{fig:aircore-analysis} was removed during analysis.  
+
+%\begin{figure}[H]
+ %   \begin{align*}
+  %      \includegraphics[width=0.9\linewidth]{7-data-analysis-and-results/img/aircore-analysis.png}
+  %  \end{align*}
+   % \caption{Schematics of CAC Analysis System \cite{AircoreFlights}. %\label{fig:aircore-analysis}}
+%\end{figure}
+
+%The analyzer pump and the push gas helped the sample to go through the analyzer. The analysis started from the side which contains the samples taken at higher altitudes to avoid losing resolution. 
+
+%The beginning and end of the sample analysis was detected due to changes in concentrations, at the beginning between calibrating gas/sample, and at the end, between sample/fill gas. 
+
+%Once the analysis was done, the stratospheric part of the sample taken with the CAC was stored in a sampler as seen in Figure \ref{fig:aircore-sampler}. This CAC sampler was at FMI and contained fifteen separate sections. All the valves were open when the sample was introduced. Once the analysis was finished and the whole sample was in the sampler, all the valves were closed at the same time, separating the samples for different altitudes and preventing further molecular diffusion.  
+
+
+%\begin{figure}[H]
+ %   \begin{align*}
+  %      \includegraphics[width=0.9\linewidth]{7-data-analysis-and-results/img/aircore-sampler.jpeg}
+  %  \end{align*}
+   % \caption{CAC Sampler with 15 Different Stages. %\label{fig:aircore-sampler}}
+%\end{figure}
+Approximately one month after the CAC analysis, the Picarro raw data files were available and the analysis could start. Figure \ref{fig:picarro-raw-data} shows some of the Picarro's raw data.
 
 \begin{figure}[H]
     \begin{align*}
-        \includegraphics[width=0.9\linewidth]{7-data-analysis-and-results/img/aircore-analysis.png}
+        \includegraphics[width=0.9\linewidth]{7-data-analysis-and-results/img/PicarroRawData.png}
     \end{align*}
-    \caption{Schematics of CAC Analysis System \cite{AircoreFlights}. \label{fig:aircore-analysis}}
+    \caption{Picarro Raw Data Showing the Concentrations of CO, $CO_2$, and $CH_4$ all in ppm. \label{fig:picarro-raw-data}}
 \end{figure}
 
-The analyzer pump and the push gas helped the sample to go through the analyzer. The analysis started from the side which contains the samples taken at higher altitudes to avoid losing resolution. The beginning and end of the sample analysis was detected due to changes in concentrations, at the beginning between calibrating gas/sample, and at the end, between sample/fill gas. Once the analysis was done, the stratospheric part of the sample taken with the CAC was stored in a sampler as seen in Figure \ref{fig:aircore-sampler}. This CAC sampler was at FMI and contained fifteen separate sections. All the valves were open when the sample was introduced. Once the analysis was finished and the whole sample was in the sampler, all the valves were closed at the same time, separating the samples for different altitudes and preventing further molecular diffusion.  
+For the analysis purposes, the program MATLAB was used. Several steps were required to accurately place the Picarro measurements on a vertical scale in order to retrieve the vertical profiles. The dry mole fractions of CO$_2$ and CH$_4$ provided by the Picarro were used. The reason behind that was because they were automatically corrected by the instrument for a combined effect of dilution and line broadening caused by water vapor.
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{7-data-analysis-and-results/img/FinalCO2.png}
+    \label{fig:CO2mixing}
+    \end{subfigure}
+\begin{subfigure}[b]{0.4\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{7-data-analysis-and-results/img/FinalCH4.png}
+    \label{fig:CH4mixing}
+    \end{subfigure}
+    \caption{Picarro Analysis of the CAC sample from the BEXUS 26 flight. Left: CO$_2$ Mixing Ratios as a Function of the Analysis Time in Seconds; Right: CH$_4$ Mixing Ratios as a Function of the Analysis Time in Seconds. \label{fig:mixingratios}}
+\end{figure}
+
+Figure \ref{fig:mixingratios} shows an example of CO2 and CH4 mixing ratios measured by the Picarro instrument during the BEXUS 26 campaign. In order to extract the measurements corresponding to the sampled air, the top and the bottom of the profiles needed to be defined. The top of the CAC sample was considered to be at midpoint of the transition in concentration between the push gas and the remaining fill gas. This point is marked with a green star in Figure \ref{fig:mixingratios}. 
+The bottom of the profile was defined at midpoint on the transition of concentration between push gas and sampled air. It is marked with a red star in Figure \ref{fig:mixingratios}.
 
 \begin{figure}[H]
     \begin{align*}
-        \includegraphics[width=0.9\linewidth]{7-data-analysis-and-results/img/aircore-sampler.jpeg}
+        \includegraphics[width=0.9\linewidth]{7-data-analysis-and-results/img/FinalCO.png}
     \end{align*}
-    \caption{CAC Sampler with 15 Different Stages. \label{fig:aircore-sampler}}
+    \caption{CO Mixing Ratios as a Function of the Analysis Time in Seconds. \label{fig:COmixing}}
 \end{figure}
 
+The beginning and end of the sample analysis was detected due to changes in concentrations, at the beginning between calibrating gas/sample, and at the end, between sample/fill gas. The remaining fill gas in the coil had high concentration of CO, while the stratosphere had considerably lower CO concentrations. Figure \ref{fig:COmixing} , was used to define the sample. Again, the top of the profile is marked with a green star and the bottom of the profile with a red star.      
 
-After the sample has been analyzed, the time trace of analysis was converted into a mole fraction profile as a function of atmospheric pressure, using the ideal gas law,
+It is assumed that the air entering the tube equilibrates the sample with ambient pressure and adjusts very quickly with the mean coil temperature. As the characteristics of the CAC (length, diameter) do not change, ambient pressure and mean coil temperature are the two main factors that regulate the number of moles in the CAC. Using the ideal gas law, it is possible to calculate the number of moles captured in the tube all along the trajectory. 
+
+%After the sample has been analyzed, the time trace of analysis was converted into a mole fraction profile as a function of atmospheric pressure, using the ideal gas law,
 \begin{equation}
     PV = nRT <=> n = \frac{PV}{RT}
     \label{eq:idealgaslaw}
 \end{equation}
-where P was the ambient pressure, V was the inner volume of the CAC/AAC, n the fraction of moles, R was the universal gas constant in $J K^{-1} mol^{-1}$ and T the ambient temperature in Kelvin, \cite{Membrive}. 
+where P was the ambient pressure, V was the inner volume of the CAC, n the fraction of moles, R was the universal gas constant in J K$^{-1}$ mol$^{-1}$ and T the ambient temperature in Kelvin, \cite{Membrive}. 
 A constant unit of pressure in the atmosphere was represented by a unit of length in the CAC tube, due to the method that the CAC sampled the ambient air.
+With measured time series of pressure (Pi) and temperature (Ti), it was possible to relate the number of air moles in the tube (ni) to the atmospheric pressure at any given time during the flight:
 
-During the analysis the number of moles that went through the analyzer increased linearly with time. So, the number of moles at any time during the analysis was
+\begin{equation}
+    n_i =\frac{P_i V}{R T_i},
+    \label{eq:ni-2}
+\end{equation} 
+and this number was maximum when the CAC reached the surface,
+\begin{equation}
+    n_{max} =\frac{P_s V}{R T_s},
+    \label{eq:n-max}
+\end{equation} 
+where P$_s$ and T$_s$ corresponded to the surface pressure and to the
+temperature of the CAC when landed at the surface.
+
+The flow rate during the analysis was kept constant at 40.8 cm$^3$/min, which ensured that the  number of moles that went through the analyzer increased linearly with time. So, the number of moles at any time during the analysis was
 \begin{equation}
     n_i = n^{max}\frac{t_i}{\Delta t}
     \label{eq:ni}
 \end{equation}
-where $n^{max}$ was the maximum number of moles i.e when the CAC reached the Earth's surface, and $\Delta t$ was the total time duration of the analysis between the top and bottom of the CAC sample.   
+where $\Delta t$ was the total time duration of the analysis between the top and bottom of the CAC sample.   
 
-Finally, the vertical profiles was obtained by using equations \ref{eq:idealgaslaw} and \ref{eq:ni}, and relate a specific pressure point with every Picarro measurement of the sample.   
+At the next step, Equations \ref{eq:ni-2}, and \ref{eq:ni} were used to associate every pressure point with every Picarro measurement of the sample to retrieve the vertical profiles.
+In order to do that, it was important that the data points of the sample from the Picarro, matched the data points for pressure and temperature from the ground station. This was not the case, because the Picarro data had by far more. For that reason, the ground station data for pressure and temperature were interpolated to match the ones from the Picarro.
+
+%When the interpolation was done, the CO$_2$, and CH$_4$ profiles were plotted against the pressure as seen in Figure
+
+Finally, the CO, CO$_2$, and CH$_4$ vertical profiles were plotted against the pressure. The resulted vertical profiles as well as discussion of the results can be seen in Section \ref{sec:scientificresults}.
+%using the 1976 US Standard Atmosphere model, every pressure point was translated into a specific altitude, and 
+
+
+%Finally, the vertical profiles was obtained by using equations \ref{eq:idealgaslaw} and \ref{eq:ni}, and relate a specific pressure point with every Picarro measurement of the sample.   
 
 The AAC sampling system was planned to be analyzed, in the same manner as the CAC, using the same Picarro gas analyzer. In the same way as for the CAC, the calibrating gas would needed to be flowing through the analyzer until the moisture was minimum and the readings in concentrations were stable. Then a sampling bag system would have been connected to the analyzer and a dry gas bottle, in a similar way as it was done in Test 17. The tubes connecting the sampling bags would have been flushed with dry gas and when the concentrations given by the Picarro analyzer were stable, the air inside the sampling bags would go through the analyzer followed again by dry gas.  
 
-Watching at the Picarro GUI, it was easily recognizable when a sampling bag was being analyzed due to the difference in concentrations between its air and the dry gas. 
-
-Again, as for the CAC, equations \ref{eq:idealgaslaw} and \ref{eq:ni} were going to be used to relate a specific pressure point with every Picarro measurement of the sample. 
+Watching at the Picarro GUI, it was easily recognizable when a sampling bag was being analyzed due to the difference in concentrations between its air and the dry gas. Again, as for the CAC, equations \ref{eq:idealgaslaw} and \ref{eq:ni} were going to be used to relate a specific pressure point with every Picarro measurement of the sample. 
 
 
 The basic working principle used by the chromatographer to obtain the concentrations was as follows:
