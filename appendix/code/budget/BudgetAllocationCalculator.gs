@@ -15,7 +15,7 @@ var CELL_ERROR_MARGIN_PERCENTAGE = 'F234';
 // Mapping between sponsors and the total allocated funds cell
 var SPONSORS_TOTAL_ALLOCATION_CELL_DICT = {
   'LTU': 'G239',
-  'SNSB': 'G240',
+  'SNSA': 'G240',
   'FMI': 'G241',
   'RESTEK': 'G242',
   'TEKNOLAB': 'G243',
@@ -90,7 +90,7 @@ function allocateExtraCostToSponsor_(extraCost, sponsor){
  */
 function calculateAllSponsorBudgetAllocations(){
   var amountLTU = calculateSponsorBudgetAllocation_('LTU');
-  var amountSNSB = calculateSponsorBudgetAllocation_('SNSB');
+  var amountSNSA = calculateSponsorBudgetAllocation_('SNSA');
   var amountFMI = calculateSponsorBudgetAllocation_('FMI');
   var amountRESTEK = calculateSponsorBudgetAllocation_('RESTEK');
   var amountTEKNOLAB = calculateSponsorBudgetAllocation_('TEKNOLAB');
@@ -102,22 +102,24 @@ function calculateAllSponsorBudgetAllocations(){
   var amountEUROCIRCUITS = calculateSponsorBudgetAllocation_('EUROCIRCUITS');
   
   // Calculate error margin.
-  // Error margin only applies to components purchased with LTU and SNSB funds.
+  // Error margin only applies to components purchased with LTU and SNSA funds.
   // This is because other sponsorships are not based on funds but on components donated.
   var errorMarginPercentage = sheet.getRange(CELL_ERROR_MARGIN_PERCENTAGE).getValue(); 
-  var errorMarginCost = errorMarginPercentage * (amountLTU + amountSNSB);
+  var errorMarginCost = errorMarginPercentage * (amountLTU + amountSNSA);
   var cell = sheet.getRange(CELL_ERROR_MARGIN_COST); 
   cell.setValue(errorMarginCost);
   
   // Calculate shipping cost.
   // Treat the shipping cost the same way as error margin.
-  // only applies to components purchased with LTU and SNSB funds.
+  // only applies to components purchased with LTU and SNSA funds.
   var shippingCostPercentage = sheet.getRange(CELL_SHIPPING_COST_PERCENTAGE).getValue(); 
-  var shippingCost = shippingCostPercentage * (amountLTU + amountSNSB);
+  var shippingCost = shippingCostPercentage * (amountLTU + amountSNSA);
   var cell = sheet.getRange(CELL_SHIPPING_COST); 
   cell.setValue(shippingCost);
   
   // Allocate shipping and error costs to specific sponsor.
-  allocateShippingCostToSponsor_(shippingCost, 'SNSB');
-  allocateErrorMarginCostToSponsor_(errorMarginCost, 'SNSB');
+  allocateShippingCostToSponsor_(shippingCost, 'SNSA');
+  allocateErrorMarginCostToSponsor_(errorMarginCost, 'SNSA');
 }
+
+

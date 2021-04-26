@@ -52,12 +52,13 @@ It is worth mentioning that the ascent speed in Table \ref{table:post-flight} is
 \multicolumn{1}{|c|}{Main Balloon} & Zodiac 12SF & Zodiac 12SF & Zodiac 35SF & Zodiac 35SF & Zodiac 12SF & Zodiac 12SF \\ \hline
 \multicolumn{1}{|c|}{Balloon mass {[}kg{]}} & 101.4 & 101.4 & - & - & 101.4 & 101.4 \\ \hline
 \multicolumn{1}{|c|}{Parachute {[$m^2$]}} & 80 & 80 & 80 & 80 & 80 & 80 \\ \hline
-\multicolumn{1}{|c|}{Vehicle mass - Launch {[}kg{]}} & 256.8 & 287.8 & - & - & 300.6 & 321.15 \\ \hline
-\multicolumn{1}{|c|}{Vehicle mass - Descent {[}kg{]}} & 155.4 & 186.4 & 189.58 & 181.5 & 199.2 & 219.75 \\ \hline
-\multicolumn{1}{|c|}{Float altitude estimation {[}km{]}} & 28.2 & 27.5 & - & - & 27 & 26.6 \\ \hline
-\multicolumn{1}{|c|}{Float pressure estimation {[}hPa{]}} & 15.38 & 17.11 & - & - & 18.5 & 19.6 \\ \hline
-\multicolumn{1}{|c|}{Float temperature estimation {[}$\degree{C}${]}} & - 48 & - 48 & - & - & - 49.5 & - 49.9 \\ \hline
-\multicolumn{1}{|c|}{Estimated ascent time} & 1h 33min & 1h 31min & - & - & 1h 29min & 1h 27min \\ \hline
+\multicolumn{1}{|c|}{
+\shortstack[l]{Vehicle mass\\Launch {[}kg{]}}} & 256.8 & 287.8 & - & - & 300.6 & 321.15 \\ \hline
+\multicolumn{1}{|c|}{\shortstack[l]{Vehicle mass\\Descent {[}kg{]}}} & 155.4 & 186.4 & 189.58 & 181.5 & 199.2 & 219.75 \\ \hline
+\multicolumn{1}{|c|}{\shortstack[l]{Float altitude\\estimation {[}km{]}}} & 28.2 & 27.5 & - & - & 27 & 26.6 \\ \hline
+\multicolumn{1}{|c|}{\shortstack[l]{Float pressure\\estimation {[}hPa{]}}} & 15.38 & 17.11 & - & - & 18.5 & 19.6 \\ \hline
+\multicolumn{1}{|c|}{\shortstack[l]{Float temperature\\estimation {[}$\degree{C}${]}}} & - 48 & - 48 & - & - & - 49.5 & - 49.9 \\ \hline
+\multicolumn{1}{|c|}{\shortstack[l]{Estimated\\ascent time}} & 1h 33min & 1h 31min & - & - & 1h 29min & 1h 27min \\ \hline
 \end{tabular}}}
 \caption{Pre-flight Information Available in Previous BEXUS Campaigns.}
 \label{table:pre-flight}
@@ -224,7 +225,7 @@ The TUBULAR Team has tested this pump in vacuum conditions in IRF facilities in 
 
 \noindent\makebox[\columnwidth]{%
 \scalebox{0.8}{
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|m{2cm}|m{2cm}|m{2cm}|m{2cm}|}
 \hline
 \textbf{Altitude} & \textbf{Pressure} & \textbf{Datasheet Flowrate} & \textbf{Datasheet Efficiency} & \textbf{Empirical Flowrate} & \textbf{Empirical Efficiency} \\ \hline
 0\ km & 1013 hPa & 8 L/min & 100 \% & 4.35 L/min  & 54.4 \%   \\ \hline
