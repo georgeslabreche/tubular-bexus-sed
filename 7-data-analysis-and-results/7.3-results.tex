@@ -142,60 +142,35 @@ For a 500 m of vertical displacement, the horizontal resolution of the AAC was a
 
 
 \subsubsection{Scientific Results}\label{sec:scientificresults}
-%Raw data was only obtained on the 5th December therefore analysis is still ongoing and there are no official results as of yet. FMI has also sent over some preliminary results which can be seen in Figure \ref{fig:verticalprofiles}.
 
-%\begin{figure}[H]
-%    \begin{align*}
-%        \includegraphics[width=1\linewidth]{7-data-analysis-and-results/img/verticalprofiles.png}
-%    \end{align*}
-%    \caption{Preliminary Vertical Profiles for (Left) CO$_2$, (Middle) CH$_4$, and (Right) CO.\label{fig:verticalprofiles}}
-%\end{figure}
-Figure \ref{fig:verticalprofiles} shows the CO$_2$, CH$_4$, and CO profiles measured during the BEXUS 26 flight. Each profile comprises about 3000 points on the vertical axis. The data from 400 hPa down to 1000 hPa were deleted. At that time the CAC valve was closed and the gases were leaking inside the coil with some unknown delay, and from inside the box (not from the troposphere). From the ambient temperature profile, seen in Figure \ref{fig:temperatureprofile}, the tropopause was estimated to be at 165.2 hPa.  
-  %The profiles stop at 400 hPa due to the CAC valve closure at about 6 km of altitude. Uncertainties of the profiles are possible due to the CAC valve leakage after landing, where air from the surface, as well as the box entered the coil.
+From the ambient temperature profile, seen in Figure \ref{fig:temperatureprofile}, the tropopause was estimated to be at 165.2 hPa. The AirCore onboard the CAC system operated nominally resulting in high resolution profiles for CO, CO2, and CH4. These profiles are presented in Figure \ref{fig:profile_fmi}. The data from 400 hPa down to 1000 hPa were deleted. During those measurements the CAC valve was closed and the gases were leaking inside the coil with some unknown delay, and from inside the box (not from the troposphere). 
+
  \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{7-data-analysis-and-results/img/temperatureprofile.png}
     \caption{Ambient Temperature in $\degree$C Over Ambient Pressure in hPa.}
     \label{fig:temperatureprofile}
 \end{figure} 
-  
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth]{7-data-analysis-and-results/img/Finalprofilesmast.png}
-    \caption{Vertical Profiles Retrieved from the Air Sampled with the CAC on the BEXUS 26 flight. Left: CO (ppb), Middle: CO$_2$ (ppm), Right: CH$_4$ (ppm).}
-    \label{fig:verticalprofiles}
-\end{figure}
 
-As seen in Figure \ref{fig:verticalprofiles}, the preliminary results follow the general pattern of the past results of the Section \ref{sec:ExpecterResults}. In general, the concentrations of CO$_2$, CH$_4$, and CO are decreasing with decreasing pressure i.e increasing altitude. The maximum value of CO$_2$ is 405 ppm, for CH$_4$ is approximately 2 ppm, and for the CO is close to 90 ppb. The red star represents the concentrations at 1000 hPa (surface) as they measured just about 20 km away from the landing site.
-
-The vertical resolution of the sample follow the one of the High-Resolution AirCore-HR (red line) in Figure \ref{fig:resolution-lenght} since the same length tube was used. Since the analysis was performed after 13 hours, the vertical resolution decrease is closer to the one represented by the green line in Figure \ref{fig:resolution-time}.
-
-In the middle figure of Figure \ref{fig:verticalprofiles}, a strong decrease of CO$_2$ can be observed in the first layers above 6 km. CO$_2$ reaches its highest value of 405 ppm just above the tropopause ($\sim$ 162.5 hPa). In the stratosphere, CO$_2$ values are lower since the exchange rate between upper troposphere and lower stratosphere takes several years \cite{Membrive}. 
-
-The CH$_4$ vertical profile is presented in the right side of Figure \ref{fig:verticalprofiles}. Mixing ratios of CH$_4$ have a small variability in the troposphere. The strong decrease of CH$_4$ in the
-stratosphere is easy to see in Figure \ref{fig:verticalprofiles}, with values of  1.9 ppm near the tropopause at $\sim$ 162.5 hPa to 1.2 ppm at
-$\sim$ 20 hPa. 
-
-A comparison between the middle and the right profile of Figure \ref{fig:verticalprofiles} shows CO$_2$ variability is higher near the ground, whereas CH$_4$ variability is higher in the mid-to-upper troposphere and in the stratosphere. This is in agreement with the fact that CO$_2$ may have negative and positive anomalies at the surface (associated mainly with vegetation uptake and anthropogenic emissions), whereas CH$_4$ has mostly positive anomalies coming from the surface and negative anomalies coming from the stratosphere \cite{Membrive}.
-
-
-A comparison was performed to the CO, CO$_2$ and CH$_4$ estimated profiles based on the map files that have been made using the combination of earlier measurements with a meteorological model based adjustments. The measured profiles were compared to the estimated profiles, showing relatively good agreement.  This comparison is presented in Figure \ref{fig:mapcomparison}. 
-%It is worth mentioning that the profiles from the forecast are from the next day of the BEXUS 26 flight due to meteorological adjustment (tropopause and latitude).   
+Trace gas concentrations are measured in parts per million (ppm) and parts per billion (ppb). A decreasing concentration trend is observed for CO2, CH4, and CO as the altitude increases. The maximum values are approximately 407 ppm for CO2, 1.9 ppm for CH4, and close to 89 ppb for CO.
 
 \begin{figure}[H]
     \begin{align*}
-        \includegraphics[width=1\linewidth]{7-data-analysis-and-results/img/Finalprofileswithmap.png}
+        \includegraphics[width=1\linewidth]{7-data-analysis-and-results/img/profiles-fmi.png}
     \end{align*}
-    \caption{Comparison of CAC Left: CO, Middle: CO$_2$, and Right: CH$_4$ vertical profiles (blue) with co-located forecast (red)\label{fig:mapcomparison}.}
+    \caption{AirCore profiles for CO, CO2, and CH4 (in black) with their respective forecasts (in grey). The red line denotes the tropopause boundary between the troposphere and the stratosphere. The red asterisk denotes a reference point for 1,000 hPa surface level concentrations measured at 20 km from the landing site\label{fig:profile_fmi}.}
 \end{figure}
 
-The agreement between both CO and CH$_4$ profiles (Figure \ref{fig:mapcomparison}, left and right profiles) is satisfying throughout the sampling range in terms of structures. For higher altitudes, the decrease of CH$_4$ measured by the CAC is much more pronounced than the
-one simulated by the forecast.
-At first, one can say that the forecast for the CO$_2$ profiles (Figure \ref{fig:mapcomparison}, middle profile) displays different structures than those measured by the CAC. But, it correctly reproduces the strong decrease in CO$_2$ in the troposphere, as well as the increase in concentration close to the tropopause ($\sim$ 165.2 hPa). The CAC and the forecast both reveal a decrease in CO$_2$ starting from above the tropopause up to the top of the profile. 
+A sharp decrease of CO2 can be observed in the first layers above the tropopause. Tropopause altitude was at 274 hPa, about 9.8 km. In the stratosphere, values are lower since the exchange between the upper troposphere and lower stratosphere takes several years \cite{Membrive}. Variability is higher near the ground, which agrees with the idea that CO2 may have negative and positive anomalies at the surface that are mainly associated with vegetation uptake and anthropogenic emissions \cite{Membrive}.
+
+The mixing ratios of CH4 have a small variability in the troposphere. A strong decrease in the stratosphere is easy to spot with a value of 1.85 ppm near the tropopause and 1.33 ppm at 15.2 km (118 hPa). Variability is higher in the mid-to-upper troposphere and in the stratosphere, which is mostly due to positive anomalies coming from the surface and negative anomalies coming from the stratosphere \cite{Membrive}.
+
+It is difficult to draw any conclusions based on measurements extracted from a single sampling flight. Variations of greenhouse gas concentrations would have to be observed through time with data collected over numerous reflights.
 
 \subsubsection{Future Work}\label{sec:futurework}
 
+It was expected that the AAC would serve as model enabling a cost-effective large scale deployment scheme for regular high altitude greenhouse gas measurement. Unlike CAC, the design of AAC would have not imposed experimental restrictions based on the proximity of infrastructure for shipping and analysis. As such, a successful proof of concept of AAC sampling system would have served as a basis to enable reliable cost-effective measurements in remote areas.
 
-It was expected that the AAC would serve as model enabling a cost-effective large scale deployment scheme for regular high altitude greenhouse gas measurement. Unlike CAC, the design of AAC would have not imposed experimental restrictions based on the proximity of infrastructure for shipping and analysis. As such, a successful proof of concept of AAC sampling system would have served as a basis to enable reliable cost-effective measurements in remote areas. For these reasons whilst the BEXUS programme has now ended for the TUBULAR Team, there is sufficient interest from FMI and team members that it is intended to fly the experiment again. A different battery set will be used to overcome the problems discovered during the BEXUS 26 campaign and the TUBULAR Team still hopes to complete all the aims of the TUBULAR experiment. It is hoped a re-flight may be possible during the spring of 2019. If this goes well the TUBULAR Team will be pleased to present the comparison results at The 24th ESA Symposium on European Rocket and Balloon Programmes and Related Research alongside the results from the BEXUS 26 campaign. 
+Despite the end of the BEXUS 26 programme, future flights can still be designed that will resolve the problems discovered during the campaign. Notably, using a different or dedicated battery set for the TUBULAR experiment.
 
-The TUBULAR Team is also still intending to publish a scientific paper on the results of the experiment, however it has been decided to wait until further data has been collected during the reflight to do this. 
+The TUBULAR Team has presented its findings in two conferences and published experiment's results in proceeding for the 24th ESA Symposium on European Rocket & Balloon Programmes and Related Research \cite{esapac} and the 3rd Symposium on Space Educational Activities \cite{labreche2020}. These publications can serve as references for future work.
