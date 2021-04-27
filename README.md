@@ -1,4 +1,4 @@
-# TUBULAR BEXUS26 Student Experiment Documentation
+# TUBULAR BEXUS Student Experiment Documentation
 - **Document ID**: BX26\_TUBULAR\_SEDv5-2\_26Apr21
 - **Mission**: BEXUS 26
 - **Team Name**: TUBULAR
